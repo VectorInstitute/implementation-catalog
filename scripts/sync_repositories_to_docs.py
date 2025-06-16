@@ -107,9 +107,9 @@ def count_total_implementations(implementations_by_type: Dict[str, List[Dict]]) 
     total_count = 0
     for _impl_type, implementations in implementations_by_type.items():
         for impl in implementations:
-            # Count the algorithms in each implementation
-            if "algorithms" in impl and impl["algorithms"]:
-                total_count += len(impl["algorithms"])
+            # Count the implementations
+            if "implementations" in impl and impl["implementations"]:
+                total_count += len(impl["implementations"])
 
     return total_count
 
@@ -176,24 +176,24 @@ def generate_card_html(impl: Dict) -> str:
         HTML string for the implementation card
 
     """
-    # Extract algorithms to display as tags
-    algorithms = impl.get("algorithms", [])
+    # Extract implementations to display as tags
+    implementations = impl.get("implementations", [])
     tag_html = ""
 
-    # Create algorithm tags with data-tippy attribute
-    for algo in algorithms:
-        if isinstance(algo, dict) and "name" in algo:
-            algo_name = algo["name"].strip()
-            algo_url = algo.get("url", "")
+    # Create implementation tags with data-tippy attribute
+    for impl_ in implementations:
+        if isinstance(impl_, dict) and "name" in impl_:
+            impl_name = impl_["name"].strip()
+            impl_url = impl_.get("url", "")
 
-            if algo_url:
-                tag_html += f'        <a href="{algo_url}" class="tag" target="_blank">{algo_name}</a>  '
+            if impl_url:
+                tag_html += f'        <a href="{impl_url}" class="tag" target="_blank">{impl_name}</a>  '
             else:
-                tag_html += f'        <span class="tag" data-tippy="{algo_name}">{algo_name}</span>  '
+                tag_html += f'        <span class="tag" data-tippy="{impl_name}">{impl_name}</span>  '
         else:
-            algo_text = str(algo).strip()
-            if algo_text:
-                tag_html += f'        <span class="tag" data-tippy="{algo_text}">{algo_text}</span>  '
+            impl_text = str(impl_).strip()
+            if impl_text:
+                tag_html += f'        <span class="tag" data-tippy="{impl_text}">{impl_text}</span>  '
 
     # Format datasets
     formatted_datasets = format_datasets(impl.get("public_datasets", []))

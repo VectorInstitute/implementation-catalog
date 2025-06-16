@@ -1,7 +1,7 @@
 name: diffusion-models
 repo_id: diffusion-repo
 description: "A repository with demos for various diffusion models for tabular and time series data"
-algorithms:
+implementations:
   - name: TabDDPM
     url: null
   - name: TabSyn

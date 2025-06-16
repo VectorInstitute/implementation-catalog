@@ -1,7 +1,7 @@
 name: bias-mitigation-unlearning
 repo_id: bmu-repo
 description: "A repository for social bias mitigation in LLMs using machine unlearning"
-algorithms:
+implementations:
   - name: Negation via Task Vectors
     url: https://aclanthology.org/2024.emnlp-industry.71/
   - name: PCGU
