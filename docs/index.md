@@ -278,7 +278,7 @@ a.dataset-tag:hover {
 
 <div class="catalog-stats">
   <div class="stat">
-    <div class="stat-number">28</div>
+    <div class="stat-number">27</div>
     <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
@@ -286,6 +286,8 @@ a.dataset-tag:hover {
     <div class="stat-label">Years of Research</div>
   </div>
 </div>
+
+
 
 
 
@@ -346,21 +348,6 @@ a.dataset-tag:hover {
     <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/aieng-template-implementation" title="Go to Repository">AI Engineering template implementation</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with an example AI Engineering implementation</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="topic">topic</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">dataset_a</span>  <span class="dataset-tag">dataset_b</span>
-    </div>
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/diffusion_models" title="Go to Repository">diffusion-models</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
@@ -408,4 +395,3 @@ a.dataset-tag:hover {
     </div>
 
     </div>
-
