@@ -278,7 +278,7 @@ a.dataset-tag:hover {
 
 <div class="catalog-stats">
   <div class="stat">
-    <div class="stat-number">27</div>
+    <div class="stat-number">25</div>
     <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
@@ -286,6 +286,8 @@ a.dataset-tag:hover {
     <div class="stat-label">Years of Research</div>
   </div>
 </div>
+
+
 
 
 
@@ -369,19 +371,6 @@ a.dataset-tag:hover {
     <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/fed-rag" title="Go to Repository">fed-rag</a></h3>
-        <span class="tag year-tag">2025</span>
-        <span class="tag type-tag">tool</span>
-    </div>
-    <p>A framework for fine-tuning retrieval-augmented generation (RAG) systems.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="RA-DIT">RA-DIT</span>          <span class="tag" data-tippy="Algo2">Algo2</span>
-    </div>
-
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/fl4health" title="Go to Repository">fl4health</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">tool</span>
@@ -395,3 +384,4 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+
