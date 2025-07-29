@@ -351,6 +351,8 @@ a.dataset-tag:hover {
 
 
 
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
@@ -380,6 +382,34 @@ a.dataset-tag:hover {
 === "bootcamp"
 
     <div class="grid cards" markdown>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/diffusion_models" title="Go to Repository">diffusion-models</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with demos for various diffusion models for tabular and time series data</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="TabDDPM">TabDDPM</span>          <span class="tag" data-tippy="TabSyn">TabSyn</span>          <a href="https://arxiv.org/abs/2405.17724" class="tag" target="_blank">ClavaDDPM</a>          <span class="tag" data-tippy="CSDI">CSDI</span>          <a href="https://arxiv.org/abs/2307.11494" class="tag" target="_blank">TSDiff</a>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://www.physionet.org/content/challenge-2012/1.0.0/" class="dataset-tag" target="_blank">Physionet Challenge 2012</a>  <a href="https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014" class="dataset-tag" target="_blank">Electricity dataset (UCI Machine Learning Repository)</a>
+    </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/ai-deployment" title="Go to Repository">ai-deployment</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with reference implementations for deploying AI models in production environments, focusing on best practices and cloud-native solutions.</p>
+    <div class="tag-container">
+        <a href="https://aws.amazon.com/" class="tag" target="_blank">AWS</a>          <a href="https://cloud.google.com/" class="tag" target="_blank">GCP</a>
+    </div>
+
+
+    </div>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
@@ -412,30 +442,17 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/diffusion_models" title="Go to Repository">diffusion-models</a></h3>
+        <h3><a href="https://github.com/VectorInstitute/finetuning-and-alignment" title="Go to Repository">finetuning-and-alignment</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
     </div>
-    <p>A repository with demos for various diffusion models for tabular and time series data</p>
+    <p>A repository with implementations advanced fine-tuning techniques and approaches to enhance Large Language Model performance, reduce their computational cost, with a focus on alignment with human values</p>
     <div class="tag-container">
-        <span class="tag" data-tippy="TabDDPM">TabDDPM</span>          <span class="tag" data-tippy="TabSyn">TabSyn</span>          <a href="https://arxiv.org/abs/2405.17724" class="tag" target="_blank">ClavaDDPM</a>          <span class="tag" data-tippy="CSDI">CSDI</span>          <a href="https://arxiv.org/abs/2307.11494" class="tag" target="_blank">TSDiff</a>
+        <a href="https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html" class="tag" target="_blank">FSDP</a>          <a href="https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html" class="tag" target="_blank">DDP</a>          <span class="tag" data-tippy="Instruction Tuning">Instruction Tuning</span>          <a href="https://github.com/huggingface/peft" class="tag" target="_blank">PEFT</a>          <span class="tag" data-tippy="Quantization">Quantization</span>          <span class="tag" data-tippy="Supervised Fine-tuning">Supervised Fine-tuning</span>
     </div>
     <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://www.physionet.org/content/challenge-2012/1.0.0/" class="dataset-tag" target="_blank">Physionet Challenge 2012</a>  <a href="https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014" class="dataset-tag" target="_blank">Electricity dataset (UCI Machine Learning Repository)</a>
+        <strong>Datasets:</strong> <a href="https://huggingface.co/datasets/knkarthick/samsum" class="dataset-tag" target="_blank">SAMSum dataset</a>  <a href="https://github.com/cardiffnlp/tweeteval" class="dataset-tag" target="_blank">TweetEval</a>
     </div>
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/ai-deployment" title="Go to Repository">ai-deployment</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with reference implementations for deploying AI models in production environments, focusing on best practices and cloud-native solutions.</p>
-    <div class="tag-container">
-        <a href="https://aws.amazon.com/" class="tag" target="_blank">AWS</a>          <a href="https://cloud.google.com/" class="tag" target="_blank">GCP</a>
-    </div>
-
 
     </div>
     <div class="card" markdown>
@@ -453,40 +470,12 @@ a.dataset-tag:hover {
     </div>
 
     </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/finetuning-and-alignment" title="Go to Repository">finetuning-and-alignment</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with implementations advanced fine-tuning techniques and approaches to enhance Large Language Model performance, reduce their computational cost, with a focus on alignment with human values</p>
-    <div class="tag-container">
-        <a href="https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html" class="tag" target="_blank">FSDP</a>          <a href="https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html" class="tag" target="_blank">DDP</a>          <span class="tag" data-tippy="Instruction Tuning">Instruction Tuning</span>          <a href="https://github.com/huggingface/peft" class="tag" target="_blank">PEFT</a>          <span class="tag" data-tippy="Quantization">Quantization</span>          <span class="tag" data-tippy="Supervised Fine-tuning">Supervised Fine-tuning</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://huggingface.co/datasets/knkarthick/samsum" class="dataset-tag" target="_blank">SAMSum dataset</a>  <a href="https://github.com/cardiffnlp/tweeteval" class="dataset-tag" target="_blank">TweetEval</a>
-    </div>
-
-    </div>
 
     </div>
 
 === "tool"
 
     <div class="grid cards" markdown>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/fed-rag" title="Go to Repository">fed-rag</a></h3>
-        <span class="tag year-tag">2025</span>
-        <span class="tag type-tag">tool</span>
-    </div>
-    <p>A framework for fine-tuning retrieval-augmented generation (RAG) systems.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Basic fine-tuning with FL">Basic fine-tuning with FL</span>          <a href="https://arxiv.org/abs/2310.01352" class="tag" target="_blank">RA-DIT</a>
-    </div>
-
-
-    </div>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/mmlearn" title="Go to Repository">mmlearn</a></h3>
@@ -504,6 +493,19 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/fed-rag" title="Go to Repository">fed-rag</a></h3>
+        <span class="tag year-tag">2025</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>A framework for fine-tuning retrieval-augmented generation (RAG) systems.</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Basic fine-tuning with FL">Basic fine-tuning with FL</span>          <a href="https://arxiv.org/abs/2310.01352" class="tag" target="_blank">RA-DIT</a>
+    </div>
+
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/fl4health" title="Go to Repository">fl4health</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">tool</span>
@@ -517,3 +519,4 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+
