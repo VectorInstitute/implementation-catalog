@@ -335,6 +335,8 @@ a.dataset-tag:hover {
 
 
 
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
@@ -366,21 +368,6 @@ a.dataset-tag:hover {
     <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
-        <span class="tag year-tag">2023</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with implementation of anomaly detection techniques</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Logistic Regression (Supervised)">Logistic Regression (Supervised)</span>          <span class="tag" data-tippy="Random Forest (Supervised)">Random Forest (Supervised)</span>          <span class="tag" data-tippy="XGBoost (Supervised)">XGBoost (Supervised)</span>          <span class="tag" data-tippy="CatBoost (Supervised)">CatBoost (Supervised)</span>          <span class="tag" data-tippy="Light GBM (Supervised)">Light GBM (Supervised)</span>          <span class="tag" data-tippy="TabNet (Supervised and Semi-supervised)">TabNet (Supervised and Semi-supervised)</span>          <span class="tag" data-tippy="Autoencoder (AE) (Unsupervised)">Autoencoder (AE) (Unsupervised)</span>          <span class="tag" data-tippy="Isolation Forest (Unsupervised)">Isolation Forest (Unsupervised)</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://arxiv.org/pdf/2211.13358.pdf" class="dataset-tag" target="_blank">Bank Account Fraud Detection</a>  <a href="https://dgraph.xinye.com/dataset" class="dataset-tag" target="_blank">DGraph dataset</a>  <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad" class="dataset-tag" target="_blank">MVTec dataset</a>  <a href="http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm" class="dataset-tag" target="_blank">UCSD Anomaly Detection Dataset</a>  <a href="https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset" class="dataset-tag" target="_blank">UCF Crime Dataset</a>
-    </div>
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/diffusion_models" title="Go to Repository">diffusion-models</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
@@ -405,6 +392,21 @@ a.dataset-tag:hover {
         <a href="https://aws.amazon.com/" class="tag" target="_blank">AWS</a>          <a href="https://cloud.google.com/" class="tag" target="_blank">GCP</a>
     </div>
 
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
+        <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with implementation of anomaly detection techniques</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Logistic Regression (Supervised)">Logistic Regression (Supervised)</span>          <span class="tag" data-tippy="Random Forest (Supervised)">Random Forest (Supervised)</span>          <span class="tag" data-tippy="XGBoost (Supervised)">XGBoost (Supervised)</span>          <span class="tag" data-tippy="CatBoost (Supervised)">CatBoost (Supervised)</span>          <span class="tag" data-tippy="Light GBM (Supervised)">Light GBM (Supervised)</span>          <span class="tag" data-tippy="TabNet (Supervised and Semi-supervised)">TabNet (Supervised and Semi-supervised)</span>          <span class="tag" data-tippy="Autoencoder (AE) (Unsupervised)">Autoencoder (AE) (Unsupervised)</span>          <span class="tag" data-tippy="Isolation Forest (Unsupervised)">Isolation Forest (Unsupervised)</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://arxiv.org/pdf/2211.13358.pdf" class="dataset-tag" target="_blank">Bank Account Fraud Detection</a>  <a href="https://dgraph.xinye.com/dataset" class="dataset-tag" target="_blank">DGraph dataset</a>  <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad" class="dataset-tag" target="_blank">MVTec dataset</a>  <a href="http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm" class="dataset-tag" target="_blank">UCSD Anomaly Detection Dataset</a>  <a href="https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset" class="dataset-tag" target="_blank">UCF Crime Dataset</a>
+    </div>
 
     </div>
     <div class="card" markdown>
@@ -456,3 +458,4 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+
