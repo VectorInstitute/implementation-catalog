@@ -278,7 +278,7 @@ a.dataset-tag:hover {
 
 <div class="catalog-stats">
   <div class="stat">
-    <div class="stat-number">43</div>
+    <div class="stat-number">47</div>
     <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
@@ -286,6 +286,10 @@ a.dataset-tag:hover {
     <div class="stat-label">Years of Research</div>
   </div>
 </div>
+
+
+
+
 
 
 
@@ -376,6 +380,21 @@ a.dataset-tag:hover {
     </div>
     <div class="datasets">
         <strong>Datasets:</strong> <a href="https://arxiv.org/pdf/2211.13358.pdf" class="dataset-tag" target="_blank">Bank Account Fraud Detection</a>  <a href="https://dgraph.xinye.com/dataset" class="dataset-tag" target="_blank">DGraph dataset</a>  <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad" class="dataset-tag" target="_blank">MVTec dataset</a>  <a href="http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm" class="dataset-tag" target="_blank">UCSD Anomaly Detection Dataset</a>  <a href="https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset" class="dataset-tag" target="_blank">UCF Crime Dataset</a>
+    </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/self-supervised-learning" title="Go to Repository">self-supervised-learning</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with reference implementations of self-supervised learning techniques</p>
+    <div class="tag-container">
+        <a href="https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf" class="tag" target="_blank">Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)</a>          <a href="https://arxiv.org/abs/2302.00861" class="tag" target="_blank">SimMTM</a>          <a href="https://arxiv.org/abs/2303.15747" class="tag" target="_blank">TabRet</a>          <a href="https://arxiv.org/abs/2202.03555" class="tag" target="_blank">Data2Vec</a>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://cs.stanford.edu/~acoates/stl10/" class="dataset-tag" target="_blank">STL-10</a>  <a href="https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data" class="dataset-tag" target="_blank">Beijing PM 2.5</a>
     </div>
 
     </div>

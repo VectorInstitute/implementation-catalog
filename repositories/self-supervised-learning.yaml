@@ -1,0 +1,20 @@
+name: self-supervised-learning
+repo_id: VectorInstitute/self-supervised-learning
+description: "A repository with reference implementations of self-supervised learning techniques"
+implementations:
+  - name: Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)
+    url: https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf
+  - name: SimMTM
+    url: https://arxiv.org/abs/2302.00861
+  - name: TabRet
+    url: https://arxiv.org/abs/2303.15747
+  - name: Data2Vec
+    url: https://arxiv.org/abs/2202.03555
+public_datasets:
+  - name: STL-10
+    url: https://cs.stanford.edu/~acoates/stl10/
+  - name: Beijing PM 2.5
+    url: https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data
+type: bootcamp
+year: 2024
+github_url: https://github.com/VectorInstitute/self-supervised-learning
