@@ -341,6 +341,8 @@ a.dataset-tag:hover {
 
 
 
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
@@ -372,6 +374,34 @@ a.dataset-tag:hover {
     <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/diffusion_models" title="Go to Repository">diffusion-models</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with demos for various diffusion models for tabular and time series data</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="TabDDPM">TabDDPM</span>          <span class="tag" data-tippy="TabSyn">TabSyn</span>          <a href="https://arxiv.org/abs/2405.17724" class="tag" target="_blank">ClavaDDPM</a>          <span class="tag" data-tippy="CSDI">CSDI</span>          <a href="https://arxiv.org/abs/2307.11494" class="tag" target="_blank">TSDiff</a>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://www.physionet.org/content/challenge-2012/1.0.0/" class="dataset-tag" target="_blank">Physionet Challenge 2012</a>  <a href="https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014" class="dataset-tag" target="_blank">Electricity dataset (UCI Machine Learning Repository)</a>
+    </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/ai-deployment" title="Go to Repository">ai-deployment</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with reference implementations for deploying AI models in production environments, focusing on best practices and cloud-native solutions.</p>
+    <div class="tag-container">
+        <a href="https://aws.amazon.com/" class="tag" target="_blank">AWS</a>          <a href="https://cloud.google.com/" class="tag" target="_blank">GCP</a>
+    </div>
+
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
         <span class="tag year-tag">2023</span>
         <span class="tag type-tag">bootcamp</span>
@@ -398,34 +428,6 @@ a.dataset-tag:hover {
     <div class="datasets">
         <strong>Datasets:</strong> <a href="https://cs.stanford.edu/~acoates/stl10/" class="dataset-tag" target="_blank">STL-10</a>  <a href="https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data" class="dataset-tag" target="_blank">Beijing PM 2.5</a>
     </div>
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/diffusion_models" title="Go to Repository">diffusion-models</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with demos for various diffusion models for tabular and time series data</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="TabDDPM">TabDDPM</span>          <span class="tag" data-tippy="TabSyn">TabSyn</span>          <a href="https://arxiv.org/abs/2405.17724" class="tag" target="_blank">ClavaDDPM</a>          <span class="tag" data-tippy="CSDI">CSDI</span>          <a href="https://arxiv.org/abs/2307.11494" class="tag" target="_blank">TSDiff</a>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://www.physionet.org/content/challenge-2012/1.0.0/" class="dataset-tag" target="_blank">Physionet Challenge 2012</a>  <a href="https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014" class="dataset-tag" target="_blank">Electricity dataset (UCI Machine Learning Repository)</a>
-    </div>
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/ai-deployment" title="Go to Repository">ai-deployment</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with reference implementations for deploying AI models in production environments, focusing on best practices and cloud-native solutions.</p>
-    <div class="tag-container">
-        <a href="https://aws.amazon.com/" class="tag" target="_blank">AWS</a>          <a href="https://cloud.google.com/" class="tag" target="_blank">GCP</a>
-    </div>
-
 
     </div>
     <div class="card" markdown>
@@ -477,3 +479,4 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+
