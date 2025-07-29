@@ -278,7 +278,7 @@ a.dataset-tag:hover {
 
 <div class="catalog-stats">
   <div class="stat">
-    <div class="stat-number">33</div>
+    <div class="stat-number">43</div>
     <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
@@ -286,6 +286,12 @@ a.dataset-tag:hover {
     <div class="stat-label">Years of Research</div>
   </div>
 </div>
+
+
+
+
+
+
 
 
 
@@ -358,6 +364,21 @@ a.dataset-tag:hover {
     <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
+        <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with implementation of anomaly detection techniques</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Logistic Regression (Supervised)">Logistic Regression (Supervised)</span>          <span class="tag" data-tippy="Random Forest (Supervised)">Random Forest (Supervised)</span>          <span class="tag" data-tippy="XGBoost (Supervised)">XGBoost (Supervised)</span>          <span class="tag" data-tippy="CatBoost (Supervised)">CatBoost (Supervised)</span>          <span class="tag" data-tippy="Light GBM (Supervised)">Light GBM (Supervised)</span>          <span class="tag" data-tippy="TabNet (Supervised and Semi-supervised)">TabNet (Supervised and Semi-supervised)</span>          <span class="tag" data-tippy="Autoencoder (AE) (Unsupervised)">Autoencoder (AE) (Unsupervised)</span>          <span class="tag" data-tippy="Isolation Forest (Unsupervised)">Isolation Forest (Unsupervised)</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://arxiv.org/pdf/2211.13358.pdf" class="dataset-tag" target="_blank">Bank Account Fraud Detection</a>  <a href="https://dgraph.xinye.com/dataset" class="dataset-tag" target="_blank">DGraph dataset</a>  <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad" class="dataset-tag" target="_blank">MVTec dataset</a>  <a href="http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm" class="dataset-tag" target="_blank">UCSD Anomaly Detection Dataset</a>  <a href="https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset" class="dataset-tag" target="_blank">UCF Crime Dataset</a>
+    </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/diffusion_models" title="Go to Repository">diffusion-models</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
@@ -367,8 +388,21 @@ a.dataset-tag:hover {
         <span class="tag" data-tippy="TabDDPM">TabDDPM</span>          <span class="tag" data-tippy="TabSyn">TabSyn</span>          <a href="https://arxiv.org/abs/2405.17724" class="tag" target="_blank">ClavaDDPM</a>          <span class="tag" data-tippy="CSDI">CSDI</span>          <a href="https://arxiv.org/abs/2307.11494" class="tag" target="_blank">TSDiff</a>
     </div>
     <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">Physionet Challenge 2012</span>  <span class="dataset-tag">wiki2000</span>
+        <strong>Datasets:</strong> <a href="https://www.physionet.org/content/challenge-2012/1.0.0/" class="dataset-tag" target="_blank">Physionet Challenge 2012</a>  <a href="https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014" class="dataset-tag" target="_blank">Electricity dataset (UCI Machine Learning Repository)</a>
     </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/ai-deployment" title="Go to Repository">ai-deployment</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with reference implementations for deploying AI models in production environments, focusing on best practices and cloud-native solutions.</p>
+    <div class="tag-container">
+        <a href="https://aws.amazon.com/" class="tag" target="_blank">AWS</a>          <a href="https://cloud.google.com/" class="tag" target="_blank">GCP</a>
+    </div>
+
 
     </div>
     <div class="card" markdown>
@@ -382,7 +416,7 @@ a.dataset-tag:hover {
         <span class="tag" data-tippy="Web Search">Web Search</span>          <span class="tag" data-tippy="Document Search">Document Search</span>          <span class="tag" data-tippy="SQL Search">SQL Search</span>          <span class="tag" data-tippy="Cloud Search">Cloud Search</span>          <span class="tag" data-tippy="PubMed QA">PubMed QA</span>          <span class="tag" data-tippy="RAG Evaluation">RAG Evaluation</span>
     </div>
     <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <span class="dataset-tag">wiki2000</span>
+        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <a href="https://www.kaggle.com/datasets/prakharrathi25/banking-dataset-marketing-targets" class="dataset-tag" target="_blank">Banking Dataset - Marketing Targets</a>
     </div>
 
     </div>

@@ -1,0 +1,26 @@
+name: anomaly-detection
+repo_id: VectorInstitute/anomaly-detection
+description: "A repository with implementation of anomaly detection techniques"
+implementations:
+  - name: Logistic Regression (Supervised)
+  - name: Random Forest (Supervised)
+  - name: XGBoost (Supervised)
+  - name: CatBoost (Supervised)
+  - name: Light GBM (Supervised)
+  - name: TabNet (Supervised and Semi-supervised)
+  - name: Autoencoder (AE) (Unsupervised)
+  - name: Isolation Forest (Unsupervised)
+public_datasets:
+  - name: Bank Account Fraud Detection
+    url: https://arxiv.org/pdf/2211.13358.pdf
+  - name: DGraph dataset
+    url: https://dgraph.xinye.com/dataset
+  - name: MVTec dataset
+    url: https://www.mvtec.com/company/research/datasets/mvtec-ad
+  - name: UCSD Anomaly Detection Dataset
+    url: http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm
+  - name: UCF Crime Dataset
+    url: https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset
+type: bootcamp
+year: 2023
+github_url: https://github.com/VectorInstitute/anomaly-detection
