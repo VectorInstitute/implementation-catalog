@@ -1,5 +1,5 @@
 name: diffusion-models
-repo_id: diffusion-repo
+repo_id: VectorInstitute/diffusion-models
 description: "A repository with demos for various diffusion models for tabular and time series data"
 implementations:
   - name: TabDDPM
@@ -14,7 +14,9 @@ implementations:
     url: https://arxiv.org/abs/2307.11494
 public_datasets:
   - name: Physionet Challenge 2012
-  - name: wiki2000
+    url: https://www.physionet.org/content/challenge-2012/1.0.0/
+  - name: Electricity dataset (UCI Machine Learning Repository)
+    url: https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014
 type: bootcamp
 year: 2024
 github_url: https://github.com/VectorInstitute/diffusion_models

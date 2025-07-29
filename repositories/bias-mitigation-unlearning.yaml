@@ -1,5 +1,5 @@
 name: bias-mitigation-unlearning
-repo_id: bmu-repo
+repo_id: VectorInstitute/bias-mitigation-unlearning
 description: "A repository for social bias mitigation in LLMs using machine unlearning"
 implementations:
   - name: Negation via Task Vectors

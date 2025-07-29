@@ -1,0 +1,24 @@
+name: retrieval-augmented-generation
+repo_id: vectorinstitute/retrieval-augmented-generation
+description: "A repository reference implementations for retrieval-augmented generation"
+implementations:
+  - name: Web Search
+    url: null
+  - name: Document Search
+    url: null
+  - name: SQL Search
+    url: null
+  - name: Cloud Search
+    url: null
+  - name: PubMed QA
+    url: null
+  - name: RAG Evaluation
+    url: null
+public_datasets:
+  - name: PubMed
+    url: https://pubmed.ncbi.nlm.nih.gov
+  - name: Banking Dataset - Marketing Targets
+    url: https://www.kaggle.com/datasets/prakharrathi25/banking-dataset-marketing-targets
+type: bootcamp
+year: 2024
+github_url: https://github.com/VectorInstitute/retrieval-augmented-generation

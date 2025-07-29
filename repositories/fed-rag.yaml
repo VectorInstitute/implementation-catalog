@@ -2,10 +2,10 @@ name: fed-rag
 repo_id: fed-rag-repo
 description: "A framework for fine-tuning retrieval-augmented generation (RAG) systems."
 implementations:
+  - name: Basic fine-tuning with FL
+    url: null
   - name: RA-DIT
-    url: null
-  - name: Algo2
-    url: null
+    url: https://arxiv.org/abs/2310.01352
 type: tool
 year: 2025
 github_url: https://github.com/VectorInstitute/fed-rag

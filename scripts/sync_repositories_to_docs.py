@@ -202,8 +202,8 @@ def generate_card_html(impl: Dict) -> str:
     if "github_url" in impl:
         repo_url = impl["github_url"]
     else:
-        repo_id = impl["repo_id"].replace("-repo", "")
-        repo_url = f"https://github.com/VectorInstitute/{repo_id}"
+        repo_id = impl["repo_id"]
+        repo_url = f"https://github.com/{repo_id}"
 
     # Add BibTeX citation button if available
     bibtex_html = ""

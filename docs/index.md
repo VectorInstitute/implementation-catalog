@@ -278,7 +278,7 @@ a.dataset-tag:hover {
 
 <div class="catalog-stats">
   <div class="stat">
-    <div class="stat-number">27</div>
+    <div class="stat-number">33</div>
     <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
@@ -286,6 +286,12 @@ a.dataset-tag:hover {
     <div class="stat-label">Years of Research</div>
   </div>
 </div>
+
+
+
+
+
+
 
 
 
@@ -365,6 +371,21 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/retrieval-augmented-generation" title="Go to Repository">retrieval-augmented-generation</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository reference implementations for retrieval-augmented generation</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Web Search">Web Search</span>          <span class="tag" data-tippy="Document Search">Document Search</span>          <span class="tag" data-tippy="SQL Search">SQL Search</span>          <span class="tag" data-tippy="Cloud Search">Cloud Search</span>          <span class="tag" data-tippy="PubMed QA">PubMed QA</span>          <span class="tag" data-tippy="RAG Evaluation">RAG Evaluation</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <span class="dataset-tag">wiki2000</span>
+    </div>
+
+    </div>
 
     </div>
 
@@ -379,7 +400,7 @@ a.dataset-tag:hover {
     </div>
     <p>A framework for fine-tuning retrieval-augmented generation (RAG) systems.</p>
     <div class="tag-container">
-        <span class="tag" data-tippy="RA-DIT">RA-DIT</span>          <span class="tag" data-tippy="Algo2">Algo2</span>
+        <span class="tag" data-tippy="Basic fine-tuning with FL">Basic fine-tuning with FL</span>          <a href="https://arxiv.org/abs/2310.01352" class="tag" target="_blank">RA-DIT</a>
     </div>
 
 
@@ -399,4 +420,3 @@ a.dataset-tag:hover {
     </div>
 
     </div>
-

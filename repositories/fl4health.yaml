@@ -1,5 +1,5 @@
 name: fl4health
-repo_id: fl4health-repo
+repo_id: VectorInstitute/FL4Health
 description: "A flexible, modular, and easy to use library to facilitate federated learning research and development in healthcare settings"
 implementations:
   - name: FedAvg
