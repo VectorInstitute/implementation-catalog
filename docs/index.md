@@ -327,6 +327,8 @@ a.dataset-tag:hover {
 
 
 
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
@@ -367,7 +369,7 @@ a.dataset-tag:hover {
         <span class="tag" data-tippy="TabDDPM">TabDDPM</span>          <span class="tag" data-tippy="TabSyn">TabSyn</span>          <a href="https://arxiv.org/abs/2405.17724" class="tag" target="_blank">ClavaDDPM</a>          <span class="tag" data-tippy="CSDI">CSDI</span>          <a href="https://arxiv.org/abs/2307.11494" class="tag" target="_blank">TSDiff</a>
     </div>
     <div class="datasets">
-        <strong>Datasets:</strong> <span class="dataset-tag">Physionet Challenge 2012</span>  <span class="dataset-tag">wiki2000</span>
+        <strong>Datasets:</strong> <a href="https://www.physionet.org/content/challenge-2012/1.0.0/" class="dataset-tag" target="_blank">Physionet Challenge 2012</a>  <a href="https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014" class="dataset-tag" target="_blank">Electricity dataset (UCI Machine Learning Repository)</a>
     </div>
 
     </div>
@@ -382,7 +384,7 @@ a.dataset-tag:hover {
         <span class="tag" data-tippy="Web Search">Web Search</span>          <span class="tag" data-tippy="Document Search">Document Search</span>          <span class="tag" data-tippy="SQL Search">SQL Search</span>          <span class="tag" data-tippy="Cloud Search">Cloud Search</span>          <span class="tag" data-tippy="PubMed QA">PubMed QA</span>          <span class="tag" data-tippy="RAG Evaluation">RAG Evaluation</span>
     </div>
     <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <span class="dataset-tag">wiki2000</span>
+        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <a href="https://www.kaggle.com/datasets/prakharrathi25/banking-dataset-marketing-targets" class="dataset-tag" target="_blank">Banking Dataset - Marketing Targets</a>
     </div>
 
     </div>
@@ -420,3 +422,4 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+
