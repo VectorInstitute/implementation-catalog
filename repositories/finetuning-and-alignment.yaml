@@ -1,0 +1,24 @@
+name: finetuning-and-alignment
+repo_id: VectorInstitute/finetuning-and-alignment
+description: "A repository with implementations advanced fine-tuning techniques and approaches to enhance Large Language Model performance, reduce their computational cost, with a focus on alignment with human values"
+implementations:
+  - name: FSDP
+    url: https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html
+  - name: DDP
+    url: https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html
+  - name: Instruction Tuning
+    url: null
+  - name: PEFT
+    url: https://github.com/huggingface/peft
+  - name: Quantization
+    url: null
+  - name: Supervised Fine-tuning
+    url: null
+public_datasets:
+  - name: SAMSum dataset
+    url: https://huggingface.co/datasets/knkarthick/samsum
+  - name: TweetEval
+    url: https://github.com/cardiffnlp/tweeteval
+type: bootcamp
+year: 2024
+github_url: https://github.com/VectorInstitute/finetuning-and-alignment
