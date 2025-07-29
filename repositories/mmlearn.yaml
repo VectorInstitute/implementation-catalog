@@ -1,0 +1,18 @@
+name: mmlearn
+repo_id: VectorInstitute/mmlearn
+description: "A toolkit for research on multimodal representation learning"
+implementations:
+  - name: Contrastive Pretraining
+    url: null
+  - name: I-JEPA
+    url: https://arxiv.org/abs/2301.08243
+public_datasets:
+  - name: ImageNet
+    url: https://www.image-net.org/
+  - name: LibriSpeech
+    url: https://www.openslr.org/12/
+  - name: RGB-D
+    url: https://rgbd.cs.princeton.edu/
+type: tool
+year: 2024
+github_url: https://github.com/VectorInstitute/mmlearn
