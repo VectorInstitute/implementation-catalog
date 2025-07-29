@@ -1,0 +1,19 @@
+name: recommender-systems
+repo_id: VectorInstitute/recommender-systems
+description: "A repository with implementations of recommender systems"
+implementations:
+  - name: Matrix Factorization
+    url: null
+  - name: Collaborative Filtering
+    url: null
+  - name: Content-Based Filtering
+    url: null
+  - name: Sequence Aware Recommender Systems
+    url: null
+  - name: Session-Based Recommender Systems
+    url: null
+  - name: Knowledge Graph-Based Recommender Systems
+    url: null
+type: bootcamp
+year: 2022
+github_url: https://github.com/VectorInstitute/recommender-systems
