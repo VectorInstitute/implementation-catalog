@@ -4,6 +4,11 @@ description: "A toolkit to download, augment, and benchmark Open-PMC data"
 implementations:
   - name: PMC Data Extraction
     url: https://arxiv.org/abs/2503.14377
+public_datasets:
+  - name: PubMed Central
+    url: https://pmc.ncbi.nlm.nih.gov/
+  - name: HuggingFace PMC Dataset
+    url: https://huggingface.co/datasets/vector-institute/open-pmc
 type: tool
 paper_url: https://arxiv.org/abs/2503.14377
 bibtex: baghbanzadeh2025advancing

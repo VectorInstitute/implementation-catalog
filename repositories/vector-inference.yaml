@@ -1,0 +1,6 @@
+name: vector-inference
+repo_id: VectorInstitute/vector-inference
+description: "Efficient LLM inference on Slurm clusters using vLLM."
+type: tool
+year: 2024
+github_url: https://github.com/VectorInstitute/vector-inference
