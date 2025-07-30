@@ -1,0 +1,9 @@
+name: pmc-data-extraction
+repo_id: pmc-data-extraction
+description: "A toolkit to download, augment, and benchmark Open-PMC data"
+implementations:
+  - name: PMC Data Extraction
+    url: https://arxiv.org/abs/2503.14377
+type: tool
+year: 2024
+github_url: https://github.com/VectorInstitute/pmc-data-extraction
