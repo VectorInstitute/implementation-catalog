@@ -1,0 +1,19 @@
+name: privacy-enhancing-techniques
+repo_id: VectorInstitute/privacy-enhancing-techniques
+description: "A repository with implementations of privacy-enhancing techniques for machine learning"
+implementations:
+  - name: Differential Privacy (tensorflow_privacy)
+    url: null
+  - name: PATE
+    url: null
+  - name: Membership Inference Attacks
+    url: null
+  - name: Horizontal Federated Learning
+    url: null
+  - name: Vertical Federated Learning
+    url: null
+  - name: Homomorphic Encryption
+    url: null
+type: bootcamp
+year: 2021
+github_url: https://github.com/VectorInstitute/privacy-enhancing-techniques
