@@ -5,5 +5,7 @@ implementations:
   - name: PMC Data Extraction
     url: https://arxiv.org/abs/2503.14377
 type: tool
+paper_url: https://arxiv.org/abs/2503.14377
+bibtex: baghbanzadeh2025advancing
 year: 2024
 github_url: https://github.com/VectorInstitute/pmc-data-extraction

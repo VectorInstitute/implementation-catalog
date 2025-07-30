@@ -367,6 +367,8 @@ a.dataset-tag:hover {
 
 
 
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
@@ -540,7 +542,10 @@ a.dataset-tag:hover {
         <a href="https://arxiv.org/abs/2503.14377" class="tag" target="_blank">PMC Data Extraction</a>
     </div>
 
-
+    <div class="citation-links">
+        <a href="#" class="bibtex-button" data-bibtex-id="baghbanzadeh2025advancing" title="View Citation">Cite</a>
+        <a href="https://arxiv.org/abs/2503.14377" class="paper-link" title="View Paper" target="_blank">Paper</a>
+    </div>
     </div>
     <div class="card" markdown>
     <div class="header">
@@ -572,3 +577,4 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+
