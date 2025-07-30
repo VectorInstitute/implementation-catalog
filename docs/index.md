@@ -363,6 +363,8 @@ a.dataset-tag:hover {
 
 
 
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
@@ -394,21 +396,6 @@ a.dataset-tag:hover {
     <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
-        <span class="tag year-tag">2023</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with implementation of anomaly detection techniques</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Logistic Regression (Supervised)">Logistic Regression (Supervised)</span>          <span class="tag" data-tippy="Random Forest (Supervised)">Random Forest (Supervised)</span>          <span class="tag" data-tippy="XGBoost (Supervised)">XGBoost (Supervised)</span>          <span class="tag" data-tippy="CatBoost (Supervised)">CatBoost (Supervised)</span>          <span class="tag" data-tippy="Light GBM (Supervised)">Light GBM (Supervised)</span>          <span class="tag" data-tippy="TabNet (Supervised and Semi-supervised)">TabNet (Supervised and Semi-supervised)</span>          <span class="tag" data-tippy="Autoencoder (AE) (Unsupervised)">Autoencoder (AE) (Unsupervised)</span>          <span class="tag" data-tippy="Isolation Forest (Unsupervised)">Isolation Forest (Unsupervised)</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://arxiv.org/pdf/2211.13358.pdf" class="dataset-tag" target="_blank">Bank Account Fraud Detection</a>  <a href="https://dgraph.xinye.com/dataset" class="dataset-tag" target="_blank">DGraph dataset</a>  <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad" class="dataset-tag" target="_blank">MVTec dataset</a>  <a href="http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm" class="dataset-tag" target="_blank">UCSD Anomaly Detection Dataset</a>  <a href="https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset" class="dataset-tag" target="_blank">UCF Crime Dataset</a>
-    </div>
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/recommender-systems" title="Go to Repository">recommender-systems</a></h3>
         <span class="tag year-tag">2022</span>
         <span class="tag type-tag">bootcamp</span>
@@ -418,34 +405,6 @@ a.dataset-tag:hover {
         <span class="tag" data-tippy="Matrix Factorization">Matrix Factorization</span>          <span class="tag" data-tippy="Collaborative Filtering">Collaborative Filtering</span>          <span class="tag" data-tippy="Content-Based Filtering">Content-Based Filtering</span>          <span class="tag" data-tippy="Sequence Aware Recommender Systems">Sequence Aware Recommender Systems</span>          <span class="tag" data-tippy="Session-Based Recommender Systems">Session-Based Recommender Systems</span>          <span class="tag" data-tippy="Knowledge Graph-Based Recommender Systems">Knowledge Graph-Based Recommender Systems</span>
     </div>
 
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/privacy-enhancing-techniques" title="Go to Repository">privacy-enhancing-techniques</a></h3>
-        <span class="tag year-tag">2021</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with implementations of privacy-enhancing techniques for machine learning</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Differential Privacy (tensorflow_privacy)">Differential Privacy (tensorflow_privacy)</span>          <span class="tag" data-tippy="PATE">PATE</span>          <span class="tag" data-tippy="Membership Inference Attacks">Membership Inference Attacks</span>          <span class="tag" data-tippy="Horizontal Federated Learning">Horizontal Federated Learning</span>          <span class="tag" data-tippy="Vertical Federated Learning">Vertical Federated Learning</span>          <span class="tag" data-tippy="Homomorphic Encryption">Homomorphic Encryption</span>
-    </div>
-
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/self-supervised-learning" title="Go to Repository">self-supervised-learning</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with reference implementations of self-supervised learning techniques</p>
-    <div class="tag-container">
-        <a href="https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf" class="tag" target="_blank">Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)</a>          <a href="https://arxiv.org/abs/2302.00861" class="tag" target="_blank">SimMTM</a>          <a href="https://arxiv.org/abs/2303.15747" class="tag" target="_blank">TabRet</a>          <a href="https://arxiv.org/abs/2202.03555" class="tag" target="_blank">Data2Vec</a>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://cs.stanford.edu/~acoates/stl10/" class="dataset-tag" target="_blank">STL-10</a>  <a href="https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data" class="dataset-tag" target="_blank">Beijing PM 2.5</a>
-    </div>
 
     </div>
     <div class="card" markdown>
@@ -465,6 +424,19 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/privacy-enhancing-techniques" title="Go to Repository">privacy-enhancing-techniques</a></h3>
+        <span class="tag year-tag">2021</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with implementations of privacy-enhancing techniques for machine learning</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Differential Privacy (tensorflow_privacy)">Differential Privacy (tensorflow_privacy)</span>          <span class="tag" data-tippy="PATE">PATE</span>          <span class="tag" data-tippy="Membership Inference Attacks">Membership Inference Attacks</span>          <span class="tag" data-tippy="Horizontal Federated Learning">Horizontal Federated Learning</span>          <span class="tag" data-tippy="Vertical Federated Learning">Vertical Federated Learning</span>          <span class="tag" data-tippy="Homomorphic Encryption">Homomorphic Encryption</span>
+    </div>
+
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/ai-deployment" title="Go to Repository">ai-deployment</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
@@ -478,16 +450,31 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/retrieval-augmented-generation" title="Go to Repository">retrieval-augmented-generation</a></h3>
+        <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
+        <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with implementation of anomaly detection techniques</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Logistic Regression (Supervised)">Logistic Regression (Supervised)</span>          <span class="tag" data-tippy="Random Forest (Supervised)">Random Forest (Supervised)</span>          <span class="tag" data-tippy="XGBoost (Supervised)">XGBoost (Supervised)</span>          <span class="tag" data-tippy="CatBoost (Supervised)">CatBoost (Supervised)</span>          <span class="tag" data-tippy="Light GBM (Supervised)">Light GBM (Supervised)</span>          <span class="tag" data-tippy="TabNet (Supervised and Semi-supervised)">TabNet (Supervised and Semi-supervised)</span>          <span class="tag" data-tippy="Autoencoder (AE) (Unsupervised)">Autoencoder (AE) (Unsupervised)</span>          <span class="tag" data-tippy="Isolation Forest (Unsupervised)">Isolation Forest (Unsupervised)</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://arxiv.org/pdf/2211.13358.pdf" class="dataset-tag" target="_blank">Bank Account Fraud Detection</a>  <a href="https://dgraph.xinye.com/dataset" class="dataset-tag" target="_blank">DGraph dataset</a>  <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad" class="dataset-tag" target="_blank">MVTec dataset</a>  <a href="http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm" class="dataset-tag" target="_blank">UCSD Anomaly Detection Dataset</a>  <a href="https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset" class="dataset-tag" target="_blank">UCF Crime Dataset</a>
+    </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/self-supervised-learning" title="Go to Repository">self-supervised-learning</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
     </div>
-    <p>A repository reference implementations for retrieval-augmented generation</p>
+    <p>A repository with reference implementations of self-supervised learning techniques</p>
     <div class="tag-container">
-        <span class="tag" data-tippy="Web Search">Web Search</span>          <span class="tag" data-tippy="Document Search">Document Search</span>          <span class="tag" data-tippy="SQL Search">SQL Search</span>          <span class="tag" data-tippy="Cloud Search">Cloud Search</span>          <span class="tag" data-tippy="PubMed QA">PubMed QA</span>          <span class="tag" data-tippy="RAG Evaluation">RAG Evaluation</span>
+        <a href="https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf" class="tag" target="_blank">Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)</a>          <a href="https://arxiv.org/abs/2302.00861" class="tag" target="_blank">SimMTM</a>          <a href="https://arxiv.org/abs/2303.15747" class="tag" target="_blank">TabRet</a>          <a href="https://arxiv.org/abs/2202.03555" class="tag" target="_blank">Data2Vec</a>
     </div>
     <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <a href="https://www.kaggle.com/datasets/prakharrathi25/banking-dataset-marketing-targets" class="dataset-tag" target="_blank">Banking Dataset - Marketing Targets</a>
+        <strong>Datasets:</strong> <a href="https://cs.stanford.edu/~acoates/stl10/" class="dataset-tag" target="_blank">STL-10</a>  <a href="https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data" class="dataset-tag" target="_blank">Beijing PM 2.5</a>
     </div>
 
     </div>
@@ -506,25 +493,27 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/retrieval-augmented-generation" title="Go to Repository">retrieval-augmented-generation</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository reference implementations for retrieval-augmented generation</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Web Search">Web Search</span>          <span class="tag" data-tippy="Document Search">Document Search</span>          <span class="tag" data-tippy="SQL Search">SQL Search</span>          <span class="tag" data-tippy="Cloud Search">Cloud Search</span>          <span class="tag" data-tippy="PubMed QA">PubMed QA</span>          <span class="tag" data-tippy="RAG Evaluation">RAG Evaluation</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <a href="https://www.kaggle.com/datasets/prakharrathi25/banking-dataset-marketing-targets" class="dataset-tag" target="_blank">Banking Dataset - Marketing Targets</a>
+    </div>
+
+    </div>
 
     </div>
 
 === "tool"
 
     <div class="grid cards" markdown>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/fed-rag" title="Go to Repository">fed-rag</a></h3>
-        <span class="tag year-tag">2025</span>
-        <span class="tag type-tag">tool</span>
-    </div>
-    <p>A framework for fine-tuning retrieval-augmented generation (RAG) systems.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Basic fine-tuning with FL">Basic fine-tuning with FL</span>          <a href="https://arxiv.org/abs/2310.01352" class="tag" target="_blank">RA-DIT</a>
-    </div>
-
-
-    </div>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/mmlearn" title="Go to Repository">mmlearn</a></h3>
@@ -542,6 +531,19 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/fed-rag" title="Go to Repository">fed-rag</a></h3>
+        <span class="tag year-tag">2025</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>A framework for fine-tuning retrieval-augmented generation (RAG) systems.</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Basic fine-tuning with FL">Basic fine-tuning with FL</span>          <a href="https://arxiv.org/abs/2310.01352" class="tag" target="_blank">RA-DIT</a>
+    </div>
+
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/fl4health" title="Go to Repository">fl4health</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">tool</span>
@@ -555,3 +557,4 @@ a.dataset-tag:hover {
     </div>
 
     </div>
+
