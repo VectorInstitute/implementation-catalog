@@ -9,7 +9,7 @@ public_datasets:
     url: https://pmc.ncbi.nlm.nih.gov/
   - name: HuggingFace PMC Dataset
     url: https://huggingface.co/datasets/vector-institute/open-pmc
-type: tool
+type: applied-research
 paper_url: https://arxiv.org/abs/2503.14377
 bibtex: baghbanzadeh2025advancing
 year: 2024
