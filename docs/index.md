@@ -394,7 +394,7 @@ a.dataset-tag:hover {
         <span class="tag year-tag">2025</span>
         <span class="tag type-tag">applied-research</span>
     </div>
-    <p>A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG). It focuses on financial data from SEC 10-Q filings and explores how knowledge graphs can improve information retrieval and question answering compared to baseline approaches.</p>
+    <p>A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG).</p>
     <div class="tag-container">
         <a href="https://vectorinstitute.github.io/kg-rag/" class="tag" target="_blank">KG-RAG</a>          <a href="https://microsoft.github.io/graphrag/" class="tag" target="_blank">GraphRAG</a>
     </div>
@@ -621,4 +621,3 @@ a.dataset-tag:hover {
     </div>
 
     </div>
-

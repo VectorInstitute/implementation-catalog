@@ -1,6 +1,6 @@
 name: kg-rag
 repo_id: kg-rag
-description: "A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG). It focuses on financial data from SEC 10-Q filings and explores how knowledge graphs can improve information retrieval and question answering compared to baseline approaches."
+description: "A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG)."
 implementations:
   - name: KG-RAG
     url: https://vectorinstitute.github.io/kg-rag/
