@@ -11,22 +11,8 @@ implementations:
 public_datasets:
   - name: S2EF Datasets
     url: https://huggingface.co/datasets/vector-institute/s2ef-15m
-  - name: Ligand Efficacy Prediction
-    url: https://huggingface.co/datasets/vector-institute/atom3d-lep
-  - name: Protein Structure Ranking
-    url: https://huggingface.co/datasets/vector-institute/atom3d-psr
-  - name: RNA Structure Ranking
-    url: https://huggingface.co/datasets/vector-institute/atom3d-rsr
-  - name: Ligand Binding Affinity
-    url: https://huggingface.co/datasets/vector-institute/atom3d-lba
-  - name: Small Molecule Properties (SMP)
-    url: https://huggingface.co/datasets/vector-institute/smp
-  - name: Mutation Stability Prediction
-    url: https://huggingface.co/datasets/vector-institute/atom3d-msp
-  - name: Residue identity prediction
-    url: https://huggingface.co/datasets/vector-institute/atom3d-res
-  - name: Protein-Protein Interfaces
-    url: https://huggingface.co/datasets/vector-institute/atom3d-ppi
+  - name: Misc. Atomistic Graph Datasets
+    url: https://huggingface.co/datasets/vector-institute/datasets
 type: applied-research
 year: 2024
 github_url: https://github.com/VectorInstitute/atomgen
