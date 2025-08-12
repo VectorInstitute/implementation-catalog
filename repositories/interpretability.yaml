@@ -1,0 +1,27 @@
+name: interpretability
+repo_id: VectorInstitute/interpretability
+description: "A repository providing reference implementations and resources for the 2025 Bootcamp on Interpretable and Explainable AI, covering both post-hoc explainability methods and interpretable models"
+implementations:
+  - name: LIME
+    url: https://christophm.github.io/interpretable-ml-book/lime.html
+  - name: SHAP
+    url: https://arxiv.org/abs/1705.07874
+  - name: PDP (Partial Dependence Plot)
+    url: https://scikit-learn.org/stable/modules/partial_dependence.html
+  - name: ALE (Accumulated Local Effects)
+    url: https://christophm.github.io/interpretable-ml-book/ale.html
+  - name: Integrated Gradients
+    url: https://www.tensorflow.org/tutorials/interpretability/integrated_gradients
+  - name: Counterfactual Explanations
+    url: https://christophm.github.io/interpretable-ml-book/counterfactual.html
+  - name: Generalized Additive Model
+    url: https://en.wikipedia.org/wiki/Generalized_additive_model
+  - name: Neural Additive Model
+    url: https://arxiv.org/abs/2004.13912
+  - name: Explainable Boosting Machine
+    url: https://interpret.ml/docs/ebm.html
+  - name: Gas turbine dataset
+    url: https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set
+type: bootcamp
+year: 2025
+github_url: https://github.com/VectorInstitute/interpretability

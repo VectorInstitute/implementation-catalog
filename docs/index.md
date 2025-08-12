@@ -278,7 +278,7 @@ a.dataset-tag:hover {
 
 <div class="catalog-stats">
   <div class="stat">
-    <div class="stat-number">73</div>
+    <div class="stat-number">83</div>
     <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
@@ -391,26 +391,15 @@ a.dataset-tag:hover {
 
 
 
+
+
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
 
     <div class="grid cards" markdown>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/kg-rag" title="Go to Repository">kg-rag</a></h3>
-        <span class="tag year-tag">2025</span>
-        <span class="tag type-tag">applied-research</span>
-    </div>
-    <p>A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG).</p>
-    <div class="tag-container">
-        <a href="https://vectorinstitute.github.io/kg-rag/" class="tag" target="_blank">KG-RAG</a>          <a href="https://microsoft.github.io/graphrag/" class="tag" target="_blank">GraphRAG</a>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://github.com/docugami/KG-RAG-datasets/blob/main/sec-10-q/README.md" class="dataset-tag" target="_blank">SEC 10-Q</a>
-    </div>
-
-    </div>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/atomgen" title="Go to Repository">atomgen</a></h3>
@@ -428,21 +417,18 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/bias-mitigation-unlearning" title="Go to Repository">bias-mitigation-unlearning</a></h3>
-        <span class="tag year-tag">2024</span>
+        <h3><a href="https://github.com/VectorInstitute/kg-rag" title="Go to Repository">kg-rag</a></h3>
+        <span class="tag year-tag">2025</span>
         <span class="tag type-tag">applied-research</span>
     </div>
-    <p>A repository for social bias mitigation in LLMs using machine unlearning</p>
+    <p>A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG).</p>
     <div class="tag-container">
-        <a href="https://aclanthology.org/2024.emnlp-industry.71/" class="tag" target="_blank">Negation via Task Vectors</a>          <a href="https://aclanthology.org/2024.emnlp-industry.71/" class="tag" target="_blank">PCGU</a>
+        <a href="https://vectorinstitute.github.io/kg-rag/" class="tag" target="_blank">KG-RAG</a>          <a href="https://microsoft.github.io/graphrag/" class="tag" target="_blank">GraphRAG</a>
     </div>
     <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://github.com/nyu-mll/BBQ/tree/main/data" class="dataset-tag" target="_blank">BBQ</a>  <a href="https://github.com/moinnadeem/StereoSet/tree/master/data" class="dataset-tag" target="_blank">Stereoset</a>  <a href="https://github.com/VectorInstitute/bias-mitigation-unlearning/tree/main/reddit_bias/data" class="dataset-tag" target="_blank">RedditBias</a>
+        <strong>Datasets:</strong> <a href="https://github.com/docugami/KG-RAG-datasets/blob/main/sec-10-q/README.md" class="dataset-tag" target="_blank">SEC 10-Q</a>
     </div>
-    <div class="citation-links">
-        <a href="#" class="bibtex-button" data-bibtex-id="dige2024can" title="View Citation">Cite</a>
-        <a href="https://aclanthology.org/2024.emnlp-industry.71/" class="paper-link" title="View Paper" target="_blank">Paper</a>
-    </div>
+
     </div>
     <div class="card" markdown>
     <div class="header">
@@ -462,12 +448,45 @@ a.dataset-tag:hover {
         <a href="https://arxiv.org/abs/2503.14377" class="paper-link" title="View Paper" target="_blank">Paper</a>
     </div>
     </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/bias-mitigation-unlearning" title="Go to Repository">bias-mitigation-unlearning</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">applied-research</span>
+    </div>
+    <p>A repository for social bias mitigation in LLMs using machine unlearning</p>
+    <div class="tag-container">
+        <a href="https://aclanthology.org/2024.emnlp-industry.71/" class="tag" target="_blank">Negation via Task Vectors</a>          <a href="https://aclanthology.org/2024.emnlp-industry.71/" class="tag" target="_blank">PCGU</a>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://github.com/nyu-mll/BBQ/tree/main/data" class="dataset-tag" target="_blank">BBQ</a>  <a href="https://github.com/moinnadeem/StereoSet/tree/master/data" class="dataset-tag" target="_blank">Stereoset</a>  <a href="https://github.com/VectorInstitute/bias-mitigation-unlearning/tree/main/reddit_bias/data" class="dataset-tag" target="_blank">RedditBias</a>
+    </div>
+    <div class="citation-links">
+        <a href="#" class="bibtex-button" data-bibtex-id="dige2024can" title="View Citation">Cite</a>
+        <a href="https://aclanthology.org/2024.emnlp-industry.71/" class="paper-link" title="View Paper" target="_blank">Paper</a>
+    </div>
+    </div>
 
     </div>
 
 === "bootcamp"
 
     <div class="grid cards" markdown>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
+        <span class="tag year-tag">2023</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with implementation of anomaly detection techniques</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Logistic Regression (Supervised)">Logistic Regression (Supervised)</span>          <span class="tag" data-tippy="Random Forest (Supervised)">Random Forest (Supervised)</span>          <span class="tag" data-tippy="XGBoost (Supervised)">XGBoost (Supervised)</span>          <span class="tag" data-tippy="CatBoost (Supervised)">CatBoost (Supervised)</span>          <span class="tag" data-tippy="Light GBM (Supervised)">Light GBM (Supervised)</span>          <span class="tag" data-tippy="TabNet (Supervised and Semi-supervised)">TabNet (Supervised and Semi-supervised)</span>          <span class="tag" data-tippy="Autoencoder (AE) (Unsupervised)">Autoencoder (AE) (Unsupervised)</span>          <span class="tag" data-tippy="Isolation Forest (Unsupervised)">Isolation Forest (Unsupervised)</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://arxiv.org/pdf/2211.13358.pdf" class="dataset-tag" target="_blank">Bank Account Fraud Detection</a>  <a href="https://dgraph.xinye.com/dataset" class="dataset-tag" target="_blank">DGraph dataset</a>  <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad" class="dataset-tag" target="_blank">MVTec dataset</a>  <a href="http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm" class="dataset-tag" target="_blank">UCSD Anomaly Detection Dataset</a>  <a href="https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset" class="dataset-tag" target="_blank">UCF Crime Dataset</a>
+    </div>
+
+    </div>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/recommender-systems" title="Go to Repository">recommender-systems</a></h3>
@@ -477,6 +496,47 @@ a.dataset-tag:hover {
     <p>A repository with implementations of recommender systems</p>
     <div class="tag-container">
         <span class="tag" data-tippy="Matrix Factorization">Matrix Factorization</span>          <span class="tag" data-tippy="Collaborative Filtering">Collaborative Filtering</span>          <span class="tag" data-tippy="Content-Based Filtering">Content-Based Filtering</span>          <span class="tag" data-tippy="Sequence Aware Recommender Systems">Sequence Aware Recommender Systems</span>          <span class="tag" data-tippy="Session-Based Recommender Systems">Session-Based Recommender Systems</span>          <span class="tag" data-tippy="Knowledge Graph-Based Recommender Systems">Knowledge Graph-Based Recommender Systems</span>
+    </div>
+
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/privacy-enhancing-techniques" title="Go to Repository">privacy-enhancing-techniques</a></h3>
+        <span class="tag year-tag">2021</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with implementations of privacy-enhancing techniques for machine learning</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Differential Privacy (tensorflow_privacy)">Differential Privacy (tensorflow_privacy)</span>          <span class="tag" data-tippy="PATE">PATE</span>          <span class="tag" data-tippy="Membership Inference Attacks">Membership Inference Attacks</span>          <span class="tag" data-tippy="Horizontal Federated Learning">Horizontal Federated Learning</span>          <span class="tag" data-tippy="Vertical Federated Learning">Vertical Federated Learning</span>          <span class="tag" data-tippy="Homomorphic Encryption">Homomorphic Encryption</span>
+    </div>
+
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/self-supervised-learning" title="Go to Repository">self-supervised-learning</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository with reference implementations of self-supervised learning techniques</p>
+    <div class="tag-container">
+        <a href="https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf" class="tag" target="_blank">Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)</a>          <a href="https://arxiv.org/abs/2302.00861" class="tag" target="_blank">SimMTM</a>          <a href="https://arxiv.org/abs/2303.15747" class="tag" target="_blank">TabRet</a>          <a href="https://arxiv.org/abs/2202.03555" class="tag" target="_blank">Data2Vec</a>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://cs.stanford.edu/~acoates/stl10/" class="dataset-tag" target="_blank">STL-10</a>  <a href="https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data" class="dataset-tag" target="_blank">Beijing PM 2.5</a>
+    </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/interpretability" title="Go to Repository">interpretability</a></h3>
+        <span class="tag year-tag">2025</span>
+        <span class="tag type-tag">bootcamp</span>
+    </div>
+    <p>A repository providing reference implementations and resources for the 2025 Bootcamp on Interpretable and Explainable AI, covering both post-hoc explainability methods and interpretable models</p>
+    <div class="tag-container">
+        <a href="https://christophm.github.io/interpretable-ml-book/lime.html" class="tag" target="_blank">LIME</a>          <a href="https://arxiv.org/abs/1705.07874" class="tag" target="_blank">SHAP</a>          <a href="https://scikit-learn.org/stable/modules/partial_dependence.html" class="tag" target="_blank">PDP (Partial Dependence Plot)</a>          <a href="https://christophm.github.io/interpretable-ml-book/ale.html" class="tag" target="_blank">ALE (Accumulated Local Effects)</a>          <a href="https://www.tensorflow.org/tutorials/interpretability/integrated_gradients" class="tag" target="_blank">Integrated Gradients</a>          <a href="https://christophm.github.io/interpretable-ml-book/counterfactual.html" class="tag" target="_blank">Counterfactual Explanations</a>          <a href="https://en.wikipedia.org/wiki/Generalized_additive_model" class="tag" target="_blank">Generalized Additive Model</a>          <a href="https://arxiv.org/abs/2004.13912" class="tag" target="_blank">Neural Additive Model</a>          <a href="https://interpret.ml/docs/ebm.html" class="tag" target="_blank">Explainable Boosting Machine</a>          <a href="https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set" class="tag" target="_blank">Gas turbine dataset</a>
     </div>
 
 
@@ -498,19 +558,6 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/privacy-enhancing-techniques" title="Go to Repository">privacy-enhancing-techniques</a></h3>
-        <span class="tag year-tag">2021</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with implementations of privacy-enhancing techniques for machine learning</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Differential Privacy (tensorflow_privacy)">Differential Privacy (tensorflow_privacy)</span>          <span class="tag" data-tippy="PATE">PATE</span>          <span class="tag" data-tippy="Membership Inference Attacks">Membership Inference Attacks</span>          <span class="tag" data-tippy="Horizontal Federated Learning">Horizontal Federated Learning</span>          <span class="tag" data-tippy="Vertical Federated Learning">Vertical Federated Learning</span>          <span class="tag" data-tippy="Homomorphic Encryption">Homomorphic Encryption</span>
-    </div>
-
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/ai-deployment" title="Go to Repository">ai-deployment</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
@@ -524,31 +571,16 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/anomaly-detection" title="Go to Repository">anomaly-detection</a></h3>
-        <span class="tag year-tag">2023</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository with implementation of anomaly detection techniques</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Logistic Regression (Supervised)">Logistic Regression (Supervised)</span>          <span class="tag" data-tippy="Random Forest (Supervised)">Random Forest (Supervised)</span>          <span class="tag" data-tippy="XGBoost (Supervised)">XGBoost (Supervised)</span>          <span class="tag" data-tippy="CatBoost (Supervised)">CatBoost (Supervised)</span>          <span class="tag" data-tippy="Light GBM (Supervised)">Light GBM (Supervised)</span>          <span class="tag" data-tippy="TabNet (Supervised and Semi-supervised)">TabNet (Supervised and Semi-supervised)</span>          <span class="tag" data-tippy="Autoencoder (AE) (Unsupervised)">Autoencoder (AE) (Unsupervised)</span>          <span class="tag" data-tippy="Isolation Forest (Unsupervised)">Isolation Forest (Unsupervised)</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://arxiv.org/pdf/2211.13358.pdf" class="dataset-tag" target="_blank">Bank Account Fraud Detection</a>  <a href="https://dgraph.xinye.com/dataset" class="dataset-tag" target="_blank">DGraph dataset</a>  <a href="https://www.mvtec.com/company/research/datasets/mvtec-ad" class="dataset-tag" target="_blank">MVTec dataset</a>  <a href="http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm" class="dataset-tag" target="_blank">UCSD Anomaly Detection Dataset</a>  <a href="https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset" class="dataset-tag" target="_blank">UCF Crime Dataset</a>
-    </div>
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/self-supervised-learning" title="Go to Repository">self-supervised-learning</a></h3>
+        <h3><a href="https://github.com/VectorInstitute/retrieval-augmented-generation" title="Go to Repository">retrieval-augmented-generation</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">bootcamp</span>
     </div>
-    <p>A repository with reference implementations of self-supervised learning techniques</p>
+    <p>A repository reference implementations for retrieval-augmented generation</p>
     <div class="tag-container">
-        <a href="https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf" class="tag" target="_blank">Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)</a>          <a href="https://arxiv.org/abs/2302.00861" class="tag" target="_blank">SimMTM</a>          <a href="https://arxiv.org/abs/2303.15747" class="tag" target="_blank">TabRet</a>          <a href="https://arxiv.org/abs/2202.03555" class="tag" target="_blank">Data2Vec</a>
+        <span class="tag" data-tippy="Web Search">Web Search</span>          <span class="tag" data-tippy="Document Search">Document Search</span>          <span class="tag" data-tippy="SQL Search">SQL Search</span>          <span class="tag" data-tippy="Cloud Search">Cloud Search</span>          <span class="tag" data-tippy="PubMed QA">PubMed QA</span>          <span class="tag" data-tippy="RAG Evaluation">RAG Evaluation</span>
     </div>
     <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://cs.stanford.edu/~acoates/stl10/" class="dataset-tag" target="_blank">STL-10</a>  <a href="https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data" class="dataset-tag" target="_blank">Beijing PM 2.5</a>
+        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <a href="https://www.kaggle.com/datasets/prakharrathi25/banking-dataset-marketing-targets" class="dataset-tag" target="_blank">Banking Dataset - Marketing Targets</a>
     </div>
 
     </div>
@@ -567,27 +599,25 @@ a.dataset-tag:hover {
     </div>
 
     </div>
-    <div class="card" markdown>
-    <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/retrieval-augmented-generation" title="Go to Repository">retrieval-augmented-generation</a></h3>
-        <span class="tag year-tag">2024</span>
-        <span class="tag type-tag">bootcamp</span>
-    </div>
-    <p>A repository reference implementations for retrieval-augmented generation</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Web Search">Web Search</span>          <span class="tag" data-tippy="Document Search">Document Search</span>          <span class="tag" data-tippy="SQL Search">SQL Search</span>          <span class="tag" data-tippy="Cloud Search">Cloud Search</span>          <span class="tag" data-tippy="PubMed QA">PubMed QA</span>          <span class="tag" data-tippy="RAG Evaluation">RAG Evaluation</span>
-    </div>
-    <div class="datasets">
-        <strong>Datasets:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov" class="dataset-tag" target="_blank">PubMed</a>  <a href="https://www.kaggle.com/datasets/prakharrathi25/banking-dataset-marketing-targets" class="dataset-tag" target="_blank">Banking Dataset - Marketing Targets</a>
-    </div>
-
-    </div>
 
     </div>
 
 === "tool"
 
     <div class="grid cards" markdown>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/fed-rag" title="Go to Repository">fed-rag</a></h3>
+        <span class="tag year-tag">2025</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>A framework for fine-tuning retrieval-augmented generation (RAG) systems.</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Basic fine-tuning with FL">Basic fine-tuning with FL</span>          <a href="https://arxiv.org/abs/2310.01352" class="tag" target="_blank">RA-DIT</a>
+    </div>
+
+
+    </div>
     <div class="card" markdown>
     <div class="header">
         <h3><a href="https://github.com/VectorInstitute/vector-inference" title="Go to Repository">vector-inference</a></h3>
@@ -618,19 +648,6 @@ a.dataset-tag:hover {
     </div>
     <div class="card" markdown>
     <div class="header">
-        <h3><a href="https://github.com/VectorInstitute/fed-rag" title="Go to Repository">fed-rag</a></h3>
-        <span class="tag year-tag">2025</span>
-        <span class="tag type-tag">tool</span>
-    </div>
-    <p>A framework for fine-tuning retrieval-augmented generation (RAG) systems.</p>
-    <div class="tag-container">
-        <span class="tag" data-tippy="Basic fine-tuning with FL">Basic fine-tuning with FL</span>          <a href="https://arxiv.org/abs/2310.01352" class="tag" target="_blank">RA-DIT</a>
-    </div>
-
-
-    </div>
-    <div class="card" markdown>
-    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/fl4health" title="Go to Repository">fl4health</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">tool</span>
@@ -644,4 +661,3 @@ a.dataset-tag:hover {
     </div>
 
     </div>
-
