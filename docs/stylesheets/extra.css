@@ -416,3 +416,25 @@ body {
   opacity: 1;
   padding: 0.2rem;
 }
+
+/* Dataset tag styling with improved contrast */
+.dataset-tag {
+  display: inline-block;
+  background-color: #6a5acd;
+  color: #ffffff !important;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.8rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+a.dataset-tag:hover {
+  background-color: #5449b3;
+  text-decoration: none;
+  color: #ffffff !important;
+}
