@@ -197,7 +197,7 @@ hide:
 
 <div class="catalog-stats">
   <div class="stat">
-    <div class="stat-number">112</div>
+    <div class="stat-number">115</div>
     <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
@@ -205,6 +205,10 @@ hide:
     <div class="stat-label">Years of Research</div>
   </div>
 </div>
+
+
+
+
 
 
 
@@ -657,9 +661,9 @@ hide:
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">tool</span>
     </div>
-    <p>Efficient LLM inference on Slurm clusters using vLLM.</p>
+    <p>Efficient LLM inference on Slurm clusters using vLLM</p>
     <div class="tag-container">
-        <!-- No tags available -->
+        <span class="tag" data-tippy="CLI">CLI</span>          <span class="tag" data-tippy="Python API">Python API</span>          <span class="tag" data-tippy="OpenAI compatible server">OpenAI compatible server</span>
     </div>
 
 
