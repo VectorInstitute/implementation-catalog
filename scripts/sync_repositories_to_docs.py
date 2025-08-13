@@ -162,25 +162,10 @@ def parse_yaml_repositories() -> Dict[str, List[Dict]]:
     return implementations_by_type
 
 
-def generate_card_html(impl: Dict) -> str:
-    """Generate HTML for a single implementation card.
-
-    Parameters
-    ----------
-    impl : Dict
-        Dictionary containing implementation details
-
-    Returns
-    -------
-    str
-        HTML string for the implementation card
-
-    """
-    # Extract implementations to display as tags
-    implementations = impl.get("implementations", [])
+def _generate_implementation_tags(implementations: list) -> str:
+    """Generate HTML tags for implementations."""
     tag_html = ""
 
-    # Create implementation tags with data-tippy attribute
     for impl_ in implementations:
         if isinstance(impl_, dict) and "name" in impl_:
             impl_name = impl_["name"].strip()
@@ -195,44 +180,80 @@ def generate_card_html(impl: Dict) -> str:
             if impl_text:
                 tag_html += f'        <span class="tag" data-tippy="{impl_text}">{impl_text}</span>  '
 
-    # Format datasets
-    formatted_datasets = format_datasets(impl.get("public_datasets", []))
+    return tag_html
 
-    # Get the repository URL - either from github_url or construct from repo_id
+
+def _get_repository_url(impl: Dict) -> str:
+    """Get repository URL from implementation data."""
     if "github_url" in impl:
-        repo_url = impl["github_url"]
-    else:
-        repo_id = impl["repo_id"]
-        repo_url = f"https://github.com/{repo_id}"
+        return impl["github_url"]
 
-    # Add BibTeX citation button if available
-    bibtex_html = ""
+    repo_id = impl["repo_id"]
+    return f"https://github.com/{repo_id}"
+
+
+def _generate_citation_links(impl: Dict) -> str:
+    """Generate citation links HTML."""
+    links = []
+
     if "bibtex" in impl:
         bibtex_id = impl["bibtex"]
-        bibtex_html = f'<a href="#" class="bibtex-button" data-bibtex-id="{bibtex_id}" title="View Citation">Cite</a>'
+        links.append(
+            f'<a href="#" class="bibtex-button" data-bibtex-id="{bibtex_id}" title="View Citation">Cite</a>'
+        )
 
-    # Add paper link if available
-    paper_html = ""
     if "paper_url" in impl:
         paper_url = impl["paper_url"]
-        paper_html = f'<a href="{paper_url}" class="paper-link" title="View Paper" target="_blank">Paper</a>'
+        links.append(
+            f'<a href="{paper_url}" class="paper-link" title="View Paper" target="_blank">Paper</a>'
+        )
 
-    # Combine citation links
-    citation_html = ""
-    if bibtex_html or paper_html:
-        citation_html = f"""    <div class="citation-links">
-        {bibtex_html}
-        {paper_html}
+    if "platform_url" in impl:
+        platform_url = impl["platform_url"]
+        links.append(
+            f'<a href="{platform_url}" class="coder-button" title="Open in Coder" target="_blank">Open in Coder</a>'
+        )
+
+    if links:
+        links_content = "\n        ".join(links)
+        return f"""    <div class="citation-links">
+        {links_content}
     </div>"""
 
-    # Prepare datasets section HTML if datasets exist
-    datasets_html = ""
+    return ""
+
+
+def _generate_datasets_html(formatted_datasets: str) -> str:
+    """Generate datasets section HTML."""
     if formatted_datasets:
-        datasets_html = f"""    <div class="datasets">
+        return f"""    <div class="datasets">
         <strong>Datasets:</strong> {formatted_datasets}
     </div>"""
+    return ""
 
-    # Create the card HTML with proper indentation
+
+def generate_card_html(impl: Dict) -> str:
+    """Generate HTML for a single implementation card.
+
+    Parameters
+    ----------
+    impl : Dict
+        Dictionary containing implementation details
+
+    Returns
+    -------
+    str
+        HTML string for the implementation card
+
+    """
+    implementations = impl.get("implementations", [])
+    tag_html = _generate_implementation_tags(implementations)
+
+    formatted_datasets = format_datasets(impl.get("public_datasets", []))
+    repo_url = _get_repository_url(impl)
+    citation_html = _generate_citation_links(impl)
+    datasets_html = _generate_datasets_html(formatted_datasets)
+
     return f"""    <div class="card" markdown>
     <div class="header">
         <h3><a href="{repo_url}" title="Go to Repository">{impl["name"]}</a></h3>
@@ -298,9 +319,18 @@ def generate_type_section(type_value: str, implementations: List[Dict]) -> str:
         Formatted type section
 
     """
+
+    # Sort implementations to prioritize "retrieval-augmented-generation" first
+    def sort_key(impl):
+        if impl.get("name") == "retrieval-augmented-generation":
+            return (0, impl.get("name", ""))
+        return (1, impl.get("name", ""))
+
+    sorted_implementations = sorted(implementations, key=sort_key)
+
     section = f'=== "{type_value}"\n\n    <div class="grid cards" markdown>\n'
 
-    for impl in implementations:
+    for impl in sorted_implementations:
         section += generate_card_html(impl)
 
     section += "\n    </div>\n\n"
@@ -494,13 +524,40 @@ def update_docs_index(implementations_by_type: Dict[str, List[Dict]]) -> None:
 .citation-links a:hover {
   background-color: #e0e0e0;
 }
+
+.coder-button {
+  display: inline-block;
+  background-color: #007ACC !important;
+  color: white !important;
+  padding: 0.15rem 0.4rem !important;
+  border-radius: 3px !important;
+  font-size: 0.6rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  border: 1px solid #007ACC !important;
+  transition: all 0.2s ease !important;
+}
+
+.coder-button:hover {
+  background-color: #005a9e !important;
+  border-color: #005a9e !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
 </style>
 """
 
-    # Check if the CSS is already in the document
+    # Check if the CSS is already in the document and replace it
     if "<style>" in original_content:
-        # No need to replace CSS as it's already there
-        pass
+        # Find and replace existing style block with updated CSS
+        style_start = original_content.find("<style>")
+        style_end = original_content.find("</style>") + len("</style>")
+        if style_start != -1 and style_end != -1:
+            original_content = (
+                original_content[:style_start]
+                + css_for_tags.strip()
+                + original_content[style_end:]
+            )
     else:
         # Add the CSS at the beginning of the document, after the front matter
         front_matter_end = original_content.find("---", 5) + 3  # Find the second "---"
