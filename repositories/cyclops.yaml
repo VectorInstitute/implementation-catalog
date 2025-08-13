@@ -1,0 +1,26 @@
+name: cyclops
+repo_id: VectorInstitute/cyclops
+description: "A toolkit for facilitating research and deployment of ML models for healthcare"
+implementations:
+  - name: Binary Classification
+    url: null
+  - name: Multi-label Classification
+    url: null
+  - name: Tabular Data Processing
+    url: null
+  - name: Time-series Data Processing
+    url: null
+  - name: Image Data Processing
+    url: null
+  - name: Dataset Shift Detection
+    url: null
+  - name: Model Report Card Generation
+    url: null
+public_datasets:
+  - name: NIH Chest X-ray
+    url: https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community
+  - name: MIMIC-IV
+    url: https://mimic.mit.edu/
+type: tool
+year: 2024
+github_url: https://github.com/VectorInstitute/cyclops

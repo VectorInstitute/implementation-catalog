@@ -1,0 +1,21 @@
+name: fair-sense-ai
+repo_id: VectorInstitute/fair-sense-ai
+description: "An AI-powered tool designed to analyze bias in text and visual content, with a focus on risk identification, mitigation, and promoting sustainable and trustworthy AI systems"
+implementations:
+  - name: Text Bias Analysis
+    url: null
+  - name: Image Bias Analysis
+    url: null
+  - name: Batch Text CSV Analysis
+    url: null
+  - name: Batch Image Analysis
+    url: null
+  - name: AI Risk Management
+    url: null
+  - name: Green AI Optimization
+    url: null
+  - name: Bias Scoring and Assessment
+    url: null
+type: tool
+year: 2025
+github_url: https://github.com/VectorInstitute/fair-sense-ai

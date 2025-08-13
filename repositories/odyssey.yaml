@@ -1,0 +1,26 @@
+name: odyssey
+repo_id: VectorInstitute/odyssey
+description: "A comprehensive library for developing foundation models using Electronic Health Record (EHR) data, with a focus on advanced medical data processing and modeling"
+implementations:
+  - name: EHRMamba
+    url: https://vectorinstitute.github.io/EHRMamba/
+  - name: CEHR-BERT
+    url: null
+  - name: BigBird
+    url: https://arxiv.org/abs/2007.14062
+  - name: MultiBird
+    url: null
+  - name: LSTM
+    url: null
+  - name: XGBoost
+    url: null
+  - name: Multitask Prompted Finetuning (MPF)
+    url: null
+  - name: Next Token Prediction (NTP)
+    url: null
+public_datasets:
+  - name: MIMIC-IV
+    url: https://mimic.mit.edu/
+type: tool
+year: 2024
+github_url: https://github.com/VectorInstitute/odyssey

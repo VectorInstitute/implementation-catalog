@@ -1,0 +1,21 @@
+name: florist
+repo_id: VectorInstitute/FLorist
+description: "A platform to launch and monitor Federated Learning (FL) training jobs, designed to bridge the gap between FL algorithm implementations and practical healthcare applications"
+implementations:
+  - name: FL Job Orchestration
+    url: null
+  - name: Training Job Monitoring
+    url: null
+  - name: Client-Server Communication
+    url: null
+  - name: FL4Health Integration
+    url: null
+  - name: Web-based Job Configuration
+    url: null
+  - name: Docker-based Deployment
+    url: null
+  - name: Multi-client Support
+    url: null
+type: tool
+year: 2024
+github_url: https://github.com/VectorInstitute/FLorist

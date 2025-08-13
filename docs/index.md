@@ -197,7 +197,7 @@ hide:
 
 <div class="catalog-stats">
   <div class="stat">
-    <div class="stat-number">83</div>
+    <div class="stat-number">112</div>
     <div class="stat-label">Implementations</div>
   </div>
   <div class="stat">
@@ -205,6 +205,8 @@ hide:
     <div class="stat-label">Years of Research</div>
   </div>
 </div>
+
+
 
 
 
@@ -554,6 +556,34 @@ hide:
     <div class="grid cards" markdown>
     <div class="card" markdown>
     <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/cyclops" title="Go to Repository">cyclops</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>A toolkit for facilitating research and deployment of ML models for healthcare</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Binary Classification">Binary Classification</span>          <span class="tag" data-tippy="Multi-label Classification">Multi-label Classification</span>          <span class="tag" data-tippy="Tabular Data Processing">Tabular Data Processing</span>          <span class="tag" data-tippy="Time-series Data Processing">Time-series Data Processing</span>          <span class="tag" data-tippy="Image Data Processing">Image Data Processing</span>          <span class="tag" data-tippy="Dataset Shift Detection">Dataset Shift Detection</span>          <span class="tag" data-tippy="Model Report Card Generation">Model Report Card Generation</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community" class="dataset-tag" target="_blank">NIH Chest X-ray</a>  <a href="https://mimic.mit.edu/" class="dataset-tag" target="_blank">MIMIC-IV</a>
+    </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/fair-sense-ai" title="Go to Repository">fair-sense-ai</a></h3>
+        <span class="tag year-tag">2025</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>An AI-powered tool designed to analyze bias in text and visual content, with a focus on risk identification, mitigation, and promoting sustainable and trustworthy AI systems</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="Text Bias Analysis">Text Bias Analysis</span>          <span class="tag" data-tippy="Image Bias Analysis">Image Bias Analysis</span>          <span class="tag" data-tippy="Batch Text CSV Analysis">Batch Text CSV Analysis</span>          <span class="tag" data-tippy="Batch Image Analysis">Batch Image Analysis</span>          <span class="tag" data-tippy="AI Risk Management">AI Risk Management</span>          <span class="tag" data-tippy="Green AI Optimization">Green AI Optimization</span>          <span class="tag" data-tippy="Bias Scoring and Assessment">Bias Scoring and Assessment</span>
+    </div>
+
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/fed-rag" title="Go to Repository">fed-rag</a></h3>
         <span class="tag year-tag">2025</span>
         <span class="tag type-tag">tool</span>
@@ -580,6 +610,19 @@ hide:
     </div>
     <div class="card" markdown>
     <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/FLorist" title="Go to Repository">florist</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>A platform to launch and monitor Federated Learning (FL) training jobs, designed to bridge the gap between FL algorithm implementations and practical healthcare applications</p>
+    <div class="tag-container">
+        <span class="tag" data-tippy="FL Job Orchestration">FL Job Orchestration</span>          <span class="tag" data-tippy="Training Job Monitoring">Training Job Monitoring</span>          <span class="tag" data-tippy="Client-Server Communication">Client-Server Communication</span>          <span class="tag" data-tippy="FL4Health Integration">FL4Health Integration</span>          <span class="tag" data-tippy="Web-based Job Configuration">Web-based Job Configuration</span>          <span class="tag" data-tippy="Docker-based Deployment">Docker-based Deployment</span>          <span class="tag" data-tippy="Multi-client Support">Multi-client Support</span>
+    </div>
+
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
         <h3><a href="https://github.com/VectorInstitute/mmlearn" title="Go to Repository">mmlearn</a></h3>
         <span class="tag year-tag">2024</span>
         <span class="tag type-tag">tool</span>
@@ -590,6 +633,21 @@ hide:
     </div>
     <div class="datasets">
         <strong>Datasets:</strong> <a href="https://www.image-net.org/" class="dataset-tag" target="_blank">ImageNet</a>  <a href="https://www.openslr.org/12/" class="dataset-tag" target="_blank">LibriSpeech</a>  <a href="https://rgbd.cs.princeton.edu/" class="dataset-tag" target="_blank">RGB-D</a>
+    </div>
+
+    </div>
+    <div class="card" markdown>
+    <div class="header">
+        <h3><a href="https://github.com/VectorInstitute/odyssey" title="Go to Repository">odyssey</a></h3>
+        <span class="tag year-tag">2024</span>
+        <span class="tag type-tag">tool</span>
+    </div>
+    <p>A comprehensive library for developing foundation models using Electronic Health Record (EHR) data, with a focus on advanced medical data processing and modeling</p>
+    <div class="tag-container">
+        <a href="https://vectorinstitute.github.io/EHRMamba/" class="tag" target="_blank">EHRMamba</a>          <span class="tag" data-tippy="CEHR-BERT">CEHR-BERT</span>          <a href="https://arxiv.org/abs/2007.14062" class="tag" target="_blank">BigBird</a>          <span class="tag" data-tippy="MultiBird">MultiBird</span>          <span class="tag" data-tippy="LSTM">LSTM</span>          <span class="tag" data-tippy="XGBoost">XGBoost</span>          <span class="tag" data-tippy="Multitask Prompted Finetuning (MPF)">Multitask Prompted Finetuning (MPF)</span>          <span class="tag" data-tippy="Next Token Prediction (NTP)">Next Token Prediction (NTP)</span>
+    </div>
+    <div class="datasets">
+        <strong>Datasets:</strong> <a href="https://mimic.mit.edu/" class="dataset-tag" target="_blank">MIMIC-IV</a>
     </div>
 
     </div>
@@ -608,4 +666,3 @@ hide:
     </div>
 
     </div>
-
