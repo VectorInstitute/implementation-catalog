@@ -338,6 +338,8 @@ hide:
 
 
 
+
+
 ## Browse Implementations by Type
 
 === "applied-research"
@@ -606,3 +608,4 @@ hide:
     </div>
 
     </div>
+
