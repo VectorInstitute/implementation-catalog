@@ -25,15 +25,14 @@ The catalog is organized by implementation type to help you quickly find the res
 
 ### 🛠️ Tool Category
 
-**Purpose**: Production-ready, reusable libraries and frameworks for practical use
+**Purpose**: Reusable libraries and frameworks for practical use
 
 **Key Characteristics**:
 
+- Reliable and well maintained software with clear examples
 - Comprehensive documentation and APIs
-- Multiple implementation options (CLI, Python API, web interfaces)
-- Focus on usability and deployment
+- Focus on ease of use and integration
 - Broad applicability across use cases
-- Ready for integration into production systems
 
 **Examples**:
 
@@ -42,7 +41,6 @@ The catalog is organized by implementation type to help you quickly find the res
 - **vector-inference**: LLM inference system with CLI, Python API, and OpenAI-compatible server
 - **fair-sense-ai**: AI bias analysis tool for text and visual content
 - **florist**: Framework for federated learning workflows
-- **mmlearn**: Toolkit for multimodal representation learning research
 
 ### 🎓 Bootcamp Category
 
@@ -51,7 +49,6 @@ The catalog is organized by implementation type to help you quickly find the res
 **Key Characteristics**:
 
 - Step-by-step learning materials
-- Clear documentation with tutorials
 - Simplified implementations for educational clarity
 - Workshop-ready code examples
 - Focus on understanding core concepts
