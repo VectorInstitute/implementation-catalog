@@ -30,7 +30,8 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         {/* Pagefind UI - loads after static build */}
-        <Script src={`${basePath}/_pagefind/pagefind-ui.js`} strategy="afterInteractive" />
+        {/* Next.js automatically adds basePath from config, so just use relative path */}
+        <Script src="/_pagefind/pagefind-ui.js" strategy="afterInteractive" />
       </body>
     </html>
   );

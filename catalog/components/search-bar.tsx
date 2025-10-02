@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { getBasePath } from "@/lib/utils";
 
 interface PagefindUIOptions {
   element: HTMLElement;
@@ -34,6 +33,7 @@ export default function SearchBar() {
         if (!document.querySelector('link[href*="pagefind-ui.css"]')) {
           const link = document.createElement("link");
           link.rel = "stylesheet";
+          // Use basePath for CSS since it's loaded dynamically
           link.href = `${basePath}/_pagefind/pagefind-ui.css`;
           document.head.appendChild(link);
         }
