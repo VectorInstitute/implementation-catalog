@@ -1,0 +1,24 @@
+name: crisp-nam
+repo_id: VectorInstitute/crisp-nam
+description: "Competing Risks Interpretable Survival Prediction with Neural Additive Models"
+implementations:
+  - name: CRISP-NAM
+    url: https://arxiv.org/abs/2505.21360
+  - name: Neural Additive Models for Survival Analysis
+    url: null
+  - name: DeepHit Baseline
+    url: null
+type: applied-research
+year: 2025
+github_url: https://github.com/VectorInstitute/crisp-nam
+paper_url: https://arxiv.org/abs/2505.21360
+bibtex: ramachandram2025crisp
+public_datasets:
+  - name: Framingham Heart Study
+    url: null
+  - name: Primary Biliary Cirrhosis (PBC)
+    url: null
+  - name: SUPPORT
+    url: null
+  - name: Synthetic Clinical Dataset
+    url: null
