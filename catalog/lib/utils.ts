@@ -2,9 +2,15 @@
  * Get the base path for the application
  * Returns '/implementation-catalog' in production (GitHub Pages)
  * Returns '' in development
+ *
+ * Note: This checks for the environment variable at build time.
+ * Next.js replaces process.env.NEXT_PUBLIC_* at build time.
  */
 export function getBasePath(): string {
-  return process.env.NEXT_PUBLIC_BASE_PATH === 'true' ? '/implementation-catalog' : '';
+  // Check if we're in production mode (GitHub Pages)
+  // The NEXT_PUBLIC_BASE_PATH env var is set during build
+  const isProduction = process.env.NEXT_PUBLIC_BASE_PATH === 'true';
+  return isProduction ? '/implementation-catalog' : '';
 }
 
 /**

@@ -22,7 +22,11 @@ export default function SearchBar() {
   useEffect(() => {
     // Find the hero-search container and render Pagefind there
     const heroSearchContainer = document.getElementById("hero-search");
-    const basePath = getBasePath();
+
+    // Detect base path from the current page URL
+    // If we're on GitHub Pages, the path will be /implementation-catalog/...
+    const currentPath = window.location.pathname;
+    const basePath = currentPath.startsWith('/implementation-catalog') ? '/implementation-catalog' : '';
 
     if (typeof window !== "undefined" && heroSearchContainer) {
       // Load Pagefind CSS dynamically
