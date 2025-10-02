@@ -43,6 +43,17 @@ jobs:
         with:
           python-version-file: ".python-version"
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: catalog/package-lock.json
+
+      - name: Install Node dependencies
+        working-directory: catalog
+        run: npm ci
+
       - name: Install the project
         run: uv sync --all-extras --dev
 
