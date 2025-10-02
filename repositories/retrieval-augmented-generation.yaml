@@ -3,17 +3,17 @@ repo_id: vectorinstitute/retrieval-augmented-generation
 description: "A repository reference implementations for retrieval-augmented generation"
 implementations:
   - name: Web Search
-    url: null
+    url: https://github.com/VectorInstitute/retrieval-augmented-generation/tree/main/implementations/web_search
   - name: Document Search
-    url: null
+    url: https://github.com/VectorInstitute/retrieval-augmented-generation/tree/main/implementations/document_search
   - name: SQL Search
-    url: null
+    url: https://github.com/VectorInstitute/retrieval-augmented-generation/tree/main/implementations/sql_search
   - name: Cloud Search
-    url: null
+    url: https://github.com/VectorInstitute/retrieval-augmented-generation/tree/main/implementations/cloud_search
   - name: PubMed QA
-    url: null
+    url: https://github.com/VectorInstitute/retrieval-augmented-generation/tree/main/implementations/pubmed_qa
   - name: RAG Evaluation
-    url: null
+    url: https://github.com/VectorInstitute/retrieval-augmented-generation/tree/main/implementations/rag_evaluation
 public_datasets:
   - name: PubMed
     url: https://pubmed.ncbi.nlm.nih.gov

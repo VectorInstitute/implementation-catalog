@@ -3,15 +3,15 @@ repo_id: VectorInstitute/diffusion-models
 description: "A repository with demos for various diffusion models for tabular and time series data"
 implementations:
   - name: TabDDPM
-    url: null
+    url: https://github.com/VectorInstitute/diffusion-models/tree/main/implementations/tabular/single_table_synthesis
   - name: TabSyn
-    url: null
+    url: https://github.com/VectorInstitute/diffusion-models/tree/main/implementations/tabular/single_table_synthesis
   - name: ClavaDDPM
-    url: https://arxiv.org/abs/2405.17724
+    url: https://github.com/VectorInstitute/diffusion-models/tree/main/implementations/tabular/multi_table_synthesis
   - name: CSDI
-    url: null
+    url: https://github.com/VectorInstitute/diffusion-models/tree/main/implementations/time_series/csdi
   - name: TSDiff
-    url: https://arxiv.org/abs/2307.11494
+    url: https://github.com/VectorInstitute/diffusion-models/tree/main/implementations/time_series/tsdiff
 public_datasets:
   - name: Physionet Challenge 2012
     url: https://www.physionet.org/content/challenge-2012/1.0.0/
