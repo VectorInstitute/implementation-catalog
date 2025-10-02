@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH === 'true' ? '/implementation-catalog' : '';
@@ -26,12 +25,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        {/* Pagefind UI script - must be loaded for search to work */}
+        <script src={`${basePath}/_pagefind/pagefind-ui.js`} defer />
+      </head>
       <body className="antialiased">
         {children}
-        {/* Pagefind UI - loads after static build */}
-        {/* Next.js automatically adds basePath from config, so just use relative path */}
-        <Script src="/_pagefind/pagefind-ui.js" strategy="afterInteractive" />
       </body>
     </html>
   );
