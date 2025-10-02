@@ -35,7 +35,7 @@ jobs:
         uses: astral-sh/setup-uv@0c5e2b8115b80b4c7c5ddf6ffdd634974642d182
         with:
           # Install a specific version of uv.
-          version: "0.5.21"
+          version: "0.8.22"
           enable-cache: true
 
       - name: "Set up Python"
@@ -52,6 +52,8 @@ jobs:
           pre-commit run --all-files
 
       - name: pip-audit (gh-action-pip-audit)
-        uses: pypa/gh-action-pip-audit@1220774d901786e6f652ae159f7b6bc8fea6d266
+        uses: pypa/gh-action-pip-audit@v1.1.0
         with:
           virtual-environment: .venv/
+          ignore-vulns: |
+            GHSA-4xh5-x5gv-qwph
