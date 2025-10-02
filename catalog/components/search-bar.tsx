@@ -52,9 +52,11 @@ export default function SearchBar() {
             placeholder: "Search implementations...",
           };
 
-          // Only add basePath if it's not empty
+          // basePath should include the _pagefind directory
           if (basePath) {
-            config.basePath = basePath;
+            config.basePath = `${basePath}/_pagefind/`;
+          } else {
+            config.basePath = '/_pagefind/';
           }
 
           new window.PagefindUI(config);
