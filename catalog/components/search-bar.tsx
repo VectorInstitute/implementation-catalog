@@ -3,16 +3,18 @@
 import { useEffect } from "react";
 import { getBasePath } from "@/lib/utils";
 
+interface PagefindUIOptions {
+  element: HTMLElement;
+  showSubResults: boolean;
+  showImages: boolean;
+  excerptLength: number;
+  placeholder: string;
+  basePath?: string;
+}
+
 declare global {
   interface Window {
-    PagefindUI?: new (options: {
-      element: HTMLElement;
-      showSubResults: boolean;
-      showImages: boolean;
-      excerptLength: number;
-      placeholder: string;
-      basePath?: string;
-    }) => void;
+    PagefindUI?: new (options: PagefindUIOptions) => void;
   }
 }
 
@@ -38,14 +40,20 @@ export default function SearchBar() {
         if (window.PagefindUI) {
           clearInterval(checkPagefind);
           loadPagefindCSS();
-          new window.PagefindUI({
+          const config: PagefindUIOptions = {
             element: heroSearchContainer,
             showSubResults: true,
             showImages: false,
             excerptLength: 15,
             placeholder: "Search implementations...",
-            basePath: basePath || undefined,
-          });
+          };
+
+          // Only add basePath if it's not empty
+          if (basePath) {
+            config.basePath = basePath;
+          }
+
+          new window.PagefindUI(config);
         }
       }, 100);
 
