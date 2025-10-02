@@ -7,6 +7,7 @@ import FilterTabs from "@/components/filter-tabs";
 import RepositoryCard from "@/components/repository-card";
 import SearchBar from "@/components/search-bar";
 import type { RepositoryType, RepositoryData } from "@/types/repository";
+import { getAssetPath } from "@/lib/utils";
 
 // Import the data at build time
 import repositoryData from "@/public/data/repositories.json";
@@ -95,7 +96,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="mb-4 flex justify-center">
             <Image
-              src="/vector-logo.svg"
+              src={getAssetPath("vector-logo.svg")}
               alt="Vector Institute"
               width={120}
               height={48}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { getBasePath } from "@/lib/utils";
 
 declare global {
   interface Window {
@@ -10,6 +11,7 @@ declare global {
       showImages: boolean;
       excerptLength: number;
       placeholder: string;
+      basePath?: string;
     }) => void;
   }
 }
@@ -18,6 +20,7 @@ export default function SearchBar() {
   useEffect(() => {
     // Find the hero-search container and render Pagefind there
     const heroSearchContainer = document.getElementById("hero-search");
+    const basePath = getBasePath();
 
     if (typeof window !== "undefined" && heroSearchContainer) {
       // Load Pagefind CSS dynamically
@@ -25,7 +28,7 @@ export default function SearchBar() {
         if (!document.querySelector('link[href*="pagefind-ui.css"]')) {
           const link = document.createElement("link");
           link.rel = "stylesheet";
-          link.href = "/_pagefind/pagefind-ui.css";
+          link.href = `${basePath}/_pagefind/pagefind-ui.css`;
           document.head.appendChild(link);
         }
       };
@@ -41,6 +44,7 @@ export default function SearchBar() {
             showImages: false,
             excerptLength: 15,
             placeholder: "Search implementations...",
+            basePath: basePath || undefined,
           });
         }
       }, 100);

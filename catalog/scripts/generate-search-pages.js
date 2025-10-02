@@ -5,7 +5,9 @@
  * Each page includes all searchable content (implementations, datasets) and redirects to the main page.
  */
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const fs = require('fs');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require('path');
 
 // Read the repositories data
@@ -24,7 +26,7 @@ if (!fs.existsSync(outputDir)) {
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH === 'true' ? '/implementation-catalog' : '';
 
 // Generate a page for each repository
-repositoryData.repositories.forEach((repo, index) => {
+repositoryData.repositories.forEach((repo) => {
   const repoSlug = repo.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   const repoDir = path.join(outputDir, repoSlug);
 

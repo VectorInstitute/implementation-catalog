@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH === 'true' ? '/implementation-catalog' : '';
+
 export const metadata: Metadata = {
   title: "Vector Institute Implementation Catalog",
   description: "A curated collection of high-quality AI implementations developed by researchers and engineers at the Vector Institute",
@@ -12,6 +14,9 @@ export const metadata: Metadata = {
     description: "A curated collection of high-quality AI implementations",
     type: "website",
   },
+  icons: {
+    icon: `${basePath}/vector-logo.svg`,
+  },
 };
 
 export default function RootLayout({
@@ -21,13 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/vector-logo.svg" type="image/svg+xml" />
-      </head>
+      <head />
       <body className="antialiased">
         {children}
         {/* Pagefind UI - loads after static build */}
-        <Script src="/_pagefind/pagefind-ui.js" strategy="afterInteractive" />
+        <Script src={`${basePath}/_pagefind/pagefind-ui.js`} strategy="afterInteractive" />
       </body>
     </html>
   );

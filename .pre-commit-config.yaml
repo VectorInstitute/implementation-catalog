@@ -39,6 +39,16 @@ repos:
       - id: typos
         args: []
 
+  - repo: local
+    hooks:
+      - id: nextjs-lint
+        name: Next.js Lint
+        entry: bash -c 'cd catalog && npm run lint'
+        language: system
+        files: '^catalog/'
+        types_or: [javascript, jsx, ts, tsx]
+        pass_filenames: false
+
 ci:
     autofix_commit_msg: |
         [pre-commit.ci] Add auto fixes from pre-commit.com hooks

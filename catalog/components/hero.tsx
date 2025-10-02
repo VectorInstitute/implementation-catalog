@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, TrendingUp, Layers } from "lucide-react";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 interface HeroProps {
   totalImplementations: number;
@@ -127,7 +128,7 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
           className="mb-8 flex justify-center"
         >
           <Image
-            src="/vector-logo.svg"
+            src={getAssetPath("vector-logo.svg")}
             alt="Vector Institute"
             width={140}
             height={46}
