@@ -212,7 +212,7 @@
       "public_datasets": [
         {
           "name": "PMC-OA",
-          "url": null
+          "url": "https://pmc.ncbi.nlm.nih.gov/tools/openftlist/"
         },
         {
           "name": "MIMIC-CXR",
@@ -224,7 +224,7 @@
         },
         {
           "name": "Quilt",
-          "url": null
+          "url": "https://quilt1m.github.io/"
         }
       ]
     },
@@ -891,5 +891,5 @@
   ],
   "totalImplementations": 120,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-10-02T09:08:59.098925"
+  "lastUpdated": "2025-10-02T09:13:40.684361"
 }
