@@ -57,7 +57,9 @@ jobs:
 
       - name: Build Next.js site
         working-directory: catalog
-        run: npm run build
+        run: npm run build:github
+        env:
+          NEXT_PUBLIC_BASE_PATH: "true"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
