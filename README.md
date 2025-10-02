@@ -2,8 +2,6 @@
 
 # Implementation Catalog
 
-> **🚀 New!** This catalog now has a modern web interface built with Next.js. Visit the live site at [vectorinstitute.github.io/implementation-catalog](https://vectorinstitute.github.io/implementation-catalog)
-
 This catalog is a collection of repositories for various Machine Learning techniques and algorithms implemented at Vector Institute.
 
 ## 🌐 Web Interface
@@ -26,8 +24,6 @@ npm install
 # Run development server
 npm run dev
 ```
-
-See [`catalog/README.md`](catalog/README.md) for detailed documentation.
 
 ## 📋 Repository Information
 

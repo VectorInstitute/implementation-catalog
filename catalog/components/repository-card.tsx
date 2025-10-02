@@ -19,7 +19,11 @@ export default function RepositoryCard({ repository, index = 0 }: RepositoryCard
     if (!repository.bibtex) return;
 
     try {
-      const response = await fetch('/data/papers.bib');
+      // Use window.location to construct proper path that works with GitHub Pages base path
+      const baseUrl = window.location.pathname.includes('/implementation-catalog')
+        ? '/implementation-catalog'
+        : '';
+      const response = await fetch(`${baseUrl}/data/papers.bib`);
       const bibtexContent = await response.text();
 
       // Parse the bibtex file to find the specific entry
