@@ -2,14 +2,42 @@
 
 # Implementation Catalog
 
-This catalog is a collection of repositories for various Machine Learning techniques and algorithms implemented at Vector Institute. The table has the following columns:
-- **Repository**: Link to the Github repo.
-- **Description**: A brief introduction to the repository stating its purpose and links to published research papers.
-- **Algorithms**: List of ML algorithms demonstrated in the repo.
-- **No. of datasets**: Total number of datasets utilized in the repo.
-- **Datasets**: Links to any publicly available data. This is a subset of the total datasets mentioned in the repo.
-- **Type**: The type of implementation (bootcamp, tool, or applied-research).
-- **Year**: The year the implementation was published.
+> **🚀 New!** This catalog now has a modern web interface built with Next.js. Visit the live site at [vectorinstitute.github.io/implementation-catalog](https://vectorinstitute.github.io/implementation-catalog)
+
+This catalog is a collection of repositories for various Machine Learning techniques and algorithms implemented at Vector Institute.
+
+## 🌐 Web Interface
+
+The catalog is available as an interactive website featuring:
+- **Fast Search**: Instant client-side search powered by Pagefind
+- **Filtering**: Browse by type (applied-research, bootcamp, tool)
+- **Responsive Design**: Works on all devices
+- **Static Deployment**: Zero backend, hosted on GitHub Pages
+
+### Local Development
+
+```bash
+# Navigate to the catalog directory
+cd catalog
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+See [`catalog/README.md`](catalog/README.md) for detailed documentation.
+
+## 📋 Repository Information
+
+The catalog contains the following information for each implementation:
+- **Repository**: Link to the Github repo
+- **Description**: Brief introduction and links to published research papers
+- **Algorithms**: ML algorithms and techniques demonstrated
+- **Datasets**: Links to publicly available datasets
+- **Type**: Classification (bootcamp, tool, or applied-research)
+- **Year**: Publication year
 
 | <div style="width:100px">Repository</div> | <div style="width:290px">Description</div> | <div style="width:150px">Algorithms</div>  | <div style="width:60px">No. of<br/>datasets</div> | <div style="width:120px">Public<br/>Datasets</div> | <div style="width:60px">Type</div> | <div style="width:60px">Year</div> |
 | :--------- | :---------- | :--------- | :--------------------:| :-------: | :-------: | :--------: |

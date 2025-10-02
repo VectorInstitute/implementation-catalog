@@ -1,0 +1,797 @@
+{
+  "repositories": [
+    {
+      "name": "fair-sense-ai",
+      "repo_id": "VectorInstitute/fair-sense-ai",
+      "description": "An AI-powered tool designed to analyze bias in text and visual content, with a focus on risk identification, mitigation, and promoting sustainable and trustworthy AI systems",
+      "implementations": [
+        {
+          "name": "Text Bias Analysis",
+          "url": null
+        },
+        {
+          "name": "Image Bias Analysis",
+          "url": null
+        },
+        {
+          "name": "Batch Text CSV Analysis",
+          "url": null
+        },
+        {
+          "name": "Batch Image Analysis",
+          "url": null
+        },
+        {
+          "name": "AI Risk Management",
+          "url": null
+        },
+        {
+          "name": "Green AI Optimization",
+          "url": null
+        },
+        {
+          "name": "Bias Scoring and Assessment",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/fair-sense-ai"
+    },
+    {
+      "name": "fed-rag",
+      "repo_id": "fed-rag-repo",
+      "description": "A framework for fine-tuning retrieval-augmented generation (RAG) systems.",
+      "implementations": [
+        {
+          "name": "Basic fine-tuning with FL",
+          "url": null
+        },
+        {
+          "name": "RA-DIT",
+          "url": "https://arxiv.org/abs/2310.01352"
+        }
+      ],
+      "type": "tool",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/fed-rag"
+    },
+    {
+      "name": "interpretability",
+      "repo_id": "VectorInstitute/interpretability",
+      "description": "A repository providing reference implementations and resources for the 2025 Bootcamp on Interpretable and Explainable AI, covering both post-hoc explainability methods and interpretable models",
+      "implementations": [
+        {
+          "name": "LIME",
+          "url": "https://christophm.github.io/interpretable-ml-book/lime.html"
+        },
+        {
+          "name": "SHAP",
+          "url": "https://arxiv.org/abs/1705.07874"
+        },
+        {
+          "name": "PDP (Partial Dependence Plot)",
+          "url": "https://scikit-learn.org/stable/modules/partial_dependence.html"
+        },
+        {
+          "name": "ALE (Accumulated Local Effects)",
+          "url": "https://christophm.github.io/interpretable-ml-book/ale.html"
+        },
+        {
+          "name": "Integrated Gradients",
+          "url": "https://www.tensorflow.org/tutorials/interpretability/integrated_gradients"
+        },
+        {
+          "name": "Counterfactual Explanations",
+          "url": "https://christophm.github.io/interpretable-ml-book/counterfactual.html"
+        },
+        {
+          "name": "Generalized Additive Model",
+          "url": "https://en.wikipedia.org/wiki/Generalized_additive_model"
+        },
+        {
+          "name": "Neural Additive Model",
+          "url": "https://arxiv.org/abs/2004.13912"
+        },
+        {
+          "name": "Explainable Boosting Machine",
+          "url": "https://interpret.ml/docs/ebm.html"
+        },
+        {
+          "name": "Gas turbine dataset",
+          "url": "https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/interpretability"
+    },
+    {
+      "name": "kg-rag",
+      "repo_id": "kg-rag",
+      "description": "A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG).",
+      "implementations": [
+        {
+          "name": "KG-RAG",
+          "url": "https://vectorinstitute.github.io/kg-rag/"
+        },
+        {
+          "name": "GraphRAG",
+          "url": "https://microsoft.github.io/graphrag/"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "SEC 10-Q",
+          "url": "https://github.com/docugami/KG-RAG-datasets/blob/main/sec-10-q/README.md"
+        }
+      ],
+      "type": "applied-research",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/kg-rag"
+    },
+    {
+      "name": "ai-deployment",
+      "repo_id": "VectorInstitute/ai-deployment",
+      "description": "A repository with reference implementations for deploying AI models in production environments, focusing on best practices and cloud-native solutions.",
+      "implementations": [
+        {
+          "name": "AWS",
+          "url": "https://aws.amazon.com/"
+        },
+        {
+          "name": "GCP",
+          "url": "https://cloud.google.com/"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/ai-deployment"
+    },
+    {
+      "name": "atomgen",
+      "repo_id": "atomgen",
+      "description": "Library for handling atomistic graph datasets focusing on transformer-based implementations, with utilities for training various models, experimenting with different pre-training tasks, and a suite of pre-trained models with huggingface integrations",
+      "implementations": [
+        {
+          "name": "AtomFormer",
+          "url": null
+        },
+        {
+          "name": "SchNet",
+          "url": "https://arxiv.org/abs/1706.08566"
+        },
+        {
+          "name": "TokenGT",
+          "url": "https://github.com/jw9730/tokengt"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "S2EF Datasets",
+          "url": "https://huggingface.co/datasets/vector-institute/s2ef-15m"
+        },
+        {
+          "name": "Misc. Atomistic Graph Datasets",
+          "url": "https://huggingface.co/datasets/vector-institute/datasets"
+        }
+      ],
+      "type": "applied-research",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/atomgen"
+    },
+    {
+      "name": "bias-mitigation-unlearning",
+      "repo_id": "VectorInstitute/bias-mitigation-unlearning",
+      "description": "A repository for social bias mitigation in LLMs using machine unlearning",
+      "implementations": [
+        {
+          "name": "Negation via Task Vectors",
+          "url": "https://aclanthology.org/2024.emnlp-industry.71/"
+        },
+        {
+          "name": "PCGU",
+          "url": "https://aclanthology.org/2024.emnlp-industry.71/"
+        }
+      ],
+      "type": "applied-research",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/bias-mitigation-unlearning",
+      "paper_url": "https://aclanthology.org/2024.emnlp-industry.71/",
+      "bibtex": "dige2024can",
+      "public_datasets": [
+        {
+          "name": "BBQ",
+          "url": "https://github.com/nyu-mll/BBQ/tree/main/data"
+        },
+        {
+          "name": "Stereoset",
+          "url": "https://github.com/moinnadeem/StereoSet/tree/master/data"
+        },
+        {
+          "name": "RedditBias",
+          "url": "https://github.com/VectorInstitute/bias-mitigation-unlearning/tree/main/reddit_bias/data"
+        }
+      ]
+    },
+    {
+      "name": "cyclops",
+      "repo_id": "VectorInstitute/cyclops",
+      "description": "A toolkit for facilitating research and deployment of ML models for healthcare",
+      "implementations": [
+        {
+          "name": "Binary Classification",
+          "url": null
+        },
+        {
+          "name": "Multi-label Classification",
+          "url": null
+        },
+        {
+          "name": "Tabular Data Processing",
+          "url": null
+        },
+        {
+          "name": "Time-series Data Processing",
+          "url": null
+        },
+        {
+          "name": "Image Data Processing",
+          "url": null
+        },
+        {
+          "name": "Dataset Shift Detection",
+          "url": null
+        },
+        {
+          "name": "Model Report Card Generation",
+          "url": null
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "NIH Chest X-ray",
+          "url": "https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community"
+        },
+        {
+          "name": "MIMIC-IV",
+          "url": "https://mimic.mit.edu/"
+        }
+      ],
+      "type": "tool",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/cyclops"
+    },
+    {
+      "name": "diffusion-models",
+      "repo_id": "VectorInstitute/diffusion-models",
+      "description": "A repository with demos for various diffusion models for tabular and time series data",
+      "implementations": [
+        {
+          "name": "TabDDPM",
+          "url": null
+        },
+        {
+          "name": "TabSyn",
+          "url": null
+        },
+        {
+          "name": "ClavaDDPM",
+          "url": "https://arxiv.org/abs/2405.17724"
+        },
+        {
+          "name": "CSDI",
+          "url": null
+        },
+        {
+          "name": "TSDiff",
+          "url": "https://arxiv.org/abs/2307.11494"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "Physionet Challenge 2012",
+          "url": "https://www.physionet.org/content/challenge-2012/1.0.0/"
+        },
+        {
+          "name": "Electricity dataset (UCI Machine Learning Repository)",
+          "url": "https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/diffusion_models"
+    },
+    {
+      "name": "finetuning-and-alignment",
+      "repo_id": "VectorInstitute/finetuning-and-alignment",
+      "description": "A repository with implementations advanced fine-tuning techniques and approaches to enhance Large Language Model performance, reduce their computational cost, with a focus on alignment with human values",
+      "implementations": [
+        {
+          "name": "FSDP",
+          "url": "https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html"
+        },
+        {
+          "name": "DDP",
+          "url": "https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html"
+        },
+        {
+          "name": "Instruction Tuning",
+          "url": null
+        },
+        {
+          "name": "PEFT",
+          "url": "https://github.com/huggingface/peft"
+        },
+        {
+          "name": "Quantization",
+          "url": null
+        },
+        {
+          "name": "Supervised Fine-tuning",
+          "url": null
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "SAMSum dataset",
+          "url": "https://huggingface.co/datasets/knkarthick/samsum"
+        },
+        {
+          "name": "TweetEval",
+          "url": "https://github.com/cardiffnlp/tweeteval"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/finetuning-and-alignment"
+    },
+    {
+      "name": "fl4health",
+      "repo_id": "VectorInstitute/FL4Health",
+      "description": "A flexible, modular, and easy to use library to facilitate federated learning research and development in healthcare settings",
+      "implementations": [
+        {
+          "name": "FedAvg",
+          "url": "https://arxiv.org/abs/1602.05629"
+        },
+        {
+          "name": "FedOpt",
+          "url": "https://arxiv.org/abs/2003.00295"
+        },
+        {
+          "name": "FedProx",
+          "url": "https://arxiv.org/abs/1812.06127"
+        },
+        {
+          "name": "SCAFFOLD",
+          "url": "https://arxiv.org/abs/1910.06378"
+        },
+        {
+          "name": "MOON",
+          "url": "https://arxiv.org/abs/2103.16257"
+        },
+        {
+          "name": "FedDG-GA",
+          "url": "https://arxiv.org/abs/2103.06030"
+        },
+        {
+          "name": "FLASH",
+          "url": "https://proceedings.mlr.press/v202/panchal23a/panchal23a.pdf"
+        },
+        {
+          "name": "FedPM",
+          "url": "https://arxiv.org/pdf/2209.15328"
+        },
+        {
+          "name": "Personal FL",
+          "url": "https://arxiv.org/abs/2205.13692"
+        },
+        {
+          "name": "FedBN",
+          "url": "https://arxiv.org/abs/2102.07623"
+        },
+        {
+          "name": "FedPer",
+          "url": "https://arxiv.org/abs/1912.00818"
+        },
+        {
+          "name": "FedRep",
+          "url": "https://arxiv.org/abs/2303.05206"
+        },
+        {
+          "name": "Ditto",
+          "url": "https://arxiv.org/abs/2012.04221"
+        },
+        {
+          "name": "MR-MTL",
+          "url": "https://arxiv.org/abs/2206.07902"
+        },
+        {
+          "name": "APFL",
+          "url": "https://arxiv.org/abs/2003.13461"
+        },
+        {
+          "name": "PerFCL",
+          "url": "https://ieeexplore.ieee.org/document/10020518/"
+        },
+        {
+          "name": "FENDA-FL",
+          "url": "https://arxiv.org/pdf/2309.16825.pdf"
+        },
+        {
+          "name": "FENDA+Ditto",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/fl4health"
+    },
+    {
+      "name": "florist",
+      "repo_id": "VectorInstitute/FLorist",
+      "description": "A platform to launch and monitor Federated Learning (FL) training jobs, designed to bridge the gap between FL algorithm implementations and practical healthcare applications",
+      "implementations": [
+        {
+          "name": "FL Job Orchestration",
+          "url": null
+        },
+        {
+          "name": "Training Job Monitoring",
+          "url": null
+        },
+        {
+          "name": "Client-Server Communication",
+          "url": null
+        },
+        {
+          "name": "FL4Health Integration",
+          "url": null
+        },
+        {
+          "name": "Web-based Job Configuration",
+          "url": null
+        },
+        {
+          "name": "Docker-based Deployment",
+          "url": null
+        },
+        {
+          "name": "Multi-client Support",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/FLorist"
+    },
+    {
+      "name": "mmlearn",
+      "repo_id": "VectorInstitute/mmlearn",
+      "description": "A toolkit for research on multimodal representation learning",
+      "implementations": [
+        {
+          "name": "Contrastive Pretraining",
+          "url": null
+        },
+        {
+          "name": "I-JEPA",
+          "url": "https://arxiv.org/abs/2301.08243"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "ImageNet",
+          "url": "https://www.image-net.org/"
+        },
+        {
+          "name": "LibriSpeech",
+          "url": "https://www.openslr.org/12/"
+        },
+        {
+          "name": "RGB-D",
+          "url": "https://rgbd.cs.princeton.edu/"
+        }
+      ],
+      "type": "tool",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/mmlearn"
+    },
+    {
+      "name": "odyssey",
+      "repo_id": "VectorInstitute/odyssey",
+      "description": "A comprehensive library for developing foundation models using Electronic Health Record (EHR) data, with a focus on advanced medical data processing and modeling",
+      "implementations": [
+        {
+          "name": "EHRMamba",
+          "url": "https://vectorinstitute.github.io/EHRMamba/"
+        },
+        {
+          "name": "CEHR-BERT",
+          "url": null
+        },
+        {
+          "name": "BigBird",
+          "url": "https://arxiv.org/abs/2007.14062"
+        },
+        {
+          "name": "MultiBird",
+          "url": null
+        },
+        {
+          "name": "LSTM",
+          "url": null
+        },
+        {
+          "name": "XGBoost",
+          "url": null
+        },
+        {
+          "name": "Multitask Prompted Finetuning (MPF)",
+          "url": null
+        },
+        {
+          "name": "Next Token Prediction (NTP)",
+          "url": null
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "MIMIC-IV",
+          "url": "https://mimic.mit.edu/"
+        }
+      ],
+      "type": "tool",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/odyssey"
+    },
+    {
+      "name": "pmc-data-extraction",
+      "repo_id": "pmc-data-extraction",
+      "description": "A toolkit to download, augment, and benchmark Open-PMC data",
+      "implementations": [
+        {
+          "name": "PMC Data Extraction",
+          "url": "https://arxiv.org/abs/2503.14377"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "PubMed Central",
+          "url": "https://pmc.ncbi.nlm.nih.gov/"
+        },
+        {
+          "name": "HuggingFace PMC Dataset",
+          "url": "https://huggingface.co/datasets/vector-institute/open-pmc"
+        }
+      ],
+      "type": "applied-research",
+      "paper_url": "https://arxiv.org/abs/2503.14377",
+      "bibtex": "baghbanzadeh2025advancing",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/pmc-data-extraction"
+    },
+    {
+      "name": "retrieval-augmented-generation",
+      "repo_id": "vectorinstitute/retrieval-augmented-generation",
+      "description": "A repository reference implementations for retrieval-augmented generation",
+      "implementations": [
+        {
+          "name": "Web Search",
+          "url": null
+        },
+        {
+          "name": "Document Search",
+          "url": null
+        },
+        {
+          "name": "SQL Search",
+          "url": null
+        },
+        {
+          "name": "Cloud Search",
+          "url": null
+        },
+        {
+          "name": "PubMed QA",
+          "url": null
+        },
+        {
+          "name": "RAG Evaluation",
+          "url": null
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov"
+        },
+        {
+          "name": "Banking Dataset - Marketing Targets",
+          "url": "https://www.kaggle.com/datasets/prakharrathi25/banking-dataset-marketing-targets"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/retrieval-augmented-generation",
+      "platform_url": "https://89kc2habps6ig.pit-1.try.coder.app/templates/rag-bootcamp/"
+    },
+    {
+      "name": "self-supervised-learning",
+      "repo_id": "VectorInstitute/self-supervised-learning",
+      "description": "A repository with reference implementations of self-supervised learning techniques",
+      "implementations": [
+        {
+          "name": "Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)",
+          "url": "https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf"
+        },
+        {
+          "name": "SimMTM",
+          "url": "https://arxiv.org/abs/2302.00861"
+        },
+        {
+          "name": "TabRet",
+          "url": "https://arxiv.org/abs/2303.15747"
+        },
+        {
+          "name": "Data2Vec",
+          "url": "https://arxiv.org/abs/2202.03555"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "STL-10",
+          "url": "https://cs.stanford.edu/~acoates/stl10/"
+        },
+        {
+          "name": "Beijing PM 2.5",
+          "url": "https://archive.ics.uci.edu/dataset/381/beijing+pm2+5+data"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/self-supervised-learning"
+    },
+    {
+      "name": "vector-inference",
+      "repo_id": "VectorInstitute/vector-inference",
+      "description": "Efficient LLM inference on Slurm clusters using vLLM",
+      "type": "tool",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/vector-inference",
+      "implementations": [
+        "CLI",
+        "Python API",
+        "OpenAI compatible server"
+      ]
+    },
+    {
+      "name": "anomaly-detection",
+      "repo_id": "VectorInstitute/anomaly-detection",
+      "description": "A repository with implementation of anomaly detection techniques",
+      "implementations": [
+        {
+          "name": "Logistic Regression (Supervised)"
+        },
+        {
+          "name": "Random Forest (Supervised)"
+        },
+        {
+          "name": "XGBoost (Supervised)"
+        },
+        {
+          "name": "CatBoost (Supervised)"
+        },
+        {
+          "name": "Light GBM (Supervised)"
+        },
+        {
+          "name": "TabNet (Supervised and Semi-supervised)"
+        },
+        {
+          "name": "Autoencoder (AE) (Unsupervised)"
+        },
+        {
+          "name": "Isolation Forest (Unsupervised)"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "Bank Account Fraud Detection",
+          "url": "https://arxiv.org/pdf/2211.13358.pdf"
+        },
+        {
+          "name": "DGraph dataset",
+          "url": "https://dgraph.xinye.com/dataset"
+        },
+        {
+          "name": "MVTec dataset",
+          "url": "https://www.mvtec.com/company/research/datasets/mvtec-ad"
+        },
+        {
+          "name": "UCSD Anomaly Detection Dataset",
+          "url": "http://www.svcl.ucsd.edu/projects/anomaly/dataset.htm"
+        },
+        {
+          "name": "UCF Crime Dataset",
+          "url": "https://www.kaggle.com/datasets/odins0n/ucf-crime-dataset"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2023,
+      "github_url": "https://github.com/VectorInstitute/anomaly-detection"
+    },
+    {
+      "name": "recommender-systems",
+      "repo_id": "VectorInstitute/recommender-systems",
+      "description": "A repository with implementations of recommender systems",
+      "implementations": [
+        {
+          "name": "Matrix Factorization",
+          "url": null
+        },
+        {
+          "name": "Collaborative Filtering",
+          "url": null
+        },
+        {
+          "name": "Content-Based Filtering",
+          "url": null
+        },
+        {
+          "name": "Sequence Aware Recommender Systems",
+          "url": null
+        },
+        {
+          "name": "Session-Based Recommender Systems",
+          "url": null
+        },
+        {
+          "name": "Knowledge Graph-Based Recommender Systems",
+          "url": null
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2022,
+      "github_url": "https://github.com/VectorInstitute/recommender-systems"
+    },
+    {
+      "name": "privacy-enhancing-techniques",
+      "repo_id": "VectorInstitute/privacy-enhancing-techniques",
+      "description": "A repository with implementations of privacy-enhancing techniques for machine learning",
+      "implementations": [
+        {
+          "name": "Differential Privacy (tensorflow_privacy)",
+          "url": null
+        },
+        {
+          "name": "PATE",
+          "url": null
+        },
+        {
+          "name": "Membership Inference Attacks",
+          "url": null
+        },
+        {
+          "name": "Horizontal Federated Learning",
+          "url": null
+        },
+        {
+          "name": "Vertical Federated Learning",
+          "url": null
+        },
+        {
+          "name": "Homomorphic Encryption",
+          "url": null
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2021,
+      "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
+    }
+  ],
+  "totalImplementations": 115,
+  "yearsOfResearch": 7,
+  "lastUpdated": "2025-10-01T16:20:02.943326"
+}
