@@ -20,9 +20,9 @@ implementations:
     url: https://arxiv.org/abs/2004.13912
   - name: Explainable Boosting Machine
     url: https://interpret.ml/docs/ebm.html
+public_datasets:
   - name: Gas turbine dataset
     url: https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set
-datasets:
   - name: ISIC 2016
     url: https://challenge.isic-archive.com/data/
   - name: DHI

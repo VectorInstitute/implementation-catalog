@@ -138,13 +138,13 @@
         {
           "name": "Explainable Boosting Machine",
           "url": "https://interpret.ml/docs/ebm.html"
-        },
+        }
+      ],
+      "public_datasets": [
         {
           "name": "Gas turbine dataset",
           "url": "https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set"
-        }
-      ],
-      "datasets": [
+        },
         {
           "name": "ISIC 2016",
           "url": "https://challenge.isic-archive.com/data/"
@@ -889,7 +889,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 120,
+  "totalImplementations": 119,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-10-02T09:13:40.684361"
+  "lastUpdated": "2025-10-02T09:33:29.122340"
 }
