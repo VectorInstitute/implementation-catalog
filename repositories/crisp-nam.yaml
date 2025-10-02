@@ -15,9 +15,9 @@ paper_url: https://arxiv.org/abs/2505.21360
 bibtex: ramachandram2025crisp
 public_datasets:
   - name: Framingham Heart Study
-    url: null
+    url: https://www.kaggle.com/datasets/aasheesh200/framingham-heart-study-dataset
   - name: Primary Biliary Cirrhosis (PBC)
-    url: null
+    url: https://www.kaggle.com/datasets/homayoonkhadivi/primary-biliary-cirrhosis-pbc-disease-dataset
   - name: SUPPORT
     url: null
   - name: Synthetic Clinical Dataset

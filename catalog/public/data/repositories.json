@@ -1,6 +1,48 @@
 {
   "repositories": [
     {
+      "name": "crisp-nam",
+      "repo_id": "VectorInstitute/crisp-nam",
+      "description": "Competing Risks Interpretable Survival Prediction with Neural Additive Models",
+      "implementations": [
+        {
+          "name": "CRISP-NAM",
+          "url": "https://arxiv.org/abs/2505.21360"
+        },
+        {
+          "name": "Neural Additive Models for Survival Analysis",
+          "url": null
+        },
+        {
+          "name": "DeepHit Baseline",
+          "url": null
+        }
+      ],
+      "type": "applied-research",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/crisp-nam",
+      "paper_url": "https://arxiv.org/abs/2505.21360",
+      "bibtex": "ramachandram2025crisp",
+      "public_datasets": [
+        {
+          "name": "Framingham Heart Study",
+          "url": "https://www.kaggle.com/datasets/aasheesh200/framingham-heart-study-dataset"
+        },
+        {
+          "name": "Primary Biliary Cirrhosis (PBC)",
+          "url": "https://www.kaggle.com/datasets/homayoonkhadivi/primary-biliary-cirrhosis-pbc-disease-dataset"
+        },
+        {
+          "name": "SUPPORT",
+          "url": null
+        },
+        {
+          "name": "Synthetic Clinical Dataset",
+          "url": null
+        }
+      ]
+    },
+    {
       "name": "fair-sense-ai",
       "repo_id": "VectorInstitute/fair-sense-ai",
       "description": "An AI-powered tool designed to analyze bias in text and visual content, with a focus on risk identification, mitigation, and promoting sustainable and trustworthy AI systems",
@@ -100,6 +142,24 @@
         {
           "name": "Gas turbine dataset",
           "url": "https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set"
+        }
+      ],
+      "datasets": [
+        {
+          "name": "ISIC 2016",
+          "url": "https://challenge.isic-archive.com/data/"
+        },
+        {
+          "name": "DHI",
+          "url": "https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset"
+        },
+        {
+          "name": "Default of Credit Card Clients",
+          "url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients"
+        },
+        {
+          "name": "Diabetes 130",
+          "url": "https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008"
         }
       ],
       "type": "bootcamp",
@@ -829,7 +889,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 117,
+  "totalImplementations": 120,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-10-01T22:07:14.759555"
+  "lastUpdated": "2025-10-02T09:08:59.098925"
 }

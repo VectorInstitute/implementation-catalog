@@ -22,6 +22,15 @@ implementations:
     url: https://interpret.ml/docs/ebm.html
   - name: Gas turbine dataset
     url: https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set
+datasets:
+  - name: ISIC 2016
+    url: https://challenge.isic-archive.com/data/
+  - name: DHI
+    url: https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset
+  - name: Default of Credit Card Clients
+    url: https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
+  - name: Diabetes 130
+    url: https://archive.ics.uci.edu/dataset/296/diabetes+130-us+hospitals+for+years+1999-2008
 type: bootcamp
 year: 2025
 github_url: https://github.com/VectorInstitute/interpretability
