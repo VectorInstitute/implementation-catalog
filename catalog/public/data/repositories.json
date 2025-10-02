@@ -131,6 +131,44 @@
       "github_url": "https://github.com/VectorInstitute/kg-rag"
     },
     {
+      "name": "shared-encoder",
+      "repo_id": "VectorInstitute/shared-encoder",
+      "description": "A Shared Encoder Approach to Multimodal Representation Learning",
+      "implementations": [
+        {
+          "name": "Shared Encoder Architecture",
+          "url": "https://arxiv.org/abs/2503.01654"
+        },
+        {
+          "name": "Multimodal Representation Learning",
+          "url": null
+        }
+      ],
+      "type": "applied-research",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/shared-encoder",
+      "paper_url": "https://arxiv.org/abs/2503.01654",
+      "bibtex": "roy2025shared",
+      "public_datasets": [
+        {
+          "name": "PMC-OA",
+          "url": null
+        },
+        {
+          "name": "MIMIC-CXR",
+          "url": "https://physionet.org/content/mimic-cxr/2.0.0/"
+        },
+        {
+          "name": "DeepEyeNet",
+          "url": null
+        },
+        {
+          "name": "Quilt",
+          "url": null
+        }
+      ]
+    },
+    {
       "name": "ai-deployment",
       "repo_id": "VectorInstitute/ai-deployment",
       "description": "A repository with reference implementations for deploying AI models in production environments, focusing on best practices and cloud-native solutions.",
@@ -791,7 +829,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 115,
+  "totalImplementations": 117,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-10-01T16:20:02.943326"
+  "lastUpdated": "2025-10-01T22:07:14.759555"
 }

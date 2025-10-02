@@ -1,0 +1,22 @@
+name: shared-encoder
+repo_id: VectorInstitute/shared-encoder
+description: "A Shared Encoder Approach to Multimodal Representation Learning"
+implementations:
+  - name: Shared Encoder Architecture
+    url: https://arxiv.org/abs/2503.01654
+  - name: Multimodal Representation Learning
+    url: null
+type: applied-research
+year: 2025
+github_url: https://github.com/VectorInstitute/shared-encoder
+paper_url: https://arxiv.org/abs/2503.01654
+bibtex: roy2025shared
+public_datasets:
+  - name: PMC-OA
+    url: null
+  - name: MIMIC-CXR
+    url: https://physionet.org/content/mimic-cxr/2.0.0/
+  - name: DeepEyeNet
+    url: null
+  - name: Quilt
+    url: null
