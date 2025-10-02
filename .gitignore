@@ -19,3 +19,12 @@ wheels/
 
 # macos
 *.DS_Store
+
+# Next.js
+catalog/.next/
+catalog/out/
+catalog/node_modules/
+catalog/.env*.local
+
+# MkDocs
+site/

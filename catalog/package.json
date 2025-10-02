@@ -1,0 +1,34 @@
+{
+  "name": "catalog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/generate-search-pages.js && npm run pagefind",
+    "build:github": "NEXT_PUBLIC_BASE_PATH=true next build && NEXT_PUBLIC_BASE_PATH=true node scripts/generate-search-pages.js && npm run pagefind",
+    "pagefind": "pagefind --site out --output-subdir _pagefind",
+    "start": "next start",
+    "serve": "npx serve@latest out -p 3001",
+    "lint": "eslint",
+    "export": "next build"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.22",
+    "lucide-react": "^0.544.0",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "pagefind": "^1.2.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
