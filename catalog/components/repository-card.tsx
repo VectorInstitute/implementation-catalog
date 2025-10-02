@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, FileText, BookOpen, Code2, Database } from "lucide-react";
+import { ExternalLink, FileText, BookOpen, Code2, Database, Check } from "lucide-react";
 import type { Repository } from "@/types/repository";
+import { useState } from "react";
 
 interface RepositoryCardProps {
   repository: Repository;
@@ -12,6 +13,28 @@ interface RepositoryCardProps {
 export default function RepositoryCard({ repository, index = 0 }: RepositoryCardProps) {
   const repoUrl = repository.github_url || `https://github.com/${repository.repo_id}`;
   const repoSlug = repository.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const [copied, setCopied] = useState(false);
+
+  const handleCiteCopy = async () => {
+    if (!repository.bibtex) return;
+
+    try {
+      const response = await fetch('/data/papers.bib');
+      const bibtexContent = await response.text();
+
+      // Parse the bibtex file to find the specific entry
+      const entryRegex = new RegExp(`@\\w+\\{${repository.bibtex},[\\s\\S]*?\\n\\}`, 'i');
+      const match = bibtexContent.match(entryRegex);
+
+      if (match) {
+        await navigator.clipboard.writeText(match[0]);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }
+    } catch (error) {
+      console.error('Failed to copy citation:', error);
+    }
+  };
 
   const typeColors = {
     "tool": "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30",
@@ -76,13 +99,13 @@ export default function RepositoryCard({ repository, index = 0 }: RepositoryCard
                     href={impl.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 bg-gray-100 dark:bg-gray-700/50 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 text-xs font-medium px-3 py-1.5 rounded-lg transition-all hover:scale-105"
+                    className="inline-flex items-center gap-1 bg-cyan-100 dark:bg-cyan-900/30 hover:bg-cyan-200 dark:hover:bg-cyan-900/50 text-cyan-700 dark:text-cyan-300 text-xs font-medium px-3 py-1.5 rounded-lg transition-all hover:scale-105"
                   >
                     {impl.name}
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 ) : (
-                  <span className="inline-block bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-200 text-xs font-medium px-3 py-1.5 rounded-lg">
+                  <span className="inline-block bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 text-xs font-medium px-3 py-1.5 rounded-lg">
                     {impl.name}
                   </span>
                 )}
@@ -139,11 +162,12 @@ export default function RepositoryCard({ repository, index = 0 }: RepositoryCard
           )}
           {repository.bibtex && (
             <button
+              onClick={handleCiteCopy}
               className="inline-flex items-center gap-2 text-sm bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 px-4 py-2 rounded-lg transition-all hover:scale-105"
-              title="Citation available"
+              title={copied ? "Copied!" : "Copy citation to clipboard"}
             >
-              <BookOpen className="w-4 h-4" />
-              Cite
+              {copied ? <Check className="w-4 h-4" /> : <BookOpen className="w-4 h-4" />}
+              {copied ? "Copied!" : "Cite"}
             </button>
           )}
           {repository.platform_url && (
