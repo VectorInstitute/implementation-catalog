@@ -1,0 +1,9 @@
+name: masksql
+repo_id: VectorInstitute/masksql
+description: "A privacy-preserving framework for LLM-based text-to-SQL that uses schema masking and progressive unmasking to protect sensitive database information while maintaining query accuracy"
+implementations:
+  - name: MaskSQL
+    url: null
+type: applied-research
+year: 2025
+paper_url: https://arxiv.org/abs/2509.23459
