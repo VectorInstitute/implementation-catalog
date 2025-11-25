@@ -1,0 +1,22 @@
+name: linguamark
+repo_id: VectorInstitute/linguamark
+description: "A benchmark for evaluating fairness and performance of Large Multimodal Models on multilingual Visual Question Answering tasks across 11 languages and 5 social attributes"
+implementations:
+  - name: LinguaMark Benchmark
+    url: https://vectorinstitute.github.io/linguamark/
+  - name: Bias Evaluation
+    url: null
+  - name: Answer Relevancy Evaluation
+    url: null
+  - name: Faithfulness Evaluation
+    url: null
+  - name: Model Inference Pipeline
+    url: null
+public_datasets:
+  - name: LinguaMark Multilingual VQA Dataset
+    url: https://github.com/VectorInstitute/linguamark
+type: applied-research
+year: 2025
+github_url: https://github.com/VectorInstitute/linguamark
+paper_url: https://arxiv.org/abs/2507.07274
+bibtex: raval2025linguamark

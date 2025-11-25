@@ -112,7 +112,7 @@
     },
     {
       "name": "fed-rag",
-      "repo_id": "fed-rag-repo",
+      "repo_id": "VectorInstitute/fed-rag",
       "description": "An open-source framework for fine-tuning retrieval-augmented generation (RAG) systems across centralized and federated architectures with comprehensive support for state-of-the-art RAG fine-tuning methods.",
       "implementations": [
         {
@@ -129,6 +129,52 @@
       "github_url": "https://github.com/VectorInstitute/fed-rag",
       "paper_url": "https://doi.org/10.5281/zenodo.15092361",
       "bibtex": "fajardo2025fedrag"
+    },
+    {
+      "name": "humanibench",
+      "repo_id": "VectorInstitute/humanibench",
+      "description": "A benchmark suite for evaluating Large Multimodal Models on seven Human-Centered AI principles: Fairness, Ethics, Understanding, Reasoning, Language Inclusivity, Empathy, and Robustness",
+      "implementations": [
+        {
+          "name": "Scene Understanding",
+          "url": null
+        },
+        {
+          "name": "Instance Identity",
+          "url": null
+        },
+        {
+          "name": "Multiple Choice VQA",
+          "url": null
+        },
+        {
+          "name": "Multilingual Visual QA",
+          "url": null
+        },
+        {
+          "name": "Visual Grounding",
+          "url": null
+        },
+        {
+          "name": "Empathetic Captioning",
+          "url": null
+        },
+        {
+          "name": "Image Resilience",
+          "url": null
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "HumaniBench Dataset",
+          "url": "https://huggingface.co/datasets/vector-institute/HumaniBench"
+        }
+      ],
+      "type": "applied-research",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/humanibench",
+      "paper_url": "https://arxiv.org/abs/2505.11454",
+      "bibtex": "raza2025humanibench"
     },
     {
       "name": "interpretability",
@@ -200,7 +246,7 @@
     },
     {
       "name": "kg-rag",
-      "repo_id": "kg-rag",
+      "repo_id": "VectorInstitute/kg-rag",
       "description": "A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG).",
       "implementations": [
         {
@@ -221,6 +267,44 @@
       "type": "applied-research",
       "year": 2025,
       "github_url": "https://github.com/VectorInstitute/kg-rag"
+    },
+    {
+      "name": "linguamark",
+      "repo_id": "VectorInstitute/linguamark",
+      "description": "A benchmark for evaluating fairness and performance of Large Multimodal Models on multilingual Visual Question Answering tasks across 11 languages and 5 social attributes",
+      "implementations": [
+        {
+          "name": "LinguaMark Benchmark",
+          "url": "https://vectorinstitute.github.io/linguamark/"
+        },
+        {
+          "name": "Bias Evaluation",
+          "url": null
+        },
+        {
+          "name": "Answer Relevancy Evaluation",
+          "url": null
+        },
+        {
+          "name": "Faithfulness Evaluation",
+          "url": null
+        },
+        {
+          "name": "Model Inference Pipeline",
+          "url": null
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "LinguaMark Multilingual VQA Dataset",
+          "url": "https://github.com/VectorInstitute/linguamark"
+        }
+      ],
+      "type": "applied-research",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/linguamark",
+      "paper_url": "https://arxiv.org/abs/2507.07274",
+      "bibtex": "raval2025linguamark"
     },
     {
       "name": "masksql",
@@ -309,7 +393,7 @@
     },
     {
       "name": "atomgen",
-      "repo_id": "atomgen",
+      "repo_id": "VectorInstitute/atomgen",
       "description": "Library for handling atomistic graph datasets focusing on transformer-based implementations, with utilities for training various models, experimenting with different pre-training tasks, and a suite of pre-trained models with huggingface integrations",
       "implementations": [
         {
@@ -707,7 +791,7 @@
     },
     {
       "name": "pmc-data-extraction",
-      "repo_id": "pmc-data-extraction",
+      "repo_id": "VectorInstitute/pmc-data-extraction",
       "description": "A toolkit to download, augment, and benchmark Open-PMC data",
       "implementations": [
         {
@@ -950,7 +1034,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 124,
+  "totalImplementations": 136,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-11-25T12:31:24.825921"
+  "lastUpdated": "2025-11-25T15:22:49.432085"
 }

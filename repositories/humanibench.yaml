@@ -1,0 +1,26 @@
+name: humanibench
+repo_id: VectorInstitute/humanibench
+description: "A benchmark suite for evaluating Large Multimodal Models on seven Human-Centered AI principles: Fairness, Ethics, Understanding, Reasoning, Language Inclusivity, Empathy, and Robustness"
+implementations:
+  - name: Scene Understanding
+    url: null
+  - name: Instance Identity
+    url: null
+  - name: Multiple Choice VQA
+    url: null
+  - name: Multilingual Visual QA
+    url: null
+  - name: Visual Grounding
+    url: null
+  - name: Empathetic Captioning
+    url: null
+  - name: Image Resilience
+    url: null
+public_datasets:
+  - name: HumaniBench Dataset
+    url: https://huggingface.co/datasets/vector-institute/HumaniBench
+type: applied-research
+year: 2025
+github_url: https://github.com/VectorInstitute/humanibench
+paper_url: https://arxiv.org/abs/2505.11454
+bibtex: raza2025humanibench
