@@ -1,5 +1,5 @@
 name: pmc-data-extraction
-repo_id: pmc-data-extraction
+repo_id: VectorInstitute/pmc-data-extraction
 description: "A toolkit to download, augment, and benchmark Open-PMC data"
 implementations:
   - name: PMC Data Extraction

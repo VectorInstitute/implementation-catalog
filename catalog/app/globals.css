@@ -2,18 +2,30 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --vector-teal: #48c0d9;
-  --vector-dark: #002145;
-  --vector-purple: #6a5acd;
+  --foreground: #000000;
+  /* Vector Institute Brand Colors - Primary Palette */
+  --vector-magenta: #EB088A;
+  --vector-black: #000000;
+  --vector-grey: #E9E8E8;
+  /* Vector Institute Brand Colors - Secondary Palette */
+  --vector-cobalt: #313CFF;
+  --vector-violet: #8A25C9;
+  --vector-turquoise: #48C0D9;
+  --vector-tangerine: #FF9E00;
+  --vector-lime: #CFF933;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-vector-teal: var(--vector-teal);
-  --color-vector-dark: var(--vector-dark);
-  --color-vector-purple: var(--vector-purple);
+  --color-vector-magenta: var(--vector-magenta);
+  --color-vector-black: var(--vector-black);
+  --color-vector-grey: var(--vector-grey);
+  --color-vector-cobalt: var(--vector-cobalt);
+  --color-vector-violet: var(--vector-violet);
+  --color-vector-turquoise: var(--vector-turquoise);
+  --color-vector-tangerine: var(--vector-tangerine);
+  --color-vector-lime: var(--vector-lime);
   --font-sans: ui-sans-serif, system-ui, sans-serif;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -65,20 +77,20 @@ body {
 }
 
 #hero-search .pagefind-ui__search-input:hover {
-  border-color: #48c0d9 !important;
-  box-shadow: 0 20px 25px -5px rgba(72, 192, 217, 0.1), 0 8px 10px -6px rgba(72, 192, 217, 0.1) !important;
+  border-color: #EB088A !important;
+  box-shadow: 0 20px 25px -5px rgba(235, 8, 138, 0.1), 0 8px 10px -6px rgba(235, 8, 138, 0.1) !important;
 }
 
 #hero-search .pagefind-ui__search-input:focus {
   outline: none !important;
-  border-color: #48c0d9 !important;
-  box-shadow: 0 20px 25px -5px rgba(72, 192, 217, 0.1), 0 8px 10px -6px rgba(72, 192, 217, 0.1), 0 0 0 4px rgba(72, 192, 217, 0.1) !important;
+  border-color: #EB088A !important;
+  box-shadow: 0 20px 25px -5px rgba(235, 8, 138, 0.1), 0 8px 10px -6px rgba(235, 8, 138, 0.1), 0 0 0 4px rgba(235, 8, 138, 0.1) !important;
   transform: translateY(-2px) !important;
 }
 
 /* Search icon */
 #hero-search .pagefind-ui__search-input::before {
-  color: #48c0d9 !important;
+  color: #EB088A !important;
 }
 
 /* Clear button */
@@ -189,14 +201,14 @@ body {
 
 #hero-search .pagefind-ui__filter-value:hover {
   background: #f3f4f6 !important;
-  border-color: #48c0d9 !important;
+  border-color: #EB088A !important;
   color: #111827 !important;
 }
 
 #hero-search .pagefind-ui__filter-value--selected {
-  background: #e0f2fe !important;
-  border-color: #48c0d9 !important;
-  color: #0c4a6e !important;
+  background: #fce7f3 !important;
+  border-color: #EB088A !important;
+  color: #831843 !important;
   font-weight: 500 !important;
 }
 
@@ -233,7 +245,7 @@ body {
 
 #hero-search .pagefind-ui__result:hover {
   background: #f9fafb !important;
-  border-color: #48c0d9 !important;
+  border-color: #EB088A !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
   transform: translateY(-2px) !important;
 }
@@ -245,7 +257,7 @@ body {
   top: 0 !important;
   bottom: 0 !important;
   width: 4px !important;
-  background: linear-gradient(to bottom, #48c0d9, #22d3ee) !important;
+  background: linear-gradient(to bottom, #EB088A, #313CFF) !important;
   border-radius: 1rem 0 0 1rem !important;
 }
 
@@ -267,7 +279,7 @@ body {
 }
 
 #hero-search .pagefind-ui__result:hover .pagefind-ui__result-title {
-  color: #48c0d9 !important;
+  color: #EB088A !important;
 }
 
 /* Result excerpt */
@@ -334,7 +346,7 @@ body {
 #hero-search .pagefind-ui__loading {
   padding: 2rem !important;
   text-align: center !important;
-  color: #48c0d9 !important;
+  color: #EB088A !important;
 }
 
 /* Scrollbar styling for results */

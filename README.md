@@ -25,6 +25,18 @@ npm install
 npm run dev
 ```
 
+## 📊 Analytics Dashboard
+
+Executive dashboard for catalog performance metrics:
+- **Key Metrics**: Aggregate stats across all repositories
+- **Top Performers**: Highest starred, most visited, and most cloned repos
+- **Complete Overview**: Sortable table of all repositories
+- **Auto-Update**: Weekly collection via GitHub Actions (Mondays at 00:00 UTC)
+
+**Manual Collection**: `python scripts/collect_github_metrics.py` (requires `gh` CLI)
+
+> **Note**: Traffic data (views/clones) requires a Personal Access Token with `repo` permissions. Add as `METRICS_GITHUB_TOKEN` secret in repository settings. Without it, traffic metrics will show "—" but basic metrics (stars, forks) still work.
+
 ## 📋 Repository Information
 
 The catalog contains the following information for each implementation:

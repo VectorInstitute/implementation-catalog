@@ -10,6 +10,13 @@ on:
       - 'scripts/sync_repositories_to_json.py'
       - '.github/workflows/deploy-catalog.yml'
   workflow_dispatch:
+  # Auto-trigger when metrics are updated
+  workflow_run:
+    workflows: ["Collect GitHub Metrics"]
+    types:
+      - completed
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -21,6 +28,8 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # Only deploy if metrics collection succeeded (or if triggered by push/manual)
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
