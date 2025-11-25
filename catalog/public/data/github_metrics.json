@@ -3,16 +3,16 @@
     "VectorInstitute/midst-toolkit": {
       "repo_id": "VectorInstitute/midst-toolkit",
       "name": "midst-toolkit",
-      "timestamp": "2025-11-25T20:23:34.913663+00:00",
+      "timestamp": "2025-11-25T20:45:57.732923+00:00",
       "stars": 5,
       "forks": 1,
       "watchers": 0,
       "open_issues": 1,
-      "size": 96930,
+      "size": 96960,
       "views_14d": 599,
       "unique_visitors_14d": 24,
-      "clones_14d": 592,
-      "unique_cloners_14d": 145,
+      "clones_14d": 545,
+      "unique_cloners_14d": 138,
       "language": "Python",
       "created_at": "2025-06-13T13:37:34Z",
       "updated_at": "2025-11-25T19:46:49Z",
@@ -21,7 +21,7 @@
     "VectorInstitute/atomgen": {
       "repo_id": "VectorInstitute/atomgen",
       "name": "atomgen",
-      "timestamp": "2025-11-25T20:23:35.858310+00:00",
+      "timestamp": "2025-11-25T20:45:58.752706+00:00",
       "stars": 8,
       "forks": 1,
       "watchers": 2,
@@ -51,16 +51,16 @@
     "VectorInstitute/linguamark": {
       "repo_id": "VectorInstitute/linguamark",
       "name": "linguamark",
-      "timestamp": "2025-11-25T20:23:36.865194+00:00",
+      "timestamp": "2025-11-25T20:45:59.798549+00:00",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
       "open_issues": 0,
       "size": 17052,
-      "views_14d": null,
-      "unique_visitors_14d": null,
-      "clones_14d": null,
-      "unique_cloners_14d": null,
+      "views_14d": 25,
+      "unique_visitors_14d": 3,
+      "clones_14d": 4,
+      "unique_cloners_14d": 4,
       "language": "Python",
       "created_at": "2025-06-09T17:34:32Z",
       "updated_at": "2025-11-25T20:14:47Z",
@@ -69,7 +69,7 @@
     "VectorInstitute/anomaly-detection": {
       "repo_id": "VectorInstitute/anomaly-detection",
       "name": "anomaly-detection",
-      "timestamp": "2025-11-25T20:23:37.787506+00:00",
+      "timestamp": "2025-11-25T20:46:00.744110+00:00",
       "stars": 8,
       "forks": 0,
       "watchers": 19,
@@ -89,7 +89,7 @@
     "VectorInstitute/cyclops": {
       "repo_id": "VectorInstitute/cyclops",
       "name": "cyclops",
-      "timestamp": "2025-11-25T20:23:38.850223+00:00",
+      "timestamp": "2025-11-25T20:46:02.114889+00:00",
       "stars": 87,
       "forks": 14,
       "watchers": 8,
@@ -125,7 +125,7 @@
     "VectorInstitute/recommender-systems": {
       "repo_id": "VectorInstitute/recommender-systems",
       "name": "recommender-systems",
-      "timestamp": "2025-11-25T20:23:39.906435+00:00",
+      "timestamp": "2025-11-25T20:46:03.110236+00:00",
       "stars": 6,
       "forks": 0,
       "watchers": 30,
@@ -145,7 +145,7 @@
     "VectorInstitute/fed-rag": {
       "repo_id": "VectorInstitute/fed-rag",
       "name": "fed-rag",
-      "timestamp": "2025-11-25T20:23:40.884185+00:00",
+      "timestamp": "2025-11-25T20:46:04.196801+00:00",
       "stars": 137,
       "forks": 26,
       "watchers": 6,
@@ -169,7 +169,7 @@
     "VectorInstitute/odyssey": {
       "repo_id": "VectorInstitute/odyssey",
       "name": "odyssey",
-      "timestamp": "2025-11-25T20:23:41.815709+00:00",
+      "timestamp": "2025-11-25T20:46:05.379053+00:00",
       "stars": 45,
       "forks": 13,
       "watchers": 4,
@@ -195,7 +195,7 @@
     "VectorInstitute/shared-encoder": {
       "repo_id": "VectorInstitute/shared-encoder",
       "name": "shared-encoder",
-      "timestamp": "2025-11-25T20:23:42.776764+00:00",
+      "timestamp": "2025-11-25T20:46:06.621293+00:00",
       "stars": 9,
       "forks": 1,
       "watchers": 4,
@@ -220,7 +220,7 @@
     "VectorInstitute/privacy-enhancing-techniques": {
       "repo_id": "VectorInstitute/privacy-enhancing-techniques",
       "name": "privacy-enhancing-techniques",
-      "timestamp": "2025-11-25T20:23:43.772056+00:00",
+      "timestamp": "2025-11-25T20:46:07.601766+00:00",
       "stars": 15,
       "forks": 9,
       "watchers": 16,
@@ -245,13 +245,13 @@
     "VectorInstitute/humanibench": {
       "repo_id": "VectorInstitute/humanibench",
       "name": "humanibench",
-      "timestamp": "2025-11-25T20:23:44.770717+00:00",
+      "timestamp": "2025-11-25T20:46:08.657891+00:00",
       "stars": 5,
       "forks": 1,
       "watchers": 1,
       "open_issues": 0,
       "size": 21526,
-      "views_14d": 110,
+      "views_14d": 124,
       "unique_visitors_14d": 21,
       "clones_14d": 14,
       "unique_cloners_14d": 13,
@@ -267,7 +267,7 @@
     "VectorInstitute/self-supervised-learning": {
       "repo_id": "VectorInstitute/self-supervised-learning",
       "name": "self-supervised-learning",
-      "timestamp": "2025-11-25T20:23:45.768877+00:00",
+      "timestamp": "2025-11-25T20:46:09.687240+00:00",
       "stars": 2,
       "forks": 0,
       "watchers": 18,
@@ -290,7 +290,7 @@
     "VectorInstitute/FLorist": {
       "repo_id": "VectorInstitute/FLorist",
       "name": "FLorist",
-      "timestamp": "2025-11-25T20:23:46.761048+00:00",
+      "timestamp": "2025-11-25T20:46:10.877396+00:00",
       "stars": 10,
       "forks": 1,
       "watchers": 4,
@@ -308,7 +308,7 @@
     "VectorInstitute/bias-in-the-picture-benchmark": {
       "repo_id": "VectorInstitute/bias-in-the-picture-benchmark",
       "name": "bias-in-the-picture-benchmark",
-      "timestamp": "2025-11-25T20:23:47.798268+00:00",
+      "timestamp": "2025-11-25T20:46:11.950053+00:00",
       "stars": 2,
       "forks": 0,
       "watchers": 0,
@@ -326,7 +326,7 @@
     "VectorInstitute/kg-rag": {
       "repo_id": "VectorInstitute/kg-rag",
       "name": "kg-rag",
-      "timestamp": "2025-11-25T20:23:48.784852+00:00",
+      "timestamp": "2025-11-25T20:46:13.017298+00:00",
       "stars": 20,
       "forks": 10,
       "watchers": 2,
@@ -348,7 +348,7 @@
     "VectorInstitute/interpretability": {
       "repo_id": "VectorInstitute/interpretability",
       "name": "interpretability",
-      "timestamp": "2025-11-25T20:23:49.791031+00:00",
+      "timestamp": "2025-11-25T20:46:14.195349+00:00",
       "stars": 5,
       "forks": 0,
       "watchers": 7,
@@ -366,7 +366,7 @@
     "VectorInstitute/vector-inference": {
       "repo_id": "VectorInstitute/vector-inference",
       "name": "vector-inference",
-      "timestamp": "2025-11-25T20:23:50.846255+00:00",
+      "timestamp": "2025-11-25T20:46:15.292117+00:00",
       "stars": 84,
       "forks": 12,
       "watchers": 7,
@@ -392,7 +392,7 @@
     "VectorInstitute/diffusion-models": {
       "repo_id": "VectorInstitute/diffusion-models",
       "name": "diffusion-models",
-      "timestamp": "2025-11-25T20:23:52.122597+00:00",
+      "timestamp": "2025-11-25T20:46:16.433158+00:00",
       "stars": 5,
       "forks": 0,
       "watchers": 10,
@@ -413,14 +413,14 @@
     "VectorInstitute/pmc-data-extraction": {
       "repo_id": "VectorInstitute/pmc-data-extraction",
       "name": "pmc-data-extraction",
-      "timestamp": "2025-11-25T20:23:53.154557+00:00",
+      "timestamp": "2025-11-25T20:46:17.418344+00:00",
       "stars": 13,
       "forks": 1,
       "watchers": 1,
       "open_issues": 6,
       "size": 13482,
-      "views_14d": 31,
-      "unique_visitors_14d": 9,
+      "views_14d": 39,
+      "unique_visitors_14d": 12,
       "clones_14d": 8,
       "unique_cloners_14d": 8,
       "language": "Jupyter Notebook",
@@ -431,7 +431,7 @@
     "VectorInstitute/ai-deployment": {
       "repo_id": "VectorInstitute/ai-deployment",
       "name": "ai-deployment",
-      "timestamp": "2025-11-25T20:23:54.294800+00:00",
+      "timestamp": "2025-11-25T20:46:18.900969+00:00",
       "stars": 7,
       "forks": 29,
       "watchers": 4,
@@ -449,7 +449,7 @@
     "VectorInstitute/bias-mitigation-unlearning": {
       "repo_id": "VectorInstitute/bias-mitigation-unlearning",
       "name": "bias-mitigation-unlearning",
-      "timestamp": "2025-11-25T20:23:55.441809+00:00",
+      "timestamp": "2025-11-25T20:46:19.961721+00:00",
       "stars": 3,
       "forks": 1,
       "watchers": 1,
@@ -467,7 +467,7 @@
     "vectorinstitute/retrieval-augmented-generation": {
       "repo_id": "vectorinstitute/retrieval-augmented-generation",
       "name": "retrieval-augmented-generation",
-      "timestamp": "2025-11-25T20:23:56.556203+00:00",
+      "timestamp": "2025-11-25T20:46:21.124633+00:00",
       "stars": 31,
       "forks": 21,
       "watchers": 24,
@@ -485,8 +485,8 @@
     "VectorInstitute/crisp-nam": {
       "repo_id": "VectorInstitute/crisp-nam",
       "name": "crisp-nam",
-      "timestamp": "2025-11-25T20:23:57.588827+00:00",
-      "stars": 1,
+      "timestamp": "2025-11-25T20:46:22.184595+00:00",
+      "stars": 2,
       "forks": 0,
       "watchers": 0,
       "open_issues": 0,
@@ -497,13 +497,13 @@
       "unique_cloners_14d": 2,
       "language": "Python",
       "created_at": "2025-05-22T15:49:19Z",
-      "updated_at": "2025-10-02T02:09:31Z",
+      "updated_at": "2025-11-25T20:44:42Z",
       "topics": []
     },
     "VectorInstitute/mmlearn": {
       "repo_id": "VectorInstitute/mmlearn",
       "name": "mmlearn",
-      "timestamp": "2025-11-25T20:23:58.694368+00:00",
+      "timestamp": "2025-11-25T20:46:23.238733+00:00",
       "stars": 18,
       "forks": 3,
       "watchers": 4,
@@ -529,7 +529,7 @@
     "VectorInstitute/finetuning-and-alignment": {
       "repo_id": "VectorInstitute/finetuning-and-alignment",
       "name": "finetuning-and-alignment",
-      "timestamp": "2025-11-25T20:23:59.685306+00:00",
+      "timestamp": "2025-11-25T20:46:24.287617+00:00",
       "stars": 11,
       "forks": 3,
       "watchers": 30,
@@ -547,7 +547,7 @@
     "VectorInstitute/masksql": {
       "repo_id": "VectorInstitute/masksql",
       "name": "masksql",
-      "timestamp": "2025-11-25T20:24:00.854844+00:00",
+      "timestamp": "2025-11-25T20:46:25.354483+00:00",
       "stars": 1,
       "forks": 0,
       "watchers": 0,
@@ -565,7 +565,7 @@
     "VectorInstitute/fair-sense-ai": {
       "repo_id": "VectorInstitute/fair-sense-ai",
       "name": "fair-sense-ai",
-      "timestamp": "2025-11-25T20:24:01.912787+00:00",
+      "timestamp": "2025-11-25T20:46:26.558346+00:00",
       "stars": 5,
       "forks": 2,
       "watchers": 0,
@@ -583,13 +583,13 @@
     "VectorInstitute/FL4Health": {
       "repo_id": "VectorInstitute/FL4Health",
       "name": "FL4Health",
-      "timestamp": "2025-11-25T20:24:02.912770+00:00",
+      "timestamp": "2025-11-25T20:46:27.702433+00:00",
       "stars": 47,
       "forks": 15,
       "watchers": 3,
       "open_issues": 1,
       "size": 233988,
-      "views_14d": 191,
+      "views_14d": 192,
       "unique_visitors_14d": 36,
       "clones_14d": 130,
       "unique_cloners_14d": 49,
@@ -606,5 +606,5 @@
       ]
     }
   },
-  "last_updated": "2025-11-25T20:24:04.044508+00:00"
+  "last_updated": "2025-11-25T20:46:28.773689+00:00"
 }
