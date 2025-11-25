@@ -20,9 +20,9 @@ export default function MetricsChart({
   color = "#06b6d4",
   height = 200,
 }: MetricsChartProps) {
-  const { points, maxValue, minValue, range } = useMemo(() => {
+  const { points, maxValue, minValue } = useMemo(() => {
     if (data.length === 0) {
-      return { points: "", maxValue: 0, minValue: 0, range: 0 };
+      return { points: "", maxValue: 0, minValue: 0 };
     }
 
     const values = data.map((d) => d.value);
@@ -46,7 +46,6 @@ export default function MetricsChart({
       points: pathPoints,
       maxValue: max,
       minValue: min,
-      range: dataRange,
     };
   }, [data, height]);
 
