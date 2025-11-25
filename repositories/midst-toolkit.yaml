@@ -1,0 +1,9 @@
+name: midst-toolkit
+repo_id: VectorInstitute/midst-toolkit
+description: "A toolkit for facilitating MIA resiliency testing on diffusion-model-based synthetic tabular data"
+implementations:
+  - name: Membership Inference Attacks (MIA)
+    url: https://vectorinstitute.github.io/MIDST/
+type: tool
+year: 2025
+github_url: https://github.com/VectorInstitute/midst-toolkit
