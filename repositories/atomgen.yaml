@@ -1,5 +1,5 @@
 name: atomgen
-repo_id: atomgen
+repo_id: VectorInstitute/atomgen
 description: "Library for handling atomistic graph datasets focusing on transformer-based implementations, with utilities for training various models, experimenting with different pre-training tasks, and a suite of pre-trained models with huggingface integrations"
 implementations:
   - name: AtomFormer

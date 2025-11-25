@@ -1,5 +1,5 @@
 name: kg-rag
-repo_id: kg-rag
+repo_id: VectorInstitute/kg-rag
 description: "A comprehensive framework for Knowledge Graph Retrieval Augmented Generation (KG-RAG)."
 implementations:
   - name: KG-RAG

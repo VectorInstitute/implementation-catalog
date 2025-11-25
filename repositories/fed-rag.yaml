@@ -1,5 +1,5 @@
 name: fed-rag
-repo_id: fed-rag-repo
+repo_id: VectorInstitute/fed-rag
 description: "An open-source framework for fine-tuning retrieval-augmented generation (RAG) systems across centralized and federated architectures with comprehensive support for state-of-the-art RAG fine-tuning methods."
 implementations:
   - name: Basic fine-tuning with FL
