@@ -146,9 +146,9 @@ export default function AnalyticsPage() {
   }, [allRepoMetrics]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Header */}
-      <div className="bg-gradient-to-r from-vector-teal to-cyan-500 text-white">
+      <div className="bg-gradient-to-r from-vector-magenta to-vector-cobalt text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -156,25 +156,27 @@ export default function AnalyticsPage() {
             transition={{ duration: 0.6 }}
             className="flex items-center justify-between"
           >
-            <div>
-              <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-4">
+              <div className="bg-white/95 rounded-md px-2 py-1.5 shadow-sm flex-shrink-0">
                 <Image
-                  src={getAssetPath("vector-logo.svg")}
+                  src={getAssetPath("vector-logo.webp")}
                   alt="Vector Institute"
-                  width={120}
-                  height={40}
-                  className="h-10 w-auto brightness-0 invert"
+                  width={70}
+                  height={15}
+                  priority
                 />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">
-                Repository Analytics
-              </h1>
-              <p className="text-cyan-100 text-lg">
-                Implementation Catalog Performance Dashboard
-              </p>
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-2">
+                  Repository Analytics
+                </h1>
+                <p className="text-white/90 text-lg">
+                  GitHub Engagement & Community Impact Metrics
+                </p>
+              </div>
             </div>
             {historicalData?.last_updated && (
-              <div className="hidden md:flex items-center gap-2 text-cyan-100">
+              <div className="hidden md:flex items-center gap-2 text-white/90">
                 <Calendar className="w-5 h-5" />
                 <div className="text-right">
                   <div className="text-xs uppercase tracking-wide opacity-80">
@@ -224,34 +226,34 @@ export default function AnalyticsPage() {
             {/* Key Metrics */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-6 h-6 text-vector-teal" />
+                <BarChart3 className="w-6 h-6 text-vector-magenta" />
                 Key Metrics
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 <MetricCard
-                  icon={<Star className="w-5 h-5 text-yellow-500" />}
+                  icon={<Star className="w-5 h-5 text-vector-magenta" />}
                   label="Total Stars"
                   value={aggregateMetrics.totalStars.toLocaleString()}
                 />
                 <MetricCard
-                  icon={<GitFork className="w-5 h-5 text-blue-500" />}
+                  icon={<GitFork className="w-5 h-5 text-vector-magenta" />}
                   label="Total Forks"
                   value={aggregateMetrics.totalForks.toLocaleString()}
                 />
                 <MetricCard
-                  icon={<Eye className="w-5 h-5 text-purple-500" />}
+                  icon={<Eye className="w-5 h-5 text-vector-magenta" />}
                   label="Unique Visitors"
                   value={aggregateMetrics.totalVisitors.toLocaleString()}
                   sublabel="14-day period"
                 />
                 <MetricCard
-                  icon={<Download className="w-5 h-5 text-cyan-500" />}
+                  icon={<Download className="w-5 h-5 text-vector-magenta" />}
                   label="Unique Cloners"
                   value={aggregateMetrics.totalCloners.toLocaleString()}
                   sublabel="14-day period"
                 />
                 <MetricCard
-                  icon={<Award className="w-5 h-5 text-orange-500" />}
+                  icon={<Award className="w-5 h-5 text-vector-magenta" />}
                   label="Tracked Repos"
                   value={aggregateMetrics.totalRepos.toLocaleString()}
                 />
@@ -261,14 +263,14 @@ export default function AnalyticsPage() {
             {/* Top Performers */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                <Award className="w-6 h-6 text-vector-teal" />
+                <Award className="w-6 h-6 text-vector-magenta" />
                 Top Performers
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Most Cloned */}
                 <TopPerformerCard
                   title="Most Cloned (14d)"
-                  icon={<Download className="w-5 h-5 text-cyan-500" />}
+                  icon={<Download className="w-5 h-5 text-vector-magenta" />}
                   repos={topPerformers.byCloners}
                   valueKey="unique_cloners"
                   valueLabel="cloners"
@@ -277,7 +279,7 @@ export default function AnalyticsPage() {
                 {/* Most Visited */}
                 <TopPerformerCard
                   title="Most Visited (14d)"
-                  icon={<Eye className="w-5 h-5 text-purple-500" />}
+                  icon={<Eye className="w-5 h-5 text-vector-magenta" />}
                   repos={topPerformers.byVisitors}
                   valueKey="unique_visitors"
                   valueLabel="visitors"
@@ -286,7 +288,7 @@ export default function AnalyticsPage() {
                 {/* Most Starred */}
                 <TopPerformerCard
                   title="Most Starred"
-                  icon={<Star className="w-5 h-5 text-yellow-500" />}
+                  icon={<Star className="w-5 h-5 text-vector-magenta" />}
                   repos={topPerformers.byStars}
                   valueKey="stars"
                   valueLabel="stars"
@@ -352,7 +354,7 @@ export default function AnalyticsPage() {
                                 href={`https://github.com/${repo.repo_id}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm font-medium text-vector-teal hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300"
+                                className="flex items-center gap-2 text-sm font-medium text-vector-magenta hover:text-vector-cobalt dark:text-vector-magenta dark:hover:text-vector-cobalt"
                               >
                                 {repo.name}
                                 <ExternalLink className="w-3 h-3" />
@@ -482,14 +484,14 @@ function TopPerformerCard({
             className="flex items-center justify-between py-2 border-b border-gray-100 dark:border-gray-700 last:border-0"
           >
             <div className="flex items-center gap-3 flex-1 min-w-0">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-vector-teal to-cyan-400 flex items-center justify-center text-white text-xs font-bold">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-vector-magenta to-vector-cobalt flex items-center justify-center text-white text-xs font-bold">
                 {index + 1}
               </div>
               <a
                 href={`https://github.com/${repo.repo_id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-gray-900 dark:text-white hover:text-vector-teal dark:hover:text-cyan-400 truncate"
+                className="text-sm font-medium text-gray-900 dark:text-white hover:text-vector-magenta dark:hover:text-vector-magenta truncate"
                 title={repo.name}
               >
                 {repo.name}

@@ -12,13 +12,13 @@ interface HeroProps {
 
 export default function Hero({ totalImplementations, yearsOfResearch }: HeroProps) {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-gray-100 to-cyan-50">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100">
       {/* Sophisticated gradient background with layered blobs */}
       {/* Large ambient blob - top left */}
       <motion.div
         className="absolute -top-48 -left-48 w-[900px] h-[900px]"
         style={{
-          background: 'radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.15) 0%, rgba(219, 39, 119, 0.10) 35%, rgba(236, 72, 153, 0.05) 60%, transparent 80%)',
+          background: 'radial-gradient(circle at 50% 50%, rgba(235, 8, 138, 0.12) 0%, rgba(235, 8, 138, 0.08) 35%, rgba(235, 8, 138, 0.04) 60%, transparent 80%)',
           filter: 'blur(60px)',
           borderRadius: '63% 37% 54% 46% / 55% 48% 52% 45%',
         }}
@@ -44,7 +44,7 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
       <motion.div
         className="absolute -bottom-32 -right-32 w-[800px] h-[800px]"
         style={{
-          background: 'radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.12) 0%, rgba(236, 72, 153, 0.08) 35%, rgba(219, 39, 119, 0.04) 60%, transparent 80%)',
+          background: 'radial-gradient(circle at 50% 50%, rgba(49, 60, 255, 0.10) 0%, rgba(49, 60, 255, 0.06) 35%, rgba(49, 60, 255, 0.03) 60%, transparent 80%)',
           filter: 'blur(65px)',
           borderRadius: '45% 55% 52% 48% / 48% 55% 45% 52%',
         }}
@@ -71,7 +71,7 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px]"
         style={{
-          background: 'radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.10) 0%, rgba(236, 72, 153, 0.06) 40%, rgba(219, 39, 119, 0.03) 60%, transparent 80%)',
+          background: 'radial-gradient(circle at 50% 50%, rgba(235, 8, 138, 0.08) 0%, rgba(49, 60, 255, 0.06) 40%, rgba(235, 8, 138, 0.03) 60%, transparent 80%)',
           filter: 'blur(70px)',
           borderRadius: '52% 48% 45% 55% / 55% 45% 55% 45%',
         }}
@@ -96,7 +96,7 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
       <motion.div
         className="absolute top-1/4 right-1/4 w-[500px] h-[500px]"
         style={{
-          background: 'radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, rgba(236, 72, 153, 0.04) 50%, transparent 75%)',
+          background: 'radial-gradient(circle at 50% 50%, rgba(49, 60, 255, 0.08) 0%, rgba(49, 60, 255, 0.04) 50%, transparent 75%)',
           filter: 'blur(50px)',
           borderRadius: '58% 42% 48% 52% / 52% 55% 45% 48%',
         }}
@@ -141,9 +141,9 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-vector-dark to-vector-teal bg-clip-text text-transparent leading-tight"
+          className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 leading-tight"
         >
-          Implementation Catalog
+          Implementation <span className="bg-gradient-to-r from-vector-magenta to-vector-cobalt bg-clip-text text-transparent">Catalog</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -151,7 +151,7 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-lg md:text-xl mb-12 text-gray-700 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl mb-12 text-gray-800 max-w-3xl mx-auto leading-relaxed font-medium"
         >
           Explore cutting-edge AI implementations from Vector Institute researchers and engineers
         </motion.p>
@@ -164,21 +164,21 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
           className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12"
         >
           <div className="flex items-center gap-3">
-            <div className="p-3 bg-vector-teal/10 rounded-xl border border-vector-teal/30">
-              <Layers className="w-6 h-6 text-vector-teal" />
+            <div className="p-3 bg-vector-magenta/10 rounded-xl border border-vector-magenta/30">
+              <Layers className="w-6 h-6 text-vector-magenta" />
             </div>
             <div className="text-left">
               <div className="text-3xl md:text-4xl font-bold text-gray-900">{totalImplementations}</div>
-              <div className="text-sm text-gray-600 uppercase tracking-wide">Implementations</div>
+              <div className="text-sm text-gray-700 uppercase tracking-wide font-semibold">Implementations</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="p-3 bg-purple-500/10 rounded-xl border border-purple-500/30">
-              <TrendingUp className="w-6 h-6 text-purple-600" />
+            <div className="p-3 bg-vector-cobalt/10 rounded-xl border border-vector-cobalt/30">
+              <TrendingUp className="w-6 h-6 text-vector-cobalt" />
             </div>
             <div className="text-left">
               <div className="text-3xl md:text-4xl font-bold text-gray-900">{yearsOfResearch}</div>
-              <div className="text-sm text-gray-600 uppercase tracking-wide">Years of Research</div>
+              <div className="text-sm text-gray-700 uppercase tracking-wide font-semibold">Years of Research</div>
             </div>
           </div>
         </motion.div>
@@ -191,7 +191,7 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
           transition={{ duration: 0.6, delay: 0.8 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-vector-teal to-cyan-400 hover:from-vector-teal/90 hover:to-cyan-400/90 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg shadow-vector-teal/25 transition-all mb-8"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-vector-magenta to-vector-cobalt hover:from-vector-magenta/90 hover:to-vector-cobalt/90 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg shadow-vector-magenta/25 transition-all mb-8"
         >
           Browse Implementations
           <ArrowDown className="w-5 h-5 animate-bounce" />
