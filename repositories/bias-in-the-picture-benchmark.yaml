@@ -1,0 +1,18 @@
+name: bias-in-the-picture-benchmark
+repo_id: VectorInstitute/bias-in-the-picture-benchmark
+description: "Benchmarking VLMs with Social-Cue News Images and LLM-as-Judge Assessment - evaluates how vision-language models handle real news images containing demographic and social attributes"
+implementations:
+  - name: Bias in the Picture Benchmark
+    url: https://vectorinstitute.github.io/bias-in-the-picture-benchmark/
+  - name: LLM-as-Judge Evaluation Framework
+    url: null
+  - name: VLM Inference Pipeline
+    url: null
+public_datasets:
+  - name: Social-Cue News Images Dataset
+    url: https://github.com/VectorInstitute/bias-in-the-picture-benchmark/tree/main/data
+type: applied-research
+year: 2025
+github_url: https://github.com/VectorInstitute/bias-in-the-picture-benchmark
+paper_url: https://arxiv.org/abs/2509.19659
+bibtex: narayanan2025biaspicturebenchmarkingvlms
