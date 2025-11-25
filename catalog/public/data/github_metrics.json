@@ -3,25 +3,25 @@
     "VectorInstitute/midst-toolkit": {
       "repo_id": "VectorInstitute/midst-toolkit",
       "name": "midst-toolkit",
-      "timestamp": "2025-11-25T19:21:06.753737+00:00",
+      "timestamp": "2025-11-25T19:49:20.104832+00:00",
       "stars": 5,
       "forks": 1,
       "watchers": 0,
-      "open_issues": 2,
-      "size": 96931,
+      "open_issues": 1,
+      "size": 96930,
       "views_14d": 586,
       "unique_visitors_14d": 24,
       "clones_14d": 545,
       "unique_cloners_14d": 138,
       "language": "Python",
       "created_at": "2025-06-13T13:37:34Z",
-      "updated_at": "2025-11-24T14:59:44Z",
+      "updated_at": "2025-11-25T19:46:49Z",
       "topics": []
     },
     "VectorInstitute/atomgen": {
       "repo_id": "VectorInstitute/atomgen",
       "name": "atomgen",
-      "timestamp": "2025-11-25T19:21:07.856700+00:00",
+      "timestamp": "2025-11-25T19:49:21.125276+00:00",
       "stars": 8,
       "forks": 1,
       "watchers": 2,
@@ -51,7 +51,7 @@
     "VectorInstitute/anomaly-detection": {
       "repo_id": "VectorInstitute/anomaly-detection",
       "name": "anomaly-detection",
-      "timestamp": "2025-11-25T19:21:08.861428+00:00",
+      "timestamp": "2025-11-25T19:49:22.124990+00:00",
       "stars": 8,
       "forks": 0,
       "watchers": 19,
@@ -71,7 +71,7 @@
     "VectorInstitute/cyclops": {
       "repo_id": "VectorInstitute/cyclops",
       "name": "cyclops",
-      "timestamp": "2025-11-25T19:21:10.013726+00:00",
+      "timestamp": "2025-11-25T19:49:23.125672+00:00",
       "stars": 87,
       "forks": 14,
       "watchers": 8,
@@ -107,7 +107,7 @@
     "VectorInstitute/recommender-systems": {
       "repo_id": "VectorInstitute/recommender-systems",
       "name": "recommender-systems",
-      "timestamp": "2025-11-25T19:21:11.081524+00:00",
+      "timestamp": "2025-11-25T19:49:24.165457+00:00",
       "stars": 6,
       "forks": 0,
       "watchers": 30,
@@ -127,7 +127,7 @@
     "VectorInstitute/fed-rag": {
       "repo_id": "VectorInstitute/fed-rag",
       "name": "fed-rag",
-      "timestamp": "2025-11-25T19:21:12.177053+00:00",
+      "timestamp": "2025-11-25T19:49:25.111515+00:00",
       "stars": 137,
       "forks": 26,
       "watchers": 6,
@@ -151,13 +151,13 @@
     "VectorInstitute/odyssey": {
       "repo_id": "VectorInstitute/odyssey",
       "name": "odyssey",
-      "timestamp": "2025-11-25T19:21:13.219775+00:00",
+      "timestamp": "2025-11-25T19:49:26.116839+00:00",
       "stars": 45,
       "forks": 13,
       "watchers": 4,
       "open_issues": 8,
       "size": 106582,
-      "views_14d": 278,
+      "views_14d": 287,
       "unique_visitors_14d": 39,
       "clones_14d": 86,
       "unique_cloners_14d": 42,
@@ -177,7 +177,7 @@
     "VectorInstitute/shared-encoder": {
       "repo_id": "VectorInstitute/shared-encoder",
       "name": "shared-encoder",
-      "timestamp": "2025-11-25T19:21:14.246591+00:00",
+      "timestamp": "2025-11-25T19:49:27.070179+00:00",
       "stars": 9,
       "forks": 1,
       "watchers": 4,
@@ -202,7 +202,7 @@
     "VectorInstitute/privacy-enhancing-techniques": {
       "repo_id": "VectorInstitute/privacy-enhancing-techniques",
       "name": "privacy-enhancing-techniques",
-      "timestamp": "2025-11-25T19:21:15.284695+00:00",
+      "timestamp": "2025-11-25T19:49:28.009115+00:00",
       "stars": 15,
       "forks": 9,
       "watchers": 16,
@@ -227,7 +227,7 @@
     "VectorInstitute/self-supervised-learning": {
       "repo_id": "VectorInstitute/self-supervised-learning",
       "name": "self-supervised-learning",
-      "timestamp": "2025-11-25T19:21:16.381399+00:00",
+      "timestamp": "2025-11-25T19:49:28.956872+00:00",
       "stars": 2,
       "forks": 0,
       "watchers": 18,
@@ -250,7 +250,7 @@
     "VectorInstitute/FLorist": {
       "repo_id": "VectorInstitute/FLorist",
       "name": "FLorist",
-      "timestamp": "2025-11-25T19:21:17.446281+00:00",
+      "timestamp": "2025-11-25T19:49:29.910630+00:00",
       "stars": 10,
       "forks": 1,
       "watchers": 4,
@@ -268,7 +268,7 @@
     "VectorInstitute/bias-in-the-picture-benchmark": {
       "repo_id": "VectorInstitute/bias-in-the-picture-benchmark",
       "name": "bias-in-the-picture-benchmark",
-      "timestamp": "2025-11-25T19:21:18.532922+00:00",
+      "timestamp": "2025-11-25T19:49:30.823952+00:00",
       "stars": 2,
       "forks": 0,
       "watchers": 0,
@@ -286,7 +286,7 @@
     "VectorInstitute/kg-rag": {
       "repo_id": "VectorInstitute/kg-rag",
       "name": "kg-rag",
-      "timestamp": "2025-11-25T19:21:19.617554+00:00",
+      "timestamp": "2025-11-25T19:49:31.763478+00:00",
       "stars": 20,
       "forks": 10,
       "watchers": 2,
@@ -308,7 +308,7 @@
     "VectorInstitute/interpretability": {
       "repo_id": "VectorInstitute/interpretability",
       "name": "interpretability",
-      "timestamp": "2025-11-25T19:21:20.843819+00:00",
+      "timestamp": "2025-11-25T19:49:32.713581+00:00",
       "stars": 5,
       "forks": 0,
       "watchers": 7,
@@ -326,7 +326,7 @@
     "VectorInstitute/vector-inference": {
       "repo_id": "VectorInstitute/vector-inference",
       "name": "vector-inference",
-      "timestamp": "2025-11-25T19:21:21.975469+00:00",
+      "timestamp": "2025-11-25T19:49:33.726559+00:00",
       "stars": 84,
       "forks": 12,
       "watchers": 7,
@@ -352,7 +352,7 @@
     "VectorInstitute/diffusion-models": {
       "repo_id": "VectorInstitute/diffusion-models",
       "name": "diffusion-models",
-      "timestamp": "2025-11-25T19:21:23.060238+00:00",
+      "timestamp": "2025-11-25T19:49:34.737365+00:00",
       "stars": 5,
       "forks": 0,
       "watchers": 10,
@@ -373,16 +373,16 @@
     "VectorInstitute/pmc-data-extraction": {
       "repo_id": "VectorInstitute/pmc-data-extraction",
       "name": "pmc-data-extraction",
-      "timestamp": "2025-11-25T19:21:23.971966+00:00",
+      "timestamp": "2025-11-25T19:49:35.668621+00:00",
       "stars": 13,
       "forks": 1,
       "watchers": 1,
       "open_issues": 6,
       "size": 13482,
-      "views_14d": null,
-      "unique_visitors_14d": null,
-      "clones_14d": null,
-      "unique_cloners_14d": null,
+      "views_14d": 31,
+      "unique_visitors_14d": 9,
+      "clones_14d": 8,
+      "unique_cloners_14d": 8,
       "language": "Jupyter Notebook",
       "created_at": "2024-09-12T17:32:48Z",
       "updated_at": "2025-10-13T05:39:15Z",
@@ -391,7 +391,7 @@
     "VectorInstitute/ai-deployment": {
       "repo_id": "VectorInstitute/ai-deployment",
       "name": "ai-deployment",
-      "timestamp": "2025-11-25T19:21:24.974455+00:00",
+      "timestamp": "2025-11-25T19:49:36.646630+00:00",
       "stars": 7,
       "forks": 29,
       "watchers": 4,
@@ -409,7 +409,7 @@
     "VectorInstitute/bias-mitigation-unlearning": {
       "repo_id": "VectorInstitute/bias-mitigation-unlearning",
       "name": "bias-mitigation-unlearning",
-      "timestamp": "2025-11-25T19:21:26.144815+00:00",
+      "timestamp": "2025-11-25T19:49:37.707276+00:00",
       "stars": 3,
       "forks": 1,
       "watchers": 1,
@@ -427,7 +427,7 @@
     "vectorinstitute/retrieval-augmented-generation": {
       "repo_id": "vectorinstitute/retrieval-augmented-generation",
       "name": "retrieval-augmented-generation",
-      "timestamp": "2025-11-25T19:21:27.264724+00:00",
+      "timestamp": "2025-11-25T19:49:38.698670+00:00",
       "stars": 31,
       "forks": 21,
       "watchers": 24,
@@ -445,7 +445,7 @@
     "VectorInstitute/crisp-nam": {
       "repo_id": "VectorInstitute/crisp-nam",
       "name": "crisp-nam",
-      "timestamp": "2025-11-25T19:21:28.315924+00:00",
+      "timestamp": "2025-11-25T19:49:39.643109+00:00",
       "stars": 1,
       "forks": 0,
       "watchers": 0,
@@ -463,7 +463,7 @@
     "VectorInstitute/mmlearn": {
       "repo_id": "VectorInstitute/mmlearn",
       "name": "mmlearn",
-      "timestamp": "2025-11-25T19:21:29.269208+00:00",
+      "timestamp": "2025-11-25T19:49:40.760849+00:00",
       "stars": 18,
       "forks": 3,
       "watchers": 4,
@@ -489,7 +489,7 @@
     "VectorInstitute/finetuning-and-alignment": {
       "repo_id": "VectorInstitute/finetuning-and-alignment",
       "name": "finetuning-and-alignment",
-      "timestamp": "2025-11-25T19:21:30.198571+00:00",
+      "timestamp": "2025-11-25T19:49:41.960970+00:00",
       "stars": 11,
       "forks": 3,
       "watchers": 30,
@@ -507,7 +507,7 @@
     "VectorInstitute/masksql": {
       "repo_id": "VectorInstitute/masksql",
       "name": "masksql",
-      "timestamp": "2025-11-25T19:21:31.328731+00:00",
+      "timestamp": "2025-11-25T19:49:42.967539+00:00",
       "stars": 1,
       "forks": 0,
       "watchers": 0,
@@ -525,7 +525,7 @@
     "VectorInstitute/fair-sense-ai": {
       "repo_id": "VectorInstitute/fair-sense-ai",
       "name": "fair-sense-ai",
-      "timestamp": "2025-11-25T19:21:32.422363+00:00",
+      "timestamp": "2025-11-25T19:49:43.960215+00:00",
       "stars": 5,
       "forks": 2,
       "watchers": 0,
@@ -543,7 +543,7 @@
     "VectorInstitute/FL4Health": {
       "repo_id": "VectorInstitute/FL4Health",
       "name": "FL4Health",
-      "timestamp": "2025-11-25T19:21:33.376973+00:00",
+      "timestamp": "2025-11-25T19:49:44.954643+00:00",
       "stars": 47,
       "forks": 15,
       "watchers": 3,
@@ -566,5 +566,5 @@
       ]
     }
   },
-  "last_updated": "2025-11-25T19:21:34.414862+00:00"
+  "last_updated": "2025-11-25T19:49:46.037276+00:00"
 }
