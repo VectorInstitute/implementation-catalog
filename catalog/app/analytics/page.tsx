@@ -12,6 +12,9 @@ import {
   Award,
   ExternalLink,
   BarChart3,
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
 } from "lucide-react";
 import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
@@ -54,12 +57,24 @@ interface RepoMetrics {
   unique_visitors: number;
   unique_cloners: number;
   language: string | null;
+  description?: string;
 }
+
+interface RepositoryInfo {
+  repo_id: string;
+  description: string;
+}
+
+type SortColumn = "name" | "language" | "stars" | "forks" | "unique_visitors" | "unique_cloners";
+type SortDirection = "asc" | "desc";
 
 export default function AnalyticsPage() {
   // Load data dynamically to ensure fresh data during development
   const [historicalData, setHistoricalData] = useState<HistoricalData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [repoDescriptions, setRepoDescriptions] = useState<Record<string, string>>({});
+  const [sortColumn, setSortColumn] = useState<SortColumn>("unique_cloners");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
 
   useEffect(() => {
     const loadData = async () => {
@@ -68,12 +83,29 @@ export default function AnalyticsPage() {
           process.env.NEXT_PUBLIC_BASE_PATH === "true"
             ? "/implementation-catalog"
             : "";
-        const response = await fetch(
+
+        // Load historical metrics data
+        const metricsResponse = await fetch(
           `${basePath}/data/github_metrics_history.json`
         );
-        if (!response.ok) throw new Error("Failed to fetch metrics data");
-        const data = await response.json();
-        setHistoricalData(data);
+        if (!metricsResponse.ok) throw new Error("Failed to fetch metrics data");
+        const metricsData = await metricsResponse.json();
+        setHistoricalData(metricsData);
+
+        // Load repository descriptions
+        try {
+          const reposResponse = await fetch(`${basePath}/data/repositories.json`);
+          if (reposResponse.ok) {
+            const reposData = await reposResponse.json();
+            const descriptions: Record<string, string> = {};
+            reposData.repositories?.forEach((repo: RepositoryInfo) => {
+              descriptions[repo.repo_id] = repo.description;
+            });
+            setRepoDescriptions(descriptions);
+          }
+        } catch (error) {
+          console.warn("No repository descriptions found:", error);
+        }
       } catch (error) {
         console.warn("No historical metrics data found:", error);
         setHistoricalData(null);
@@ -101,10 +133,11 @@ export default function AnalyticsPage() {
           unique_visitors: latest.unique_visitors_14d || 0,
           unique_cloners: latest.unique_cloners_14d || 0,
           language: latest.language,
+          description: repoDescriptions[repo_id],
         } as RepoMetrics;
       })
       .filter((r): r is RepoMetrics => r !== null);
-  }, [historicalData]);
+  }, [historicalData, repoDescriptions]);
 
   // Calculate aggregate metrics
   const aggregateMetrics = useMemo(() => {
@@ -144,6 +177,54 @@ export default function AnalyticsPage() {
         .slice(0, 5),
     };
   }, [allRepoMetrics]);
+
+  // Sort repository metrics
+  const sortedRepoMetrics = useMemo(() => {
+    const sorted = [...allRepoMetrics].sort((a, b) => {
+      let aValue: string | number | null = a[sortColumn];
+      let bValue: string | number | null = b[sortColumn];
+
+      // Handle null/undefined values
+      if (aValue === null || aValue === undefined) aValue = "";
+      if (bValue === null || bValue === undefined) bValue = "";
+
+      // For strings, use locale compare
+      if (typeof aValue === "string" && typeof bValue === "string") {
+        return sortDirection === "asc"
+          ? aValue.localeCompare(bValue)
+          : bValue.localeCompare(aValue);
+      }
+
+      // For numbers
+      return sortDirection === "asc"
+        ? (aValue as number) - (bValue as number)
+        : (bValue as number) - (aValue as number);
+    });
+
+    return sorted;
+  }, [allRepoMetrics, sortColumn, sortDirection]);
+
+  // Handle column header click
+  const handleSort = (column: SortColumn) => {
+    if (sortColumn === column) {
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setSortColumn(column);
+      setSortDirection("desc");
+    }
+  };
+
+  // Get sort icon for a column
+  const getSortIcon = (column: SortColumn) => {
+    if (sortColumn !== column) {
+      return <ArrowUpDown className="w-3 h-3 opacity-50" />;
+    }
+    return sortDirection === "asc" ? (
+      <ArrowUp className="w-3 h-3" />
+    ) : (
+      <ArrowDown className="w-3 h-3" />
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
@@ -306,60 +387,95 @@ export default function AnalyticsPage() {
                   <table className="w-full">
                     <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
                       <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                          Repository
+                        <th
+                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                          onClick={() => handleSort("name")}
+                        >
+                          <div className="flex items-center gap-2">
+                            Repository
+                            {getSortIcon("name")}
+                          </div>
                         </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                          Language
+                        <th
+                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                          onClick={() => handleSort("language")}
+                        >
+                          <div className="flex items-center gap-2">
+                            Language
+                            {getSortIcon("language")}
+                          </div>
                         </th>
-                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                        <th
+                          className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                          onClick={() => handleSort("stars")}
+                        >
                           <div className="flex items-center justify-end gap-1">
                             <Star className="w-3 h-3" />
                             Stars
+                            {getSortIcon("stars")}
                           </div>
                         </th>
-                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                        <th
+                          className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                          onClick={() => handleSort("forks")}
+                        >
                           <div className="flex items-center justify-end gap-1">
                             <GitFork className="w-3 h-3" />
                             Forks
+                            {getSortIcon("forks")}
                           </div>
                         </th>
-                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                        <th
+                          className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                          onClick={() => handleSort("unique_visitors")}
+                        >
                           <div className="flex items-center justify-end gap-1">
                             <Eye className="w-3 h-3" />
                             Visitors (14d)
+                            {getSortIcon("unique_visitors")}
                           </div>
                         </th>
-                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                        <th
+                          className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                          onClick={() => handleSort("unique_cloners")}
+                        >
                           <div className="flex items-center justify-end gap-1">
                             <Download className="w-3 h-3" />
                             Cloners (14d)
+                            {getSortIcon("unique_cloners")}
                           </div>
                         </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                      {[...allRepoMetrics]
-                        .sort((a, b) => b.unique_cloners - a.unique_cloners)
-                        .map((repo, index) => (
-                          <motion.tr
-                            key={repo.repo_id}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.02 }}
-                            className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors"
+                      {sortedRepoMetrics.map((repo, index) => (
+                        <motion.tr
+                          key={repo.repo_id}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3, delay: index * 0.02 }}
+                          className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group"
+                        >
+                          <td
+                            className="px-6 py-4 whitespace-nowrap relative"
+                            title={repo.description}
                           >
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              <a
-                                href={`https://github.com/${repo.repo_id}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm font-medium text-vector-magenta hover:text-vector-cobalt dark:text-vector-magenta dark:hover:text-vector-cobalt"
-                              >
-                                {repo.name}
-                                <ExternalLink className="w-3 h-3" />
-                              </a>
-                            </td>
+                            <a
+                              href={`https://github.com/${repo.repo_id}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-sm font-medium text-vector-magenta hover:text-vector-cobalt dark:text-vector-magenta dark:hover:text-vector-cobalt"
+                            >
+                              {repo.name}
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                            {repo.description && (
+                              <div className="hidden group-hover:block absolute left-0 top-full mt-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
+                                {repo.description}
+                                <div className="absolute -top-2 left-8 w-4 h-4 bg-white dark:bg-gray-800 border-l-2 border-t-2 border-gray-200 dark:border-gray-600 transform rotate-45"></div>
+                              </div>
+                            )}
+                          </td>
                             <td className="px-6 py-4 whitespace-nowrap">
                               {repo.language ? (
                                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
