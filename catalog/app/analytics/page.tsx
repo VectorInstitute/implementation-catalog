@@ -15,6 +15,9 @@ import {
   ArrowUpDown,
   ArrowUp,
   ArrowDown,
+  Package,
+  Github,
+  Info,
 } from "lucide-react";
 import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
@@ -63,18 +66,60 @@ interface RepoMetrics {
 interface RepositoryInfo {
   repo_id: string;
   description: string;
+  package_name?: string;
+}
+
+interface PyPISnapshot {
+  package_name: string;
+  name: string;
+  repo_id: string;
+  timestamp: string;
+  downloads_last_day: number | null;
+  downloads_last_week: number | null;
+  downloads_last_month: number | null;
+  total_downloads: number | null;
+  version: string | null;
+  release_date: string | null;
+}
+
+interface PyPIPackageHistory {
+  name: string;
+  repo_id: string;
+  snapshots: PyPISnapshot[];
+}
+
+interface PyPIHistoricalData {
+  packages: Record<string, PyPIPackageHistory>;
+  last_updated: string | null;
+}
+
+interface PyPIMetrics {
+  package_name: string;
+  name: string;
+  repo_id: string;
+  downloads_last_day: number;
+  downloads_last_week: number;
+  downloads_last_month: number;
+  version: string | null;
+  description?: string;
 }
 
 type SortColumn = "name" | "language" | "stars" | "forks" | "unique_visitors" | "unique_cloners";
+type PyPISortColumn = "name" | "downloads_last_day" | "downloads_last_week" | "downloads_last_month" | "version";
 type SortDirection = "asc" | "desc";
+type ActiveTab = "github" | "pypi";
 
 export default function AnalyticsPage() {
   // Load data dynamically to ensure fresh data during development
   const [historicalData, setHistoricalData] = useState<HistoricalData | null>(null);
+  const [pypiData, setPypiData] = useState<PyPIHistoricalData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [repoDescriptions, setRepoDescriptions] = useState<Record<string, string>>({});
   const [sortColumn, setSortColumn] = useState<SortColumn>("unique_cloners");
+  const [pypiSortColumn, setPypiSortColumn] = useState<PyPISortColumn>("downloads_last_month");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const [pypiSortDirection, setPypiSortDirection] = useState<SortDirection>("desc");
+  const [activeTab, setActiveTab] = useState<ActiveTab>("github");
 
   useEffect(() => {
     const loadData = async () => {
@@ -91,6 +136,19 @@ export default function AnalyticsPage() {
         if (!metricsResponse.ok) throw new Error("Failed to fetch metrics data");
         const metricsData = await metricsResponse.json();
         setHistoricalData(metricsData);
+
+        // Load PyPI metrics data
+        try {
+          const pypiResponse = await fetch(
+            `${basePath}/data/pypi_metrics_history.json`
+          );
+          if (pypiResponse.ok) {
+            const pypiMetricsData = await pypiResponse.json();
+            setPypiData(pypiMetricsData);
+          }
+        } catch (error) {
+          console.warn("No PyPI metrics data found:", error);
+        }
 
         // Load repository descriptions
         try {
@@ -226,6 +284,118 @@ export default function AnalyticsPage() {
     );
   };
 
+  // PyPI Metrics Calculations
+  const allPypiMetrics = useMemo(() => {
+    if (!pypiData?.packages) return [];
+
+    return Object.entries(pypiData.packages)
+      .map(([package_name, pkg]) => {
+        if (pkg.snapshots.length === 0) return null;
+        const latest = pkg.snapshots[pkg.snapshots.length - 1];
+        return {
+          package_name,
+          name: pkg.name,
+          repo_id: pkg.repo_id,
+          downloads_last_day: latest.downloads_last_day || 0,
+          downloads_last_week: latest.downloads_last_week || 0,
+          downloads_last_month: latest.downloads_last_month || 0,
+          version: latest.version,
+          description: repoDescriptions[pkg.repo_id],
+        } as PyPIMetrics;
+      })
+      .filter((p): p is PyPIMetrics => p !== null);
+  }, [pypiData, repoDescriptions]);
+
+  // Calculate aggregate PyPI metrics
+  const aggregatePypiMetrics = useMemo(() => {
+    const totalDownloadsDay = allPypiMetrics.reduce(
+      (sum, p) => sum + p.downloads_last_day,
+      0
+    );
+    const totalDownloadsWeek = allPypiMetrics.reduce(
+      (sum, p) => sum + p.downloads_last_week,
+      0
+    );
+    const totalDownloadsMonth = allPypiMetrics.reduce(
+      (sum, p) => sum + p.downloads_last_month,
+      0
+    );
+
+    return {
+      totalDownloadsDay,
+      totalDownloadsWeek,
+      totalDownloadsMonth,
+      totalPackages: allPypiMetrics.length,
+      avgDownloadsPerPackage:
+        allPypiMetrics.length > 0
+          ? Math.round(totalDownloadsMonth / allPypiMetrics.length)
+          : 0,
+    };
+  }, [allPypiMetrics]);
+
+  // Get top PyPI performers
+  const topPypiPerformers = useMemo(() => {
+    return {
+      byDay: [...allPypiMetrics]
+        .sort((a, b) => b.downloads_last_day - a.downloads_last_day)
+        .slice(0, 5),
+      byWeek: [...allPypiMetrics]
+        .sort((a, b) => b.downloads_last_week - a.downloads_last_week)
+        .slice(0, 5),
+      byMonth: [...allPypiMetrics]
+        .sort((a, b) => b.downloads_last_month - a.downloads_last_month)
+        .slice(0, 5),
+    };
+  }, [allPypiMetrics]);
+
+  // Sort PyPI metrics
+  const sortedPypiMetrics = useMemo(() => {
+    const sorted = [...allPypiMetrics].sort((a, b) => {
+      let aValue: string | number | null = a[pypiSortColumn];
+      let bValue: string | number | null = b[pypiSortColumn];
+
+      // Handle null/undefined values
+      if (aValue === null || aValue === undefined) aValue = "";
+      if (bValue === null || bValue === undefined) bValue = "";
+
+      // For strings, use locale compare
+      if (typeof aValue === "string" && typeof bValue === "string") {
+        return pypiSortDirection === "asc"
+          ? aValue.localeCompare(bValue)
+          : bValue.localeCompare(aValue);
+      }
+
+      // For numbers
+      return pypiSortDirection === "asc"
+        ? (aValue as number) - (bValue as number)
+        : (bValue as number) - (aValue as number);
+    });
+
+    return sorted;
+  }, [allPypiMetrics, pypiSortColumn, pypiSortDirection]);
+
+  // Handle PyPI column header click
+  const handlePypiSort = (column: PyPISortColumn) => {
+    if (pypiSortColumn === column) {
+      setPypiSortDirection(pypiSortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setPypiSortColumn(column);
+      setPypiSortDirection("desc");
+    }
+  };
+
+  // Get PyPI sort icon
+  const getPypiSortIcon = (column: PyPISortColumn) => {
+    if (pypiSortColumn !== column) {
+      return <ArrowUpDown className="w-3 h-3 opacity-50" />;
+    }
+    return pypiSortDirection === "asc" ? (
+      <ArrowUp className="w-3 h-3" />
+    ) : (
+      <ArrowDown className="w-3 h-3" />
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Header */}
@@ -252,7 +422,7 @@ export default function AnalyticsPage() {
                   Repository Analytics
                 </h1>
                 <p className="text-white/90 text-lg">
-                  GitHub Engagement & Community Impact Metrics
+                  Engagement & Community Impact Metrics
                 </p>
               </div>
             </div>
@@ -304,6 +474,68 @@ export default function AnalyticsPage() {
           </div>
         ) : (
           <>
+            {/* Tabs */}
+            <div className="mb-8">
+              <div className="border-b border-gray-200 dark:border-gray-700">
+                <nav className="-mb-px flex space-x-8" aria-label="Tabs">
+                  <button
+                    onClick={() => setActiveTab("github")}
+                    className={`
+                      ${
+                        activeTab === "github"
+                          ? "border-vector-magenta text-vector-magenta"
+                          : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300"
+                      }
+                      group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm transition-colors
+                    `}
+                  >
+                    <Github
+                      className={`
+                        ${
+                          activeTab === "github"
+                            ? "text-vector-magenta"
+                            : "text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-400"
+                        }
+                        -ml-0.5 mr-2 h-5 w-5
+                      `}
+                    />
+                    <span>GitHub Metrics</span>
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("pypi")}
+                    className={`
+                      ${
+                        activeTab === "pypi"
+                          ? "border-vector-magenta text-vector-magenta"
+                          : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300"
+                      }
+                      group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm transition-colors
+                    `}
+                  >
+                    <Package
+                      className={`
+                        ${
+                          activeTab === "pypi"
+                            ? "text-vector-magenta"
+                            : "text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-400"
+                        }
+                        -ml-0.5 mr-2 h-5 w-5
+                      `}
+                    />
+                    <span>PyPI Metrics</span>
+                    {allPypiMetrics.length > 0 && (
+                      <span className="ml-2 py-0.5 px-2 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                        {allPypiMetrics.length}
+                      </span>
+                    )}
+                  </button>
+                </nav>
+              </div>
+            </div>
+
+            {/* GitHub Tab Content */}
+            {activeTab === "github" && (
+              <>
             {/* Key Metrics */}
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
@@ -508,6 +740,226 @@ export default function AnalyticsPage() {
                 </div>
               </div>
             </section>
+              </>
+            )}
+
+            {/* PyPI Tab Content */}
+            {activeTab === "pypi" && (
+              <>
+                {allPypiMetrics.length === 0 ? (
+                  <div className="text-center py-20">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 mb-4">
+                      <Package className="w-8 h-8 text-gray-400" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                      No PyPI Data Available
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
+                      PyPI metrics will be available once packages are added to the catalog with the package_name field.
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    {/* Info Banner */}
+                    <div className="mb-8 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+                      <div className="flex items-start gap-3">
+                        <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                        <div className="text-sm text-blue-900 dark:text-blue-100">
+                          <p className="font-medium mb-1">About PyPI Download Statistics</p>
+                          <p className="text-blue-800 dark:text-blue-200">
+                            These numbers represent package download activity (excluding CDN mirrors), not unique users.
+                            Downloads include CI/CD pipelines, automated builds, dependency installations, and development environment setups.
+                            A single user or organization typically generates many downloads through automation and tooling.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Key Metrics */}
+                    <section className="mb-12">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                        <BarChart3 className="w-6 h-6 text-vector-magenta" />
+                        Key Metrics
+                      </h2>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <MetricCard
+                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
+                          label="Downloads (Last Day)"
+                          value={aggregatePypiMetrics.totalDownloadsDay.toLocaleString()}
+                        />
+                        <MetricCard
+                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
+                          label="Downloads (Last Week)"
+                          value={aggregatePypiMetrics.totalDownloadsWeek.toLocaleString()}
+                        />
+                        <MetricCard
+                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
+                          label="Downloads (Last Month)"
+                          value={aggregatePypiMetrics.totalDownloadsMonth.toLocaleString()}
+                        />
+                        <MetricCard
+                          icon={<Package className="w-5 h-5 text-vector-magenta" />}
+                          label="Total Packages"
+                          value={aggregatePypiMetrics.totalPackages.toLocaleString()}
+                        />
+                      </div>
+                    </section>
+
+                    {/* Top Performers */}
+                    <section className="mb-12">
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                        <Award className="w-6 h-6 text-vector-magenta" />
+                        Top Performers
+                      </h2>
+                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <TopPypiPerformerCard
+                          title="Most Downloaded (Last Day)"
+                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
+                          packages={topPypiPerformers.byDay}
+                          valueKey="downloads_last_day"
+                          valueLabel="downloads"
+                        />
+                        <TopPypiPerformerCard
+                          title="Most Downloaded (Last Week)"
+                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
+                          packages={topPypiPerformers.byWeek}
+                          valueKey="downloads_last_week"
+                          valueLabel="downloads"
+                        />
+                        <TopPypiPerformerCard
+                          title="Most Downloaded (Last Month)"
+                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
+                          packages={topPypiPerformers.byMonth}
+                          valueKey="downloads_last_month"
+                          valueLabel="downloads"
+                        />
+                      </div>
+                    </section>
+
+                    {/* All Packages Table */}
+                    <section>
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                        All Packages
+                      </h2>
+                      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+                        <div className="overflow-x-auto">
+                          <table className="w-full">
+                            <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+                              <tr>
+                                <th
+                                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                  onClick={() => handlePypiSort("name")}
+                                >
+                                  <div className="flex items-center gap-2">
+                                    Package
+                                    {getPypiSortIcon("name")}
+                                  </div>
+                                </th>
+                                <th
+                                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                  onClick={() => handlePypiSort("version")}
+                                >
+                                  <div className="flex items-center gap-2">
+                                    Version
+                                    {getPypiSortIcon("version")}
+                                  </div>
+                                </th>
+                                <th
+                                  className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                  onClick={() => handlePypiSort("downloads_last_day")}
+                                >
+                                  <div className="flex items-center justify-end gap-1">
+                                    <Download className="w-3 h-3" />
+                                    Last Day
+                                    {getPypiSortIcon("downloads_last_day")}
+                                  </div>
+                                </th>
+                                <th
+                                  className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                  onClick={() => handlePypiSort("downloads_last_week")}
+                                >
+                                  <div className="flex items-center justify-end gap-1">
+                                    <Download className="w-3 h-3" />
+                                    Last Week
+                                    {getPypiSortIcon("downloads_last_week")}
+                                  </div>
+                                </th>
+                                <th
+                                  className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                  onClick={() => handlePypiSort("downloads_last_month")}
+                                >
+                                  <div className="flex items-center justify-end gap-1">
+                                    <Download className="w-3 h-3" />
+                                    Last Month
+                                    {getPypiSortIcon("downloads_last_month")}
+                                  </div>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                              {sortedPypiMetrics.map((pkg, index) => (
+                                <motion.tr
+                                  key={pkg.package_name}
+                                  initial={{ opacity: 0, y: 10 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ duration: 0.3, delay: index * 0.02 }}
+                                  className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group"
+                                >
+                                  <td
+                                    className="px-6 py-4 whitespace-nowrap relative"
+                                    title={pkg.description}
+                                  >
+                                    <a
+                                      href={`https://pypi.org/project/${pkg.package_name}/`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="flex items-center gap-2 text-sm font-medium text-vector-magenta hover:text-vector-cobalt dark:text-vector-magenta dark:hover:text-vector-cobalt"
+                                    >
+                                      {pkg.package_name}
+                                      <ExternalLink className="w-3 h-3" />
+                                    </a>
+                                    {pkg.description && (
+                                      <div className="hidden group-hover:block absolute left-0 top-full mt-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
+                                        {pkg.description}
+                                        <div className="absolute -top-2 left-8 w-4 h-4 bg-white dark:bg-gray-800 border-l-2 border-t-2 border-gray-200 dark:border-gray-600 transform rotate-45"></div>
+                                      </div>
+                                    )}
+                                  </td>
+                                  <td className="px-6 py-4 whitespace-nowrap">
+                                    {pkg.version ? (
+                                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                        {pkg.version}
+                                      </span>
+                                    ) : (
+                                      <span className="text-xs text-gray-400">—</span>
+                                    )}
+                                  </td>
+                                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-gray-900 dark:text-white">
+                                    {pkg.downloads_last_day > 0
+                                      ? pkg.downloads_last_day.toLocaleString()
+                                      : "—"}
+                                  </td>
+                                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">
+                                    {pkg.downloads_last_week > 0
+                                      ? pkg.downloads_last_week.toLocaleString()
+                                      : "—"}
+                                  </td>
+                                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">
+                                    {pkg.downloads_last_month > 0
+                                      ? pkg.downloads_last_month.toLocaleString()
+                                      : "—"}
+                                  </td>
+                                </motion.tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </section>
+                  </>
+                )}
+              </>
+            )}
           </>
         )}
       </div>
@@ -616,6 +1068,68 @@ function TopPerformerCard({
             <div className="flex-shrink-0 text-right">
               <div className="text-sm font-bold text-gray-900 dark:text-white">
                 {(repo[valueKey] as number).toLocaleString()}
+              </div>
+              <div className="text-xs text-gray-500 dark:text-gray-400">
+                {valueLabel}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+// Top PyPI Performer Card Component
+function TopPypiPerformerCard({
+  title,
+  icon,
+  packages,
+  valueKey,
+  valueLabel,
+}: {
+  title: string;
+  icon: React.ReactNode;
+  packages: PyPIMetrics[];
+  valueKey: keyof PyPIMetrics;
+  valueLabel: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm"
+    >
+      <div className="flex items-center gap-2 mb-4">
+        {icon}
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+          {title}
+        </h3>
+      </div>
+      <div className="space-y-3">
+        {packages.map((pkg, index) => (
+          <div
+            key={pkg.package_name}
+            className="flex items-center justify-between py-2 border-b border-gray-100 dark:border-gray-700 last:border-0"
+          >
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-vector-magenta to-vector-cobalt flex items-center justify-center text-white text-xs font-bold">
+                {index + 1}
+              </div>
+              <a
+                href={`https://pypi.org/project/${pkg.package_name}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-gray-900 dark:text-white hover:text-vector-magenta dark:hover:text-vector-magenta truncate"
+                title={pkg.package_name}
+              >
+                {pkg.package_name}
+              </a>
+            </div>
+            <div className="flex-shrink-0 text-right">
+              <div className="text-sm font-bold text-gray-900 dark:text-white">
+                {(pkg[valueKey] as number).toLocaleString()}
               </div>
               <div className="text-xs text-gray-500 dark:text-gray-400">
                 {valueLabel}

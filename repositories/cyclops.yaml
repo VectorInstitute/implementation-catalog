@@ -24,3 +24,4 @@ public_datasets:
 type: tool
 year: 2024
 github_url: https://github.com/VectorInstitute/cyclops
+package_name: pycyclops

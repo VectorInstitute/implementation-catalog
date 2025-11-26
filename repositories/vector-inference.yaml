@@ -4,6 +4,7 @@ description: "Efficient LLM inference on Slurm clusters using vLLM"
 type: tool
 year: 2024
 github_url: https://github.com/VectorInstitute/vector-inference
+package_name: vec-inf
 implementations:
   - "CLI"
   - "Python API"

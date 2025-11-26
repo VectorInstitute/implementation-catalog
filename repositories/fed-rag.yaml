@@ -9,5 +9,6 @@ implementations:
 type: tool
 year: 2025
 github_url: https://github.com/VectorInstitute/fed-rag
+package_name: fed-rag
 paper_url: https://doi.org/10.5281/zenodo.15092361
 bibtex: fajardo2025fedrag
