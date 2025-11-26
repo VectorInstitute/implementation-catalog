@@ -1,0 +1,95 @@
+{
+  "packages": {
+    "pycyclops": {
+      "name": "cyclops",
+      "repo_id": "VectorInstitute/cyclops",
+      "snapshots": [
+        {
+          "repo_id": "VectorInstitute/cyclops",
+          "name": "cyclops",
+          "package_name": "pycyclops",
+          "timestamp": "2025-11-26T20:48:59.853569+00:00",
+          "downloads_last_day": 3,
+          "downloads_last_week": 505,
+          "downloads_last_month": 1739,
+          "total_downloads": 5077,
+          "version": "0.2.12",
+          "release_date": "2025-01-22T16:00:42"
+        }
+      ]
+    },
+    "fed-rag": {
+      "name": "fed-rag",
+      "repo_id": "VectorInstitute/fed-rag",
+      "snapshots": [
+        {
+          "repo_id": "VectorInstitute/fed-rag",
+          "name": "fed-rag",
+          "package_name": "fed-rag",
+          "timestamp": "2025-11-26T20:49:01.143760+00:00",
+          "downloads_last_day": 6,
+          "downloads_last_week": 8,
+          "downloads_last_month": 36,
+          "total_downloads": 1949,
+          "version": "0.0.27",
+          "release_date": "2025-06-18T04:08:33"
+        }
+      ]
+    },
+    "vec-inf": {
+      "name": "vector-inference",
+      "repo_id": "VectorInstitute/vector-inference",
+      "snapshots": [
+        {
+          "repo_id": "VectorInstitute/vector-inference",
+          "name": "vector-inference",
+          "package_name": "vec-inf",
+          "timestamp": "2025-11-26T20:49:02.332426+00:00",
+          "downloads_last_day": 5,
+          "downloads_last_week": 12,
+          "downloads_last_month": 184,
+          "total_downloads": 890,
+          "version": "0.7.2",
+          "release_date": "2025-11-04T23:24:41"
+        }
+      ]
+    },
+    "fair-sense-ai": {
+      "name": "fair-sense-ai",
+      "repo_id": "VectorInstitute/fair-sense-ai",
+      "snapshots": [
+        {
+          "repo_id": "VectorInstitute/fair-sense-ai",
+          "name": "fair-sense-ai",
+          "package_name": "fair-sense-ai",
+          "timestamp": "2025-11-26T20:49:03.496054+00:00",
+          "downloads_last_day": 1,
+          "downloads_last_week": 10,
+          "downloads_last_month": 57,
+          "total_downloads": 801,
+          "version": "1.0.11",
+          "release_date": "2025-06-21T18:46:37"
+        }
+      ]
+    },
+    "fl4health": {
+      "name": "fl4health",
+      "repo_id": "VectorInstitute/FL4Health",
+      "snapshots": [
+        {
+          "repo_id": "VectorInstitute/FL4Health",
+          "name": "fl4health",
+          "package_name": "fl4health",
+          "timestamp": "2025-11-26T20:49:04.672537+00:00",
+          "downloads_last_day": 1,
+          "downloads_last_week": 62,
+          "downloads_last_month": 147,
+          "total_downloads": 1220,
+          "version": "0.4.0",
+          "release_date": "2025-07-15T20:39:30"
+        }
+      ]
+    }
+  },
+  "last_updated": "2025-11-26T20:49:04.672537+00:00"
+}

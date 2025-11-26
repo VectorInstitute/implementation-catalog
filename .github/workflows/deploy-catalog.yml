@@ -53,10 +53,14 @@ jobs:
           python-version: '3.12'
 
       - name: Install Python dependencies
-        run: uv pip install --system pyyaml
+        run: uv pip install --system pyyaml requests
 
       - name: Sync YAML repositories to JSON
         run: python scripts/sync_repositories_to_json.py
+
+      - name: Collect PyPI metrics
+        run: python scripts/collect_pypi_metrics.py
+        continue-on-error: true
 
       - name: Install Node dependencies
         working-directory: catalog

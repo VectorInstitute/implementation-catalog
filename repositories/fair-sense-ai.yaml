@@ -19,3 +19,4 @@ implementations:
 type: tool
 year: 2025
 github_url: https://github.com/VectorInstitute/fair-sense-ai
+package_name: fair-sense-ai

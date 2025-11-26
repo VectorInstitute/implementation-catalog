@@ -41,3 +41,4 @@ implementations:
 type: tool
 year: 2024
 github_url: https://github.com/VectorInstitute/fl4health
+package_name: fl4health
