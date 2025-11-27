@@ -692,7 +692,10 @@ export default function AnalyticsPage() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                      {sortedRepoMetrics.map((repo, index) => (
+                      {sortedRepoMetrics.map((repo, index) => {
+                        // Show tooltip below for first 3 rows, above for the rest
+                        const showTooltipBelow = index < 3;
+                        return (
                         <motion.tr
                           key={repo.repo_id}
                           initial={{ opacity: 0, y: 10 }}
@@ -713,9 +716,9 @@ export default function AnalyticsPage() {
                               <ExternalLink className="w-3 h-3" />
                             </a>
                             {repo.description && (
-                              <div className="hidden group-hover:block absolute left-0 bottom-full mb-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
+                              <div className={`hidden group-hover:block absolute left-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words`}>
                                 {repo.description}
-                                <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white dark:bg-gray-800 border-r-2 border-b-2 border-gray-200 dark:border-gray-600 transform rotate-45"></div>
+                                <div className={`absolute ${showTooltipBelow ? '-top-2 left-8 border-l-2 border-t-2' : '-bottom-2 left-8 border-r-2 border-b-2'} w-4 h-4 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 transform rotate-45`}></div>
                               </div>
                             )}
                           </td>
@@ -745,7 +748,8 @@ export default function AnalyticsPage() {
                                 : "—"}
                             </td>
                           </motion.tr>
-                        ))}
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
@@ -974,7 +978,10 @@ export default function AnalyticsPage() {
                               </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                              {sortedPypiMetrics.map((pkg, index) => (
+                              {sortedPypiMetrics.map((pkg, index) => {
+                                // Show tooltip below for first 3 rows, above for the rest
+                                const showTooltipBelow = index < 3;
+                                return (
                                 <motion.tr
                                   key={pkg.package_name}
                                   initial={{ opacity: 0, y: 10 }}
@@ -1000,9 +1007,9 @@ export default function AnalyticsPage() {
                                       </div>
                                     </div>
                                     {pkg.description && (
-                                      <div className="hidden group-hover:block absolute left-0 bottom-full mb-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
+                                      <div className={`hidden group-hover:block absolute left-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words`}>
                                         {pkg.description}
-                                        <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white dark:bg-gray-800 border-r-2 border-b-2 border-gray-200 dark:border-gray-600 transform rotate-45"></div>
+                                        <div className={`absolute ${showTooltipBelow ? '-top-2 left-8 border-l-2 border-t-2' : '-bottom-2 left-8 border-r-2 border-b-2'} w-4 h-4 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 transform rotate-45`}></div>
                                       </div>
                                     )}
                                   </td>
@@ -1031,7 +1038,8 @@ export default function AnalyticsPage() {
                                       : "—"}
                                   </td>
                                 </motion.tr>
-                              ))}
+                                );
+                              })}
                             </tbody>
                           </table>
                         </div>
