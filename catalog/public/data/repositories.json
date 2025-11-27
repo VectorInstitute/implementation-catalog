@@ -185,39 +185,39 @@
       "implementations": [
         {
           "name": "LIME",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/LIME"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Post-hoc/LIME"
         },
         {
           "name": "SHAP",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/SHAP"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Post-hoc/SHAP"
         },
         {
           "name": "PDP (Partial Dependence Plot)",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/partial_dependence_plots"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Post-hoc/partial_dependence_plots"
         },
         {
           "name": "ALE (Accumulated Local Effects)",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/acc_local_effects"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Post-hoc/acc_local_effects"
         },
         {
           "name": "Integrated Gradients",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/integrated_gradients"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Post-hoc/integrated_gradients"
         },
         {
           "name": "Counterfactual Explanations",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/counterfactual"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Post-hoc/counterfactual"
         },
         {
           "name": "Generalized Additive Model",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/GAM"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Intepretable-models/Tabular/GAM"
         },
         {
           "name": "Neural Additive Model",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/NAM-NodeGAM"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Intepretable-models/Tabular/NAM-NodeGAM"
         },
         {
           "name": "Explainable Boosting Machine",
-          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/EBM"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/implementations/Intepretable-models/Tabular/EBM"
         }
       ],
       "public_datasets": [
@@ -1041,5 +1041,5 @@
   ],
   "totalImplementations": 136,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-11-26T21:41:00.884001"
+  "lastUpdated": "2025-11-26T21:46:26.137728"
 }
