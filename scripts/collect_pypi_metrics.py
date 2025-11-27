@@ -23,7 +23,7 @@ def get_packages_from_yaml() -> list[dict[str, str]]:
     Returns
     -------
     list[dict[str, str]]
-        List of dictionaries containing repo_id, name, and package_name.
+        List of dictionaries containing repo_id, name, package_name, and type.
 
     """
     repos_dir = Path("repositories")
@@ -42,13 +42,15 @@ def get_packages_from_yaml() -> list[dict[str, str]]:
         with open(yaml_file, encoding="utf-8") as f:
             repo_data = yaml.safe_load(f)
 
-        # Only include repos with package_name field (tools with PyPI packages)
-        if "package_name" in repo_data and repo_data.get("type") == "tool":
+        # Include repos with package_name field from both tools and bootcamps
+        repo_type = repo_data.get("type")
+        if "package_name" in repo_data and repo_type in ["tool", "bootcamp"]:
             packages.append(
                 {
                     "repo_id": repo_data["repo_id"],
                     "name": repo_data["name"],
                     "package_name": repo_data["package_name"],
+                    "type": repo_type,
                 }
             )
 
@@ -171,7 +173,7 @@ def fetch_package_metrics(package_info: dict[str, str]) -> dict[str, Any]:
     Parameters
     ----------
     package_info : dict[str, str]
-        Dictionary containing repo_id, name, and package_name.
+        Dictionary containing repo_id, name, package_name, and type.
 
     Returns
     -------
@@ -186,6 +188,7 @@ def fetch_package_metrics(package_info: dict[str, str]) -> dict[str, Any]:
         "repo_id": package_info["repo_id"],
         "name": package_info["name"],
         "package_name": package_name,
+        "type": package_info["type"],
         "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "downloads_last_day": None,
         "downloads_last_week": None,
@@ -271,8 +274,12 @@ def update_historical_data(
         historical_data["packages"][package_name] = {
             "name": metrics["name"],
             "repo_id": metrics["repo_id"],
+            "type": metrics["type"],
             "snapshots": [],
         }
+    else:
+        # Update type in case it changed
+        historical_data["packages"][package_name]["type"] = metrics["type"]
 
     # Add new snapshot (keep last 400 data points, ~2 years of weekly data)
     historical_data["packages"][package_name]["snapshots"].append(metrics)

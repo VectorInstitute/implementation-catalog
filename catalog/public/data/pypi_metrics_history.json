@@ -15,8 +15,34 @@
           "total_downloads": 5077,
           "version": "0.2.12",
           "release_date": "2025-01-22T16:00:42"
+        },
+        {
+          "repo_id": "VectorInstitute/cyclops",
+          "name": "cyclops",
+          "package_name": "pycyclops",
+          "timestamp": "2025-11-27T02:08:27.849809+00:00",
+          "downloads_last_day": 111,
+          "downloads_last_week": 613,
+          "downloads_last_month": 1847,
+          "total_downloads": 5179,
+          "version": "0.2.12",
+          "release_date": "2025-01-22T16:00:42"
+        },
+        {
+          "repo_id": "VectorInstitute/cyclops",
+          "name": "cyclops",
+          "package_name": "pycyclops",
+          "type": "tool",
+          "timestamp": "2025-11-27T02:18:58.593894+00:00",
+          "downloads_last_day": 111,
+          "downloads_last_week": 613,
+          "downloads_last_month": 1847,
+          "total_downloads": 5179,
+          "version": "0.2.12",
+          "release_date": "2025-01-22T16:00:42"
         }
-      ]
+      ],
+      "type": "tool"
     },
     "fed-rag": {
       "name": "fed-rag",
@@ -33,8 +59,34 @@
           "total_downloads": 1949,
           "version": "0.0.27",
           "release_date": "2025-06-18T04:08:33"
+        },
+        {
+          "repo_id": "VectorInstitute/fed-rag",
+          "name": "fed-rag",
+          "package_name": "fed-rag",
+          "timestamp": "2025-11-27T02:08:29.262185+00:00",
+          "downloads_last_day": 108,
+          "downloads_last_week": 110,
+          "downloads_last_month": 138,
+          "total_downloads": 2034,
+          "version": "0.0.27",
+          "release_date": "2025-06-18T04:08:33"
+        },
+        {
+          "repo_id": "VectorInstitute/fed-rag",
+          "name": "fed-rag",
+          "package_name": "fed-rag",
+          "type": "tool",
+          "timestamp": "2025-11-27T02:18:59.987748+00:00",
+          "downloads_last_day": 108,
+          "downloads_last_week": 110,
+          "downloads_last_month": 138,
+          "total_downloads": 2034,
+          "version": "0.0.27",
+          "release_date": "2025-06-18T04:08:33"
         }
-      ]
+      ],
+      "type": "tool"
     },
     "vec-inf": {
       "name": "vector-inference",
@@ -51,8 +103,34 @@
           "total_downloads": 890,
           "version": "0.7.2",
           "release_date": "2025-11-04T23:24:41"
+        },
+        {
+          "repo_id": "VectorInstitute/vector-inference",
+          "name": "vector-inference",
+          "package_name": "vec-inf",
+          "timestamp": "2025-11-27T02:08:30.553780+00:00",
+          "downloads_last_day": 6,
+          "downloads_last_week": 13,
+          "downloads_last_month": 185,
+          "total_downloads": 889,
+          "version": "0.7.2",
+          "release_date": "2025-11-04T23:24:41"
+        },
+        {
+          "repo_id": "VectorInstitute/vector-inference",
+          "name": "vector-inference",
+          "package_name": "vec-inf",
+          "type": "tool",
+          "timestamp": "2025-11-27T02:19:01.146546+00:00",
+          "downloads_last_day": 6,
+          "downloads_last_week": 13,
+          "downloads_last_month": 185,
+          "total_downloads": 889,
+          "version": "0.7.2",
+          "release_date": "2025-11-04T23:24:41"
         }
-      ]
+      ],
+      "type": "tool"
     },
     "fair-sense-ai": {
       "name": "fair-sense-ai",
@@ -69,8 +147,34 @@
           "total_downloads": 801,
           "version": "1.0.11",
           "release_date": "2025-06-21T18:46:37"
+        },
+        {
+          "repo_id": "VectorInstitute/fair-sense-ai",
+          "name": "fair-sense-ai",
+          "package_name": "fair-sense-ai",
+          "timestamp": "2025-11-27T02:08:31.746544+00:00",
+          "downloads_last_day": 3,
+          "downloads_last_week": 12,
+          "downloads_last_month": 59,
+          "total_downloads": 802,
+          "version": "1.0.11",
+          "release_date": "2025-06-21T18:46:37"
+        },
+        {
+          "repo_id": "VectorInstitute/fair-sense-ai",
+          "name": "fair-sense-ai",
+          "package_name": "fair-sense-ai",
+          "type": "tool",
+          "timestamp": "2025-11-27T02:19:03.490408+00:00",
+          "downloads_last_day": 3,
+          "downloads_last_week": 12,
+          "downloads_last_month": 59,
+          "total_downloads": 802,
+          "version": "1.0.11",
+          "release_date": "2025-06-21T18:46:37"
         }
-      ]
+      ],
+      "type": "tool"
     },
     "fl4health": {
       "name": "fl4health",
@@ -87,9 +191,55 @@
           "total_downloads": 1220,
           "version": "0.4.0",
           "release_date": "2025-07-15T20:39:30"
+        },
+        {
+          "repo_id": "VectorInstitute/FL4Health",
+          "name": "fl4health",
+          "package_name": "fl4health",
+          "timestamp": "2025-11-27T02:08:33.025147+00:00",
+          "downloads_last_day": 3,
+          "downloads_last_week": 64,
+          "downloads_last_month": 149,
+          "total_downloads": 1218,
+          "version": "0.4.0",
+          "release_date": "2025-07-15T20:39:30"
+        },
+        {
+          "repo_id": "VectorInstitute/FL4Health",
+          "name": "fl4health",
+          "package_name": "fl4health",
+          "type": "tool",
+          "timestamp": "2025-11-27T02:19:04.646673+00:00",
+          "downloads_last_day": 3,
+          "downloads_last_week": 64,
+          "downloads_last_month": 149,
+          "total_downloads": 1218,
+          "version": "0.4.0",
+          "release_date": "2025-07-15T20:39:30"
+        }
+      ],
+      "type": "tool"
+    },
+    "aieng-rag-utils": {
+      "name": "retrieval-augmented-generation",
+      "repo_id": "vectorinstitute/retrieval-augmented-generation",
+      "type": "bootcamp",
+      "snapshots": [
+        {
+          "repo_id": "vectorinstitute/retrieval-augmented-generation",
+          "name": "retrieval-augmented-generation",
+          "package_name": "aieng-rag-utils",
+          "type": "bootcamp",
+          "timestamp": "2025-11-27T02:19:02.293328+00:00",
+          "downloads_last_day": 1,
+          "downloads_last_week": 3,
+          "downloads_last_month": 29,
+          "total_downloads": 419,
+          "version": "1.0.0",
+          "release_date": "2025-07-29T20:43:26"
         }
       ]
     }
   },
-  "last_updated": "2025-11-26T20:49:04.672537+00:00"
+  "last_updated": "2025-11-27T02:19:04.646673+00:00"
 }
