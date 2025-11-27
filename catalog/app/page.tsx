@@ -62,6 +62,37 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Info Blurb */}
+            <div className="max-w-3xl mx-auto mb-8">
+              <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-5 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-vector-cobalt dark:text-vector-magenta flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">What&apos;s an Implementation?</h3>
+                    <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+                      Executable code for ML algorithms, models, and techniques spanning individual methods to comprehensive libraries:
+                    </p>
+                    <ul className="text-xs text-gray-700 dark:text-gray-300 space-y-1 ml-3">
+                      <li className="flex items-start gap-1.5">
+                        <span className="text-vector-cobalt dark:text-vector-magenta">•</span>
+                        <span><span className="font-medium text-vector-cobalt dark:text-vector-magenta">Applied Research</span> — novel experimentation and techniques often accompanying published work</span>
+                      </li>
+                      <li className="flex items-start gap-1.5">
+                        <span className="text-vector-cobalt dark:text-vector-magenta">•</span>
+                        <span><span className="font-medium text-vector-cobalt dark:text-vector-magenta">Bootcamp</span> — demos and tutorials</span>
+                      </li>
+                      <li className="flex items-start gap-1.5">
+                        <span className="text-vector-cobalt dark:text-vector-magenta">•</span>
+                        <span><span className="font-medium text-vector-cobalt dark:text-vector-magenta">Tool</span> — production-ready libraries for real-world use</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Search Bar */}
             <SearchBar />
 
