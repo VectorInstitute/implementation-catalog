@@ -108,7 +108,8 @@
       ],
       "type": "tool",
       "year": 2025,
-      "github_url": "https://github.com/VectorInstitute/fair-sense-ai"
+      "github_url": "https://github.com/VectorInstitute/fair-sense-ai",
+      "package_name": "fair-sense-ai"
     },
     {
       "name": "fed-rag",
@@ -127,6 +128,7 @@
       "type": "tool",
       "year": 2025,
       "github_url": "https://github.com/VectorInstitute/fed-rag",
+      "package_name": "fed-rag",
       "paper_url": "https://doi.org/10.5281/zenodo.15092361",
       "bibtex": "fajardo2025fedrag"
     },
@@ -183,39 +185,39 @@
       "implementations": [
         {
           "name": "LIME",
-          "url": "https://christophm.github.io/interpretable-ml-book/lime.html"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/LIME"
         },
         {
           "name": "SHAP",
-          "url": "https://arxiv.org/abs/1705.07874"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/SHAP"
         },
         {
           "name": "PDP (Partial Dependence Plot)",
-          "url": "https://scikit-learn.org/stable/modules/partial_dependence.html"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/partial_dependence_plots"
         },
         {
           "name": "ALE (Accumulated Local Effects)",
-          "url": "https://christophm.github.io/interpretable-ml-book/ale.html"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/acc_local_effects"
         },
         {
           "name": "Integrated Gradients",
-          "url": "https://www.tensorflow.org/tutorials/interpretability/integrated_gradients"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/integrated_gradients"
         },
         {
           "name": "Counterfactual Explanations",
-          "url": "https://christophm.github.io/interpretable-ml-book/counterfactual.html"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/counterfactual"
         },
         {
           "name": "Generalized Additive Model",
-          "url": "https://en.wikipedia.org/wiki/Generalized_additive_model"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/GAM"
         },
         {
           "name": "Neural Additive Model",
-          "url": "https://arxiv.org/abs/2004.13912"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/NAM-NodeGAM"
         },
         {
           "name": "Explainable Boosting Machine",
-          "url": "https://interpret.ml/docs/ebm.html"
+          "url": "https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/EBM"
         }
       ],
       "public_datasets": [
@@ -380,11 +382,11 @@
       "implementations": [
         {
           "name": "AWS",
-          "url": "https://aws.amazon.com/"
+          "url": "https://github.com/VectorInstitute/ai-deployment/tree/main/implementations/aws"
         },
         {
           "name": "GCP",
-          "url": "https://cloud.google.com/"
+          "url": "https://github.com/VectorInstitute/ai-deployment/tree/main/implementations/gcp"
         }
       ],
       "type": "bootcamp",
@@ -503,7 +505,8 @@
       ],
       "type": "tool",
       "year": 2024,
-      "github_url": "https://github.com/VectorInstitute/cyclops"
+      "github_url": "https://github.com/VectorInstitute/cyclops",
+      "package_name": "pycyclops"
     },
     {
       "name": "diffusion-models",
@@ -543,7 +546,7 @@
       ],
       "type": "bootcamp",
       "year": 2024,
-      "github_url": "https://github.com/VectorInstitute/diffusion_models"
+      "github_url": "https://github.com/VectorInstitute/diffusion-models"
     },
     {
       "name": "finetuning-and-alignment",
@@ -669,7 +672,8 @@
       ],
       "type": "tool",
       "year": 2024,
-      "github_url": "https://github.com/VectorInstitute/fl4health"
+      "github_url": "https://github.com/VectorInstitute/fl4health",
+      "package_name": "fl4health"
     },
     {
       "name": "florist",
@@ -858,7 +862,7 @@
       "type": "bootcamp",
       "year": 2024,
       "github_url": "https://github.com/VectorInstitute/retrieval-augmented-generation",
-      "platform_url": "https://89kc2habps6ig.pit-1.try.coder.app/templates/rag-bootcamp/"
+      "package_name": "aieng-rag-utils"
     },
     {
       "name": "self-supervised-learning",
@@ -867,19 +871,19 @@
       "implementations": [
         {
           "name": "Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)",
-          "url": "https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf"
+          "url": "https://github.com/VectorInstitute/self-supervised-learning/tree/main/src/contrastive_learning"
         },
         {
           "name": "SimMTM",
-          "url": "https://arxiv.org/abs/2302.00861"
+          "url": "https://github.com/VectorInstitute/self-supervised-learning/tree/main/src/masked_modelling/simmtm"
         },
         {
           "name": "TabRet",
-          "url": "https://arxiv.org/abs/2303.15747"
+          "url": "https://github.com/VectorInstitute/self-supervised-learning/tree/main/src/masked_modelling/tabret"
         },
         {
           "name": "Data2Vec",
-          "url": "https://arxiv.org/abs/2202.03555"
+          "url": "https://github.com/VectorInstitute/self-supervised-learning/tree/main/src/self_distillation"
         }
       ],
       "public_datasets": [
@@ -903,6 +907,7 @@
       "type": "tool",
       "year": 2024,
       "github_url": "https://github.com/VectorInstitute/vector-inference",
+      "package_name": "vec-inf",
       "implementations": [
         "CLI",
         "Python API",
@@ -1036,5 +1041,5 @@
   ],
   "totalImplementations": 136,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-11-25T15:22:49.432085"
+  "lastUpdated": "2025-11-26T21:41:00.884001"
 }

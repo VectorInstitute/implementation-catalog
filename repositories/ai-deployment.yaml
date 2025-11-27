@@ -3,9 +3,9 @@ repo_id: VectorInstitute/ai-deployment
 description: "A repository with reference implementations for deploying AI models in production environments, focusing on best practices and cloud-native solutions."
 implementations:
   - name: AWS
-    url: https://aws.amazon.com/
+    url: https://github.com/VectorInstitute/ai-deployment/tree/main/implementations/aws
   - name: GCP
-    url: https://cloud.google.com/
+    url: https://github.com/VectorInstitute/ai-deployment/tree/main/implementations/gcp
 type: bootcamp
 year: 2024
 github_url: https://github.com/VectorInstitute/ai-deployment

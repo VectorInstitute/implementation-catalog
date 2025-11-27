@@ -3,13 +3,13 @@ repo_id: VectorInstitute/self-supervised-learning
 description: "A repository with reference implementations of self-supervised learning techniques"
 implementations:
   - name: Internal Contrastive Learning (ICL) + Latent Outlier Exposure (LOE)
-    url: https://proceedings.mlr.press/v162/qiu22b/qiu22b.pdf
+    url: https://github.com/VectorInstitute/self-supervised-learning/tree/main/src/contrastive_learning
   - name: SimMTM
-    url: https://arxiv.org/abs/2302.00861
+    url: https://github.com/VectorInstitute/self-supervised-learning/tree/main/src/masked_modelling/simmtm
   - name: TabRet
-    url: https://arxiv.org/abs/2303.15747
+    url: https://github.com/VectorInstitute/self-supervised-learning/tree/main/src/masked_modelling/tabret
   - name: Data2Vec
-    url: https://arxiv.org/abs/2202.03555
+    url: https://github.com/VectorInstitute/self-supervised-learning/tree/main/src/self_distillation
 public_datasets:
   - name: STL-10
     url: https://cs.stanford.edu/~acoates/stl10/
