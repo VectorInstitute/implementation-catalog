@@ -42,9 +42,13 @@ def get_packages_from_yaml() -> list[dict[str, str]]:
         with open(yaml_file, encoding="utf-8") as f:
             repo_data = yaml.safe_load(f)
 
-        # Include repos with package_name field from both tools and bootcamps
+        # Include repos with package_name field from tools, bootcamps, and applied-research
         repo_type = repo_data.get("type")
-        if "package_name" in repo_data and repo_type in ["tool", "bootcamp"]:
+        if "package_name" in repo_data and repo_type in [
+            "tool",
+            "bootcamp",
+            "applied-research",
+        ]:
             packages.append(
                 {
                     "repo_id": repo_data["repo_id"],

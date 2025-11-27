@@ -1,0 +1,16 @@
+name: vbll
+repo_id: VectorInstitute/vbll
+description: "Simple and computationally efficient neural network uncertainty estimation via Variational Bayesian Last Layers - a deterministic variational approach for Bayesian last layers with quadratic complexity in last layer width"
+implementations:
+  - name: Variational Bayesian Last Layers (VBLL)
+    url: https://arxiv.org/abs/2404.11599
+  - name: VBLL for Regression
+    url: null
+  - name: VBLL for Classification
+    url: null
+type: applied-research
+year: 2024
+github_url: https://github.com/VectorInstitute/vbll
+paper_url: https://arxiv.org/abs/2404.11599
+bibtex: harrison2024vbll
+package_name: vbll

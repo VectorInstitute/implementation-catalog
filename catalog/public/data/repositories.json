@@ -901,6 +901,31 @@
       "github_url": "https://github.com/VectorInstitute/self-supervised-learning"
     },
     {
+      "name": "vbll",
+      "repo_id": "VectorInstitute/vbll",
+      "description": "Simple and computationally efficient neural network uncertainty estimation via Variational Bayesian Last Layers - a deterministic variational approach for Bayesian last layers with quadratic complexity in last layer width",
+      "implementations": [
+        {
+          "name": "Variational Bayesian Last Layers (VBLL)",
+          "url": "https://arxiv.org/abs/2404.11599"
+        },
+        {
+          "name": "VBLL for Regression",
+          "url": null
+        },
+        {
+          "name": "VBLL for Classification",
+          "url": null
+        }
+      ],
+      "type": "applied-research",
+      "year": 2024,
+      "github_url": "https://github.com/VectorInstitute/vbll",
+      "paper_url": "https://arxiv.org/abs/2404.11599",
+      "bibtex": "harrison2024vbll",
+      "package_name": "vbll"
+    },
+    {
       "name": "vector-inference",
       "repo_id": "VectorInstitute/vector-inference",
       "description": "Efficient LLM inference on Slurm clusters using vLLM",
@@ -1039,7 +1064,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 136,
+  "totalImplementations": 139,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-11-26T21:46:26.137728"
+  "lastUpdated": "2025-11-27T08:37:13.866897"
 }

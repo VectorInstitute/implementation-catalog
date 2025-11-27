@@ -111,7 +111,7 @@ type SortColumn = "name" | "language" | "stars" | "forks" | "unique_visitors" | 
 type PyPISortColumn = "name" | "downloads_last_day" | "downloads_last_week" | "downloads_last_month" | "version";
 type SortDirection = "asc" | "desc";
 type ActiveTab = "github" | "pypi";
-type PyPIFilter = "all" | "tool" | "bootcamp";
+type PyPIFilter = "all" | "tool" | "bootcamp" | "applied-research";
 
 export default function AnalyticsPage() {
   // Load data dynamically to ensure fresh data during development
@@ -702,7 +702,6 @@ export default function AnalyticsPage() {
                         >
                           <td
                             className="px-6 py-4 whitespace-nowrap relative"
-                            title={repo.description}
                           >
                             <a
                               href={`https://github.com/${repo.repo_id}`}
@@ -714,9 +713,9 @@ export default function AnalyticsPage() {
                               <ExternalLink className="w-3 h-3" />
                             </a>
                             {repo.description && (
-                              <div className="hidden group-hover:block absolute left-0 top-full mt-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
+                              <div className="hidden group-hover:block absolute left-0 bottom-full mb-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
                                 {repo.description}
-                                <div className="absolute -top-2 left-8 w-4 h-4 bg-white dark:bg-gray-800 border-l-2 border-t-2 border-gray-200 dark:border-gray-600 transform rotate-45"></div>
+                                <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white dark:bg-gray-800 border-r-2 border-b-2 border-gray-200 dark:border-gray-600 transform rotate-45"></div>
                               </div>
                             )}
                           </td>
@@ -783,10 +782,11 @@ export default function AnalyticsPage() {
                             Downloads include CI/CD pipelines, automated builds, dependency installations, and development environment setups.
                             A single user or organization typically generates many downloads through automation and tooling.
                           </p>
-                          <p className="text-blue-800 dark:text-blue-200 mt-2">
-                            <span className="font-medium">Tool packages</span> are production-ready libraries for use in projects.
-                            <span className="font-medium ml-2">Bootcamp packages</span> are educational utilities for tutorials and demos.
-                          </p>
+                          <ul className="text-blue-800 dark:text-blue-200 mt-2 space-y-1 list-disc list-inside">
+                            <li><span className="font-medium">Tool packages</span> are production-ready libraries for use in projects.</li>
+                            <li><span className="font-medium">Bootcamp packages</span> are educational utilities for tutorials and demos.</li>
+                            <li><span className="font-medium">Applied-research packages</span> are implementations from applied research projects.</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -834,6 +834,19 @@ export default function AnalyticsPage() {
                           Bootcamp
                           <span className="ml-2 text-xs opacity-75">
                             ({allPypiMetrics.filter((p) => p.type === "bootcamp").length})
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => setPypiFilter("applied-research")}
+                          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                            pypiFilter === "applied-research"
+                              ? "bg-vector-magenta text-white shadow-md"
+                              : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                          }`}
+                        >
+                          Applied Research
+                          <span className="ml-2 text-xs opacity-75">
+                            ({allPypiMetrics.filter((p) => p.type === "applied-research").length})
                           </span>
                         </button>
                       </div>
@@ -971,7 +984,6 @@ export default function AnalyticsPage() {
                                 >
                                   <td
                                     className="px-6 py-4 whitespace-nowrap relative"
-                                    title={pkg.description}
                                   >
                                     <div>
                                       <a
@@ -984,13 +996,13 @@ export default function AnalyticsPage() {
                                         <ExternalLink className="w-3 h-3" />
                                       </a>
                                       <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-                                        {pkg.type === "tool" ? "Tool" : "Bootcamp"}
+                                        {pkg.type === "tool" ? "Tool" : pkg.type === "bootcamp" ? "Bootcamp" : "Applied Research"}
                                       </div>
                                     </div>
                                     {pkg.description && (
-                                      <div className="hidden group-hover:block absolute left-0 top-full mt-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
+                                      <div className="hidden group-hover:block absolute left-0 bottom-full mb-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
                                         {pkg.description}
-                                        <div className="absolute -top-2 left-8 w-4 h-4 bg-white dark:bg-gray-800 border-l-2 border-t-2 border-gray-200 dark:border-gray-600 transform rotate-45"></div>
+                                        <div className="absolute -bottom-2 left-8 w-4 h-4 bg-white dark:bg-gray-800 border-r-2 border-b-2 border-gray-200 dark:border-gray-600 transform rotate-45"></div>
                                       </div>
                                     )}
                                   </td>
