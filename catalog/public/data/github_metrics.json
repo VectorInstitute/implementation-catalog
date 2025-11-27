@@ -3,15 +3,15 @@
     "VectorInstitute/midst-toolkit": {
       "repo_id": "VectorInstitute/midst-toolkit",
       "name": "midst-toolkit",
-      "timestamp": "2025-11-27T13:37:59.070626+00:00",
+      "timestamp": "2025-11-27T14:00:20.155686+00:00",
       "stars": 5,
       "forks": 1,
       "watchers": 0,
       "open_issues": 1,
       "size": 113082,
-      "views_14d": 654,
+      "views_14d": 641,
       "unique_visitors_14d": 27,
-      "clones_14d": 541,
+      "clones_14d": 536,
       "unique_cloners_14d": 142,
       "language": "Python",
       "created_at": "2025-06-13T13:37:34Z",
@@ -21,7 +21,7 @@
     "VectorInstitute/atomgen": {
       "repo_id": "VectorInstitute/atomgen",
       "name": "atomgen",
-      "timestamp": "2025-11-27T13:38:00.313679+00:00",
+      "timestamp": "2025-11-27T14:00:21.231079+00:00",
       "stars": 8,
       "forks": 1,
       "watchers": 2,
@@ -51,7 +51,7 @@
     "VectorInstitute/linguamark": {
       "repo_id": "VectorInstitute/linguamark",
       "name": "linguamark",
-      "timestamp": "2025-11-27T13:38:01.700714+00:00",
+      "timestamp": "2025-11-27T14:00:22.288979+00:00",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -69,7 +69,7 @@
     "VectorInstitute/anomaly-detection": {
       "repo_id": "VectorInstitute/anomaly-detection",
       "name": "anomaly-detection",
-      "timestamp": "2025-11-27T13:38:02.723892+00:00",
+      "timestamp": "2025-11-27T14:00:23.502240+00:00",
       "stars": 8,
       "forks": 0,
       "watchers": 19,
@@ -89,7 +89,7 @@
     "VectorInstitute/cyclops": {
       "repo_id": "VectorInstitute/cyclops",
       "name": "cyclops",
-      "timestamp": "2025-11-27T13:38:03.885339+00:00",
+      "timestamp": "2025-11-27T14:00:24.657675+00:00",
       "stars": 87,
       "forks": 14,
       "watchers": 8,
@@ -125,7 +125,7 @@
     "VectorInstitute/recommender-systems": {
       "repo_id": "VectorInstitute/recommender-systems",
       "name": "recommender-systems",
-      "timestamp": "2025-11-27T13:38:05.053785+00:00",
+      "timestamp": "2025-11-27T14:00:25.727033+00:00",
       "stars": 6,
       "forks": 0,
       "watchers": 30,
@@ -145,7 +145,7 @@
     "VectorInstitute/fed-rag": {
       "repo_id": "VectorInstitute/fed-rag",
       "name": "fed-rag",
-      "timestamp": "2025-11-27T13:38:06.123702+00:00",
+      "timestamp": "2025-11-27T14:00:26.814978+00:00",
       "stars": 137,
       "forks": 26,
       "watchers": 6,
@@ -169,7 +169,7 @@
     "VectorInstitute/odyssey": {
       "repo_id": "VectorInstitute/odyssey",
       "name": "odyssey",
-      "timestamp": "2025-11-27T13:38:07.173776+00:00",
+      "timestamp": "2025-11-27T14:00:27.970846+00:00",
       "stars": 46,
       "forks": 13,
       "watchers": 4,
@@ -195,7 +195,7 @@
     "VectorInstitute/shared-encoder": {
       "repo_id": "VectorInstitute/shared-encoder",
       "name": "shared-encoder",
-      "timestamp": "2025-11-27T13:38:08.242538+00:00",
+      "timestamp": "2025-11-27T14:00:28.997184+00:00",
       "stars": 9,
       "forks": 1,
       "watchers": 4,
@@ -220,7 +220,7 @@
     "VectorInstitute/privacy-enhancing-techniques": {
       "repo_id": "VectorInstitute/privacy-enhancing-techniques",
       "name": "privacy-enhancing-techniques",
-      "timestamp": "2025-11-27T13:38:09.269525+00:00",
+      "timestamp": "2025-11-27T14:00:30.023493+00:00",
       "stars": 15,
       "forks": 9,
       "watchers": 16,
@@ -245,7 +245,7 @@
     "VectorInstitute/humanibench": {
       "repo_id": "VectorInstitute/humanibench",
       "name": "humanibench",
-      "timestamp": "2025-11-27T13:38:10.411717+00:00",
+      "timestamp": "2025-11-27T14:00:30.896276+00:00",
       "stars": 6,
       "forks": 1,
       "watchers": 1,
@@ -267,7 +267,7 @@
     "VectorInstitute/self-supervised-learning": {
       "repo_id": "VectorInstitute/self-supervised-learning",
       "name": "self-supervised-learning",
-      "timestamp": "2025-11-27T13:38:11.443545+00:00",
+      "timestamp": "2025-11-27T14:00:31.927731+00:00",
       "stars": 3,
       "forks": 0,
       "watchers": 18,
@@ -290,7 +290,7 @@
     "VectorInstitute/FLorist": {
       "repo_id": "VectorInstitute/FLorist",
       "name": "FLorist",
-      "timestamp": "2025-11-27T13:38:12.995655+00:00",
+      "timestamp": "2025-11-27T14:00:33.633072+00:00",
       "stars": 10,
       "forks": 1,
       "watchers": 4,
@@ -308,7 +308,7 @@
     "VectorInstitute/bias-in-the-picture-benchmark": {
       "repo_id": "VectorInstitute/bias-in-the-picture-benchmark",
       "name": "bias-in-the-picture-benchmark",
-      "timestamp": "2025-11-27T13:38:14.173496+00:00",
+      "timestamp": "2025-11-27T14:00:34.761407+00:00",
       "stars": 3,
       "forks": 0,
       "watchers": 0,
@@ -326,7 +326,7 @@
     "VectorInstitute/kg-rag": {
       "repo_id": "VectorInstitute/kg-rag",
       "name": "kg-rag",
-      "timestamp": "2025-11-27T13:38:15.246531+00:00",
+      "timestamp": "2025-11-27T14:00:35.752110+00:00",
       "stars": 20,
       "forks": 10,
       "watchers": 2,
@@ -348,7 +348,7 @@
     "VectorInstitute/interpretability": {
       "repo_id": "VectorInstitute/interpretability",
       "name": "interpretability",
-      "timestamp": "2025-11-27T13:38:16.491869+00:00",
+      "timestamp": "2025-11-27T14:00:36.884397+00:00",
       "stars": 5,
       "forks": 0,
       "watchers": 7,
@@ -367,17 +367,38 @@
         "machine-learning"
       ]
     },
+    "VectorInstitute/HV-Ai-C": {
+      "repo_id": "VectorInstitute/HV-Ai-C",
+      "name": "HV-Ai-C",
+      "timestamp": "2025-11-27T14:00:37.876191+00:00",
+      "stars": 73,
+      "forks": 22,
+      "watchers": 6,
+      "open_issues": 1,
+      "size": 223,
+      "views_14d": 101,
+      "unique_visitors_14d": 43,
+      "clones_14d": 19,
+      "unique_cloners_14d": 11,
+      "language": "Python",
+      "created_at": "2022-03-03T16:55:04Z",
+      "updated_at": "2025-11-10T06:49:37Z",
+      "topics": [
+        "hvac-control",
+        "reinforcement-learning"
+      ]
+    },
     "VectorInstitute/vector-inference": {
       "repo_id": "VectorInstitute/vector-inference",
       "name": "vector-inference",
-      "timestamp": "2025-11-27T13:38:17.699883+00:00",
+      "timestamp": "2025-11-27T14:00:38.893143+00:00",
       "stars": 84,
       "forks": 12,
       "watchers": 7,
       "open_issues": 6,
       "size": 5879,
-      "views_14d": 443,
-      "unique_visitors_14d": 92,
+      "views_14d": 441,
+      "unique_visitors_14d": 91,
       "clones_14d": 157,
       "unique_cloners_14d": 70,
       "language": "Python",
@@ -396,7 +417,7 @@
     "VectorInstitute/diffusion-models": {
       "repo_id": "VectorInstitute/diffusion-models",
       "name": "diffusion-models",
-      "timestamp": "2025-11-27T13:38:18.809482+00:00",
+      "timestamp": "2025-11-27T14:00:40.132792+00:00",
       "stars": 5,
       "forks": 0,
       "watchers": 10,
@@ -417,7 +438,7 @@
     "VectorInstitute/pmc-data-extraction": {
       "repo_id": "VectorInstitute/pmc-data-extraction",
       "name": "pmc-data-extraction",
-      "timestamp": "2025-11-27T13:38:19.862166+00:00",
+      "timestamp": "2025-11-27T14:00:41.124937+00:00",
       "stars": 13,
       "forks": 1,
       "watchers": 1,
@@ -435,7 +456,7 @@
     "VectorInstitute/ai-deployment": {
       "repo_id": "VectorInstitute/ai-deployment",
       "name": "ai-deployment",
-      "timestamp": "2025-11-27T13:38:20.964436+00:00",
+      "timestamp": "2025-11-27T14:00:42.305945+00:00",
       "stars": 8,
       "forks": 29,
       "watchers": 4,
@@ -456,7 +477,7 @@
     "VectorInstitute/bias-mitigation-unlearning": {
       "repo_id": "VectorInstitute/bias-mitigation-unlearning",
       "name": "bias-mitigation-unlearning",
-      "timestamp": "2025-11-27T13:38:22.134662+00:00",
+      "timestamp": "2025-11-27T14:00:43.422738+00:00",
       "stars": 3,
       "forks": 2,
       "watchers": 1,
@@ -474,7 +495,7 @@
     "vectorinstitute/retrieval-augmented-generation": {
       "repo_id": "vectorinstitute/retrieval-augmented-generation",
       "name": "retrieval-augmented-generation",
-      "timestamp": "2025-11-27T13:38:23.230684+00:00",
+      "timestamp": "2025-11-27T14:00:44.546128+00:00",
       "stars": 31,
       "forks": 21,
       "watchers": 24,
@@ -495,7 +516,7 @@
     "VectorInstitute/crisp-nam": {
       "repo_id": "VectorInstitute/crisp-nam",
       "name": "crisp-nam",
-      "timestamp": "2025-11-27T13:38:24.466635+00:00",
+      "timestamp": "2025-11-27T14:00:45.633609+00:00",
       "stars": 2,
       "forks": 0,
       "watchers": 0,
@@ -513,7 +534,7 @@
     "VectorInstitute/mmlearn": {
       "repo_id": "VectorInstitute/mmlearn",
       "name": "mmlearn",
-      "timestamp": "2025-11-27T13:38:25.584151+00:00",
+      "timestamp": "2025-11-27T14:00:46.696693+00:00",
       "stars": 18,
       "forks": 3,
       "watchers": 4,
@@ -539,7 +560,7 @@
     "VectorInstitute/finetuning-and-alignment": {
       "repo_id": "VectorInstitute/finetuning-and-alignment",
       "name": "finetuning-and-alignment",
-      "timestamp": "2025-11-27T13:38:26.631969+00:00",
+      "timestamp": "2025-11-27T14:00:47.758159+00:00",
       "stars": 11,
       "forks": 3,
       "watchers": 30,
@@ -560,7 +581,7 @@
     "VectorInstitute/masksql": {
       "repo_id": "VectorInstitute/masksql",
       "name": "masksql",
-      "timestamp": "2025-11-27T13:38:27.952149+00:00",
+      "timestamp": "2025-11-27T14:00:48.818464+00:00",
       "stars": 1,
       "forks": 0,
       "watchers": 0,
@@ -578,7 +599,7 @@
     "VectorInstitute/fair-sense-ai": {
       "repo_id": "VectorInstitute/fair-sense-ai",
       "name": "fair-sense-ai",
-      "timestamp": "2025-11-27T13:38:28.999152+00:00",
+      "timestamp": "2025-11-27T14:00:49.918697+00:00",
       "stars": 5,
       "forks": 2,
       "watchers": 0,
@@ -596,7 +617,7 @@
     "VectorInstitute/FL4Health": {
       "repo_id": "VectorInstitute/FL4Health",
       "name": "FL4Health",
-      "timestamp": "2025-11-27T13:38:29.997413+00:00",
+      "timestamp": "2025-11-27T14:00:50.991718+00:00",
       "stars": 48,
       "forks": 15,
       "watchers": 3,
@@ -621,7 +642,7 @@
     "VectorInstitute/vbll": {
       "repo_id": "VectorInstitute/vbll",
       "name": "vbll",
-      "timestamp": "2025-11-27T13:38:31.053754+00:00",
+      "timestamp": "2025-11-27T14:00:51.987742+00:00",
       "stars": 77,
       "forks": 7,
       "watchers": 2,
@@ -637,5 +658,5 @@
       "topics": []
     }
   },
-  "last_updated": "2025-11-27T13:38:31.988275+00:00"
+  "last_updated": "2025-11-27T14:00:52.993796+00:00"
 }

@@ -996,6 +996,33 @@
       "github_url": "https://github.com/VectorInstitute/anomaly-detection"
     },
     {
+      "name": "hv-ai-c",
+      "repo_id": "VectorInstitute/HV-Ai-C",
+      "description": "A reinforcement learning solution for HVAC temperature control designed to minimize energy consumption in data centers and buildings. Available as the 'hnp' package on PyPI.",
+      "implementations": [
+        {
+          "name": "Hyperspace Neighbour Penetration (HNP)",
+          "url": "https://arxiv.org/pdf/2106.05497.pdf"
+        },
+        {
+          "name": "Q-Learning Agent with HNP",
+          "url": null
+        },
+        {
+          "name": "Sinergym Integration",
+          "url": null
+        },
+        {
+          "name": "Beobench Integration",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2022,
+      "github_url": "https://github.com/VectorInstitute/HV-Ai-C",
+      "package_name": "hnp"
+    },
+    {
       "name": "recommender-systems",
       "repo_id": "VectorInstitute/recommender-systems",
       "description": "A repository with implementations of recommender systems",
@@ -1064,7 +1091,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 139,
+  "totalImplementations": 143,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-11-27T08:37:13.866897"
+  "lastUpdated": "2025-11-27T08:59:50.883649"
 }
