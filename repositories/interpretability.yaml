@@ -3,23 +3,23 @@ repo_id: VectorInstitute/interpretability
 description: "A repository providing reference implementations and resources for the 2025 Bootcamp on Interpretable and Explainable AI, covering both post-hoc explainability methods and interpretable models"
 implementations:
   - name: LIME
-    url: https://christophm.github.io/interpretable-ml-book/lime.html
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/LIME
   - name: SHAP
-    url: https://arxiv.org/abs/1705.07874
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/SHAP
   - name: PDP (Partial Dependence Plot)
-    url: https://scikit-learn.org/stable/modules/partial_dependence.html
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/partial_dependence_plots
   - name: ALE (Accumulated Local Effects)
-    url: https://christophm.github.io/interpretable-ml-book/ale.html
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/acc_local_effects
   - name: Integrated Gradients
-    url: https://www.tensorflow.org/tutorials/interpretability/integrated_gradients
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/integrated_gradients
   - name: Counterfactual Explanations
-    url: https://christophm.github.io/interpretable-ml-book/counterfactual.html
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Post-hoc/counterfactual
   - name: Generalized Additive Model
-    url: https://en.wikipedia.org/wiki/Generalized_additive_model
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/GAM
   - name: Neural Additive Model
-    url: https://arxiv.org/abs/2004.13912
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/NAM-NodeGAM
   - name: Explainable Boosting Machine
-    url: https://interpret.ml/docs/ebm.html
+    url: https://github.com/VectorInstitute/interpretability/tree/main/reference_implementations/Intepretable-models/Tabular/EBM
 public_datasets:
   - name: Gas turbine dataset
     url: https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set

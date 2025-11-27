@@ -19,4 +19,4 @@ public_datasets:
     url: https://archive.ics.uci.edu/dataset/321/electricityloaddiagrams20112014
 type: bootcamp
 year: 2024
-github_url: https://github.com/VectorInstitute/diffusion_models
+github_url: https://github.com/VectorInstitute/diffusion-models
