@@ -1,0 +1,11 @@
+name: mcp-goodnews
+repo_id: VectorInstitute/mcp-goodnews
+description: "A Model Context Protocol (MCP) server that curates positive news stories using AI-powered sentiment analysis, integrating with Claude Desktop to deliver uplifting news"
+implementations:
+  - name: Uplifting News Aggregation
+    url: https://github.com/VectorInstitute/mcp-goodnews/blob/main/src/mcp_goodnews/newsapi.py
+  - name: Sentiment Analysis
+    url: https://github.com/VectorInstitute/mcp-goodnews/blob/main/src/mcp_goodnews/goodnews_ranker.py
+type: tool
+year: 2025
+github_url: https://github.com/VectorInstitute/mcp-goodnews

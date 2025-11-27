@@ -324,6 +324,24 @@
       "bibtex": "abedini2025masksql"
     },
     {
+      "name": "mcp-goodnews",
+      "repo_id": "VectorInstitute/mcp-goodnews",
+      "description": "A Model Context Protocol (MCP) server that curates positive news stories using AI-powered sentiment analysis, integrating with Claude Desktop to deliver uplifting news",
+      "implementations": [
+        {
+          "name": "News Aggregation",
+          "url": null
+        },
+        {
+          "name": "Claude Desktop Integration",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/mcp-goodnews"
+    },
+    {
       "name": "midst-toolkit",
       "repo_id": "VectorInstitute/midst-toolkit",
       "description": "A toolkit for facilitating MIA resiliency testing on diffusion-model-based synthetic tabular data",
@@ -1091,7 +1109,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 143,
+  "totalImplementations": 145,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-11-27T08:59:50.883649"
+  "lastUpdated": "2025-11-27T09:27:18.958799"
 }
