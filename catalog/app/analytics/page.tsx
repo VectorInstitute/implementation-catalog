@@ -73,6 +73,7 @@ interface PyPISnapshot {
   package_name: string;
   name: string;
   repo_id: string;
+  type: string;
   timestamp: string;
   downloads_last_day: number | null;
   downloads_last_week: number | null;
@@ -85,6 +86,7 @@ interface PyPISnapshot {
 interface PyPIPackageHistory {
   name: string;
   repo_id: string;
+  type: string;
   snapshots: PyPISnapshot[];
 }
 
@@ -97,6 +99,7 @@ interface PyPIMetrics {
   package_name: string;
   name: string;
   repo_id: string;
+  type: string;
   downloads_last_day: number;
   downloads_last_week: number;
   downloads_last_month: number;
@@ -108,6 +111,7 @@ type SortColumn = "name" | "language" | "stars" | "forks" | "unique_visitors" | 
 type PyPISortColumn = "name" | "downloads_last_day" | "downloads_last_week" | "downloads_last_month" | "version";
 type SortDirection = "asc" | "desc";
 type ActiveTab = "github" | "pypi";
+type PyPIFilter = "all" | "tool" | "bootcamp";
 
 export default function AnalyticsPage() {
   // Load data dynamically to ensure fresh data during development
@@ -120,6 +124,7 @@ export default function AnalyticsPage() {
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [pypiSortDirection, setPypiSortDirection] = useState<SortDirection>("desc");
   const [activeTab, setActiveTab] = useState<ActiveTab>("github");
+  const [pypiFilter, setPypiFilter] = useState<PyPIFilter>("all");
 
   useEffect(() => {
     const loadData = async () => {
@@ -296,6 +301,7 @@ export default function AnalyticsPage() {
           package_name,
           name: pkg.name,
           repo_id: pkg.repo_id,
+          type: pkg.type || "tool", // Default to "tool" for backward compatibility
           downloads_last_day: latest.downloads_last_day || 0,
           downloads_last_week: latest.downloads_last_week || 0,
           downloads_last_month: latest.downloads_last_month || 0,
@@ -306,17 +312,23 @@ export default function AnalyticsPage() {
       .filter((p): p is PyPIMetrics => p !== null);
   }, [pypiData, repoDescriptions]);
 
-  // Calculate aggregate PyPI metrics
+  // Filter PyPI metrics based on selected filter
+  const filteredPypiMetrics = useMemo(() => {
+    if (pypiFilter === "all") return allPypiMetrics;
+    return allPypiMetrics.filter((pkg) => pkg.type === pypiFilter);
+  }, [allPypiMetrics, pypiFilter]);
+
+  // Calculate aggregate PyPI metrics (using filtered data)
   const aggregatePypiMetrics = useMemo(() => {
-    const totalDownloadsDay = allPypiMetrics.reduce(
+    const totalDownloadsDay = filteredPypiMetrics.reduce(
       (sum, p) => sum + p.downloads_last_day,
       0
     );
-    const totalDownloadsWeek = allPypiMetrics.reduce(
+    const totalDownloadsWeek = filteredPypiMetrics.reduce(
       (sum, p) => sum + p.downloads_last_week,
       0
     );
-    const totalDownloadsMonth = allPypiMetrics.reduce(
+    const totalDownloadsMonth = filteredPypiMetrics.reduce(
       (sum, p) => sum + p.downloads_last_month,
       0
     );
@@ -325,32 +337,32 @@ export default function AnalyticsPage() {
       totalDownloadsDay,
       totalDownloadsWeek,
       totalDownloadsMonth,
-      totalPackages: allPypiMetrics.length,
+      totalPackages: filteredPypiMetrics.length,
       avgDownloadsPerPackage:
-        allPypiMetrics.length > 0
-          ? Math.round(totalDownloadsMonth / allPypiMetrics.length)
+        filteredPypiMetrics.length > 0
+          ? Math.round(totalDownloadsMonth / filteredPypiMetrics.length)
           : 0,
     };
-  }, [allPypiMetrics]);
+  }, [filteredPypiMetrics]);
 
-  // Get top PyPI performers
+  // Get top PyPI performers (using filtered data)
   const topPypiPerformers = useMemo(() => {
     return {
-      byDay: [...allPypiMetrics]
+      byDay: [...filteredPypiMetrics]
         .sort((a, b) => b.downloads_last_day - a.downloads_last_day)
         .slice(0, 5),
-      byWeek: [...allPypiMetrics]
+      byWeek: [...filteredPypiMetrics]
         .sort((a, b) => b.downloads_last_week - a.downloads_last_week)
         .slice(0, 5),
-      byMonth: [...allPypiMetrics]
+      byMonth: [...filteredPypiMetrics]
         .sort((a, b) => b.downloads_last_month - a.downloads_last_month)
         .slice(0, 5),
     };
-  }, [allPypiMetrics]);
+  }, [filteredPypiMetrics]);
 
-  // Sort PyPI metrics
+  // Sort PyPI metrics (using filtered data)
   const sortedPypiMetrics = useMemo(() => {
-    const sorted = [...allPypiMetrics].sort((a, b) => {
+    const sorted = [...filteredPypiMetrics].sort((a, b) => {
       let aValue: string | number | null = a[pypiSortColumn];
       let bValue: string | number | null = b[pypiSortColumn];
 
@@ -372,7 +384,7 @@ export default function AnalyticsPage() {
     });
 
     return sorted;
-  }, [allPypiMetrics, pypiSortColumn, pypiSortDirection]);
+  }, [filteredPypiMetrics, pypiSortColumn, pypiSortDirection]);
 
   // Handle PyPI column header click
   const handlePypiSort = (column: PyPISortColumn) => {
@@ -771,7 +783,59 @@ export default function AnalyticsPage() {
                             Downloads include CI/CD pipelines, automated builds, dependency installations, and development environment setups.
                             A single user or organization typically generates many downloads through automation and tooling.
                           </p>
+                          <p className="text-blue-800 dark:text-blue-200 mt-2">
+                            <span className="font-medium">Tool packages</span> are production-ready libraries for use in projects.
+                            <span className="font-medium ml-2">Bootcamp packages</span> are educational utilities for tutorials and demos.
+                          </p>
                         </div>
+                      </div>
+                    </div>
+
+                    {/* Filter Buttons */}
+                    <div className="mb-8 flex items-center gap-3">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        Filter by type:
+                      </span>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => setPypiFilter("all")}
+                          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                            pypiFilter === "all"
+                              ? "bg-vector-magenta text-white shadow-md"
+                              : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                          }`}
+                        >
+                          All Packages
+                          <span className="ml-2 text-xs opacity-75">
+                            ({allPypiMetrics.length})
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => setPypiFilter("tool")}
+                          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                            pypiFilter === "tool"
+                              ? "bg-vector-magenta text-white shadow-md"
+                              : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                          }`}
+                        >
+                          Tool
+                          <span className="ml-2 text-xs opacity-75">
+                            ({allPypiMetrics.filter((p) => p.type === "tool").length})
+                          </span>
+                        </button>
+                        <button
+                          onClick={() => setPypiFilter("bootcamp")}
+                          className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                            pypiFilter === "bootcamp"
+                              ? "bg-vector-magenta text-white shadow-md"
+                              : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                          }`}
+                        >
+                          Bootcamp
+                          <span className="ml-2 text-xs opacity-75">
+                            ({allPypiMetrics.filter((p) => p.type === "bootcamp").length})
+                          </span>
+                        </button>
                       </div>
                     </div>
 
@@ -909,15 +973,20 @@ export default function AnalyticsPage() {
                                     className="px-6 py-4 whitespace-nowrap relative"
                                     title={pkg.description}
                                   >
-                                    <a
-                                      href={`https://pypi.org/project/${pkg.package_name}/`}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="flex items-center gap-2 text-sm font-medium text-vector-magenta hover:text-vector-cobalt dark:text-vector-magenta dark:hover:text-vector-cobalt"
-                                    >
-                                      {pkg.package_name}
-                                      <ExternalLink className="w-3 h-3" />
-                                    </a>
+                                    <div>
+                                      <a
+                                        href={`https://pypi.org/project/${pkg.package_name}/`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 text-sm font-medium text-vector-magenta hover:text-vector-cobalt dark:text-vector-magenta dark:hover:text-vector-cobalt"
+                                      >
+                                        {pkg.package_name}
+                                        <ExternalLink className="w-3 h-3" />
+                                      </a>
+                                      <div className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                                        {pkg.type === "tool" ? "Tool" : "Bootcamp"}
+                                      </div>
+                                    </div>
                                     {pkg.description && (
                                       <div className="hidden group-hover:block absolute left-0 top-full mt-2 z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words">
                                         {pkg.description}
