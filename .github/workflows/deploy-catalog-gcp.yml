@@ -1,0 +1,135 @@
+name: Deploy Catalog to GCP (catalog.vectorinstitute.ai)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'catalog/**'
+      - 'repositories/**'
+      - 'scripts/sync_repositories_to_json.py'
+      - 'scripts/collect_pypi_metrics.py'
+      - '.github/workflows/deploy-catalog-gcp.yml'
+  workflow_dispatch:
+  # Auto-trigger when metrics are updated
+  workflow_run:
+    workflows: ["Collect GitHub Metrics"]
+    types:
+      - completed
+    branches:
+      - main
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: "gcp-catalog-deploy"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    # Only deploy if metrics collection succeeded (or if triggered by push/manual)
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: catalog/package-lock.json
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.9.11"
+          enable-cache: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: uv pip install --system pyyaml requests
+
+      - name: Sync YAML repositories to JSON
+        run: python scripts/sync_repositories_to_json.py
+
+      - name: Collect PyPI metrics
+        run: python scripts/collect_pypi_metrics.py
+        continue-on-error: true
+
+      - name: Install Node dependencies
+        working-directory: catalog
+        run: npm ci
+
+      - name: Build Next.js site for GCP (root domain)
+        working-directory: catalog
+        run: npm run build
+        env:
+          # Build for root domain (no base path needed for catalog.vectorinstitute.ai)
+          NODE_ENV: production
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/736624225747/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider'
+          service_account: 'github-actions-deployer@coderd.iam.gserviceaccount.com'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Deploy to GCS
+        run: |
+          # Sync files to GCS bucket
+          gcloud storage rsync \
+            --recursive \
+            --delete-unmatched-destination-objects \
+            catalog/out/ \
+            gs://catalog-vectorinstitute-ai/
+
+      - name: Set cache headers for static assets
+        run: |
+          # Set cache headers for static assets (CSS, JS, images)
+          # _next/static has immutable hashed filenames, so cache for 1 year
+          gcloud storage objects update "gs://catalog-vectorinstitute-ai/_next/static/**" \
+            --cache-control="public, max-age=31536000, immutable" \
+            --recursive || true
+
+          # Cache other static assets for 1 hour
+          gcloud storage objects update "gs://catalog-vectorinstitute-ai/_next/**" \
+            --cache-control="public, max-age=3600" \
+            --recursive || true
+
+          # HTML files should be revalidated frequently
+          gcloud storage objects update "gs://catalog-vectorinstitute-ai/**.html" \
+            --cache-control="public, max-age=300, must-revalidate" \
+            --recursive || true
+
+          # Index files need fresh content
+          gcloud storage objects update "gs://catalog-vectorinstitute-ai/index.html" \
+            --cache-control="public, max-age=60, must-revalidate" || true
+
+      - name: Set content types
+        run: |
+          # Ensure proper content types for common files
+          gcloud storage objects update "gs://catalog-vectorinstitute-ai/**.json" \
+            --content-type="application/json" \
+            --recursive || true
+
+          gcloud storage objects update "gs://catalog-vectorinstitute-ai/**.xml" \
+            --content-type="application/xml" \
+            --recursive || true
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Catalog deployed successfully to GCS!"
+          echo "📦 Bucket: gs://catalog-vectorinstitute-ai"
+          echo "🌐 Once load balancer is configured, it will be available at:"
+          echo "    https://catalog.vectorinstitute.ai"
