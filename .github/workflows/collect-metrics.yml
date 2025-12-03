@@ -1,9 +1,10 @@
 name: Collect GitHub Metrics
 
 on:
-  # Run weekly on Mondays at 00:00 UTC
+  # Run weekly on Mondays at 12:00 UTC (noon)
+  # Later timing ensures PyPI stats are available for the previous day
   schedule:
-    - cron: '0 0 * * 1'
+    - cron: '0 12 * * 1'
   # Allow manual trigger
   workflow_dispatch:
 
