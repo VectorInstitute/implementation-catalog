@@ -107,7 +107,7 @@ def calculate_recent_downloads(
         Downloads for last day, last week, last month (without mirrors).
 
     """
-    from datetime import datetime
+    from datetime import datetime, timedelta
 
     if not overall_data or "data" not in overall_data:
         return None, None, None
@@ -121,12 +121,15 @@ def calculate_recent_downloads(
         return None, None, None
 
     today = datetime.now().date()
+    yesterday = today - timedelta(days=1)
 
     # Calculate downloads for different time periods
+    # For "last day", look at yesterday (most recent complete day)
+    # This avoids issues with incomplete data for the current day
     last_1_day = sum(
         d["downloads"]
         for d in without_mirrors
-        if (today - datetime.strptime(d["date"], "%Y-%m-%d").date()).days <= 1
+        if datetime.strptime(d["date"], "%Y-%m-%d").date() == yesterday
     )
     last_7_days = sum(
         d["downloads"]
