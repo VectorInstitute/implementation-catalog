@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
+import type { User } from '@vector-institute/aieng-auth-core';
 
 // Types
 interface RepoSnapshot {
@@ -113,7 +114,11 @@ type SortDirection = "asc" | "desc";
 type ActiveTab = "github" | "pypi";
 type PyPIFilter = "all" | "tool" | "bootcamp" | "applied-research";
 
-export default function AnalyticsPage() {
+interface AnalyticsPageProps {
+  user: User | null;
+}
+
+export default function AnalyticsPage({ user }: AnalyticsPageProps) {
   // Load data dynamically to ensure fresh data during development
   const [historicalData, setHistoricalData] = useState<HistoricalData | null>(null);
   const [pypiData, setPypiData] = useState<PyPIHistoricalData | null>(null);
@@ -125,6 +130,15 @@ export default function AnalyticsPage() {
   const [pypiSortDirection, setPypiSortDirection] = useState<SortDirection>("desc");
   const [activeTab, setActiveTab] = useState<ActiveTab>("github");
   const [pypiFilter, setPypiFilter] = useState<PyPIFilter>("all");
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/analytics/api/auth/logout', { method: 'POST' });
+      window.location.href = '/analytics/login';
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };
 
   useEffect(() => {
     const loadData = async () => {
@@ -437,21 +451,35 @@ export default function AnalyticsPage() {
                 </p>
               </div>
             </div>
-            {historicalData?.last_updated && (
-              <div className="hidden md:flex items-center gap-2 text-white/90">
-                <Calendar className="w-5 h-5" />
-                <div className="text-right">
-                  <div className="text-xs uppercase tracking-wide opacity-80">
-                    Last Updated
-                  </div>
-                  <div className="text-sm font-medium">
-                    {new Date(historicalData.last_updated)
-                      .toISOString()
-                      .split("T")[0]}
+            <div className="flex items-center gap-4">
+              {historicalData?.last_updated && (
+                <div className="hidden lg:flex items-center gap-2 text-white/90">
+                  <Calendar className="w-5 h-5" />
+                  <div className="text-right">
+                    <div className="text-xs uppercase tracking-wide opacity-80">
+                      Last Updated
+                    </div>
+                    <div className="text-sm font-medium">
+                      {new Date(historicalData.last_updated)
+                        .toISOString()
+                        .split("T")[0]}
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+              {user && (
+                <div className="text-right">
+                  <p className="text-xs text-white/70 uppercase tracking-wide">Signed in as</p>
+                  <p className="text-sm font-semibold bg-gradient-to-r from-vector-magenta to-vector-violet bg-clip-text text-transparent">{user.email}</p>
+                </div>
+              )}
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-slate-600 to-slate-700 hover:from-vector-magenta hover:to-vector-violet rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                Logout
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>

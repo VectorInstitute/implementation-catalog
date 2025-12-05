@@ -9,5 +9,7 @@ export default async function Home() {
     redirect('/login');
   }
 
-  return <AnalyticsContent />;
+  const user = session.user;
+
+  return <AnalyticsContent user={user} />;
 }
