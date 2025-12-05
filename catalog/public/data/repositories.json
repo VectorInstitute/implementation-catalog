@@ -329,12 +329,12 @@
       "description": "A Model Context Protocol (MCP) server that curates positive news stories using AI-powered sentiment analysis, integrating with Claude Desktop to deliver uplifting news",
       "implementations": [
         {
-          "name": "News Aggregation",
-          "url": null
+          "name": "Uplifting News Aggregation",
+          "url": "https://github.com/VectorInstitute/mcp-goodnews/blob/main/src/mcp_goodnews/newsapi.py"
         },
         {
-          "name": "Claude Desktop Integration",
-          "url": null
+          "name": "Sentiment Analysis",
+          "url": "https://github.com/VectorInstitute/mcp-goodnews/blob/main/src/mcp_goodnews/goodnews_ranker.py"
         }
       ],
       "type": "tool",
@@ -1111,5 +1111,5 @@
   ],
   "totalImplementations": 145,
   "yearsOfResearch": 7,
-  "lastUpdated": "2025-11-27T09:27:18.958799"
+  "lastUpdated": "2025-12-05T12:16:37.440017"
 }
