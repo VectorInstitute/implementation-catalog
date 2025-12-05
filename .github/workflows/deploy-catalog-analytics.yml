@@ -1,0 +1,158 @@
+name: Deploy Catalog Analytics (Cloud Run)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'catalog-analytics/**'
+      - 'catalog/public/data/**'
+      - '.github/workflows/deploy-catalog-analytics.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PROJECT_ID: coderd
+  GAR_LOCATION: us-central1
+  REPOSITORY: catalog
+  SERVICE_NAME: catalog-analytics
+  REGION: us-central1
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy to Cloud Run
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost "$AGENT_TOOLSDIRECTORY"
+          docker system prune -af --volumes
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          token_format: access_token
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker for Artifact Registry
+        run: |
+          gcloud auth configure-docker ${{ env.GAR_LOCATION }}-docker.pkg.dev --quiet
+
+      - name: Create Artifact Registry repository
+        run: |
+          if ! gcloud artifacts repositories describe ${{ env.REPOSITORY }} \
+            --location=${{ env.GAR_LOCATION }} \
+            --format="get(name)" 2>/dev/null; then
+            echo "Creating Artifact Registry repository"
+            gcloud artifacts repositories create ${{ env.REPOSITORY }} \
+              --repository-format=docker \
+              --location=${{ env.GAR_LOCATION }} \
+              --description="Docker repository for Catalog services"
+            echo "✓ Repository created"
+          else
+            echo "✓ Repository exists"
+          fi
+
+      - name: Copy data files from catalog
+        run: |
+          mkdir -p catalog-analytics/public/data
+          if [ -d "catalog/public/data" ]; then
+            cp -r catalog/public/data/* catalog-analytics/public/data/ || true
+          fi
+          echo "✓ Data files copied"
+
+      - name: Build and push Docker image
+        run: |
+          IMAGE_URL="${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.SERVICE_NAME }}:${{ github.sha }}"
+          LATEST_URL="${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.SERVICE_NAME }}:latest"
+
+          docker build \
+            -t "$IMAGE_URL" \
+            -t "$LATEST_URL" \
+            --cache-from type=gha,scope=catalog-analytics \
+            --cache-to type=gha,mode=max,scope=catalog-analytics \
+            catalog-analytics/
+
+          docker push "$IMAGE_URL"
+          docker push "$LATEST_URL"
+
+          echo "✓ Image pushed: $IMAGE_URL"
+          echo "image=$IMAGE_URL" >> $GITHUB_OUTPUT
+        id: build
+
+      - name: Deploy to Cloud Run
+        id: deploy
+        run: |
+          gcloud run deploy ${{ env.SERVICE_NAME }} \
+            --image ${{ steps.build.outputs.image }} \
+            --region ${{ env.REGION }} \
+            --platform managed \
+            --allow-unauthenticated \
+            --memory=1Gi \
+            --cpu=1 \
+            --timeout=300s \
+            --max-instances=10 \
+            --min-instances=0 \
+            --concurrency=80 \
+            --port=8080 \
+            --set-env-vars="NODE_ENV=production,NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }},GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }},SESSION_SECRET=${{ secrets.SESSION_SECRET }},NEXT_PUBLIC_APP_URL=https://catalog.vectorinstitute.ai,REDIRECT_URI=https://catalog.vectorinstitute.ai/analytics/api/auth/callback,ALLOWED_DOMAINS=vectorinstitute.ai" \
+            --update-labels="deployed-by=github-actions,commit=${{ github.sha }},service=catalog-analytics" \
+            --quiet
+
+          SERVICE_URL=$(gcloud run services describe ${{ env.SERVICE_NAME }} \
+            --region ${{ env.REGION }} \
+            --format 'value(status.url)')
+
+          echo "url=$SERVICE_URL" >> $GITHUB_OUTPUT
+          echo "✓ Service deployed at $SERVICE_URL"
+
+      - name: Verify deployment
+        run: |
+          SERVICE_URL="${{ steps.deploy.outputs.url }}"
+          echo "Verifying deployment at $SERVICE_URL..."
+
+          MAX_RETRIES=20
+          for i in $(seq 1 $MAX_RETRIES); do
+            if curl -sf --max-time 10 "${SERVICE_URL}/login" > /dev/null 2>&1; then
+              echo "✓ Service is responding"
+              exit 0
+            fi
+            echo "Attempt $i/$MAX_RETRIES failed, waiting..."
+            sleep 5
+          done
+
+          echo "✗ Deployment verification failed"
+          exit 1
+
+      - name: Output deployment summary
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << EOF
+          ## 🚀 Catalog Analytics Deployed
+
+          **Service URL:** ${{ steps.deploy.outputs.url }}
+          **Commit:** \`${{ github.sha }}\`
+          **Region:** ${{ env.REGION }}
+
+          ### Next Steps
+          Configure load balancer to route:
+          - \`catalog.vectorinstitute.ai/analytics/*\` → Cloud Run service
+          - \`catalog.vectorinstitute.ai/*\` → GCS backend (existing)
+
+          **Cloud Run Service:** \`${{ env.SERVICE_NAME }}\`
+          EOF

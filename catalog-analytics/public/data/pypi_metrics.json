@@ -1,0 +1,109 @@
+{
+  "packages": {
+    "pycyclops": {
+      "repo_id": "VectorInstitute/cyclops",
+      "name": "cyclops",
+      "package_name": "pycyclops",
+      "type": "tool",
+      "timestamp": "2025-12-03T19:22:40.934525+00:00",
+      "downloads_last_day": 1,
+      "downloads_last_week": 192,
+      "downloads_last_month": 1633,
+      "total_downloads": 5162,
+      "version": "0.2.12",
+      "release_date": "2025-01-22T16:00:42"
+    },
+    "fed-rag": {
+      "repo_id": "VectorInstitute/fed-rag",
+      "name": "fed-rag",
+      "package_name": "fed-rag",
+      "type": "tool",
+      "timestamp": "2025-12-03T19:22:44.750204+00:00",
+      "downloads_last_day": null,
+      "downloads_last_week": 149,
+      "downloads_last_month": 175,
+      "total_downloads": 1825,
+      "version": "0.0.27",
+      "release_date": "2025-06-18T04:08:33"
+    },
+    "hnp": {
+      "repo_id": "VectorInstitute/HV-Ai-C",
+      "name": "hv-ai-c",
+      "package_name": "hnp",
+      "type": "tool",
+      "timestamp": "2025-12-03T19:22:48.386917+00:00",
+      "downloads_last_day": 12,
+      "downloads_last_week": 37,
+      "downloads_last_month": 84,
+      "total_downloads": 237,
+      "version": "1.1.2",
+      "release_date": "2023-03-08T05:07:41"
+    },
+    "vec-inf": {
+      "repo_id": "VectorInstitute/vector-inference",
+      "name": "vector-inference",
+      "package_name": "vec-inf",
+      "type": "tool",
+      "timestamp": "2025-12-03T19:22:51.513664+00:00",
+      "downloads_last_day": 9,
+      "downloads_last_week": 113,
+      "downloads_last_month": 270,
+      "total_downloads": 989,
+      "version": "0.7.3",
+      "release_date": "2025-11-27T19:01:50"
+    },
+    "aieng-rag-utils": {
+      "repo_id": "vectorinstitute/retrieval-augmented-generation",
+      "name": "retrieval-augmented-generation",
+      "package_name": "aieng-rag-utils",
+      "type": "bootcamp",
+      "timestamp": "2025-12-03T19:22:55.591891+00:00",
+      "downloads_last_day": null,
+      "downloads_last_week": null,
+      "downloads_last_month": 21,
+      "total_downloads": 346,
+      "version": "1.0.0",
+      "release_date": "2025-07-29T20:43:26"
+    },
+    "fair-sense-ai": {
+      "repo_id": "VectorInstitute/fair-sense-ai",
+      "name": "fair-sense-ai",
+      "package_name": "fair-sense-ai",
+      "type": "tool",
+      "timestamp": "2025-12-03T19:22:59.941732+00:00",
+      "downloads_last_day": null,
+      "downloads_last_week": 8,
+      "downloads_last_month": 27,
+      "total_downloads": 777,
+      "version": "1.0.11",
+      "release_date": "2025-06-21T18:46:37"
+    },
+    "fl4health": {
+      "repo_id": "VectorInstitute/FL4Health",
+      "name": "fl4health",
+      "package_name": "fl4health",
+      "type": "tool",
+      "timestamp": "2025-12-03T19:23:05.019919+00:00",
+      "downloads_last_day": 2,
+      "downloads_last_week": 154,
+      "downloads_last_month": 284,
+      "total_downloads": 1305,
+      "version": "0.4.1",
+      "release_date": "2025-11-27T21:14:51"
+    },
+    "vbll": {
+      "repo_id": "VectorInstitute/vbll",
+      "name": "vbll",
+      "package_name": "vbll",
+      "type": "applied-research",
+      "timestamp": "2025-12-03T19:23:10.152058+00:00",
+      "downloads_last_day": 3,
+      "downloads_last_week": 703,
+      "downloads_last_month": 1758,
+      "total_downloads": 5654,
+      "version": "0.4.9",
+      "release_date": "2025-05-14T17:35:57"
+    }
+  },
+  "last_updated": "2025-12-03T19:23:14.974408+00:00"
+}
