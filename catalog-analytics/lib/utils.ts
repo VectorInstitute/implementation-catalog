@@ -1,7 +1,9 @@
 /**
  * Get the full path for an asset
- * For Cloud Run deployment, no base path is needed
+ * With basePath: '/analytics', assets are served at /analytics/*
  */
 export function getAssetPath(path: string): string {
-  return path.startsWith('/') ? path : `/${path}`;
+  const basePath = '/analytics';
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return `${basePath}${cleanPath}`;
 }

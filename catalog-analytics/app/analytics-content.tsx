@@ -129,10 +129,9 @@ export default function AnalyticsPage() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const basePath =
-          process.env.NEXT_PUBLIC_BASE_PATH === "true"
-            ? "/implementation-catalog"
-            : "";
+        // With basePath: '/analytics' in next.config.ts, use empty string for public assets
+        // Next.js automatically serves public files at /analytics/*
+        const basePath = "/analytics";
 
         // Load historical metrics data
         const metricsResponse = await fetch(

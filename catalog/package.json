@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && node scripts/generate-search-pages.js && npm run pagefind",
-    "build:github": "NEXT_PUBLIC_BASE_PATH=true next build && NEXT_PUBLIC_BASE_PATH=true node scripts/generate-search-pages.js && npm run pagefind",
     "pagefind": "pagefind --site out --output-subdir _pagefind",
     "start": "next start",
     "serve": "npx serve@latest out -p 3001",

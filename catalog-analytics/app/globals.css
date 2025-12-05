@@ -2,36 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Vector Institute Brand Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  /* Vector Institute Brand Colors - Primary Palette */
+  /* Primary Colors */
   --vector-magenta: #EB088A;
   --vector-black: #000000;
   --vector-grey: #E9E8E8;
-  /* Vector Institute Brand Colors - Secondary Palette */
+
+  /* Secondary Colors */
   --vector-cobalt: #313CFF;
   --vector-violet: #8A25C9;
   --vector-turquoise: #48C0D9;
   --vector-tangerine: #FF9E00;
   --vector-lime: #CFF933;
+
+  /* Light theme */
+  --background: #ffffff;
+  --foreground: #000000;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --border: #E9E8E8;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #ffffff;
+    --card-bg: rgba(26, 26, 26, 0.95);
+    --border: #2a2a2a;
   }
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: var(--background);
+  font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Vector Institute gradient backgrounds */
+  .bg-vector-gradient {
+    background: linear-gradient(135deg, #EB088A 0%, #8A25C9 50%, #313CFF 100%);
+  }
+
+  .bg-vector-gradient-subtle {
+    background: linear-gradient(135deg,
+      rgba(235, 8, 138, 0.1) 0%,
+      rgba(138, 37, 201, 0.1) 50%,
+      rgba(49, 60, 255, 0.1) 100%);
+  }
+}
+
+@layer components {
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .card-highlight {
+    background: var(--card-bg);
+    border: 2px solid var(--vector-magenta);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(235, 8, 138, 0.2), 0 2px 4px -2px rgba(235, 8, 138, 0.2);
   }
 }
