@@ -182,6 +182,24 @@
           "created_at": "2025-06-13T13:37:34Z",
           "updated_at": "2025-12-02T22:11:24Z",
           "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/midst-toolkit",
+          "name": "midst-toolkit",
+          "timestamp": "2025-12-08T12:03:03.498364+00:00",
+          "stars": 5,
+          "forks": 1,
+          "watchers": 0,
+          "open_issues": 3,
+          "size": 201266,
+          "views_14d": 765,
+          "unique_visitors_14d": 22,
+          "clones_14d": 735,
+          "unique_cloners_14d": 234,
+          "language": "Python",
+          "created_at": "2025-06-13T13:37:34Z",
+          "updated_at": "2025-12-02T22:11:24Z",
+          "topics": []
         }
       ]
     },
@@ -487,6 +505,36 @@
             "pytorch",
             "transformers"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/atomgen",
+          "name": "atomgen",
+          "timestamp": "2025-12-08T12:02:56.753970+00:00",
+          "stars": 8,
+          "forks": 1,
+          "watchers": 2,
+          "open_issues": 1,
+          "size": 2579,
+          "views_14d": 14,
+          "unique_visitors_14d": 7,
+          "clones_14d": 77,
+          "unique_cloners_14d": 39,
+          "language": "Python",
+          "created_at": "2024-04-11T01:22:34Z",
+          "updated_at": "2025-11-24T21:04:24Z",
+          "topics": [
+            "ai-for-science",
+            "atomistic-machine-learning",
+            "atomistic-models",
+            "atomistic-simulations",
+            "fine-tuning",
+            "huggingface",
+            "machine-learning",
+            "materials-science",
+            "pretrained-models",
+            "pytorch",
+            "transformers"
+          ]
         }
       ]
     },
@@ -684,6 +732,26 @@
           "size": 15604,
           "views_14d": 42,
           "unique_visitors_14d": 21,
+          "clones_14d": 2,
+          "unique_cloners_14d": 2,
+          "language": "Jupyter Notebook",
+          "created_at": "2023-03-20T16:43:29Z",
+          "updated_at": "2025-07-29T21:42:49Z",
+          "topics": [
+            "anomaly-detection"
+          ]
+        },
+        {
+          "repo_id": "VectorInstitute/anomaly-detection",
+          "name": "anomaly-detection",
+          "timestamp": "2025-12-08T12:03:04.181120+00:00",
+          "stars": 8,
+          "forks": 0,
+          "watchers": 19,
+          "open_issues": 0,
+          "size": 15604,
+          "views_14d": 30,
+          "unique_visitors_14d": 14,
           "clones_14d": 2,
           "unique_cloners_14d": 2,
           "language": "Jupyter Notebook",
@@ -1057,6 +1125,42 @@
             "omop-cdm",
             "physionet"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/cyclops",
+          "name": "cyclops",
+          "timestamp": "2025-12-08T12:02:52.111928+00:00",
+          "stars": 87,
+          "forks": 14,
+          "watchers": 8,
+          "open_issues": 20,
+          "size": 27256,
+          "views_14d": 39,
+          "unique_visitors_14d": 24,
+          "clones_14d": 193,
+          "unique_cloners_14d": 133,
+          "language": "Python",
+          "created_at": "2022-02-21T21:15:08Z",
+          "updated_at": "2025-10-16T06:37:02Z",
+          "topics": [
+            "clinical-data",
+            "clinical-decision-support",
+            "clinical-research",
+            "data-drift",
+            "deep-learning",
+            "drift-detection",
+            "eicu-crd",
+            "electronic-health-record",
+            "electronic-medical-record",
+            "evaluation",
+            "healthcare",
+            "machine-learning",
+            "mimic-iii",
+            "mimic-iv",
+            "model-monitoring",
+            "omop-cdm",
+            "physionet"
+          ]
         }
       ]
     },
@@ -1247,6 +1351,26 @@
           "repo_id": "VectorInstitute/recommender-systems",
           "name": "recommender-systems",
           "timestamp": "2025-12-03T19:18:08.732337+00:00",
+          "stars": 6,
+          "forks": 0,
+          "watchers": 30,
+          "open_issues": 1,
+          "size": 27200,
+          "views_14d": 0,
+          "unique_visitors_14d": 0,
+          "clones_14d": 3,
+          "unique_cloners_14d": 2,
+          "language": "Jupyter Notebook",
+          "created_at": "2022-06-09T21:10:48Z",
+          "updated_at": "2025-05-13T20:17:43Z",
+          "topics": [
+            "recommender-system"
+          ]
+        },
+        {
+          "repo_id": "VectorInstitute/recommender-systems",
+          "name": "recommender-systems",
+          "timestamp": "2025-12-08T12:02:50.183423+00:00",
           "stars": 6,
           "forks": 0,
           "watchers": 30,
@@ -1497,6 +1621,30 @@
           "unique_visitors_14d": 55,
           "clones_14d": 160,
           "unique_cloners_14d": 94,
+          "language": "Python",
+          "created_at": "2025-01-17T20:04:22Z",
+          "updated_at": "2025-11-26T21:02:01Z",
+          "topics": [
+            "deep-learning",
+            "federated-learning",
+            "llms",
+            "machine-learning",
+            "rag"
+          ]
+        },
+        {
+          "repo_id": "VectorInstitute/fed-rag",
+          "name": "fed-rag",
+          "timestamp": "2025-12-08T12:03:02.873631+00:00",
+          "stars": 137,
+          "forks": 26,
+          "watchers": 6,
+          "open_issues": 50,
+          "size": 14153,
+          "views_14d": 218,
+          "unique_visitors_14d": 68,
+          "clones_14d": 155,
+          "unique_cloners_14d": 96,
           "language": "Python",
           "created_at": "2025-01-17T20:04:22Z",
           "updated_at": "2025-11-26T21:02:01Z",
@@ -1772,6 +1920,32 @@
             "state-space-models",
             "transformers"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/odyssey",
+          "name": "odyssey",
+          "timestamp": "2025-12-08T12:02:54.133658+00:00",
+          "stars": 46,
+          "forks": 14,
+          "watchers": 4,
+          "open_issues": 9,
+          "size": 105571,
+          "views_14d": 395,
+          "unique_visitors_14d": 32,
+          "clones_14d": 123,
+          "unique_cloners_14d": 61,
+          "language": "Python",
+          "created_at": "2023-12-01T15:46:32Z",
+          "updated_at": "2025-12-05T17:10:54Z",
+          "topics": [
+            "electronic-health-record",
+            "foundation-models",
+            "healthcare",
+            "machine-learning",
+            "mimic-iv",
+            "state-space-models",
+            "transformers"
+          ]
         }
       ]
     },
@@ -2016,6 +2190,31 @@
           "unique_visitors_14d": 9,
           "clones_14d": 8,
           "unique_cloners_14d": 8,
+          "language": "Python",
+          "created_at": "2025-02-21T17:04:07Z",
+          "updated_at": "2025-10-02T02:00:56Z",
+          "topics": [
+            "clip",
+            "mimic-cxr",
+            "multimodal",
+            "multimodal-learning",
+            "quilt",
+            "shared-encoder"
+          ]
+        },
+        {
+          "repo_id": "VectorInstitute/shared-encoder",
+          "name": "shared-encoder",
+          "timestamp": "2025-12-08T12:03:00.239160+00:00",
+          "stars": 9,
+          "forks": 1,
+          "watchers": 4,
+          "open_issues": 3,
+          "size": 157,
+          "views_14d": 10,
+          "unique_visitors_14d": 10,
+          "clones_14d": 9,
+          "unique_cloners_14d": 9,
           "language": "Python",
           "created_at": "2025-02-21T17:04:07Z",
           "updated_at": "2025-10-02T02:00:56Z",
@@ -2282,6 +2481,31 @@
             "ml",
             "privacy"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/privacy-enhancing-techniques",
+          "name": "privacy-enhancing-techniques",
+          "timestamp": "2025-12-08T12:02:58.075094+00:00",
+          "stars": 15,
+          "forks": 9,
+          "watchers": 16,
+          "open_issues": 0,
+          "size": 35253,
+          "views_14d": 2,
+          "unique_visitors_14d": 2,
+          "clones_14d": 7,
+          "unique_cloners_14d": 5,
+          "language": "Jupyter Notebook",
+          "created_at": "2021-09-28T17:43:56Z",
+          "updated_at": "2025-07-30T00:00:30Z",
+          "topics": [
+            "differential-privacy",
+            "encryption",
+            "federated-learning",
+            "machine-learning",
+            "ml",
+            "privacy"
+          ]
         }
       ]
     },
@@ -2517,6 +2741,29 @@
             "self-distillation",
             "self-supervised-learning"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/self-supervised-learning",
+          "name": "self-supervised-learning",
+          "timestamp": "2025-12-08T12:03:02.236600+00:00",
+          "stars": 3,
+          "forks": 0,
+          "watchers": 18,
+          "open_issues": 0,
+          "size": 84026,
+          "views_14d": 7,
+          "unique_visitors_14d": 3,
+          "clones_14d": 5,
+          "unique_cloners_14d": 5,
+          "language": "Jupyter Notebook",
+          "created_at": "2023-08-17T15:25:42Z",
+          "updated_at": "2025-11-26T21:28:48Z",
+          "topics": [
+            "contrastive-learning",
+            "masked-modelling",
+            "self-distillation",
+            "self-supervised-learning"
+          ]
         }
       ]
     },
@@ -2702,6 +2949,24 @@
           "created_at": "2024-01-29T19:34:13Z",
           "updated_at": "2025-12-01T20:59:07Z",
           "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/FLorist",
+          "name": "FLorist",
+          "timestamp": "2025-12-08T12:02:57.441641+00:00",
+          "stars": 10,
+          "forks": 1,
+          "watchers": 4,
+          "open_issues": 3,
+          "size": 5629,
+          "views_14d": 22,
+          "unique_visitors_14d": 10,
+          "clones_14d": 279,
+          "unique_cloners_14d": 121,
+          "language": "CSS",
+          "created_at": "2024-01-29T19:34:13Z",
+          "updated_at": "2025-12-03T21:18:32Z",
+          "topics": []
         }
       ]
     },
@@ -2883,6 +3148,24 @@
           "unique_visitors_14d": 11,
           "clones_14d": 14,
           "unique_cloners_14d": 12,
+          "language": "Python",
+          "created_at": "2025-11-21T16:57:41Z",
+          "updated_at": "2025-11-26T21:34:25Z",
+          "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/bias-in-the-picture-benchmark",
+          "name": "bias-in-the-picture-benchmark",
+          "timestamp": "2025-12-08T12:02:48.149363+00:00",
+          "stars": 3,
+          "forks": 0,
+          "watchers": 0,
+          "open_issues": 0,
+          "size": 9705,
+          "views_14d": 32,
+          "unique_visitors_14d": 10,
+          "clones_14d": 3,
+          "unique_cloners_14d": 3,
           "language": "Python",
           "created_at": "2025-11-21T16:57:41Z",
           "updated_at": "2025-11-26T21:34:25Z",
@@ -3112,6 +3395,28 @@
             "llms",
             "rag"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/kg-rag",
+          "name": "kg-rag",
+          "timestamp": "2025-12-08T12:02:49.421581+00:00",
+          "stars": 20,
+          "forks": 10,
+          "watchers": 2,
+          "open_issues": 1,
+          "size": 44514,
+          "views_14d": 187,
+          "unique_visitors_14d": 74,
+          "clones_14d": 146,
+          "unique_cloners_14d": 72,
+          "language": "Python",
+          "created_at": "2024-12-11T17:22:56Z",
+          "updated_at": "2025-12-03T15:53:36Z",
+          "topics": [
+            "knowledge-graph",
+            "llms",
+            "rag"
+          ]
         }
       ]
     },
@@ -3309,6 +3614,28 @@
           "unique_visitors_14d": 6,
           "clones_14d": 27,
           "unique_cloners_14d": 19,
+          "language": "Jupyter Notebook",
+          "created_at": "2024-09-19T15:22:45Z",
+          "updated_at": "2025-11-27T03:46:04Z",
+          "topics": [
+            "ai",
+            "interpretability",
+            "machine-learning"
+          ]
+        },
+        {
+          "repo_id": "VectorInstitute/interpretability",
+          "name": "interpretability",
+          "timestamp": "2025-12-08T12:03:01.516539+00:00",
+          "stars": 5,
+          "forks": 0,
+          "watchers": 7,
+          "open_issues": 0,
+          "size": 552929,
+          "views_14d": 122,
+          "unique_visitors_14d": 7,
+          "clones_14d": 31,
+          "unique_cloners_14d": 22,
           "language": "Jupyter Notebook",
           "created_at": "2024-09-19T15:22:45Z",
           "updated_at": "2025-11-27T03:46:04Z",
@@ -3582,6 +3909,32 @@
             "vllm",
             "vlm"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/vector-inference",
+          "name": "vector-inference",
+          "timestamp": "2025-12-08T12:03:06.799186+00:00",
+          "stars": 86,
+          "forks": 12,
+          "watchers": 7,
+          "open_issues": 5,
+          "size": 5970,
+          "views_14d": 226,
+          "unique_visitors_14d": 71,
+          "clones_14d": 285,
+          "unique_cloners_14d": 121,
+          "language": "Python",
+          "created_at": "2024-03-06T01:36:48Z",
+          "updated_at": "2025-12-07T20:51:14Z",
+          "topics": [
+            "inference",
+            "llm",
+            "llm-inference",
+            "reward-modeling",
+            "text-embedding",
+            "vllm",
+            "vlm"
+          ]
         }
       ]
     },
@@ -3797,6 +4150,27 @@
             "diffusion-models",
             "synthetic-data"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/diffusion-models",
+          "name": "diffusion-models",
+          "timestamp": "2025-12-08T12:02:53.474920+00:00",
+          "stars": 5,
+          "forks": 0,
+          "watchers": 10,
+          "open_issues": 1,
+          "size": 272452,
+          "views_14d": 22,
+          "unique_visitors_14d": 7,
+          "clones_14d": 10,
+          "unique_cloners_14d": 7,
+          "language": "Jupyter Notebook",
+          "created_at": "2024-06-12T17:52:14Z",
+          "updated_at": "2025-12-01T17:38:22Z",
+          "topics": [
+            "diffusion-models",
+            "synthetic-data"
+          ]
         }
       ]
     },
@@ -3978,6 +4352,24 @@
           "unique_visitors_14d": 15,
           "clones_14d": 8,
           "unique_cloners_14d": 8,
+          "language": "Jupyter Notebook",
+          "created_at": "2024-09-12T17:32:48Z",
+          "updated_at": "2025-10-13T05:39:15Z",
+          "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/pmc-data-extraction",
+          "name": "pmc-data-extraction",
+          "timestamp": "2025-12-08T12:02:59.448947+00:00",
+          "stars": 13,
+          "forks": 1,
+          "watchers": 1,
+          "open_issues": 6,
+          "size": 13482,
+          "views_14d": 49,
+          "unique_visitors_14d": 19,
+          "clones_14d": 5,
+          "unique_cloners_14d": 5,
           "language": "Jupyter Notebook",
           "created_at": "2024-09-12T17:32:48Z",
           "updated_at": "2025-10-13T05:39:15Z",
@@ -4182,6 +4574,27 @@
             "ai",
             "deployment"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/ai-deployment",
+          "name": "ai-deployment",
+          "timestamp": "2025-12-08T12:02:58.704168+00:00",
+          "stars": 8,
+          "forks": 29,
+          "watchers": 4,
+          "open_issues": 0,
+          "size": 18502,
+          "views_14d": 24,
+          "unique_visitors_14d": 5,
+          "clones_14d": 24,
+          "unique_cloners_14d": 23,
+          "language": "Python",
+          "created_at": "2024-06-03T19:08:04Z",
+          "updated_at": "2025-11-27T02:32:45Z",
+          "topics": [
+            "ai",
+            "deployment"
+          ]
         }
       ]
     },
@@ -4363,6 +4776,24 @@
           "unique_visitors_14d": 5,
           "clones_14d": 4,
           "unique_cloners_14d": 3,
+          "language": "Python",
+          "created_at": "2024-10-09T20:05:04Z",
+          "updated_at": "2025-09-01T03:13:59Z",
+          "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/bias-mitigation-unlearning",
+          "name": "bias-mitigation-unlearning",
+          "timestamp": "2025-12-08T12:02:50.768282+00:00",
+          "stars": 3,
+          "forks": 2,
+          "watchers": 1,
+          "open_issues": 6,
+          "size": 383,
+          "views_14d": 27,
+          "unique_visitors_14d": 3,
+          "clones_14d": 6,
+          "unique_cloners_14d": 6,
           "language": "Python",
           "created_at": "2024-10-09T20:05:04Z",
           "updated_at": "2025-09-01T03:13:59Z",
@@ -4567,6 +4998,27 @@
             "rag",
             "retrieval-augmented-generation"
           ]
+        },
+        {
+          "repo_id": "vectorinstitute/retrieval-augmented-generation",
+          "name": "retrieval-augmented-generation",
+          "timestamp": "2025-12-08T12:02:46.842259+00:00",
+          "stars": 30,
+          "forks": 21,
+          "watchers": 24,
+          "open_issues": 3,
+          "size": 49315,
+          "views_14d": 171,
+          "unique_visitors_14d": 30,
+          "clones_14d": 109,
+          "unique_cloners_14d": 54,
+          "language": "Jupyter Notebook",
+          "created_at": "2023-11-30T19:17:30Z",
+          "updated_at": "2025-12-01T17:38:11Z",
+          "topics": [
+            "rag",
+            "retrieval-augmented-generation"
+          ]
         }
       ]
     },
@@ -4747,6 +5199,24 @@
           "views_14d": 21,
           "unique_visitors_14d": 4,
           "clones_14d": 6,
+          "unique_cloners_14d": 5,
+          "language": "Python",
+          "created_at": "2025-05-22T15:49:19Z",
+          "updated_at": "2025-11-25T20:44:42Z",
+          "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/crisp-nam",
+          "name": "crisp-nam",
+          "timestamp": "2025-12-08T12:02:54.816063+00:00",
+          "stars": 2,
+          "forks": 0,
+          "watchers": 0,
+          "open_issues": 0,
+          "size": 7170,
+          "views_14d": 21,
+          "unique_visitors_14d": 4,
+          "clones_14d": 5,
           "unique_cloners_14d": 5,
           "language": "Python",
           "created_at": "2025-05-22T15:49:19Z",
@@ -5017,6 +5487,32 @@
             "zero-shot-classification",
             "zero-shot-retrieval"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/mmlearn",
+          "name": "mmlearn",
+          "timestamp": "2025-12-08T12:02:56.148932+00:00",
+          "stars": 19,
+          "forks": 3,
+          "watchers": 4,
+          "open_issues": 7,
+          "size": 5296,
+          "views_14d": 25,
+          "unique_visitors_14d": 8,
+          "clones_14d": 66,
+          "unique_cloners_14d": 32,
+          "language": "Python",
+          "created_at": "2024-08-07T18:50:11Z",
+          "updated_at": "2025-12-02T13:31:50Z",
+          "topics": [
+            "clip",
+            "contrastive-learning",
+            "i-jepa",
+            "multi-task-learning",
+            "multimodal-learning",
+            "zero-shot-classification",
+            "zero-shot-retrieval"
+          ]
         }
       ]
     },
@@ -5217,6 +5713,27 @@
             "alignment",
             "fine-tuning"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/finetuning-and-alignment",
+          "name": "finetuning-and-alignment",
+          "timestamp": "2025-12-08T12:02:52.793408+00:00",
+          "stars": 11,
+          "forks": 3,
+          "watchers": 30,
+          "open_issues": 0,
+          "size": 27777,
+          "views_14d": 24,
+          "unique_visitors_14d": 6,
+          "clones_14d": 20,
+          "unique_cloners_14d": 18,
+          "language": "Jupyter Notebook",
+          "created_at": "2024-05-14T03:18:04Z",
+          "updated_at": "2025-11-27T02:38:26Z",
+          "topics": [
+            "alignment",
+            "fine-tuning"
+          ]
         }
       ]
     },
@@ -5398,6 +5915,24 @@
           "unique_visitors_14d": 8,
           "clones_14d": 190,
           "unique_cloners_14d": 65,
+          "language": "Python",
+          "created_at": "2025-10-15T20:14:06Z",
+          "updated_at": "2025-12-03T15:52:15Z",
+          "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/masksql",
+          "name": "masksql",
+          "timestamp": "2025-12-08T12:03:05.351751+00:00",
+          "stars": 1,
+          "forks": 0,
+          "watchers": 0,
+          "open_issues": 5,
+          "size": 5542,
+          "views_14d": 162,
+          "unique_visitors_14d": 9,
+          "clones_14d": 196,
+          "unique_cloners_14d": 74,
           "language": "Python",
           "created_at": "2025-10-15T20:14:06Z",
           "updated_at": "2025-12-03T15:52:15Z",
@@ -5586,6 +6121,24 @@
           "language": "Python",
           "created_at": "2025-01-08T20:10:48Z",
           "updated_at": "2025-08-29T07:22:56Z",
+          "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/fair-sense-ai",
+          "name": "fair-sense-ai",
+          "timestamp": "2025-12-08T12:03:07.519349+00:00",
+          "stars": 6,
+          "forks": 3,
+          "watchers": 0,
+          "open_issues": 0,
+          "size": 13906,
+          "views_14d": 88,
+          "unique_visitors_14d": 25,
+          "clones_14d": 3,
+          "unique_cloners_14d": 3,
+          "language": "Python",
+          "created_at": "2025-01-08T20:10:48Z",
+          "updated_at": "2025-12-04T03:29:22Z",
           "topics": []
         }
       ]
@@ -5842,6 +6395,31 @@
             "healthcare",
             "machine-learning"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/FL4Health",
+          "name": "FL4Health",
+          "timestamp": "2025-12-08T12:02:55.479069+00:00",
+          "stars": 51,
+          "forks": 16,
+          "watchers": 3,
+          "open_issues": 0,
+          "size": 234703,
+          "views_14d": 590,
+          "unique_visitors_14d": 96,
+          "clones_14d": 830,
+          "unique_cloners_14d": 255,
+          "language": "Python",
+          "created_at": "2022-09-16T12:54:29Z",
+          "updated_at": "2025-12-08T11:36:21Z",
+          "topics": [
+            "deep-learning",
+            "distributed-learning",
+            "federated-learning",
+            "federated-learning-framework",
+            "healthcare",
+            "machine-learning"
+          ]
         }
       ]
     },
@@ -5966,6 +6544,24 @@
           "open_issues": 0,
           "size": 17052,
           "views_14d": 35,
+          "unique_visitors_14d": 4,
+          "clones_14d": 4,
+          "unique_cloners_14d": 4,
+          "language": "Python",
+          "created_at": "2025-06-09T17:34:32Z",
+          "updated_at": "2025-11-25T20:14:47Z",
+          "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/linguamark",
+          "name": "linguamark",
+          "timestamp": "2025-12-08T12:02:51.427255+00:00",
+          "stars": 0,
+          "forks": 0,
+          "watchers": 0,
+          "open_issues": 0,
+          "size": 17052,
+          "views_14d": 32,
           "unique_visitors_14d": 4,
           "clones_14d": 4,
           "unique_cloners_14d": 4,
@@ -6132,6 +6728,28 @@
             "multimodal-large-language-models",
             "vlm"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/humanibench",
+          "name": "humanibench",
+          "timestamp": "2025-12-08T12:02:48.804706+00:00",
+          "stars": 6,
+          "forks": 1,
+          "watchers": 1,
+          "open_issues": 0,
+          "size": 21607,
+          "views_14d": 180,
+          "unique_visitors_14d": 21,
+          "clones_14d": 85,
+          "unique_cloners_14d": 57,
+          "language": "Python",
+          "created_at": "2025-01-28T14:55:04Z",
+          "updated_at": "2025-11-27T21:43:32Z",
+          "topics": [
+            "evaluation-framework",
+            "multimodal-large-language-models",
+            "vlm"
+          ]
         }
       ]
     },
@@ -6227,6 +6845,24 @@
           "created_at": "2023-10-11T15:26:23Z",
           "updated_at": "2025-12-02T04:43:16Z",
           "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/vbll",
+          "name": "vbll",
+          "timestamp": "2025-12-08T12:03:06.067732+00:00",
+          "stars": 78,
+          "forks": 7,
+          "watchers": 2,
+          "open_issues": 4,
+          "size": 551,
+          "views_14d": 310,
+          "unique_visitors_14d": 38,
+          "clones_14d": 5,
+          "unique_cloners_14d": 5,
+          "language": "Python",
+          "created_at": "2023-10-11T15:26:23Z",
+          "updated_at": "2025-12-02T04:43:16Z",
+          "topics": []
         }
       ]
     },
@@ -6316,6 +6952,27 @@
             "hvac-control",
             "reinforcement-learning"
           ]
+        },
+        {
+          "repo_id": "VectorInstitute/HV-Ai-C",
+          "name": "HV-Ai-C",
+          "timestamp": "2025-12-08T12:03:00.859081+00:00",
+          "stars": 74,
+          "forks": 22,
+          "watchers": 6,
+          "open_issues": 1,
+          "size": 223,
+          "views_14d": 71,
+          "unique_visitors_14d": 40,
+          "clones_14d": 14,
+          "unique_cloners_14d": 7,
+          "language": "Python",
+          "created_at": "2022-03-03T16:55:04Z",
+          "updated_at": "2025-12-03T19:07:08Z",
+          "topics": [
+            "hvac-control",
+            "reinforcement-learning"
+          ]
         }
       ]
     },
@@ -6375,9 +7032,27 @@
           "created_at": "2025-03-18T18:06:25Z",
           "updated_at": "2025-11-26T21:32:12Z",
           "topics": []
+        },
+        {
+          "repo_id": "VectorInstitute/mcp-goodnews",
+          "name": "mcp-goodnews",
+          "timestamp": "2025-12-08T12:02:47.491186+00:00",
+          "stars": 44,
+          "forks": 9,
+          "watchers": 0,
+          "open_issues": 1,
+          "size": 101,
+          "views_14d": 67,
+          "unique_visitors_14d": 41,
+          "clones_14d": 59,
+          "unique_cloners_14d": 46,
+          "language": "Python",
+          "created_at": "2025-03-18T18:06:25Z",
+          "updated_at": "2025-11-26T21:32:12Z",
+          "topics": []
         }
       ]
     }
   },
-  "last_updated": "2025-12-03T19:20:18.504534+00:00"
+  "last_updated": "2025-12-08T12:03:07.519349+00:00"
 }
