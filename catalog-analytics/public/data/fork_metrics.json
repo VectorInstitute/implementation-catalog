@@ -1,0 +1,326 @@
+{
+  "summary": {
+    "total_forks": 200,
+    "active_forks": 27,
+    "meaningful_forks": 11,
+    "not_meaningful_forks": 16,
+    "meaningful_rate": 40.7,
+    "total_files_changed": 0,
+    "code_files": 0,
+    "config_files": 0
+  },
+  "geographic_distribution": [
+    {
+      "country": "Canada",
+      "count": 8
+    },
+    {
+      "country": "Other",
+      "count": 2
+    },
+    {
+      "country": "United States",
+      "count": 1
+    }
+  ],
+  "active_forks": [
+    {
+      "fork_owner": "yasamanparhizkar",
+      "fork_name": "mmlearn",
+      "fork_url": "https://github.com/yasamanparhizkar/mmlearn",
+      "parent_repo": "VectorInstitute/mmlearn",
+      "commits_ahead": 4,
+      "location": "Canada",
+      "country": "Canada",
+      "created_at": "2024-11-01T21:43:26Z",
+      "updated_at": "2024-11-04T17:14:06Z"
+    },
+    {
+      "fork_owner": "HoBinspire",
+      "fork_name": "EHRMamba-odyssey",
+      "fork_url": "https://github.com/HoBinspire/EHRMamba-odyssey",
+      "parent_repo": "VectorInstitute/odyssey",
+      "commits_ahead": 2,
+      "location": null,
+      "country": null,
+      "created_at": "2025-05-25T10:35:02Z",
+      "updated_at": "2025-05-26T04:02:36Z"
+    },
+    {
+      "fork_owner": "maxbrazhnyy",
+      "fork_name": "odyssey",
+      "fork_url": "https://github.com/maxbrazhnyy/odyssey",
+      "parent_repo": "VectorInstitute/odyssey",
+      "commits_ahead": 8,
+      "location": null,
+      "country": null,
+      "created_at": "2024-11-26T20:35:52Z",
+      "updated_at": "2024-12-07T00:00:32Z"
+    },
+    {
+      "fork_owner": "wangrandk",
+      "fork_name": "odyssey",
+      "fork_url": "https://github.com/wangrandk/odyssey",
+      "parent_repo": "VectorInstitute/odyssey",
+      "commits_ahead": 5,
+      "location": "Copenhagen",
+      "country": "Other",
+      "created_at": "2024-11-18T15:05:51Z",
+      "updated_at": "2024-11-29T09:22:21Z"
+    },
+    {
+      "fork_owner": "ml4oncology",
+      "fork_name": "ml4o-inference",
+      "fork_url": "https://github.com/ml4oncology/ml4o-inference",
+      "parent_repo": "VectorInstitute/vector-inference",
+      "commits_ahead": 1,
+      "location": null,
+      "country": null,
+      "created_at": "2025-03-21T02:11:57Z",
+      "updated_at": "2025-08-01T20:47:04Z"
+    },
+    {
+      "fork_owner": "atharvas",
+      "fork_name": "tacc-inference",
+      "fork_url": "https://github.com/atharvas/tacc-inference",
+      "parent_repo": "VectorInstitute/vector-inference",
+      "commits_ahead": 21,
+      "location": null,
+      "country": null,
+      "created_at": "2024-10-07T18:16:43Z",
+      "updated_at": "2024-11-17T02:50:34Z"
+    },
+    {
+      "fork_owner": "ikb-a",
+      "fork_name": "vector-inference",
+      "fork_url": "https://github.com/ikb-a/vector-inference",
+      "parent_repo": "VectorInstitute/vector-inference",
+      "commits_ahead": 1,
+      "location": null,
+      "country": null,
+      "created_at": "2024-08-22T18:03:45Z",
+      "updated_at": "2024-08-22T18:42:29Z"
+    },
+    {
+      "fork_owner": "raeidsaqur",
+      "fork_name": "vector-inference",
+      "fork_url": "https://github.com/raeidsaqur/vector-inference",
+      "parent_repo": "VectorInstitute/vector-inference",
+      "commits_ahead": 1,
+      "location": null,
+      "country": null,
+      "created_at": "2024-04-11T16:33:24Z",
+      "updated_at": "2024-11-17T15:57:26Z"
+    },
+    {
+      "fork_owner": "AirFlowW",
+      "fork_name": "vbll-for-mbrl",
+      "fork_url": "https://github.com/AirFlowW/vbll-for-mbrl",
+      "parent_repo": "VectorInstitute/vbll",
+      "commits_ahead": 37,
+      "location": null,
+      "country": null,
+      "created_at": "2024-10-09T08:38:26Z",
+      "updated_at": "2025-04-01T09:12:43Z"
+    },
+    {
+      "fork_owner": "matekrk",
+      "fork_name": "vbll",
+      "fork_url": "https://github.com/matekrk/vbll",
+      "parent_repo": "VectorInstitute/vbll",
+      "commits_ahead": 4,
+      "location": "Krakow",
+      "country": "Other",
+      "created_at": "2024-09-30T11:37:13Z",
+      "updated_at": "2025-04-02T16:16:03Z"
+    },
+    {
+      "fork_owner": "Tocheee",
+      "fork_name": "FL4HealthVectorBootcamp",
+      "fork_url": "https://github.com/Tocheee/FL4HealthVectorBootcamp",
+      "parent_repo": "VectorInstitute/FL4Health",
+      "commits_ahead": 2,
+      "location": null,
+      "country": null,
+      "created_at": "2025-04-02T14:19:22Z",
+      "updated_at": "2025-04-08T13:51:27Z"
+    },
+    {
+      "fork_owner": "calenirwin",
+      "fork_name": "FL4Health",
+      "fork_url": "https://github.com/calenirwin/FL4Health",
+      "parent_repo": "VectorInstitute/FL4Health",
+      "commits_ahead": 2,
+      "location": "Toronto, Canada",
+      "country": "Canada",
+      "created_at": "2025-03-24T17:19:34Z",
+      "updated_at": "2025-04-09T17:52:19Z"
+    },
+    {
+      "fork_owner": "nkitner",
+      "fork_name": "accenture_group",
+      "fork_url": "https://github.com/nkitner/accenture_group",
+      "parent_repo": "VectorInstitute/FL4Health",
+      "commits_ahead": 29,
+      "location": null,
+      "country": null,
+      "created_at": "2025-03-18T19:55:46Z",
+      "updated_at": "2025-04-28T20:18:22Z"
+    },
+    {
+      "fork_owner": "zxj-c",
+      "fork_name": "FL4Health",
+      "fork_url": "https://github.com/zxj-c/FL4Health",
+      "parent_repo": "VectorInstitute/FL4Health",
+      "commits_ahead": 1,
+      "location": null,
+      "country": null,
+      "created_at": "2024-05-14T15:21:29Z",
+      "updated_at": "2025-04-09T00:06:41Z"
+    },
+    {
+      "fork_owner": "ethanhkim",
+      "fork_name": "cyclops",
+      "fork_url": "https://github.com/ethanhkim/cyclops",
+      "parent_repo": "VectorInstitute/cyclops",
+      "commits_ahead": 8,
+      "location": null,
+      "country": null,
+      "created_at": "2024-08-27T13:19:31Z",
+      "updated_at": "2024-09-03T14:25:13Z"
+    },
+    {
+      "fork_owner": "harel-coffee",
+      "fork_name": "cyclops-auto",
+      "fork_url": "https://github.com/harel-coffee/cyclops-auto",
+      "parent_repo": "VectorInstitute/cyclops",
+      "commits_ahead": 10,
+      "location": null,
+      "country": null,
+      "created_at": "2024-06-26T14:05:46Z",
+      "updated_at": "2024-06-29T17:23:30Z"
+    },
+    {
+      "fork_owner": "jumanaf",
+      "fork_name": "kiwi-ai-deployment-bootcamp",
+      "fork_url": "https://github.com/jumanaf/kiwi-ai-deployment-bootcamp",
+      "parent_repo": "VectorInstitute/ai-deployment",
+      "commits_ahead": 3,
+      "location": "Seattle, WA",
+      "country": "United States",
+      "created_at": "2024-10-16T13:59:14Z",
+      "updated_at": "2024-11-04T17:31:47Z"
+    },
+    {
+      "fork_owner": "aminfadaei116",
+      "fork_name": "ai-deployment-bootcamp",
+      "fork_url": "https://github.com/aminfadaei116/ai-deployment-bootcamp",
+      "parent_repo": "VectorInstitute/ai-deployment",
+      "commits_ahead": 6,
+      "location": "Toronto, Canada",
+      "country": "Canada",
+      "created_at": "2024-09-10T02:10:57Z",
+      "updated_at": "2024-10-10T15:06:24Z"
+    },
+    {
+      "fork_owner": "doaa-altarawy",
+      "fork_name": "ai-deployment-bootcamp",
+      "fork_url": "https://github.com/doaa-altarawy/ai-deployment-bootcamp",
+      "parent_repo": "VectorInstitute/ai-deployment",
+      "commits_ahead": 4,
+      "location": "Canada",
+      "country": "Canada",
+      "created_at": "2024-09-03T20:50:02Z",
+      "updated_at": "2024-10-18T15:39:24Z"
+    },
+    {
+      "fork_owner": "miladrezazadeh",
+      "fork_name": "ai-deployment-bootcamp",
+      "fork_url": "https://github.com/miladrezazadeh/ai-deployment-bootcamp",
+      "parent_repo": "VectorInstitute/ai-deployment",
+      "commits_ahead": 5,
+      "location": "Toronto, Ontario",
+      "country": "Canada",
+      "created_at": "2024-08-30T13:51:30Z",
+      "updated_at": "2024-09-27T14:12:12Z"
+    },
+    {
+      "fork_owner": "ykissin-omers",
+      "fork_name": "omers-ai-deployment-bootcamp",
+      "fork_url": "https://github.com/ykissin-omers/omers-ai-deployment-bootcamp",
+      "parent_repo": "VectorInstitute/ai-deployment",
+      "commits_ahead": 11,
+      "location": null,
+      "country": null,
+      "created_at": "2024-08-27T14:36:39Z",
+      "updated_at": "2024-08-28T18:18:47Z"
+    },
+    {
+      "fork_owner": "calenirwin",
+      "fork_name": "ai-deployment-bootcamp",
+      "fork_url": "https://github.com/calenirwin/ai-deployment-bootcamp",
+      "parent_repo": "VectorInstitute/ai-deployment",
+      "commits_ahead": 10,
+      "location": "Toronto, Canada",
+      "country": "Canada",
+      "created_at": "2024-08-22T17:34:20Z",
+      "updated_at": "2024-10-18T14:03:12Z"
+    },
+    {
+      "fork_owner": "louisphilippebossebell",
+      "fork_name": "ai-deployment-bootcamp",
+      "fork_url": "https://github.com/louisphilippebossebell/ai-deployment-bootcamp",
+      "parent_repo": "VectorInstitute/ai-deployment",
+      "commits_ahead": 26,
+      "location": null,
+      "country": null,
+      "created_at": "2024-08-22T17:24:44Z",
+      "updated_at": "2024-08-27T16:14:26Z"
+    },
+    {
+      "fork_owner": "CamDuffy1",
+      "fork_name": "rag_bootcamp",
+      "fork_url": "https://github.com/CamDuffy1/rag_bootcamp",
+      "parent_repo": "vectorinstitute/retrieval-augmented-generation",
+      "commits_ahead": 27,
+      "location": "Toronto",
+      "country": "Canada",
+      "created_at": "2024-03-26T15:23:58Z",
+      "updated_at": "2024-03-26T18:37:59Z"
+    },
+    {
+      "fork_owner": "neilsbak",
+      "fork_name": "rag_bootcamp",
+      "fork_url": "https://github.com/neilsbak/rag_bootcamp",
+      "parent_repo": "vectorinstitute/retrieval-augmented-generation",
+      "commits_ahead": 28,
+      "location": null,
+      "country": null,
+      "created_at": "2024-03-26T14:36:51Z",
+      "updated_at": "2024-05-06T21:12:16Z"
+    },
+    {
+      "fork_owner": "otetLopez",
+      "fork_name": "VectorRAGBootcamp",
+      "fork_url": "https://github.com/otetLopez/VectorRAGBootcamp",
+      "parent_repo": "vectorinstitute/retrieval-augmented-generation",
+      "commits_ahead": 1,
+      "location": "Toronto",
+      "country": "Canada",
+      "created_at": "2024-03-20T16:07:24Z",
+      "updated_at": "2024-03-21T18:55:04Z"
+    },
+    {
+      "fork_owner": "daniel1377",
+      "fork_name": "daniel_new_rag_bootcamp",
+      "fork_url": "https://github.com/daniel1377/daniel_new_rag_bootcamp",
+      "parent_repo": "vectorinstitute/retrieval-augmented-generation",
+      "commits_ahead": 4,
+      "location": null,
+      "country": null,
+      "created_at": "2024-03-14T14:52:09Z",
+      "updated_at": "2024-03-19T18:40:51Z"
+    }
+  ],
+  "last_updated": "2025-12-10T20:08:31.062215+00:00"
+}

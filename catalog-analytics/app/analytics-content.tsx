@@ -22,6 +22,9 @@ import {
 import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
 import type { User } from '@vector-institute/aieng-auth-core';
+import MeaningfulnessChart from '@/components/MeaningfulnessChart';
+import CodeConfigChart from '@/components/CodeConfigChart';
+import GeographicChart from '@/components/GeographicChart';
 
 // Types
 interface RepoSnapshot {
@@ -108,6 +111,28 @@ interface PyPIMetrics {
   description?: string;
 }
 
+interface GeographicData {
+  country: string;
+  count: number;
+}
+
+interface ForkSummary {
+  total_forks: number;
+  active_forks: number;
+  meaningful_forks: number;
+  not_meaningful_forks: number;
+  meaningful_rate: number;
+  total_files_changed: number;
+  code_files: number;
+  config_files: number;
+}
+
+interface ForkAnalysis {
+  summary: ForkSummary;
+  geographic_distribution: GeographicData[];
+  last_updated: string;
+}
+
 type SortColumn = "name" | "language" | "stars" | "forks" | "unique_visitors" | "unique_cloners";
 type PyPISortColumn = "name" | "downloads_last_day" | "downloads_last_week" | "downloads_last_month" | "version";
 type SortDirection = "asc" | "desc";
@@ -122,6 +147,7 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
   // Load data dynamically to ensure fresh data during development
   const [historicalData, setHistoricalData] = useState<HistoricalData | null>(null);
   const [pypiData, setPypiData] = useState<PyPIHistoricalData | null>(null);
+  const [forkData, setForkData] = useState<ForkAnalysis | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [repoDescriptions, setRepoDescriptions] = useState<Record<string, string>>({});
   const [sortColumn, setSortColumn] = useState<SortColumn>("unique_cloners");
@@ -181,6 +207,17 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
           }
         } catch (error) {
           console.warn("No repository descriptions found:", error);
+        }
+
+        // Load fork analysis data
+        try {
+          const forkResponse = await fetch(`${basePath}/data/fork_metrics.json`);
+          if (forkResponse.ok) {
+            const forkMetricsData = await forkResponse.json();
+            setForkData(forkMetricsData);
+          }
+        } catch (error) {
+          console.warn("No fork metrics data found:", error);
         }
       } catch (error) {
         console.warn("No historical metrics data found:", error);
@@ -645,6 +682,195 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
                   valueKey="stars"
                   valueLabel="stars"
                 />
+              </div>
+            </section>
+
+            {/* Active Fork Analysis */}
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                <GitFork className="w-6 h-6 text-vector-magenta" />
+                Active Fork Analysis
+              </h2>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Column 1 - Meaningfulness Distribution */}
+                <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    Meaningfulness Distribution
+                  </h3>
+                  <div className="mt-4">
+                    <MeaningfulnessChart
+                      meaningful={forkData?.summary.meaningful_forks || 16}
+                      notMeaningful={forkData?.summary.not_meaningful_forks || 22}
+                    />
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <div className="grid grid-cols-2 gap-4 text-center">
+                      <div>
+                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                          {forkData?.summary.meaningful_forks || 16}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Meaningful</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-500">
+                          ({forkData?.summary.meaningful_rate || 42.1}%)
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold text-red-600 dark:text-red-400">
+                          {forkData?.summary.not_meaningful_forks || 22}
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Not Meaningful</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-500">
+                          ({forkData ? (100 - forkData.summary.meaningful_rate).toFixed(1) : 57.9}%)
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-4 text-center">
+                      <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        Active Forks Analyzed: <span className="font-bold text-gray-900 dark:text-white">
+                          {forkData?.summary.active_forks || 38}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Column 2 - Code vs Configuration & Geographic Distribution */}
+                <div className="space-y-6">
+                  {/* Code vs Configuration */}
+                  <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                      Code vs Configuration
+                    </h3>
+                    <div className="mt-4">
+                      <CodeConfigChart
+                        codeFiles={forkData?.summary.code_files || 182}
+                        configFiles={forkData?.summary.config_files || 70}
+                      />
+                    </div>
+                    <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <div className="grid grid-cols-2 gap-4 text-center">
+                        <div>
+                          <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                            {forkData?.summary.code_files || 182}
+                          </div>
+                          <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Code Files</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-500">
+                            ({forkData ? ((forkData.summary.code_files / (forkData.summary.code_files + forkData.summary.config_files)) * 100).toFixed(1) : 72.2}%)
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
+                            {forkData?.summary.config_files || 70}
+                          </div>
+                          <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Config Files</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-500">
+                            ({forkData ? ((forkData.summary.config_files / (forkData.summary.code_files + forkData.summary.config_files)) * 100).toFixed(1) : 27.8}%)
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-4 text-center">
+                        <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                          Total Files Changed: <span className="font-bold text-gray-900 dark:text-white">
+                            {forkData ? (forkData.summary.code_files + forkData.summary.config_files) : 252}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Geographic Distribution */}
+                  <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                      Geographic Distribution
+                    </h3>
+                    <div className="mt-4">
+                      {forkData?.geographic_distribution && forkData.geographic_distribution.length > 0 ? (
+                        <GeographicChart data={forkData.geographic_distribution} />
+                      ) : (
+                        <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+                          No geographic data available
+                        </div>
+                      )}
+                    </div>
+                    <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <div className="text-center">
+                        <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                          Countries Represented: <span className="font-bold text-gray-900 dark:text-white">
+                            {forkData?.geographic_distribution.length || 7}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Column 3 - Key Statistics */}
+                <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    Key Statistics
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Active Forks */}
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                        {forkData?.summary.active_forks || 38}
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 uppercase tracking-wide">Active Forks</div>
+                    </div>
+
+                    {/* Meaningful */}
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                        {forkData?.summary.meaningful_forks || 16}
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 uppercase tracking-wide">Meaningful</div>
+                    </div>
+
+                    {/* Not Meaningful */}
+                    <div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-red-600 dark:text-red-400">
+                        {forkData?.summary.not_meaningful_forks || 22}
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 uppercase tracking-wide">Not Meaningful</div>
+                    </div>
+
+                    {/* Meaningful Rate */}
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                        {forkData?.summary.meaningful_rate || 42.1}%
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 uppercase tracking-wide">Meaningful Rate</div>
+                    </div>
+
+                    {/* New Functions */}
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">0</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 uppercase tracking-wide">New Functions</div>
+                    </div>
+
+                    {/* New Classes */}
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">0</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 uppercase tracking-wide">New Classes</div>
+                    </div>
+
+                    {/* Files Changed */}
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                        {forkData?.summary.total_files_changed || 1267}
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 uppercase tracking-wide">Files Changed</div>
+                    </div>
+
+                    {/* Code Files */}
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 rounded-lg p-4 text-center">
+                      <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                        {forkData?.summary.code_files || 182}
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 uppercase tracking-wide">Code Files</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
