@@ -14,9 +14,23 @@ interface CIStatus {
   details?: string;
 }
 
+function isValidRepoId(repo_id: string): boolean {
+  // Expect GitHub-style "owner/repo" with safe characters only
+  const trimmed = repo_id.trim();
+  const repoPattern = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
+  return repoPattern.test(trimmed);
+}
+
 export async function POST(request: Request) {
   try {
     const { repositories }: CIStatusRequest = await request.json();
+
+    if (!Array.isArray(repositories)) {
+      return NextResponse.json(
+        { error: 'Invalid request: "repositories" must be an array of strings' },
+        { status: 400 }
+      );
+    }
 
     const token = process.env.GH_TOKEN || process.env.CATALOG_GITHUB_TOKEN || process.env.GITHUB_TOKEN || process.env.METRICS_GITHUB_TOKEN;
 
@@ -34,13 +48,24 @@ export async function POST(request: Request) {
       }, {} as Record<string, CIStatus>);
 
       return NextResponse.json(statusMap);
+      // Validate repo_id before using it in an outbound request
+      if (typeof repo_id !== 'string' || !isValidRepoId(repo_id)) {
+        return {
+          repo_id: String(repo_id),
+          state: 'unknown' as const,
+          total_checks: 0,
+          updated_at: new Date().toISOString(),
+          details: 'Invalid repository identifier',
+        };
+      }
+
     }
 
     // Fetch CI status for all repos in parallel
     const statusPromises = repositories.map(async (repo_id) => {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/${repo_id}/commits/main/status`,
+          `https://api.github.com/repos/${repo_id.trim()}/commits/main/status`,
           {
             headers: {
               'Authorization': `Bearer ${token}`,
