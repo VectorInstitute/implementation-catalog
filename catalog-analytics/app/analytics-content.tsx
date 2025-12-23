@@ -136,6 +136,8 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
   const [pypiSortColumn, setPypiSortColumn] = useState<PyPISortColumn>("downloads_last_month");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [pypiSortDirection, setPypiSortDirection] = useState<SortDirection>("desc");
+  const [templateSortColumn, setTemplateSortColumn] = useState<SortColumn>("unique_cloners");
+  const [templateSortDirection, setTemplateSortDirection] = useState<SortDirection>("desc");
   const [activeTab, setActiveTab] = useState<ActiveTab>("github");
   const [pypiFilter, setPypiFilter] = useState<PyPIFilter>("all");
   const [ciStatuses, setCiStatuses] = useState<Record<string, CIStatus>>({});
@@ -231,6 +233,18 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
       .filter((r): r is RepoMetrics => r !== null);
   }, [historicalData, repoDescriptions]);
 
+  // Separate regular repos from template repos
+  const regularRepoMetrics = useMemo(() => {
+    return allRepoMetrics.filter(repo => !repo.name.startsWith('aieng-template-'));
+  }, [allRepoMetrics]);
+
+  const templateRepoMetrics = useMemo(() => {
+    return allRepoMetrics.filter(repo =>
+      repo.name.startsWith('aieng-template-') &&
+      repo.name !== 'aieng-template-poetry'
+    );
+  }, [allRepoMetrics]);
+
   // Fetch CI statuses when repo metrics are loaded
   useEffect(() => {
     const fetchCIStatuses = async () => {
@@ -283,15 +297,15 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
     fetchCIStatuses();
   }, [allRepoMetrics, ciCache, CACHE_DURATION]);
 
-  // Calculate aggregate metrics
+  // Calculate aggregate metrics (using regular repos only, excluding templates)
   const aggregateMetrics = useMemo(() => {
-    const totalStars = allRepoMetrics.reduce((sum, r) => sum + r.stars, 0);
-    const totalForks = allRepoMetrics.reduce((sum, r) => sum + r.forks, 0);
-    const totalVisitors = allRepoMetrics.reduce(
+    const totalStars = regularRepoMetrics.reduce((sum, r) => sum + r.stars, 0);
+    const totalForks = regularRepoMetrics.reduce((sum, r) => sum + r.forks, 0);
+    const totalVisitors = regularRepoMetrics.reduce(
       (sum, r) => sum + r.unique_visitors,
       0
     );
-    const totalCloners = allRepoMetrics.reduce(
+    const totalCloners = regularRepoMetrics.reduce(
       (sum, r) => sum + r.unique_cloners,
       0
     );
@@ -301,30 +315,30 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
       totalForks,
       totalVisitors,
       totalCloners,
-      totalRepos: allRepoMetrics.length,
+      totalRepos: regularRepoMetrics.length,
       avgStarsPerRepo:
-        allRepoMetrics.length > 0
-          ? Math.round(totalStars / allRepoMetrics.length)
+        regularRepoMetrics.length > 0
+          ? Math.round(totalStars / regularRepoMetrics.length)
           : 0,
     };
-  }, [allRepoMetrics]);
+  }, [regularRepoMetrics]);
 
-  // Get top performers
+  // Get top performers (using regular repos only, excluding templates)
   const topPerformers = useMemo(() => {
     return {
-      byStars: [...allRepoMetrics].sort((a, b) => b.stars - a.stars).slice(0, 5),
-      byVisitors: [...allRepoMetrics]
+      byStars: [...regularRepoMetrics].sort((a, b) => b.stars - a.stars).slice(0, 5),
+      byVisitors: [...regularRepoMetrics]
         .sort((a, b) => b.unique_visitors - a.unique_visitors)
         .slice(0, 5),
-      byCloners: [...allRepoMetrics]
+      byCloners: [...regularRepoMetrics]
         .sort((a, b) => b.unique_cloners - a.unique_cloners)
         .slice(0, 5),
     };
-  }, [allRepoMetrics]);
+  }, [regularRepoMetrics]);
 
-  // Sort repository metrics
+  // Sort repository metrics (regular repos only, excluding templates)
   const sortedRepoMetrics = useMemo(() => {
-    const sorted = [...allRepoMetrics].sort((a, b) => {
+    const sorted = [...regularRepoMetrics].sort((a, b) => {
       // Special handling for CI status column
       if (sortColumn === 'ci_status') {
         const statusA = ciStatuses[a.repo_id]?.state || 'unknown';
@@ -368,7 +382,55 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
     });
 
     return sorted;
-  }, [allRepoMetrics, sortColumn, sortDirection, ciStatuses]);
+  }, [regularRepoMetrics, sortColumn, sortDirection, ciStatuses]);
+
+  // Sort template repository metrics
+  const sortedTemplateMetrics = useMemo(() => {
+    const sorted = [...templateRepoMetrics].sort((a, b) => {
+      // Special handling for CI status column
+      if (templateSortColumn === 'ci_status') {
+        const statusA = ciStatuses[a.repo_id]?.state || 'unknown';
+        const statusB = ciStatuses[b.repo_id]?.state || 'unknown';
+
+        // Define sort order: success > pending > failure/error > unknown
+        const statusOrder: Record<string, number> = {
+          success: 4,
+          pending: 3,
+          failure: 2,
+          error: 2,
+          unknown: 1,
+        };
+
+        const orderA = statusOrder[statusA] || 0;
+        const orderB = statusOrder[statusB] || 0;
+
+        return templateSortDirection === 'asc'
+          ? orderA - orderB
+          : orderB - orderA;
+      }
+
+      let aValue: string | number | null = a[templateSortColumn];
+      let bValue: string | number | null = b[templateSortColumn];
+
+      // Handle null/undefined values
+      if (aValue === null || aValue === undefined) aValue = "";
+      if (bValue === null || bValue === undefined) bValue = "";
+
+      // For strings, use locale compare
+      if (typeof aValue === "string" && typeof bValue === "string") {
+        return templateSortDirection === "asc"
+          ? aValue.localeCompare(bValue)
+          : bValue.localeCompare(aValue);
+      }
+
+      // For numbers
+      return templateSortDirection === "asc"
+        ? (aValue as number) - (bValue as number)
+        : (bValue as number) - (aValue as number);
+    });
+
+    return sorted;
+  }, [templateRepoMetrics, templateSortColumn, templateSortDirection, ciStatuses]);
 
   // Handle column header click
   const handleSort = (column: SortColumn) => {
@@ -386,6 +448,28 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
       return <ArrowUpDown className="w-3 h-3 opacity-50" />;
     }
     return sortDirection === "asc" ? (
+      <ArrowUp className="w-3 h-3" />
+    ) : (
+      <ArrowDown className="w-3 h-3" />
+    );
+  };
+
+  // Handle template column header click
+  const handleTemplateSort = (column: SortColumn) => {
+    if (templateSortColumn === column) {
+      setTemplateSortDirection(templateSortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setTemplateSortColumn(column);
+      setTemplateSortDirection("desc");
+    }
+  };
+
+  // Get template sort icon for a column
+  const getTemplateSortIcon = (column: SortColumn) => {
+    if (templateSortColumn !== column) {
+      return <ArrowUpDown className="w-3 h-3 opacity-50" />;
+    }
+    return templateSortDirection === "asc" ? (
       <ArrowUp className="w-3 h-3" />
     ) : (
       <ArrowDown className="w-3 h-3" />
@@ -739,155 +823,30 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
             </section>
 
             {/* Repositories Table */}
-            <section>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Repositories
-              </h2>
-              <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-                      <tr>
-                        <th
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                          onClick={() => handleSort("name")}
-                        >
-                          <div className="flex items-center gap-2">
-                            Repository
-                            {getSortIcon("name")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                          onClick={() => handleSort("language")}
-                        >
-                          <div className="flex items-center gap-2">
-                            Language
-                            {getSortIcon("language")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                          onClick={() => handleSort("stars")}
-                        >
-                          <div className="flex items-center justify-end gap-1">
-                            <Star className="w-3 h-3" />
-                            Stars
-                            {getSortIcon("stars")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                          onClick={() => handleSort("forks")}
-                        >
-                          <div className="flex items-center justify-end gap-1">
-                            <GitFork className="w-3 h-3" />
-                            Forks
-                            {getSortIcon("forks")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                          onClick={() => handleSort("unique_visitors")}
-                        >
-                          <div className="flex items-center justify-end gap-1">
-                            <Eye className="w-3 h-3" />
-                            Visitors (14d)
-                            {getSortIcon("unique_visitors")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                          onClick={() => handleSort("unique_cloners")}
-                        >
-                          <div className="flex items-center justify-end gap-1">
-                            <Download className="w-3 h-3" />
-                            Cloners (14d)
-                            {getSortIcon("unique_cloners")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-6 py-3 text-center text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                          onClick={() => handleSort("ci_status")}
-                        >
-                          <div className="flex items-center justify-center gap-1">
-                            CI Status
-                            {getSortIcon("ci_status")}
-                          </div>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                      {sortedRepoMetrics.map((repo, index) => {
-                        // Show tooltip below for first 3 rows, above for the rest
-                        const showTooltipBelow = index < 3;
-                        return (
-                        <motion.tr
-                          key={repo.repo_id}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: index * 0.02 }}
-                          className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group"
-                        >
-                          <td
-                            className="px-6 py-4 whitespace-nowrap relative"
-                          >
-                            <a
-                              href={`https://github.com/${repo.repo_id}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-2 text-sm font-medium text-vector-magenta hover:text-vector-cobalt dark:text-vector-magenta dark:hover:text-vector-cobalt"
-                            >
-                              {repo.name}
-                              <ExternalLink className="w-3 h-3" />
-                            </a>
-                            {repo.description && (
-                              <div className={`hidden group-hover:block absolute left-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words`}>
-                                {repo.description}
-                                <div className={`absolute ${showTooltipBelow ? '-top-2 left-8 border-l-2 border-t-2' : '-bottom-2 left-8 border-r-2 border-b-2'} w-4 h-4 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 transform rotate-45`}></div>
-                              </div>
-                            )}
-                          </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              {repo.language ? (
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
-                                  {repo.language}
-                                </span>
-                              ) : (
-                                <span className="text-xs text-gray-400">—</span>
-                              )}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-gray-900 dark:text-white">
-                              {repo.stars.toLocaleString()}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">
-                              {repo.forks.toLocaleString()}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">
-                              {repo.unique_visitors > 0
-                                ? repo.unique_visitors.toLocaleString()
-                                : "—"}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">
-                              {repo.unique_cloners > 0
-                                ? repo.unique_cloners.toLocaleString()
-                                : "—"}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-center">
-                              <CIStatusBadge
-                                status={ciStatuses[repo.repo_id]}
-                                loading={ciLoading}
-                                showTooltipBelow={showTooltipBelow}
-                              />
-                            </td>
-                          </motion.tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </section>
+            <RepositoryTable
+              title="Repositories"
+              repos={sortedRepoMetrics}
+              ciStatuses={ciStatuses}
+              ciLoading={ciLoading}
+              sortColumn={sortColumn}
+              sortDirection={sortDirection}
+              onSort={handleSort}
+              getSortIcon={getSortIcon}
+            />
+
+            {/* Template Repositories Table */}
+            {templateRepoMetrics.length > 0 && (
+              <RepositoryTable
+                title="Template Repositories"
+                repos={sortedTemplateMetrics}
+                ciStatuses={ciStatuses}
+                ciLoading={ciLoading}
+                sortColumn={templateSortColumn}
+                sortDirection={templateSortDirection}
+                onSort={handleTemplateSort}
+                getSortIcon={getTemplateSortIcon}
+              />
+            )}
               </>
             )}
 
@@ -1193,6 +1152,176 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
         </div>
       </footer>
     </div>
+  );
+}
+
+// Reusable Repository Table Component
+function RepositoryTable({
+  title,
+  repos,
+  ciStatuses,
+  ciLoading,
+  sortColumn,
+  sortDirection,
+  onSort,
+  getSortIcon,
+}: {
+  title: string;
+  repos: RepoMetrics[];
+  ciStatuses: Record<string, CIStatus>;
+  ciLoading: boolean;
+  sortColumn: SortColumn;
+  sortDirection: SortDirection;
+  onSort: (column: SortColumn) => void;
+  getSortIcon: (column: SortColumn) => React.ReactNode;
+}) {
+  return (
+    <section className="mt-12">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+        {title}
+      </h2>
+      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+              <tr>
+                <th
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  onClick={() => onSort("name")}
+                >
+                  <div className="flex items-center gap-2">
+                    Repository
+                    {getSortIcon("name")}
+                  </div>
+                </th>
+                <th
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  onClick={() => onSort("language")}
+                >
+                  <div className="flex items-center gap-2">
+                    Language
+                    {getSortIcon("language")}
+                  </div>
+                </th>
+                <th
+                  className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  onClick={() => onSort("stars")}
+                >
+                  <div className="flex items-center justify-end gap-1">
+                    <Star className="w-3 h-3" />
+                    Stars
+                    {getSortIcon("stars")}
+                  </div>
+                </th>
+                <th
+                  className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  onClick={() => onSort("forks")}
+                >
+                  <div className="flex items-center justify-end gap-1">
+                    <GitFork className="w-3 h-3" />
+                    Forks
+                    {getSortIcon("forks")}
+                  </div>
+                </th>
+                <th
+                  className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  onClick={() => onSort("unique_visitors")}
+                >
+                  <div className="flex items-center justify-end gap-1">
+                    <Eye className="w-3 h-3" />
+                    Visitors (14d)
+                    {getSortIcon("unique_visitors")}
+                  </div>
+                </th>
+                <th
+                  className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  onClick={() => onSort("unique_cloners")}
+                >
+                  <div className="flex items-center justify-end gap-1">
+                    <Download className="w-3 h-3" />
+                    Cloners (14d)
+                    {getSortIcon("unique_cloners")}
+                  </div>
+                </th>
+                <th
+                  className="px-6 py-3 text-center text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  onClick={() => onSort("ci_status")}
+                >
+                  <div className="flex items-center justify-center gap-1">
+                    CI Status
+                    {getSortIcon("ci_status")}
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+              {repos.map((repo, index) => {
+                const showTooltipBelow = index < 3;
+                return (
+                  <motion.tr
+                    key={repo.repo_id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.02 }}
+                    className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors group"
+                  >
+                    <td className="px-6 py-4 whitespace-nowrap relative">
+                      <a
+                        href={`https://github.com/${repo.repo_id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm font-medium text-vector-magenta hover:text-vector-cobalt dark:text-vector-magenta dark:hover:text-vector-cobalt"
+                      >
+                        {repo.name}
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                      {repo.description && (
+                        <div className={`hidden group-hover:block absolute left-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words`}>
+                          {repo.description}
+                          <div className={`absolute ${showTooltipBelow ? '-top-2 left-8 border-l-2 border-t-2' : '-bottom-2 left-8 border-r-2 border-b-2'} w-4 h-4 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 transform rotate-45`}></div>
+                        </div>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      {repo.language ? (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                          {repo.language}
+                        </span>
+                      ) : (
+                        <span className="text-xs text-gray-400">—</span>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium text-gray-900 dark:text-white">
+                      {repo.stars.toLocaleString()}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">
+                      {repo.forks.toLocaleString()}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">
+                      {repo.unique_visitors > 0
+                        ? repo.unique_visitors.toLocaleString()
+                        : "—"}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-600 dark:text-gray-400">
+                      {repo.unique_cloners > 0
+                        ? repo.unique_cloners.toLocaleString()
+                        : "—"}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-center">
+                      <CIStatusBadge
+                        status={ciStatuses[repo.repo_id]}
+                        loading={ciLoading}
+                        showTooltipBelow={showTooltipBelow}
+                      />
+                    </td>
+                  </motion.tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   );
 }
 

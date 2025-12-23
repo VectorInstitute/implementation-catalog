@@ -65,45 +65,112 @@ export async function POST(request: Request) {
       }
 
       try {
-        const response = await fetch(
-          `https://api.github.com/repos/${repoIdStr}/commits/main/status`,
+        // First, get the latest commit SHA on main branch
+        const branchResponse = await fetch(
+          `https://api.github.com/repos/${repoIdStr}/branches/main`,
           {
             headers: {
               'Authorization': `Bearer ${token}`,
-              'Accept': 'application/vnd.github.v3+json',
+              'Accept': 'application/vnd.github+json',
+              'X-GitHub-Api-Version': '2022-11-28',
             },
           }
         );
 
-        if (!response.ok) {
-          if (response.status === 404) {
-            // No CI configured or branch doesn't exist
+        if (!branchResponse.ok) {
+          if (branchResponse.status === 404) {
             return {
               repo_id,
               state: 'unknown' as const,
               total_checks: 0,
               updated_at: new Date().toISOString(),
-              details: 'No CI configured or main branch not found',
+              details: 'Main branch not found',
             };
           }
-          throw new Error(`GitHub API error: ${response.status}`);
+          throw new Error(`GitHub API error: ${branchResponse.status}`);
         }
 
-        const data = await response.json();
+        const branchData = await branchResponse.json();
+        const latestCommitSha = branchData.commit.sha;
 
-        // Treat "pending" with 0 checks as "no CI configured"
-        const actualState = (data.state === 'pending' && data.total_count === 0)
-          ? 'unknown'
-          : data.state || 'unknown';
+        // Now get check runs for this specific commit
+        const checksResponse = await fetch(
+          `https://api.github.com/repos/${repoIdStr}/commits/${latestCommitSha}/check-runs`,
+          {
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Accept': 'application/vnd.github+json',
+              'X-GitHub-Api-Version': '2022-11-28',
+            },
+          }
+        );
+
+        if (!checksResponse.ok) {
+          throw new Error(`GitHub API error: ${checksResponse.status}`);
+        }
+
+        const data = await checksResponse.json();
+        const checkRuns = data.check_runs || [];
+
+        if (checkRuns.length === 0) {
+          return {
+            repo_id,
+            state: 'unknown' as const,
+            total_checks: 0,
+            updated_at: new Date().toISOString(),
+            details: 'No CI configured',
+          };
+        }
+
+        // Check if any workflow runs failed
+        // Status: completed, in_progress, queued, waiting, requested, pending
+        // Conclusion (when completed): success, failure, neutral, cancelled, skipped, timed_out, action_required, startup_failure, stale
+        let hasFailure = false;
+        let hasPending = false;
+        let mostRecentUpdate = '';
+
+        for (const check of checkRuns) {
+          // Skip Dependabot checks - they mark as "failure" for dependency conflicts which aren't CI failures
+          if (check.app?.slug === 'dependabot' || check.name === 'Dependabot') {
+            continue;
+          }
+
+          // If the check hasn't completed yet, mark as pending
+          if (check.status !== 'completed') {
+            hasPending = true;
+          }
+          // If completed, check the conclusion
+          else if (check.conclusion === 'failure' ||
+                   check.conclusion === 'timed_out' ||
+                   check.conclusion === 'action_required' ||
+                   check.conclusion === 'startup_failure') {
+            hasFailure = true;
+          }
+
+          // Track most recent update
+          const updateTime = check.completed_at || check.started_at;
+          if (updateTime && (!mostRecentUpdate || updateTime > mostRecentUpdate)) {
+            mostRecentUpdate = updateTime;
+          }
+        }
+
+        // Determine overall state based on the checks
+        let state: 'success' | 'failure' | 'pending' | 'error' | 'unknown';
+        if (hasFailure) {
+          state = 'failure';
+        } else if (hasPending) {
+          state = 'pending';
+        } else {
+          // All checks completed without failure
+          state = 'success';
+        }
 
         return {
           repo_id,
-          state: actualState,
-          total_checks: data.total_count || 0,
-          updated_at: data.updated_at || new Date().toISOString(),
-          details: actualState === 'unknown' && data.total_count === 0
-            ? 'No CI configured'
-            : `${data.total_count} check(s)`,
+          state,
+          total_checks: checkRuns.length,
+          updated_at: mostRecentUpdate || new Date().toISOString(),
+          details: `${checkRuns.length} check(s)`,
         };
       } catch (error) {
         console.error(`Error fetching CI status for ${repo_id}:`, error);
