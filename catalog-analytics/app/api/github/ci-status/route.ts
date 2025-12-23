@@ -48,10 +48,15 @@ export async function POST(request: Request) {
       }, {} as Record<string, CIStatus>);
 
       return NextResponse.json(statusMap);
+    }
+
+    // Fetch CI status for all repos in parallel
+    const statusPromises = repositories.map(async (repo_id) => {
       // Validate repo_id before using it in an outbound request
-      if (typeof repo_id !== 'string' || !isValidRepoId(repo_id)) {
+      const repoIdStr = String(repo_id).trim();
+      if (!isValidRepoId(repoIdStr)) {
         return {
-          repo_id: String(repo_id),
+          repo_id: repoIdStr,
           state: 'unknown' as const,
           total_checks: 0,
           updated_at: new Date().toISOString(),
@@ -59,13 +64,9 @@ export async function POST(request: Request) {
         };
       }
 
-    }
-
-    // Fetch CI status for all repos in parallel
-    const statusPromises = repositories.map(async (repo_id) => {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/${repo_id.trim()}/commits/main/status`,
+          `https://api.github.com/repos/${repoIdStr}/commits/main/status`,
           {
             headers: {
               'Authorization': `Bearer ${token}`,
