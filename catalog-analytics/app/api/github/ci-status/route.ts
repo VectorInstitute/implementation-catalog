@@ -21,6 +21,19 @@ function isValidRepoId(repo_id: string): boolean {
   return repoPattern.test(trimmed);
 }
 
+function isValidCommitSha(sha: string): boolean {
+  // Git SHAs are 40-character hexadecimal strings
+  const shaPattern = /^[a-f0-9]{40}$/;
+  return shaPattern.test(sha);
+}
+
+function buildGitHubApiUrl(path: string): URL {
+  // Always use the official GitHub API base URL to prevent SSRF
+  const baseUrl = 'https://api.github.com';
+  // URL constructor will throw if path is malformed
+  return new URL(path, baseUrl);
+}
+
 export async function POST(request: Request) {
   try {
     const { repositories }: CIStatusRequest = await request.json();
@@ -66,8 +79,10 @@ export async function POST(request: Request) {
 
       try {
         // First, get the latest commit SHA on main branch
+        // Use URL constructor to prevent SSRF
+        const branchUrl = buildGitHubApiUrl(`/repos/${encodeURIComponent(repoIdStr)}/branches/main`);
         const branchResponse = await fetch(
-          `https://api.github.com/repos/${repoIdStr}/branches/main`,
+          branchUrl.toString(),
           {
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -93,9 +108,22 @@ export async function POST(request: Request) {
         const branchData = await branchResponse.json();
         const latestCommitSha = branchData.commit.sha;
 
+        // Validate the commit SHA to prevent SSRF
+        if (!isValidCommitSha(latestCommitSha)) {
+          return {
+            repo_id,
+            state: 'unknown' as const,
+            total_checks: 0,
+            updated_at: new Date().toISOString(),
+            details: 'Invalid commit SHA received from API',
+          };
+        }
+
         // Now get check runs for this specific commit
+        // Use URL constructor to prevent SSRF
+        const checksUrl = buildGitHubApiUrl(`/repos/${encodeURIComponent(repoIdStr)}/commits/${latestCommitSha}/check-runs`);
         const checksResponse = await fetch(
-          `https://api.github.com/repos/${repoIdStr}/commits/${latestCommitSha}/check-runs`,
+          checksUrl.toString(),
           {
             headers: {
               'Authorization': `Bearer ${token}`,
