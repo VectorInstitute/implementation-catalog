@@ -43,6 +43,14 @@ interface RepoSnapshot {
   topics: string[];
 }
 
+interface CIStatus {
+  repo_id: string;
+  state: 'success' | 'failure' | 'pending' | 'error' | 'unknown';
+  total_checks: number;
+  updated_at: string;
+  details?: string;
+}
+
 interface RepoHistory {
   name: string;
   snapshots: RepoSnapshot[];
@@ -108,7 +116,7 @@ interface PyPIMetrics {
   description?: string;
 }
 
-type SortColumn = "name" | "language" | "stars" | "forks" | "unique_visitors" | "unique_cloners";
+type SortColumn = "name" | "language" | "stars" | "forks" | "unique_visitors" | "unique_cloners" | "ci_status";
 type PyPISortColumn = "name" | "downloads_last_day" | "downloads_last_week" | "downloads_last_month" | "version";
 type SortDirection = "asc" | "desc";
 type ActiveTab = "github" | "pypi";
@@ -130,6 +138,14 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
   const [pypiSortDirection, setPypiSortDirection] = useState<SortDirection>("desc");
   const [activeTab, setActiveTab] = useState<ActiveTab>("github");
   const [pypiFilter, setPypiFilter] = useState<PyPIFilter>("all");
+  const [ciStatuses, setCiStatuses] = useState<Record<string, CIStatus>>({});
+  const [ciLoading, setCiLoading] = useState(false);
+  const [ciCache, setCiCache] = useState<{
+    data: Record<string, CIStatus>;
+    timestamp: number;
+  } | null>(null);
+
+  const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
   const handleLogout = async () => {
     try {
@@ -215,6 +231,58 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
       .filter((r): r is RepoMetrics => r !== null);
   }, [historicalData, repoDescriptions]);
 
+  // Fetch CI statuses when repo metrics are loaded
+  useEffect(() => {
+    const fetchCIStatuses = async () => {
+      if (allRepoMetrics.length === 0) return;
+
+      // Check cache validity
+      const isCacheValid = ciCache && (Date.now() - ciCache.timestamp) < CACHE_DURATION;
+      if (isCacheValid) {
+        setCiStatuses(ciCache.data);
+        return;
+      }
+
+      setCiLoading(true);
+
+      try {
+        const repoIds = allRepoMetrics.map(r => r.repo_id);
+        const basePath = "/analytics";
+
+        const response = await fetch(`${basePath}/api/github/ci-status`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ repositories: repoIds }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+          console.error('CI status API error:', response.status, errorData);
+          throw new Error(`Failed to fetch CI statuses: ${response.status} - ${errorData.error || 'Unknown error'}`);
+        }
+
+        const data = await response.json();
+        setCiStatuses(data);
+
+        // Update cache
+        setCiCache({
+          data,
+          timestamp: Date.now(),
+        });
+      } catch (error) {
+        console.error('Error fetching CI statuses:', error);
+        // Set empty object so we don't keep retrying
+        setCiStatuses({});
+      } finally {
+        setCiLoading(false);
+      }
+    };
+
+    fetchCIStatuses();
+  }, [allRepoMetrics, ciCache, CACHE_DURATION]);
+
   // Calculate aggregate metrics
   const aggregateMetrics = useMemo(() => {
     const totalStars = allRepoMetrics.reduce((sum, r) => sum + r.stars, 0);
@@ -257,6 +325,28 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
   // Sort repository metrics
   const sortedRepoMetrics = useMemo(() => {
     const sorted = [...allRepoMetrics].sort((a, b) => {
+      // Special handling for CI status column
+      if (sortColumn === 'ci_status') {
+        const statusA = ciStatuses[a.repo_id]?.state || 'unknown';
+        const statusB = ciStatuses[b.repo_id]?.state || 'unknown';
+
+        // Define sort order: success > pending > failure/error > unknown
+        const statusOrder: Record<string, number> = {
+          success: 4,
+          pending: 3,
+          failure: 2,
+          error: 2,
+          unknown: 1,
+        };
+
+        const orderA = statusOrder[statusA] || 0;
+        const orderB = statusOrder[statusB] || 0;
+
+        return sortDirection === 'asc'
+          ? orderA - orderB
+          : orderB - orderA;
+      }
+
       let aValue: string | number | null = a[sortColumn];
       let bValue: string | number | null = b[sortColumn];
 
@@ -278,7 +368,7 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
     });
 
     return sorted;
-  }, [allRepoMetrics, sortColumn, sortDirection]);
+  }, [allRepoMetrics, sortColumn, sortDirection, ciStatuses]);
 
   // Handle column header click
   const handleSort = (column: SortColumn) => {
@@ -648,10 +738,10 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
               </div>
             </section>
 
-            {/* All Repositories Table */}
+            {/* Repositories Table */}
             <section>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                All Repositories
+                Repositories
               </h2>
               <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
                 <div className="overflow-x-auto">
@@ -716,6 +806,15 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
                             {getSortIcon("unique_cloners")}
                           </div>
                         </th>
+                        <th
+                          className="px-6 py-3 text-center text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                          onClick={() => handleSort("ci_status")}
+                        >
+                          <div className="flex items-center justify-center gap-1">
+                            CI Status
+                            {getSortIcon("ci_status")}
+                          </div>
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -773,6 +872,13 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
                               {repo.unique_cloners > 0
                                 ? repo.unique_cloners.toLocaleString()
                                 : "—"}
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-center">
+                              <CIStatusBadge
+                                status={ciStatuses[repo.repo_id]}
+                                loading={ciLoading}
+                                showTooltipBelow={showTooltipBelow}
+                              />
                             </td>
                           </motion.tr>
                         );
@@ -1255,5 +1361,77 @@ function TopPypiPerformerCard({
         ))}
       </div>
     </motion.div>
+  );
+}
+
+// CI Status Badge Component (Icon-only)
+function CIStatusBadge({
+  status,
+  loading,
+  showTooltipBelow,
+}: {
+  status: CIStatus | undefined;
+  loading: boolean;
+  showTooltipBelow: boolean;
+}) {
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center">
+        <div className="w-4 h-4 border-2 border-gray-300 border-t-vector-magenta rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!status || status.state === 'unknown') {
+    return (
+      <span className="text-sm text-gray-400">—</span>
+    );
+  }
+
+  const statusConfig = {
+    success: {
+      icon: '✓',
+      color: 'text-green-600 dark:text-green-400',
+      label: 'Passing',
+    },
+    failure: {
+      icon: '✗',
+      color: 'text-red-600 dark:text-red-400',
+      label: 'Failed',
+    },
+    error: {
+      icon: '✗',
+      color: 'text-red-600 dark:text-red-400',
+      label: 'Error',
+    },
+    pending: {
+      icon: '⚠',
+      color: 'text-yellow-600 dark:text-yellow-400',
+      label: 'Pending',
+    },
+    unknown: {
+      icon: '—',
+      color: 'text-gray-400',
+      label: 'Unknown',
+    },
+  };
+
+  const config = statusConfig[status.state];
+
+  return (
+    <div className="relative group inline-flex items-center justify-center">
+      <span className={`text-base font-semibold ${config.color}`}>
+        {config.icon}
+      </span>
+      {/* Tooltip - right aligned to prevent cutoff */}
+      <div className={`hidden group-hover:block absolute right-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-xs rounded-lg py-2 px-3 whitespace-nowrap shadow-xl border-2 border-gray-200 dark:border-gray-600`}>
+        <div className="font-medium mb-1">{config.label}</div>
+        <div className="text-gray-600 dark:text-gray-400">{status.details}</div>
+        <div className="text-gray-500 dark:text-gray-500 text-[10px] mt-1">
+          Updated: {new Date(status.updated_at).toLocaleString()}
+        </div>
+        <div className={`absolute right-2 ${showTooltipBelow ? '-top-2 border-l-2 border-t-2' : '-bottom-2 border-r-2 border-b-2'} w-4 h-4 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 transform rotate-45`}></div>
+      </div>
+    </div>
   );
 }
