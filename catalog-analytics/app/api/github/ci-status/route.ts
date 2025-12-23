@@ -106,7 +106,7 @@ export async function POST(request: Request) {
             : `${data.total_count} check(s)`,
         };
       } catch (error) {
-        console.error(`Error fetching CI status for ${repo_id}:`, error);
+        console.error('Error fetching CI status for %s:', repo_id, error);
         return {
           repo_id,
           state: 'unknown' as const,
