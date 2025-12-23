@@ -173,7 +173,7 @@ export async function POST(request: Request) {
           details: `${checkRuns.length} check(s)`,
         };
       } catch (error) {
-        console.error(`Error fetching CI status for ${repo_id}:`, error);
+        console.error('Error fetching CI status for %s:', repo_id, error);
         return {
           repo_id,
           state: 'unknown' as const,
