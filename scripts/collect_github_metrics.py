@@ -65,6 +65,56 @@ def check_gh_installed() -> bool:
         return False
 
 
+def get_template_repos() -> List[str]:
+    """Discover template repositories in VectorInstitute org via GitHub API.
+
+    Returns
+    -------
+    List[str]
+        List of template repository IDs matching aieng-template-* pattern.
+
+    """
+    print("Discovering template repositories...")
+
+    try:
+        # Query GitHub API for all VectorInstitute repos
+        result = subprocess.run(
+            [
+                "gh",
+                "api",
+                "orgs/VectorInstitute/repos",
+                "--paginate",
+                "--jq",
+                '.[] | select(.name | startswith("aieng-template-")) | .full_name',
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+
+        if not result.stdout:
+            print("Warning: No template repos found", file=sys.stderr)
+            return []
+
+        # Parse the result - one repo per line
+        template_repos = [
+            repo.strip() for repo in result.stdout.strip().split("\n") if repo.strip()
+        ]
+
+        print(f"Found {len(template_repos)} template repositories")
+        return template_repos
+
+    except subprocess.CalledProcessError as e:
+        print(
+            f"Warning: Could not fetch template repos from GitHub API: {e.stderr}",
+            file=sys.stderr,
+        )
+        return []
+    except Exception as e:
+        print(f"Warning: Error discovering template repos: {e}", file=sys.stderr)
+        return []
+
+
 def get_repo_ids_from_yaml() -> List[str]:
     """Extract repo_id values from YAML files in repositories/ directory.
 
@@ -287,7 +337,17 @@ def setup_environment() -> tuple[list[str], Path, dict[str, Any]]:
         print("ERROR: No repository IDs found in YAML files.")
         sys.exit(1)
 
-    print(f"Found {len(repo_ids)} repositories to track\n")
+    print(f"Found {len(repo_ids)} catalog repositories")
+
+    # Also get template repositories
+    template_repos = get_template_repos()
+
+    # Combine both lists, avoiding duplicates
+    all_repo_ids = list(set(repo_ids + template_repos))
+
+    print(f"Total repositories to track: {len(all_repo_ids)}")
+    print(f"  - Catalog repos: {len(repo_ids)}")
+    print(f"  - Template repos: {len(template_repos)}\n")
 
     output_dir = Path("catalog/public/data")
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -298,7 +358,7 @@ def setup_environment() -> tuple[list[str], Path, dict[str, Any]]:
         f"Loaded historical data (tracking {len(historical_data.get('repos', {}))} repos)\n"
     )
 
-    return repo_ids, output_dir, historical_data
+    return all_repo_ids, output_dir, historical_data
 
 
 def collect_all_metrics(
