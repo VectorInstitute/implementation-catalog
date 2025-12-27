@@ -80,7 +80,9 @@ export async function POST(request: Request) {
       try {
         // First, get the latest commit SHA on main branch
         // Use URL constructor to prevent SSRF
-        const branchUrl = buildGitHubApiUrl(`/repos/${encodeURIComponent(repoIdStr)}/branches/main`);
+        // Note: Don't use encodeURIComponent on repo_id since it would encode the '/' separator
+        // We've already validated repo_id format with isValidRepoId()
+        const branchUrl = buildGitHubApiUrl(`/repos/${repoIdStr}/branches/main`);
         const branchResponse = await fetch(
           branchUrl.toString(),
           {
@@ -121,7 +123,8 @@ export async function POST(request: Request) {
 
         // Now get check runs for this specific commit
         // Use URL constructor to prevent SSRF
-        const checksUrl = buildGitHubApiUrl(`/repos/${encodeURIComponent(repoIdStr)}/commits/${latestCommitSha}/check-runs`);
+        // Note: Don't use encodeURIComponent on repo_id since it would encode the '/' separator
+        const checksUrl = buildGitHubApiUrl(`/repos/${repoIdStr}/commits/${latestCommitSha}/check-runs`);
         const checksResponse = await fetch(
           checksUrl.toString(),
           {

@@ -111,7 +111,7 @@ jobs:
             --min-instances=0 \
             --concurrency=80 \
             --port=8080 \
-            --set-env-vars="NODE_ENV=production,NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }},GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }},SESSION_SECRET=${{ secrets.SESSION_SECRET }},NEXT_PUBLIC_APP_URL=https://catalog.vectorinstitute.ai,REDIRECT_URI=https://catalog.vectorinstitute.ai/analytics/api/auth/callback,ALLOWED_DOMAINS=vectorinstitute.ai" \
+            --set-env-vars="NODE_ENV=production,NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }},GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }},SESSION_SECRET=${{ secrets.SESSION_SECRET }},METRICS_GITHUB_TOKEN=${{ secrets.METRICS_GITHUB_TOKEN }},NEXT_PUBLIC_APP_URL=https://catalog.vectorinstitute.ai,REDIRECT_URI=https://catalog.vectorinstitute.ai/analytics/api/auth/callback,ALLOWED_DOMAINS=vectorinstitute.ai" \
             --update-labels="deployed-by=github-actions,commit=${{ github.sha }},service=catalog-analytics" \
             --quiet
 
