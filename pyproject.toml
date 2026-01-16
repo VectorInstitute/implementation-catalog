@@ -8,9 +8,10 @@ license = "Apache-2.0"
 repository = "https://github.com/VectorInstitute/implementation-catalog"
 requires-python = ">=3.12"
 dependencies = [
-    "filelock==3.20.3",
+    "filelock>=3.20.3",
     "pyyaml>=6.0.2",
-    "urllib3==2.6.0",
+    "urllib3==2.6.3",
+    "virtualenv>=20.36.1",
 ]
 
 [dependency-groups]
