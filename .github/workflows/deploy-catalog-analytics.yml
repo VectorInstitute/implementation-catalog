@@ -5,8 +5,11 @@ on:
     branches: [main]
     paths:
       - 'catalog-analytics/**'
-      - 'catalog/public/data/**'
       - '.github/workflows/deploy-catalog-analytics.yml'
+  workflow_run:
+    workflows: ["Collect GitHub Metrics"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -24,6 +27,9 @@ jobs:
   build-and-deploy:
     name: Build and Deploy to Cloud Run
     runs-on: ubuntu-latest
+    if: >
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     permissions:
       contents: read
       id-token: write
