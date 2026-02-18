@@ -1,0 +1,22 @@
+name: agent-bootcamp
+repo_id: VectorInstitute/agent-bootcamp
+description: "A bootcamp repository with hands-on implementations for building AI agents, covering basics, frameworks, and evaluation techniques."
+implementations:
+  - name: Search Demo
+    url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/1_basics/0_search_demo
+  - name: ReAct Agent for RAG
+    url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/1_basics/1_react_rag
+  - name: ReAct Agent for RAG (OpenAI Agents SDK)
+    url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/2_frameworks/1_react_rag
+  - name: Multi-agent Setup for Deep Research
+    url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/2_frameworks/2_multi_agent
+  - name: Python Code Interpreter
+    url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/2_frameworks/3_code_interpreter
+  - name: MCP Server Integration
+    url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/2_frameworks/4_mcp
+  - name: LLM-as-a-Judge
+    url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/3_evals/1_llm_judge
+  - name: Evaluation on Synthetic Dataset
+    url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/3_evals/2_synthetic_data
+type: bootcamp
+year: 2025
