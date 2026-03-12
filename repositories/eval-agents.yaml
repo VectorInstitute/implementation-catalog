@@ -1,0 +1,23 @@
+name: eval-agents
+repo_id: VectorInstitute/eval-agents
+description: "Reference implementations for the Agentic AI Evaluation bootcamp, covering evaluation techniques for AI agents including LLM-as-judge, deterministic graders, and trace-level evaluation."
+implementations:
+  - name: Why Evals
+    url: https://github.com/VectorInstitute/eval-agents/blob/main/implementations/basics/01_why_evals.ipynb
+  - name: Evaluation Harness
+    url: https://github.com/VectorInstitute/eval-agents/blob/main/implementations/basics/02_evaluation_harness.ipynb
+  - name: Knowledge-Grounded QA Agent (PlanReAct)
+    url: https://github.com/VectorInstitute/eval-agents/tree/main/implementations/knowledge_qa
+  - name: AML Investigation Agent
+    url: https://github.com/VectorInstitute/eval-agents/tree/main/implementations/aml_investigation
+  - name: Report Generation Agent
+    url: https://github.com/VectorInstitute/eval-agents/tree/main/implementations/report_generation
+public_datasets:
+  - name: DeepSearchQA
+    url: https://www.kaggle.com/datasets/deepmind/deepsearchqa
+  - name: Online Retail
+    url: https://archive.ics.uci.edu/dataset/352/online+retail
+type: bootcamp
+year: 2026
+github_url: https://github.com/VectorInstitute/eval-agents
+package_name: aieng-eval-agents
