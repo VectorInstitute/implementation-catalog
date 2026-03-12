@@ -20,3 +20,5 @@ implementations:
     url: https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/3_evals/2_synthetic_data
 type: bootcamp
 year: 2025
+github_url: https://github.com/VectorInstitute/agent-bootcamp
+package_name: aieng-agents
