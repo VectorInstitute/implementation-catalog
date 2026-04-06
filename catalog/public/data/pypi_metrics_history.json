@@ -144,6 +144,19 @@
           "total_downloads": 3839,
           "version": "0.2.12",
           "release_date": "2025-01-22T16:00:42"
+        },
+        {
+          "repo_id": "VectorInstitute/cyclops",
+          "name": "cyclops",
+          "package_name": "pycyclops",
+          "type": "tool",
+          "timestamp": "2026-04-06T12:12:16.773714+00:00",
+          "downloads_last_day": null,
+          "downloads_last_week": null,
+          "downloads_last_month": null,
+          "total_downloads": null,
+          "version": "0.2.12",
+          "release_date": "2025-01-22T16:00:42"
         }
       ],
       "type": "tool"
@@ -290,6 +303,19 @@
           "downloads_last_week": 31,
           "downloads_last_month": 167,
           "total_downloads": 1126,
+          "version": "0.0.27",
+          "release_date": "2025-06-18T04:08:33"
+        },
+        {
+          "repo_id": "VectorInstitute/fed-rag",
+          "name": "fed-rag",
+          "package_name": "fed-rag",
+          "type": "tool",
+          "timestamp": "2026-04-06T12:12:23.685605+00:00",
+          "downloads_last_day": 2,
+          "downloads_last_week": 26,
+          "downloads_last_month": 156,
+          "total_downloads": 1102,
           "version": "0.0.27",
           "release_date": "2025-06-18T04:08:33"
         }
@@ -440,6 +466,19 @@
           "total_downloads": 1609,
           "version": "0.8.1",
           "release_date": "2026-02-04T23:16:20"
+        },
+        {
+          "repo_id": "VectorInstitute/vector-inference",
+          "name": "vector-inference",
+          "package_name": "vec-inf",
+          "type": "tool",
+          "timestamp": "2026-04-06T12:12:20.639336+00:00",
+          "downloads_last_day": null,
+          "downloads_last_week": 48,
+          "downloads_last_month": 261,
+          "total_downloads": 1539,
+          "version": "0.8.1",
+          "release_date": "2026-02-04T23:16:20"
         }
       ],
       "type": "tool"
@@ -586,6 +625,19 @@
           "downloads_last_week": 25,
           "downloads_last_month": 95,
           "total_downloads": 535,
+          "version": "1.0.11",
+          "release_date": "2025-06-21T18:46:37"
+        },
+        {
+          "repo_id": "VectorInstitute/fair-sense-ai",
+          "name": "fair-sense-ai",
+          "package_name": "fair-sense-ai",
+          "type": "tool",
+          "timestamp": "2026-04-06T12:12:15.553948+00:00",
+          "downloads_last_day": 1,
+          "downloads_last_week": 3,
+          "downloads_last_month": 82,
+          "total_downloads": 521,
           "version": "1.0.11",
           "release_date": "2025-06-21T18:46:37"
         }
@@ -736,6 +788,19 @@
           "total_downloads": 1337,
           "version": "0.4.2",
           "release_date": "2026-01-21T15:43:14"
+        },
+        {
+          "repo_id": "VectorInstitute/FL4Health",
+          "name": "fl4health",
+          "package_name": "fl4health",
+          "type": "tool",
+          "timestamp": "2026-04-06T12:12:25.017205+00:00",
+          "downloads_last_day": null,
+          "downloads_last_week": 32,
+          "downloads_last_month": 148,
+          "total_downloads": 1307,
+          "version": "0.4.2",
+          "release_date": "2026-01-21T15:43:14"
         }
       ],
       "type": "tool"
@@ -861,6 +926,19 @@
           "total_downloads": null,
           "version": "1.0.0",
           "release_date": "2025-07-29T20:43:26"
+        },
+        {
+          "repo_id": "vectorinstitute/retrieval-augmented-generation",
+          "name": "retrieval-augmented-generation",
+          "package_name": "aieng-rag-utils",
+          "type": "bootcamp",
+          "timestamp": "2026-04-06T12:12:14.179578+00:00",
+          "downloads_last_day": null,
+          "downloads_last_week": 6,
+          "downloads_last_month": 32,
+          "total_downloads": 230,
+          "version": "1.0.0",
+          "release_date": "2025-07-29T20:43:26"
         }
       ]
     },
@@ -959,6 +1037,19 @@
           "total_downloads": null,
           "version": "0.4.9",
           "release_date": "2025-05-14T17:35:57"
+        },
+        {
+          "repo_id": "VectorInstitute/vbll",
+          "name": "vbll",
+          "package_name": "vbll",
+          "type": "applied-research",
+          "timestamp": "2026-04-06T12:12:19.209045+00:00",
+          "downloads_last_day": null,
+          "downloads_last_week": null,
+          "downloads_last_month": null,
+          "total_downloads": null,
+          "version": "0.4.9",
+          "release_date": "2025-05-14T17:35:57"
         }
       ]
     },
@@ -1044,6 +1135,19 @@
           "total_downloads": 589,
           "version": "1.1.2",
           "release_date": "2023-03-08T05:07:41"
+        },
+        {
+          "repo_id": "VectorInstitute/HV-Ai-C",
+          "name": "hv-ai-c",
+          "package_name": "hnp",
+          "type": "tool",
+          "timestamp": "2026-04-06T12:12:22.169147+00:00",
+          "downloads_last_day": null,
+          "downloads_last_week": 8,
+          "downloads_last_month": 52,
+          "total_downloads": 593,
+          "version": "1.1.2",
+          "release_date": "2023-03-08T05:07:41"
         }
       ]
     },
@@ -1101,6 +1205,19 @@
           "downloads_last_week": 12,
           "downloads_last_month": 236,
           "total_downloads": 236,
+          "version": "0.1.1",
+          "release_date": "2026-03-16T13:10:34"
+        },
+        {
+          "repo_id": "VectorInstitute/agent-bootcamp",
+          "name": "agent-bootcamp",
+          "package_name": "aieng-agents",
+          "type": "bootcamp",
+          "timestamp": "2026-04-06T12:12:18.043076+00:00",
+          "downloads_last_day": null,
+          "downloads_last_week": 8,
+          "downloads_last_month": 244,
+          "total_downloads": 244,
           "version": "0.1.1",
           "release_date": "2026-03-16T13:10:34"
         }
@@ -1162,9 +1279,22 @@
           "total_downloads": 374,
           "version": "0.3.0",
           "release_date": "2026-02-25T16:06:48"
+        },
+        {
+          "repo_id": "VectorInstitute/eval-agents",
+          "name": "eval-agents",
+          "package_name": "aieng-eval-agents",
+          "type": "bootcamp",
+          "timestamp": "2026-04-06T12:12:12.740865+00:00",
+          "downloads_last_day": null,
+          "downloads_last_week": null,
+          "downloads_last_month": null,
+          "total_downloads": null,
+          "version": "0.3.0",
+          "release_date": "2026-02-25T16:06:48"
         }
       ]
     }
   },
-  "last_updated": "2026-03-30T12:13:41.038666+00:00"
+  "last_updated": "2026-04-06T12:12:25.017205+00:00"
 }
