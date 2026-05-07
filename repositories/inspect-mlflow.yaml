@@ -1,0 +1,18 @@
+name: inspect-mlflow
+repo_id: VectorInstitute/inspect-mlflow
+description: "An MLflow extension for logging Inspect AI evaluation runs, including metrics, artifacts, and per-sample traces, into MLflow as the post-run system of record."
+implementations:
+  - name: Eval Run Logging
+    url: null
+  - name: Metrics Tracking (accuracy, samples, token usage)
+    url: null
+  - name: Artifact Logging
+    url: null
+  - name: Sample Trace Logging
+    url: null
+  - name: LLM Autolog Integration
+    url: null
+type: tool
+year: 2026
+github_url: https://github.com/VectorInstitute/inspect-mlflow
+package_name: inspect-mlflow-ext

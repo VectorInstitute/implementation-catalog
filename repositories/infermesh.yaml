@@ -1,0 +1,22 @@
+name: infermesh
+repo_id: VectorInstitute/infermesh
+description: "A Python and CLI client for running large LLM inference batches with concurrent generation, rate limiting, automatic retries, crash-resilient resume support, and multi-replica routing."
+implementations:
+  - name: Concurrent Batch Generation
+    url: null
+  - name: Text Embedding
+    url: null
+  - name: Audio Transcription
+    url: null
+  - name: Client-side Rate Limiting (RPM/TPM)
+    url: null
+  - name: Multi-replica Routing
+    url: null
+  - name: Crash-resilient Batch Resume
+    url: null
+  - name: Structured Output (Pydantic)
+    url: null
+type: tool
+year: 2026
+github_url: https://github.com/VectorInstitute/infermesh
+package_name: infermesh

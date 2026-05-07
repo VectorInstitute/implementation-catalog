@@ -1,0 +1,19 @@
+name: interpretability-llms-agents
+repo_id: VectorInstitute/interpretability-llms-agents
+description: "A bootcamp repository with hands-on implementations for interpretability, fairness, alignment, and agentic evaluation of large language and vision-language models."
+implementations:
+  - name: XAI Refresher
+    url: https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/xai_refresher
+  - name: Bias & Fairness Analysis
+    url: https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/bias_fairness_analysis
+  - name: Preference Alignment (DPO)
+    url: https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/preference_alignment
+  - name: Multimedia RAG + VLM
+    url: https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/multimedia_rag
+  - name: Agentic ChartQA Evaluation
+    url: https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/agentic_vqa_eval
+  - name: Mechanistic Interpretability
+    url: https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/mechanistic_interpretability
+type: bootcamp
+year: 2025
+github_url: https://github.com/VectorInstitute/interpretability-llms-agents

@@ -42,6 +42,107 @@
       "package_name": "aieng-eval-agents"
     },
     {
+      "name": "infermesh",
+      "repo_id": "VectorInstitute/infermesh",
+      "description": "A Python and CLI client for running large LLM inference batches with concurrent generation, rate limiting, automatic retries, crash-resilient resume support, and multi-replica routing.",
+      "implementations": [
+        {
+          "name": "Concurrent Batch Generation",
+          "url": null
+        },
+        {
+          "name": "Text Embedding",
+          "url": null
+        },
+        {
+          "name": "Audio Transcription",
+          "url": null
+        },
+        {
+          "name": "Client-side Rate Limiting (RPM/TPM)",
+          "url": null
+        },
+        {
+          "name": "Multi-replica Routing",
+          "url": null
+        },
+        {
+          "name": "Crash-resilient Batch Resume",
+          "url": null
+        },
+        {
+          "name": "Structured Output (Pydantic)",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2026,
+      "github_url": "https://github.com/VectorInstitute/infermesh",
+      "package_name": "infermesh"
+    },
+    {
+      "name": "inspect-mlflow",
+      "repo_id": "VectorInstitute/inspect-mlflow",
+      "description": "An MLflow extension for logging Inspect AI evaluation runs, including metrics, artifacts, and per-sample traces, into MLflow as the post-run system of record.",
+      "implementations": [
+        {
+          "name": "Eval Run Logging",
+          "url": null
+        },
+        {
+          "name": "Metrics Tracking (accuracy, samples, token usage)",
+          "url": null
+        },
+        {
+          "name": "Artifact Logging",
+          "url": null
+        },
+        {
+          "name": "Sample Trace Logging",
+          "url": null
+        },
+        {
+          "name": "LLM Autolog Integration",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2026,
+      "github_url": "https://github.com/VectorInstitute/inspect-mlflow",
+      "package_name": "inspect-mlflow-ext"
+    },
+    {
+      "name": "inspect-podman",
+      "repo_id": "VectorInstitute/inspect-podman",
+      "description": "A Podman-backed sandbox provider for the Inspect AI evaluation framework, enabling containerized tool calls without Docker.",
+      "implementations": [
+        {
+          "name": "Podman Sandbox Provider",
+          "url": null
+        },
+        {
+          "name": "Podman Compose Integration",
+          "url": null
+        },
+        {
+          "name": "Per-sample Container Isolation",
+          "url": null
+        },
+        {
+          "name": "Containerfile/Dockerfile Discovery",
+          "url": null
+        },
+        {
+          "name": "Container Healthcheck Support",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2026,
+      "github_url": "https://github.com/VectorInstitute/inspect-podman",
+      "package_name": "inspect-podman"
+    },
+    {
       "name": "agent-bootcamp",
       "repo_id": "VectorInstitute/agent-bootcamp",
       "description": "A bootcamp repository with hands-on implementations for building AI agents, covering basics, frameworks, and evaluation techniques.",
@@ -329,6 +430,40 @@
       "type": "bootcamp",
       "year": 2025,
       "github_url": "https://github.com/VectorInstitute/interpretability"
+    },
+    {
+      "name": "interpretability-llms-agents",
+      "repo_id": "VectorInstitute/interpretability-llms-agents",
+      "description": "A bootcamp repository with hands-on implementations for interpretability, fairness, alignment, and agentic evaluation of large language and vision-language models.",
+      "implementations": [
+        {
+          "name": "XAI Refresher",
+          "url": "https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/xai_refresher"
+        },
+        {
+          "name": "Bias & Fairness Analysis",
+          "url": "https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/bias_fairness_analysis"
+        },
+        {
+          "name": "Preference Alignment (DPO)",
+          "url": "https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/preference_alignment"
+        },
+        {
+          "name": "Multimedia RAG + VLM",
+          "url": "https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/multimedia_rag"
+        },
+        {
+          "name": "Agentic ChartQA Evaluation",
+          "url": "https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/agentic_vqa_eval"
+        },
+        {
+          "name": "Mechanistic Interpretability",
+          "url": "https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/mechanistic_interpretability"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/interpretability-llms-agents"
     },
     {
       "name": "kg-rag",
@@ -1193,7 +1328,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 158,
+  "totalImplementations": 181,
   "yearsOfResearch": 8,
-  "lastUpdated": "2026-03-12T15:02:30.676792"
+  "lastUpdated": "2026-05-07T09:57:21.339959"
 }
