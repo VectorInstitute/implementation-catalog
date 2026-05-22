@@ -159,6 +159,13 @@ jobs:
 
           echo "✅ Security headers updated with $(echo $HASHES | wc -w) inline script hashes"
 
+          # Invalidate CDN cache so stale CSP headers are not served alongside
+          # the new HTML (mismatched hashes would break the site).
+          gcloud compute url-maps invalidate-cdn-cache catalog-url-map \
+            --project=coderd \
+            --path "/*"
+          echo "✅ CDN cache invalidated"
+
       - name: Deployment summary
         run: |
           echo "✅ Catalog deployed successfully to GCS!"
