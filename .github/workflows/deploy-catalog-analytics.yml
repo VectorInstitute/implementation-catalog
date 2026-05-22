@@ -135,7 +135,7 @@ jobs:
 
           MAX_RETRIES=20
           for i in $(seq 1 $MAX_RETRIES); do
-            if curl -sf --max-time 10 "${SERVICE_URL}/login" > /dev/null 2>&1; then
+            if curl -sf --max-time 10 "${SERVICE_URL}/analytics/login/" > /dev/null 2>&1; then
               echo "✓ Service is responding"
               exit 0
             fi
