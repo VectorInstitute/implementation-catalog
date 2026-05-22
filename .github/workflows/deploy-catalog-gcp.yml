@@ -127,9 +127,40 @@ jobs:
             --content-type="application/xml" \
             --recursive || true
 
+      - name: Update security headers with fresh CSP hashes
+        run: |
+          # Extract SHA-256 hashes of all inline <script> blocks in the built index.html.
+          # Next.js RSC data payloads are inline scripts whose content changes every build,
+          # so the hashes must be recomputed and pushed to the load balancer after each deploy.
+          HASHES=$(python3 - <<'EOF'
+          import re, hashlib, base64
+          html = open("catalog/out/index.html").read()
+          scripts = re.findall(r'<script(?! src)[^>]*>(.*?)</script>', html, re.DOTALL)
+          hashes = []
+          for s in scripts:
+              s = s.strip()
+              if s:
+                  h = base64.b64encode(hashlib.sha256(s.encode()).digest()).decode()
+                  hashes.append(f"'sha256-{h}'")
+          print(" ".join(hashes))
+          EOF
+          )
+
+          CSP="default-src 'self'; script-src 'self' ${HASHES}; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+
+          gcloud compute backend-buckets update catalog-backend-bucket \
+            --project=coderd \
+            --custom-response-header="Strict-Transport-Security: max-age=31536000; includeSubDomains" \
+            --custom-response-header="X-Frame-Options: DENY" \
+            --custom-response-header="X-Content-Type-Options: nosniff" \
+            --custom-response-header="Referrer-Policy: strict-origin-when-cross-origin" \
+            --custom-response-header="Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()" \
+            --custom-response-header="Content-Security-Policy: ${CSP}"
+
+          echo "✅ Security headers updated with $(echo $HASHES | wc -w) inline script hashes"
+
       - name: Deployment summary
         run: |
           echo "✅ Catalog deployed successfully to GCS!"
           echo "📦 Bucket: gs://catalog-vectorinstitute-ai"
-          echo "🌐 Once load balancer is configured, it will be available at:"
-          echo "    https://catalog.vectorinstitute.ai"
+          echo "🌐 https://catalog.vectorinstitute.ai"
