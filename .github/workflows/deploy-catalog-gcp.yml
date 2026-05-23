@@ -146,7 +146,9 @@ jobs:
           EOF
           )
 
-          CSP="default-src 'self'; script-src 'self' ${HASHES}; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+          # wasm-unsafe-eval: required for Pagefind's WebAssembly search index.
+          # style-src unsafe-inline: Next.js injects inline styles for critical CSS.
+          CSP="default-src 'self'; script-src 'self' 'wasm-unsafe-eval' ${HASHES}; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
 
           gcloud compute backend-buckets update catalog-backend-bucket \
             --project=coderd \
