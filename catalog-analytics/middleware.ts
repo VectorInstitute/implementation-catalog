@@ -1,7 +1,32 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const PUBLIC_PATHS = [
+  "/analytics/login",
+  "/analytics/login/",
+  "/analytics/api/auth/",
+];
+
+function isPublicPath(pathname: string): boolean {
+  return PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p));
+}
+
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Redirect unauthenticated users to login before any rendering starts.
+  // This must happen in middleware (not page.tsx) because reading headers()
+  // in the root layout starts the streaming response; any redirect called
+  // from a page component after that becomes a client-side RSC redirect
+  // with no HTML — rendering a blank page for users without JS hydrated.
+  if (!isPublicPath(pathname)) {
+    const sessionCookie = request.cookies.get("aieng_catalog_analytics_session");
+    if (!sessionCookie) {
+      const loginUrl = new URL("/analytics/login/", request.url);
+      return NextResponse.redirect(loginUrl);
+    }
+  }
+
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
   const csp = [
     `default-src 'self'`,
@@ -19,8 +44,6 @@ export function middleware(request: NextRequest) {
   ].join("; ");
 
   const requestHeaders = new Headers(request.headers);
-  // Next.js 13+ reads x-nonce from request headers and applies it to
-  // all server-rendered inline scripts automatically.
   requestHeaders.set("x-nonce", nonce);
   requestHeaders.set("content-security-policy", csp);
 
