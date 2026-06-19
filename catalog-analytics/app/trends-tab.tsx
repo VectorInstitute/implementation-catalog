@@ -227,7 +227,7 @@ function ChartTooltip({
           <span className="font-semibold" style={{ color: entry.color }}>
             {entry.name}:
           </span>{" "}
-          {entry.value !== null ? entry.value.toLocaleString() : "—"}
+          {entry.value !== null ? entry.value.toLocaleString() : "-"}
         </p>
       ))}
     </div>
@@ -548,7 +548,7 @@ export function GitHubTrendsSection({
         </div>
         <ChartNote>
           Cumulative new stars across all repositories. Stars are direct human
-          actions — no CI/CD noise.
+          actions, no CI/CD noise.
         </ChartNote>
         <ResponsiveContainer width="100%" height={200}>
           <AreaChart
@@ -606,10 +606,7 @@ export function GitHubTrendsSection({
                 unique_visitors_14d: { label: "Unique Visitors" },
               }}
               active={metric}
-              onChange={(m) => {
-                setMetric(m);
-                setSelectedRepoId("");
-              }}
+              onChange={setMetric}
             />
             <RepoSelector
               repos={spotlightRepos}
@@ -731,10 +728,7 @@ export function PyPITrendsSection({
                 downloads_last_month: { label: "Monthly" },
               }}
               active={metric}
-              onChange={(m) => {
-                setMetric(m);
-                setSelectedPackage("");
-              }}
+              onChange={setMetric}
             />
             <RepoSelector
               repos={packageList}
