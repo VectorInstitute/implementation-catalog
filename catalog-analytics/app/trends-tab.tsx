@@ -135,9 +135,22 @@ function weekLabel(isoDate: string): string {
   const d = new Date(isoDate + "T12:00:00Z");
   return d.toLocaleDateString("en-US", {
     month: "short",
-    year: "2-digit",
+    day: "numeric",
     timeZone: "UTC",
   });
+}
+
+// Returns one label per calendar month (first occurrence) for XAxis ticks.
+function monthBoundaryTicks(data: { label: string }[]): string[] {
+  const seen = new Set<string>();
+  return data
+    .filter(({ label }) => {
+      const month = label.slice(0, 3); // "Dec", "Jan", etc.
+      if (seen.has(month)) return false;
+      seen.add(month);
+      return true;
+    })
+    .map(({ label }) => label);
 }
 
 function dedupeByWeek<T extends { timestamp: string }>(snapshots: T[]): T[] {
@@ -297,6 +310,7 @@ function SpotlightChart({
   data: TrafficPoint[];
   color: string;
 }) {
+  const ticks = monthBoundaryTicks(data);
   return (
     <ResponsiveContainer width="100%" height={260}>
       <ComposedChart data={data} margin={{ top: 5, right: 8, bottom: 0, left: 0 }}>
@@ -307,10 +321,10 @@ function SpotlightChart({
         />
         <XAxis
           dataKey="label"
+          ticks={ticks}
           tick={{ fontSize: 11, fill: "#9ca3af" }}
           tickLine={false}
           axisLine={false}
-          interval="preserveStartEnd"
         />
         <YAxis
           tick={{ fontSize: 11, fill: "#9ca3af" }}
@@ -568,10 +582,10 @@ export function GitHubTrendsSection({
             />
             <XAxis
               dataKey="label"
+              ticks={monthBoundaryTicks(aggregateData)}
               tick={{ fontSize: 11, fill: "#9ca3af" }}
               tickLine={false}
               axisLine={false}
-              interval="preserveStartEnd"
             />
             <YAxis
               tick={{ fontSize: 11, fill: "#9ca3af" }}
