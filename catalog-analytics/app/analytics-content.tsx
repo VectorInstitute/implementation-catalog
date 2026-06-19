@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, useEffect } from "react";
+import { GitHubTrendsSection, PyPITrendsSection } from "./trends-tab";
 import { motion } from "framer-motion";
 import {
   Star,
@@ -786,41 +787,7 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
               </div>
             </section>
 
-            {/* Top Performers */}
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                <Award className="w-6 h-6 text-vector-magenta" />
-                Top Performers
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                {/* Most Cloned */}
-                <TopPerformerCard
-                  title="Most Cloned (14d)"
-                  icon={<Download className="w-5 h-5 text-vector-magenta" />}
-                  repos={topPerformers.byCloners}
-                  valueKey="unique_cloners"
-                  valueLabel="cloners"
-                />
-
-                {/* Most Visited */}
-                <TopPerformerCard
-                  title="Most Visited (14d)"
-                  icon={<Eye className="w-5 h-5 text-vector-magenta" />}
-                  repos={topPerformers.byVisitors}
-                  valueKey="unique_visitors"
-                  valueLabel="visitors"
-                />
-
-                {/* Most Starred */}
-                <TopPerformerCard
-                  title="Most Starred"
-                  icon={<Star className="w-5 h-5 text-vector-magenta" />}
-                  repos={topPerformers.byStars}
-                  valueKey="stars"
-                  valueLabel="stars"
-                />
-              </div>
-            </section>
+            <GitHubTrendsSection historicalData={historicalData} />
 
             {/* Repositories Table */}
             <RepositoryTable
@@ -978,36 +945,7 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
                       </div>
                     </section>
 
-                    {/* Top Performers */}
-                    <section className="mb-12">
-                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                        <Award className="w-6 h-6 text-vector-magenta" />
-                        Top Performers
-                      </h2>
-                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <TopPypiPerformerCard
-                          title="Most Downloaded (Last Day)"
-                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
-                          packages={topPypiPerformers.byDay}
-                          valueKey="downloads_last_day"
-                          valueLabel="downloads"
-                        />
-                        <TopPypiPerformerCard
-                          title="Most Downloaded (Last Week)"
-                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
-                          packages={topPypiPerformers.byWeek}
-                          valueKey="downloads_last_week"
-                          valueLabel="downloads"
-                        />
-                        <TopPypiPerformerCard
-                          title="Most Downloaded (Last Month)"
-                          icon={<Download className="w-5 h-5 text-vector-magenta" />}
-                          packages={topPypiPerformers.byMonth}
-                          valueKey="downloads_last_month"
-                          valueLabel="downloads"
-                        />
-                      </div>
-                    </section>
+                    <PyPITrendsSection historicalData={pypiData} />
 
                     {/* All Packages Table */}
                     <section>
