@@ -1,13 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ExternalLink, FileText, BookOpen, Code2, Database, Check } from "lucide-react";
 import type { Repository } from "@/types/repository";
+import type { CSSProperties } from "react";
 import { useState } from "react";
 
 interface RepositoryCardProps {
   repository: Repository;
   index?: number;
+}
+
+/** CSS custom property consumed by the `.reveal` animation in globals.css. */
+function revealDelay(index: number): CSSProperties {
+  // Cap the stagger so a long, filtered list doesn't leave the last cards
+  // waiting multiple seconds to appear.
+  const seconds = Math.min(index * 0.05, 0.5);
+  return { "--reveal-delay": `${seconds}s` } as CSSProperties;
 }
 
 export default function RepositoryCard({ repository, index = 0 }: RepositoryCardProps) {
@@ -47,13 +55,10 @@ export default function RepositoryCard({ repository, index = 0 }: RepositoryCard
   };
 
   return (
-    <motion.article
+    <article
       id={repoSlug}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      whileHover={{ y: -4 }}
-      className="group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 p-6 overflow-hidden scroll-mt-20"
+      style={revealDelay(index)}
+      className="reveal reveal-up group relative bg-white dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 dark:border-gray-700 p-6 overflow-hidden scroll-mt-20"
     >
       {/* Gradient accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-vector-teal via-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -187,6 +192,6 @@ export default function RepositoryCard({ repository, index = 0 }: RepositoryCard
           )}
         </div>
       )}
-    </motion.article>
+    </article>
   );
 }

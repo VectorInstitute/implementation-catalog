@@ -3,11 +3,17 @@
 import { motion } from "framer-motion";
 import { ArrowDown, TrendingUp, Layers } from "lucide-react";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { getAssetPath } from "@/lib/utils";
 
 interface HeroProps {
   totalImplementations: number;
   yearsOfResearch: number;
+}
+
+/** CSS custom property consumed by the `.reveal` animation in globals.css. */
+function revealDelay(seconds: number): CSSProperties {
+  return { "--reveal-delay": `${seconds}s` } as CSSProperties;
 }
 
 export default function Hero({ totalImplementations, yearsOfResearch }: HeroProps) {
@@ -121,12 +127,7 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8 flex justify-center"
-        >
+        <div className="reveal reveal-down mb-8 flex justify-center" style={revealDelay(0)}>
           <Image
             src={getAssetPath("vector-logo.svg")}
             alt="Vector Institute"
@@ -134,34 +135,28 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
             height={46}
             className="object-contain"
           />
-        </motion.div>
+        </div>
 
         {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 leading-tight"
+        <h1
+          className="reveal reveal-up text-5xl md:text-7xl font-bold mb-6 text-gray-900 leading-tight"
+          style={revealDelay(0.2)}
         >
           Implementation <span className="bg-gradient-to-r from-vector-magenta to-vector-cobalt bg-clip-text text-transparent">Catalog</span>
-        </motion.h1>
+        </h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-lg md:text-xl mb-12 text-gray-800 max-w-3xl mx-auto leading-relaxed font-medium"
+        <p
+          className="reveal reveal-up text-lg md:text-xl mb-12 text-gray-800 max-w-3xl mx-auto leading-relaxed font-medium"
+          style={revealDelay(0.4)}
         >
           Explore cutting-edge AI implementations from Vector Institute researchers and engineers
-        </motion.p>
+        </p>
 
         {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12"
+        <div
+          className="reveal reveal-up flex flex-wrap justify-center gap-8 md:gap-16 mb-12"
+          style={revealDelay(0.6)}
         >
           <div className="flex items-center gap-3">
             <div className="p-3 bg-vector-magenta/10 rounded-xl border border-vector-magenta/30">
@@ -181,40 +176,26 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
               <div className="text-sm text-gray-700 uppercase tracking-wide font-semibold">Years of Research</div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* CTA Button */}
-        <motion.a
+        <a
           href="#browse"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-vector-magenta to-vector-cobalt hover:from-vector-magenta/90 hover:to-vector-cobalt/90 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg shadow-vector-magenta/25 transition-all mb-8"
+          className="reveal reveal-scale inline-flex items-center gap-2 bg-gradient-to-r from-vector-magenta to-vector-cobalt hover:from-vector-magenta/90 hover:to-vector-cobalt/90 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-lg shadow-vector-magenta/25 transition-all hover:scale-105 active:scale-95 mb-8"
+          style={revealDelay(0.8)}
         >
           Browse Implementations
           <ArrowDown className="w-5 h-5 animate-bounce" />
-        </motion.a>
+        </a>
 
         {/* Search Bar in Hero */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="max-w-2xl mx-auto"
-        >
+        <div className="reveal reveal-up max-w-2xl mx-auto" style={revealDelay(1)}>
           <div id="hero-search" />
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
+      <div className="reveal absolute bottom-8 left-1/2 -translate-x-1/2" style={revealDelay(1.2)}>
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -222,7 +203,7 @@ export default function Hero({ totalImplementations, yearsOfResearch }: HeroProp
         >
           <ArrowDown className="w-6 h-6" />
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }

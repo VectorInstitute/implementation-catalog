@@ -53,6 +53,50 @@ body {
   }
 }
 
+/*
+ * Reveal-on-mount animation. Runs purely in CSS (no JS/hydration required),
+ * so content is guaranteed to reach its final, fully visible state even if
+ * the page never hydrates (slow network, blocked script, JS error, etc).
+ * Framer Motion equivalents relied on an `initial={{ opacity: 0 }}` prop,
+ * which bakes `opacity: 0` into the server-rendered HTML and only animates
+ * to visible once React hydrates - if hydration stalls or fails, the
+ * content stays invisible indefinitely.
+ */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-offset-y, 0)) scale(var(--reveal-scale, 1));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.reveal {
+  animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+.reveal-down {
+  --reveal-offset-y: -20px;
+}
+
+.reveal-up {
+  --reveal-offset-y: 20px;
+}
+
+.reveal-scale {
+  --reveal-scale: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation-duration: 0.001ms;
+    animation-delay: 0s;
+  }
+}
+
 /* Pagefind Search Styling */
 #hero-search .pagefind-ui__form {
   position: relative;
