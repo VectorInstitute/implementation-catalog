@@ -323,6 +323,7 @@ def save_metrics_data(
 
     with open(current_metrics_path, "w", encoding="utf-8") as f:
         json.dump(current_data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
     print(f"✓ Saved current metrics to {current_metrics_path}")
 
@@ -330,6 +331,7 @@ def save_metrics_data(
     historical_path = Path("catalog/public/data/pypi_metrics_history.json")
     with open(historical_path, "w", encoding="utf-8") as f:
         json.dump(historical_data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
     print(f"✓ Saved historical data to {historical_path}")
 
