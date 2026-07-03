@@ -26,6 +26,20 @@
           "url": "https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/boc_rate_decisions"
         }
       ],
+      "public_datasets": [
+        {
+          "name": "Statistics Canada (CPI / macroeconomic tables)",
+          "url": "https://www.statcan.gc.ca"
+        },
+        {
+          "name": "FRED (Federal Reserve Economic Data)",
+          "url": "https://fred.stlouisfed.org"
+        },
+        {
+          "name": "Yahoo Finance (via yfinance)",
+          "url": "https://finance.yahoo.com"
+        }
+      ],
       "type": "bootcamp",
       "year": 2026,
       "github_url": "https://github.com/VectorInstitute/agentic-forecasting",
@@ -244,6 +258,16 @@
         {
           "name": "Evaluation on Synthetic Dataset",
           "url": "https://github.com/VectorInstitute/agent-bootcamp/tree/main/src/3_evals/2_synthetic_data"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "HotpotQA",
+          "url": "https://huggingface.co/datasets/vector-institute/hotpotqa"
+        },
+        {
+          "name": "Wikipedia",
+          "url": "https://en.wikipedia.org"
         }
       ],
       "type": "bootcamp",
@@ -553,6 +577,40 @@
           "url": "https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/mechanistic_interpretability"
         }
       ],
+      "public_datasets": [
+        {
+          "name": "UCI Credit Card Default Clients Dataset",
+          "url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients"
+        },
+        {
+          "name": "COCO (Common Objects in Context)",
+          "url": "https://cocodataset.org"
+        },
+        {
+          "name": "SST-2 (Stanford Sentiment Treebank)",
+          "url": "https://huggingface.co/datasets/stanfordnlp/sst2"
+        },
+        {
+          "name": "Civil Comments",
+          "url": "https://huggingface.co/datasets/google/civil_comments"
+        },
+        {
+          "name": "Jigsaw Unintended Bias in Toxicity Classification",
+          "url": "https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/data"
+        },
+        {
+          "name": "SONIC-O1",
+          "url": "https://huggingface.co/datasets/vector-institute/sonic-o1"
+        },
+        {
+          "name": "Videos Dataset for LLMs RAG",
+          "url": "https://huggingface.co/datasets/elmoghany/Videos-Dataset-For-LLMs-RAG-That-Require-Audio-Vidoes-And-Text"
+        },
+        {
+          "name": "ChartQAPro",
+          "url": "https://huggingface.co/datasets/ahmed-masry/ChartQAPro"
+        }
+      ],
       "type": "bootcamp",
       "year": 2025,
       "github_url": "https://github.com/VectorInstitute/interpretability-llms-agents"
@@ -716,6 +774,12 @@
         {
           "name": "GCP",
           "url": "https://github.com/VectorInstitute/ai-deployment/tree/main/implementations/gcp"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "CNN / DailyMail (News Summarization)",
+          "url": "https://www.kaggle.com/datasets/gowrishankarp/newspaper-text-summarization-cnn-dailymail"
         }
       ],
       "type": "bootcamp",
@@ -1381,6 +1445,24 @@
           "url": null
         }
       ],
+      "public_datasets": [
+        {
+          "name": "MovieLens",
+          "url": "https://grouplens.org/datasets/movielens/"
+        },
+        {
+          "name": "Amazon Review Dataset",
+          "url": "https://nijianmo.github.io/amazon/index.html"
+        },
+        {
+          "name": "YOOCHOOSE (RecSys Challenge 2015)",
+          "url": "https://www.kaggle.com/datasets/chadgostopp/recsys-challenge-2015"
+        },
+        {
+          "name": "TMDB Movie Dataset",
+          "url": "https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata"
+        }
+      ],
       "type": "bootcamp",
       "year": 2022,
       "github_url": "https://github.com/VectorInstitute/recommender-systems"
@@ -1415,6 +1497,44 @@
           "url": null
         }
       ],
+      "public_datasets": [
+        {
+          "name": "UCI Heart Disease Dataset",
+          "url": "https://archive.ics.uci.edu/dataset/45/heart+disease"
+        },
+        {
+          "name": "Credit Card Fraud Detection (ULB)",
+          "url": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud"
+        },
+        {
+          "name": "Breast Cancer Wisconsin (Diagnostic) Dataset",
+          "url": "https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data"
+        },
+        {
+          "name": "The Cancer Genome Atlas (TCGA)",
+          "url": "https://portal.gdc.cancer.gov"
+        },
+        {
+          "name": "CIFAR-10",
+          "url": "https://www.cs.toronto.edu/~kriz/cifar.html"
+        },
+        {
+          "name": "Home Credit Default Risk",
+          "url": "https://www.kaggle.com/c/home-credit-default-risk/overview"
+        },
+        {
+          "name": "MIMIC-III Clinical Database",
+          "url": "https://physionet.org/content/mimiciii/1.4/"
+        },
+        {
+          "name": "Inside Airbnb (Toronto)",
+          "url": "http://insideairbnb.com/toronto/"
+        },
+        {
+          "name": "Yelp Open Dataset",
+          "url": "https://www.yelp.com/dataset"
+        }
+      ],
       "type": "bootcamp",
       "year": 2021,
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
@@ -1422,5 +1542,5 @@
   ],
   "totalImplementations": 194,
   "yearsOfResearch": 8,
-  "lastUpdated": "2026-07-03T12:46:59.370333"
+  "lastUpdated": "2026-07-03T13:08:37.698002"
 }

@@ -14,6 +14,25 @@ implementations:
     url: null
   - name: Homomorphic Encryption
     url: null
+public_datasets:
+  - name: UCI Heart Disease Dataset
+    url: https://archive.ics.uci.edu/dataset/45/heart+disease
+  - name: Credit Card Fraud Detection (ULB)
+    url: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
+  - name: Breast Cancer Wisconsin (Diagnostic) Dataset
+    url: https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data
+  - name: The Cancer Genome Atlas (TCGA)
+    url: https://portal.gdc.cancer.gov
+  - name: CIFAR-10
+    url: https://www.cs.toronto.edu/~kriz/cifar.html
+  - name: Home Credit Default Risk
+    url: https://www.kaggle.com/c/home-credit-default-risk/overview
+  - name: MIMIC-III Clinical Database
+    url: https://physionet.org/content/mimiciii/1.4/
+  - name: Inside Airbnb (Toronto)
+    url: http://insideairbnb.com/toronto/
+  - name: Yelp Open Dataset
+    url: https://www.yelp.com/dataset
 type: bootcamp
 year: 2021
 github_url: https://github.com/VectorInstitute/privacy-enhancing-techniques

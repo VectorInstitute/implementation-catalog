@@ -14,6 +14,15 @@ implementations:
     url: null
   - name: Knowledge Graph-Based Recommender Systems
     url: null
+public_datasets:
+  - name: MovieLens
+    url: https://grouplens.org/datasets/movielens/
+  - name: Amazon Review Dataset
+    url: https://nijianmo.github.io/amazon/index.html
+  - name: YOOCHOOSE (RecSys Challenge 2015)
+    url: https://www.kaggle.com/datasets/chadgostopp/recsys-challenge-2015
+  - name: TMDB Movie Dataset
+    url: https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata
 type: bootcamp
 year: 2022
 github_url: https://github.com/VectorInstitute/recommender-systems

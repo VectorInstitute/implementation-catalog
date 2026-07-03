@@ -12,6 +12,13 @@ implementations:
     url: https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/energy_oil_forecasting
   - name: Bank of Canada Rate Decision Forecasting
     url: https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/boc_rate_decisions
+public_datasets:
+  - name: Statistics Canada (CPI / macroeconomic tables)
+    url: https://www.statcan.gc.ca
+  - name: FRED (Federal Reserve Economic Data)
+    url: https://fred.stlouisfed.org
+  - name: Yahoo Finance (via yfinance)
+    url: https://finance.yahoo.com
 type: bootcamp
 year: 2026
 github_url: https://github.com/VectorInstitute/agentic-forecasting

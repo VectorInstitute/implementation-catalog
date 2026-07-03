@@ -132,6 +132,7 @@ def write_json_file(data: Dict[str, Any], output_path: Path) -> None:
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
     print(
         f"Successfully wrote {len(data['repositories'])} repositories to {output_path}"

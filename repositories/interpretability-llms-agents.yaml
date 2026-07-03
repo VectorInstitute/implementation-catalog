@@ -14,6 +14,23 @@ implementations:
     url: https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/agentic_vqa_eval
   - name: Mechanistic Interpretability
     url: https://github.com/VectorInstitute/interpretability-llms-agents/tree/main/implementations/mechanistic_interpretability
+public_datasets:
+  - name: UCI Credit Card Default Clients Dataset
+    url: https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
+  - name: COCO (Common Objects in Context)
+    url: https://cocodataset.org
+  - name: SST-2 (Stanford Sentiment Treebank)
+    url: https://huggingface.co/datasets/stanfordnlp/sst2
+  - name: Civil Comments
+    url: https://huggingface.co/datasets/google/civil_comments
+  - name: Jigsaw Unintended Bias in Toxicity Classification
+    url: https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification/data
+  - name: SONIC-O1
+    url: https://huggingface.co/datasets/vector-institute/sonic-o1
+  - name: Videos Dataset for LLMs RAG
+    url: https://huggingface.co/datasets/elmoghany/Videos-Dataset-For-LLMs-RAG-That-Require-Audio-Vidoes-And-Text
+  - name: ChartQAPro
+    url: https://huggingface.co/datasets/ahmed-masry/ChartQAPro
 type: bootcamp
 year: 2025
 github_url: https://github.com/VectorInstitute/interpretability-llms-agents
