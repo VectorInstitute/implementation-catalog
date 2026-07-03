@@ -63,6 +63,7 @@ repositoryData.repositories.forEach((repo) => {
     : '';
 
   // Create HTML content
+  const redirectTarget = `${basePath}/#${repoSlug}`;
   const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +71,15 @@ repositoryData.repositories.forEach((repo) => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${repo.name} - Vector Implementation Catalog</title>
   <meta name="description" content="${repo.description}">
-  <meta http-equiv="refresh" content="0; url=${basePath}/#${repoSlug}">
+  <!--
+    A meta-refresh (not an inline <script>) drives this redirect: the site's
+    CSP script-src only allow-lists the specific inline-script hashes found
+    in the built index.html (see deploy-catalog-gcp.yml), so a per-repo
+    inline script here - unique content per page, thus a different hash
+    each time - would be silently blocked at runtime. meta-refresh isn't
+    governed by script-src, so it works unconditionally.
+  -->
+  <meta http-equiv="refresh" content="0; url=${redirectTarget}">
   <style>
     body {
       font-family: system-ui, -apple-system, sans-serif;
@@ -99,20 +108,14 @@ repositoryData.repositories.forEach((repo) => {
     }
     .description { color: #4b5563; margin: 20px 0; }
     .link { color: #0891b2; text-decoration: none; }
-    .redirect-notice {
-      background: #fef3c7;
-      border: 1px solid #fbbf24;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
   </style>
 </head>
 <body data-pagefind-body>
-  <div class="redirect-notice">
-    <strong>Redirecting...</strong> If you're not redirected, <a href="${basePath}/#${repoSlug}" class="link">click here</a>.
-  </div>
-
+  <!--
+    This markup exists only so Pagefind has content to crawl and index for
+    this repository. The meta-refresh above fires before it's normally
+    seen; "Continue to ${repo.name}" below is a manual fallback link.
+  -->
   <article>
     <div>
       <span class="badge type-badge" data-pagefind-filter="type">${repo.type}</span>
@@ -124,17 +127,14 @@ repositoryData.repositories.forEach((repo) => {
     <p class="description" data-pagefind-meta="description">${repo.description}</p>
 
     <p>
+      <a href="${redirectTarget}" class="link">Continue to ${repo.name}</a>
+      &middot;
       <a href="${githubUrl}" target="_blank" rel="noopener noreferrer" class="link">View on GitHub</a>
     </p>
 
     ${implementationsList}
     ${datasetsList}
   </article>
-
-  <script>
-    // Redirect to main page with hash
-    window.location.href = '${basePath}/#${repoSlug}';
-  </script>
 </body>
 </html>`;
 

@@ -41,10 +41,38 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/*
+ * When a search result (or any #<repo-slug> link) lands on a repository
+ * card, briefly highlight it so the jump from search feels intentional
+ * rather than an abrupt drop onto the page.
+ */
+@keyframes target-highlight {
+  from {
+    box-shadow: 0 0 0 3px rgba(235, 8, 138, 0.5);
+  }
+  to {
+    box-shadow: 0 0 0 3px rgba(235, 8, 138, 0);
+  }
+}
+
+article:target {
+  animation: target-highlight 2s ease-out;
 }
 
 @layer utilities {
