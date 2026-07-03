@@ -1,0 +1,18 @@
+name: agentic-forecasting
+repo_id: VectorInstitute/agentic-forecasting
+description: "A bootcamp codebase for building, evaluating, and comparing forecasting systems, conventional numerical models, LLM Processes, and agentic forecasters, on real economic, financial, and event-prediction tasks."
+implementations:
+  - name: Getting Started (Evaluation Framework)
+    url: https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/getting_started
+  - name: S&P 500 Forecasting
+    url: https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/sp500_forecasting
+  - name: Food Price Forecasting
+    url: https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/food_price_forecasting
+  - name: Energy / Oil Price Forecasting
+    url: https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/energy_oil_forecasting
+  - name: Bank of Canada Rate Decision Forecasting
+    url: https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/boc_rate_decisions
+type: bootcamp
+year: 2026
+github_url: https://github.com/VectorInstitute/agentic-forecasting
+package_name: aieng-forecasting

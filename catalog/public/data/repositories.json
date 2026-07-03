@@ -1,6 +1,37 @@
 {
   "repositories": [
     {
+      "name": "agentic-forecasting",
+      "repo_id": "VectorInstitute/agentic-forecasting",
+      "description": "A bootcamp codebase for building, evaluating, and comparing forecasting systems, conventional numerical models, LLM Processes, and agentic forecasters, on real economic, financial, and event-prediction tasks.",
+      "implementations": [
+        {
+          "name": "Getting Started (Evaluation Framework)",
+          "url": "https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/getting_started"
+        },
+        {
+          "name": "S&P 500 Forecasting",
+          "url": "https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/sp500_forecasting"
+        },
+        {
+          "name": "Food Price Forecasting",
+          "url": "https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/food_price_forecasting"
+        },
+        {
+          "name": "Energy / Oil Price Forecasting",
+          "url": "https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/energy_oil_forecasting"
+        },
+        {
+          "name": "Bank of Canada Rate Decision Forecasting",
+          "url": "https://github.com/VectorInstitute/agentic-forecasting/tree/main/implementations/boc_rate_decisions"
+        }
+      ],
+      "type": "bootcamp",
+      "year": 2026,
+      "github_url": "https://github.com/VectorInstitute/agentic-forecasting",
+      "package_name": "aieng-forecasting"
+    },
+    {
       "name": "eval-agents",
       "repo_id": "VectorInstitute/eval-agents",
       "description": "Reference implementations for the Agentic AI Evaluation bootcamp, covering evaluation techniques for AI agents including LLM-as-judge, deterministic graders, and trace-level evaluation.",
@@ -143,6 +174,41 @@
       "package_name": "inspect-podman"
     },
     {
+      "name": "unbias-plus",
+      "repo_id": "VectorInstitute/unbias-plus",
+      "description": "A Python package that finds biased language in text, explains why, suggests neutral wording, and rewrites the whole text. Use from CLI, REST API, or Python.",
+      "implementations": [
+        {
+          "name": "Bias Detection and Classification",
+          "url": "https://github.com/VectorInstitute/unbias-plus/blob/main/src/unbias_plus/pipeline.py"
+        },
+        {
+          "name": "Debiasing and Neutral Rewriting",
+          "url": "https://github.com/VectorInstitute/unbias-plus/blob/main/src/unbias_plus/pipeline.py"
+        },
+        {
+          "name": "CLI",
+          "url": "https://github.com/VectorInstitute/unbias-plus/blob/main/src/unbias_plus/cli.py"
+        },
+        {
+          "name": "REST API and Demo UI",
+          "url": "https://github.com/VectorInstitute/unbias-plus/blob/main/src/unbias_plus/api.py"
+        }
+      ],
+      "public_datasets": [
+        {
+          "name": "UnBias-Plus Dataset",
+          "url": "https://huggingface.co/datasets/vector-institute/unbias-plus-dataset"
+        }
+      ],
+      "type": "tool",
+      "year": 2026,
+      "github_url": "https://github.com/VectorInstitute/unbias-plus",
+      "package_name": "unbias-plus",
+      "paper_url": "https://arxiv.org/abs/2606.23412",
+      "bibtex": "radwan2026unbiasplus"
+    },
+    {
       "name": "agent-bootcamp",
       "repo_id": "VectorInstitute/agent-bootcamp",
       "description": "A bootcamp repository with hands-on implementations for building AI agents, covering basics, frameworks, and evaluation techniques.",
@@ -184,6 +250,32 @@
       "year": 2025,
       "github_url": "https://github.com/VectorInstitute/agent-bootcamp",
       "package_name": "aieng-agents"
+    },
+    {
+      "name": "aspis",
+      "repo_id": "VectorInstitute/aspis",
+      "description": "A tool for creating measurement instruments for AI risks, converting high-level risk descriptions into specific, measurable concepts that can be operationalized using LLM-as-a-judge evaluation.",
+      "implementations": [
+        {
+          "name": "Risk Systematization",
+          "url": null
+        },
+        {
+          "name": "Interactive Streamlit UI",
+          "url": null
+        },
+        {
+          "name": "REST API",
+          "url": null
+        },
+        {
+          "name": "LLM-as-a-Judge Prompt Generation",
+          "url": null
+        }
+      ],
+      "type": "tool",
+      "year": 2025,
+      "github_url": "https://github.com/VectorInstitute/aspis"
     },
     {
       "name": "bias-in-the-picture-benchmark",
@@ -1328,7 +1420,7 @@
       "github_url": "https://github.com/VectorInstitute/privacy-enhancing-techniques"
     }
   ],
-  "totalImplementations": 181,
+  "totalImplementations": 194,
   "yearsOfResearch": 8,
-  "lastUpdated": "2026-05-07T09:57:21.339959"
+  "lastUpdated": "2026-07-03T12:46:59.370333"
 }

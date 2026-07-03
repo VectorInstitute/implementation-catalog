@@ -1,0 +1,21 @@
+name: unbias-plus
+repo_id: VectorInstitute/unbias-plus
+description: "A Python package that finds biased language in text, explains why, suggests neutral wording, and rewrites the whole text. Use from CLI, REST API, or Python."
+implementations:
+  - name: Bias Detection and Classification
+    url: https://github.com/VectorInstitute/unbias-plus/blob/main/src/unbias_plus/pipeline.py
+  - name: Debiasing and Neutral Rewriting
+    url: https://github.com/VectorInstitute/unbias-plus/blob/main/src/unbias_plus/pipeline.py
+  - name: CLI
+    url: https://github.com/VectorInstitute/unbias-plus/blob/main/src/unbias_plus/cli.py
+  - name: REST API and Demo UI
+    url: https://github.com/VectorInstitute/unbias-plus/blob/main/src/unbias_plus/api.py
+public_datasets:
+  - name: UnBias-Plus Dataset
+    url: https://huggingface.co/datasets/vector-institute/unbias-plus-dataset
+type: tool
+year: 2026
+github_url: https://github.com/VectorInstitute/unbias-plus
+package_name: unbias-plus
+paper_url: https://arxiv.org/abs/2606.23412
+bibtex: radwan2026unbiasplus

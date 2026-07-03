@@ -1,0 +1,15 @@
+name: aspis
+repo_id: VectorInstitute/aspis
+description: "A tool for creating measurement instruments for AI risks, converting high-level risk descriptions into specific, measurable concepts that can be operationalized using LLM-as-a-judge evaluation."
+implementations:
+  - name: Risk Systematization
+    url: null
+  - name: Interactive Streamlit UI
+    url: null
+  - name: REST API
+    url: null
+  - name: LLM-as-a-Judge Prompt Generation
+    url: null
+type: tool
+year: 2025
+github_url: https://github.com/VectorInstitute/aspis
