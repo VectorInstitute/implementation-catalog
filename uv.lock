@@ -266,7 +266,7 @@ requires-dist = [
     { name = "pyyaml", specifier = ">=6.0.2" },
     { name = "requests", specifier = ">=2.32.0" },
     { name = "urllib3", specifier = ">=2.8.0" },
-    { name = "virtualenv", specifier = ">=20.36.1" },
+    { name = "virtualenv", specifier = ">=21.7.13" },
 ]
 
 [package.metadata.requires-dev]
