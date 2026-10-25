@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br/srgb from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 flex items-center justify-center p-4">
       {/* Vector Brand Header Accent */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-vector-magenta via-vector-violet to-vector-cobalt"></div>
+      <div className="fixed top-0 left-0 right-0 h-1 bg-linear-to-r/srgb from-vector-magenta via-vector-violet to-vector-cobalt"></div>
 
       <div className="card p-8 max-w-md w-full text-center animate-fade-in">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-vector-magenta via-vector-violet to-vector-cobalt bg-clip-text text-transparent mb-4">
+        <h1 className="text-4xl font-bold bg-linear-to-r/srgb from-vector-magenta via-vector-violet to-vector-cobalt bg-clip-text text-transparent mb-4">
           Catalog Analytics
         </h1>
         <p className="text-slate-600 dark:text-slate-400 mb-8">

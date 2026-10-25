@@ -289,7 +289,7 @@ function RepoSelector({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="appearance-none bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg pl-3 pr-8 py-1.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-vector-magenta cursor-pointer"
+        className="appearance-none bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg pl-3 pr-8 py-1.5 text-sm text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-vector-magenta cursor-pointer"
       >
         {repos.map(([id, name]) => (
           <option key={id} value={id}>
@@ -388,7 +388,7 @@ function TopMoversPanel({
           );
           return (
             <div key={m.id} className="flex items-center gap-2.5">
-              <span className="w-4 text-xs text-gray-400 text-right flex-shrink-0">
+              <span className="w-4 text-xs text-gray-400 text-right shrink-0">
                 {i + 1}
               </span>
               <div className="flex-1 min-w-0">
@@ -402,7 +402,7 @@ function TopMoversPanel({
                     {m.name}
                   </a>
                   <span
-                    className="text-xs flex-shrink-0 font-semibold"
+                    className="text-xs shrink-0 font-semibold"
                     style={{ color }}
                   >
                     +{m.delta.toLocaleString()}
@@ -548,7 +548,7 @@ export function GitHubTrendsSection({
       </h2>
 
       {/* Stars growth */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm mb-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-xs mb-6">
         <div className="flex items-start justify-between mb-0.5">
           <h3 className="text-base font-semibold text-gray-900 dark:text-white flex items-center gap-2">
             <Star className="w-5 h-5 text-vector-magenta" />
@@ -611,7 +611,7 @@ export function GitHubTrendsSection({
 
       {/* Spotlight + Top Movers */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+        <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-xs">
           {/* Controls */}
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <MetricToggle
@@ -641,7 +641,7 @@ export function GitHubTrendsSection({
           )}
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+        <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-xs">
           <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-0.5 flex items-center gap-2">
             {metric === "unique_cloners_14d" ? (
               <GitBranch className="w-4 h-4" style={{ color }} />
@@ -733,7 +733,7 @@ export function PyPITrendsSection({
       </h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+        <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-xs">
           {/* Controls */}
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <MetricToggle
@@ -763,7 +763,7 @@ export function PyPITrendsSection({
           )}
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+        <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-xs">
           <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-0.5 flex items-center gap-2">
             <Download className="w-4 h-4" style={{ color }} />
             Top Movers
