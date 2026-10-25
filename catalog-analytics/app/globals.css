@@ -1,75 +1,228 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-/* Vector Institute Brand Variables */
-:root {
-  /* Primary Colors */
-  --vector-magenta: #EB088A;
-  --vector-black: #000000;
-  --vector-grey: #E9E8E8;
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-vector-magenta: #eb088a;
+  --color-vector-black: #000000;
+  --color-vector-grey: #e9e8e8;
+  --color-vector-cobalt: #313cff;
+  --color-vector-violet: #8a25c9;
+  --color-vector-turquoise: #48c0d9;
+  --color-vector-tangerine: #ff9e00;
+  --color-vector-lime: #cff933;
 
-  /* Secondary Colors */
-  --vector-cobalt: #313CFF;
-  --vector-violet: #8A25C9;
-  --vector-turquoise: #48C0D9;
-  --vector-tangerine: #FF9E00;
-  --vector-lime: #CFF933;
+  /*
+    Tailwind CSS v4 moved its default palette to OKLCH, which shifts these
+    shades slightly. Pin the v3 sRGB values for the families this app uses so
+    the dashboard keeps its existing colors.
+  */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+  --color-red-950: #450a0a;
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-200: #fef08a;
+  --color-yellow-300: #fde047;
+  --color-yellow-400: #facc15;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+  --color-yellow-700: #a16207;
+  --color-yellow-800: #854d0e;
+  --color-yellow-900: #713f12;
+  --color-yellow-950: #422006;
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #052e16;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+  --color-blue-950: #172554;
 
-  /* Light theme */
-  --background: #ffffff;
-  --foreground: #000000;
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --border: #E9E8E8;
+  --font-sans: 'Open Sans', system-ui, sans-serif;
+
+  --animate-fade-in: fadeIn 0.5s ease-in;
+  --animate-slide-up: slideUp 0.5s ease-out;
+
+  --background-image-vector-gradient: linear-gradient(
+    135deg,
+    #eb088a 0%,
+    #8a25c9 50%,
+    #313cff 100%
+  );
+  --background-image-vector-gradient-horizontal: linear-gradient(
+    90deg,
+    #eb088a 0%,
+    #8a25c9 50%,
+    #313cff 100%
+  );
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
 
-@media (prefers-color-scheme: dark) {
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  /*
+    Tailwind CSS v4 preflight no longer gives buttons a pointer cursor.
+    Restore the v3 behaviour so clickable buttons keep the hand cursor.
+  */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* Vector Institute Brand Variables */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ffffff;
-    --card-bg: rgba(26, 26, 26, 0.95);
-    --border: #2a2a2a;
+    /* Primary Colors */
+    --vector-magenta: #eb088a;
+    --vector-black: #000000;
+    --vector-grey: #e9e8e8;
+
+    /* Secondary Colors */
+    --vector-cobalt: #313cff;
+    --vector-violet: #8a25c9;
+    --vector-turquoise: #48c0d9;
+    --vector-tangerine: #ff9e00;
+    --vector-lime: #cff933;
+
+    /* Light theme */
+    --background: #ffffff;
+    --foreground: #000000;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --border: #e9e8e8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ffffff;
+      --card-bg: rgba(26, 26, 26, 0.95);
+      --border: #2a2a2a;
+    }
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family:
+      'Open Sans',
+      system-ui,
+      -apple-system,
+      sans-serif;
+    min-height: 100vh;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
-  min-height: 100vh;
+@utility text-balance {
+  text-wrap: balance;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  /* Vector Institute gradient backgrounds */
-  .bg-vector-gradient {
-    background: linear-gradient(135deg, #EB088A 0%, #8A25C9 50%, #313CFF 100%);
-  }
-
-  .bg-vector-gradient-subtle {
-    background: linear-gradient(135deg,
-      rgba(235, 8, 138, 0.1) 0%,
-      rgba(138, 37, 201, 0.1) 50%,
-      rgba(49, 60, 255, 0.1) 100%);
-  }
+/* Vector Institute gradient backgrounds */
+@utility bg-vector-gradient {
+  background: linear-gradient(135deg, #eb088a 0%, #8a25c9 50%, #313cff 100%);
 }
 
-@layer components {
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-  }
+@utility bg-vector-gradient-subtle {
+  background: linear-gradient(
+    135deg,
+    rgba(235, 8, 138, 0.1) 0%,
+    rgba(138, 37, 201, 0.1) 50%,
+    rgba(49, 60, 255, 0.1) 100%
+  );
+}
 
-  .card-highlight {
-    background: var(--card-bg);
-    border: 2px solid var(--vector-magenta);
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(235, 8, 138, 0.2), 0 2px 4px -2px rgba(235, 8, 138, 0.2);
-  }
+@utility card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+@utility card-highlight {
+  background: var(--card-bg);
+  border: 2px solid var(--vector-magenta);
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 6px -1px rgba(235, 8, 138, 0.2),
+    0 2px 4px -2px rgba(235, 8, 138, 0.2);
 }

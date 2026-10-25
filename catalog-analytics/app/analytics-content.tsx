@@ -597,9 +597,9 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-linear-to-br/srgb from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Header */}
-      <div className="bg-gradient-to-r from-vector-magenta to-vector-cobalt text-white">
+      <div className="bg-linear-to-r/srgb from-vector-magenta to-vector-cobalt text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -608,7 +608,7 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
             className="flex items-center justify-between"
           >
             <div className="flex items-center gap-4">
-              <div className="bg-white/95 rounded-md px-2 py-1.5 shadow-sm flex-shrink-0">
+              <div className="bg-white/95 rounded-md px-2 py-1.5 shadow-xs shrink-0">
                 <Image
                   src={getAssetPath("vector-logo.webp")}
                   alt="Vector Institute"
@@ -645,12 +645,12 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
               {user && (
                 <div className="text-right">
                   <p className="text-xs text-white/70 uppercase tracking-wide">Signed in as</p>
-                  <p className="text-sm font-semibold bg-gradient-to-r from-vector-magenta to-vector-violet bg-clip-text text-transparent">{user.email}</p>
+                  <p className="text-sm font-semibold bg-linear-to-r/srgb from-vector-magenta to-vector-violet bg-clip-text text-transparent">{user.email}</p>
                 </div>
               )}
               <button
                 onClick={handleLogout}
-                className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-slate-600 to-slate-700 hover:from-vector-magenta hover:to-vector-violet rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+                className="px-4 py-2 text-sm font-semibold text-white bg-linear-to-r/srgb from-slate-600 to-slate-700 hover:from-vector-magenta hover:to-vector-violet rounded-lg shadow-xs hover:shadow-md transition-all duration-200"
               >
                 Logout
               </button>
@@ -837,7 +837,7 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
                     {/* Info Banner */}
                     <div className="mb-8 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                       <div className="flex items-start gap-3">
-                        <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                        <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
                         <div className="text-sm text-blue-900 dark:text-blue-100">
                           <p className="font-medium mb-1">About PyPI Download Statistics</p>
                           <p className="text-blue-800 dark:text-blue-200">
@@ -952,7 +952,7 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
                       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                         All Packages
                       </h2>
-                      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+                      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-xs">
                         <div className="overflow-x-auto">
                           <table className="w-full">
                             <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
@@ -1037,7 +1037,7 @@ export default function AnalyticsPage({ user }: AnalyticsPageProps) {
                                       </div>
                                     </div>
                                     {pkg.description && (
-                                      <div className={`hidden group-hover:block absolute left-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words`}>
+                                      <div className={`hidden group-hover:block absolute left-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal wrap-break-word`}>
                                         {pkg.description}
                                         <div className={`absolute ${showTooltipBelow ? '-top-2 left-8 border-l-2 border-t-2' : '-bottom-2 left-8 border-r-2 border-b-2'} w-4 h-4 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 transform rotate-45`}></div>
                                       </div>
@@ -1118,7 +1118,7 @@ function RepositoryTable({
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
         {title}
       </h2>
-      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm">
+      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
@@ -1214,7 +1214,7 @@ function RepositoryTable({
                         <ExternalLink className="w-3 h-3" />
                       </a>
                       {repo.description && (
-                        <div className={`hidden group-hover:block absolute left-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal break-words`}>
+                        <div className={`hidden group-hover:block absolute left-0 ${showTooltipBelow ? 'top-full mt-2' : 'bottom-full mb-2'} z-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-sm rounded-lg py-3 px-4 w-96 max-w-[calc(100vw-2rem)] shadow-xl border-2 border-gray-200 dark:border-gray-600 leading-relaxed whitespace-normal wrap-break-word`}>
                           {repo.description}
                           <div className={`absolute ${showTooltipBelow ? '-top-2 left-8 border-l-2 border-t-2' : '-bottom-2 left-8 border-r-2 border-b-2'} w-4 h-4 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 transform rotate-45`}></div>
                         </div>
@@ -1282,7 +1282,7 @@ function MetricCard({
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
-      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-5 shadow-sm hover:shadow-md transition-all"
+      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-5 shadow-xs hover:shadow-md transition-all"
     >
       <div className="flex items-start justify-between mb-3">
         <div className="p-2 bg-gray-50 dark:bg-gray-900 rounded-lg">{icon}</div>
@@ -1326,7 +1326,7 @@ function TopPerformerCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm"
+      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-xs"
     >
       <div className="flex items-center gap-2 mb-4">
         {icon}
@@ -1341,7 +1341,7 @@ function TopPerformerCard({
             className="flex items-center justify-between py-2 border-b border-gray-100 dark:border-gray-700 last:border-0"
           >
             <div className="flex items-center gap-3 flex-1 min-w-0">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-vector-magenta to-vector-cobalt flex items-center justify-center text-white text-xs font-bold">
+              <div className="shrink-0 w-6 h-6 rounded-full bg-linear-to-br/srgb from-vector-magenta to-vector-cobalt flex items-center justify-center text-white text-xs font-bold">
                 {index + 1}
               </div>
               <a
@@ -1354,7 +1354,7 @@ function TopPerformerCard({
                 {repo.name}
               </a>
             </div>
-            <div className="flex-shrink-0 text-right">
+            <div className="shrink-0 text-right">
               <div className="text-sm font-bold text-gray-900 dark:text-white">
                 {(repo[valueKey] as number).toLocaleString()}
               </div>
@@ -1388,7 +1388,7 @@ function TopPypiPerformerCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm"
+      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-xs"
     >
       <div className="flex items-center gap-2 mb-4">
         {icon}
@@ -1403,7 +1403,7 @@ function TopPypiPerformerCard({
             className="flex items-center justify-between py-2 border-b border-gray-100 dark:border-gray-700 last:border-0"
           >
             <div className="flex items-center gap-3 flex-1 min-w-0">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-br from-vector-magenta to-vector-cobalt flex items-center justify-center text-white text-xs font-bold">
+              <div className="shrink-0 w-6 h-6 rounded-full bg-linear-to-br/srgb from-vector-magenta to-vector-cobalt flex items-center justify-center text-white text-xs font-bold">
                 {index + 1}
               </div>
               <a
@@ -1416,7 +1416,7 @@ function TopPypiPerformerCard({
                 {pkg.package_name}
               </a>
             </div>
-            <div className="flex-shrink-0 text-right">
+            <div className="shrink-0 text-right">
               <div className="text-sm font-bold text-gray-900 dark:text-white">
                 {(pkg[valueKey] as number).toLocaleString()}
               </div>
